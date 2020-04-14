@@ -154,13 +154,7 @@ public class WindowGame extends BasicGame {
     }
 
     @Override
-    public void keyReleased(int key, char c) {
-		p1.setMoving(false);
 
-		if (Input.KEY_ESCAPE == key) {
-			container.exit();
-		}
-	}
     
     
     public void keyPressed(int key, char c) {
@@ -171,6 +165,7 @@ public class WindowGame extends BasicGame {
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
 	        case Input.KEY_DOWN:  p1.setDirection(2); p1.setMoving(true); break;
 	        case Input.KEY_RIGHT: p1.setDirection(3); p1.setMoving(true); break;
+	        case Input.KEY_ESCAPE: container.exit(); break;
 	        }
     	}
     	else {
