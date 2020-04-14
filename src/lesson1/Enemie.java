@@ -63,8 +63,8 @@ public class Enemie {
 		this.battleanim = battleanim;
 		System.out.print("hello world");
 	}
-	public void xp(){
-		System.out.println("xp");
+	public void Getxp(){
+		
 	}
 	
 

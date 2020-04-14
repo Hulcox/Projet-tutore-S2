@@ -159,7 +159,7 @@ public class WindowGame extends BasicGame {
     
     public void keyPressed(int key, char c) {
 
-    	if (!battle.isInBattle()) {
+    	if (!battle.isInBattle()) { //Commande hors bataille
 	        switch (key) {
 	        case Input.KEY_UP:    p1.setDirection(0); p1.setMoving(true); break;
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
@@ -169,7 +169,7 @@ public class WindowGame extends BasicGame {
 	        }
     	}
     	else {
-    		switch (key) {
+    		switch (key) { //Commande bataille
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
     		}
