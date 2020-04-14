@@ -64,7 +64,7 @@ public class Enemie {
 		System.out.print("hello world");
 	}
 	public void xp(){
-		
+		System.out.println("xp");
 	}
 	
 
