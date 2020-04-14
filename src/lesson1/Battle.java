@@ -60,7 +60,7 @@ public class Battle {
 			if (time > 2) {
 				g.drawAnimation(player.getBattleanim()[0], 0, 240);
 				g.drawAnimation(player.getMap().getArrayList().get(i).getBattleanim()[1],0+player.getMap().getArrayList().get(i).getBattleanim()[1].getWidth()/2,240); //ENEMY ON PLAYER
-				if (time > 3) {
+				if (time > 3) { //Battle win
 					time = 0;
 					player.setAnimstate(0);
 					player.setPv(player.getPv()-player.getMap().getArrayList().get(i).getDegats());
