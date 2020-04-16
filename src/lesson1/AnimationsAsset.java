@@ -31,7 +31,7 @@ public class AnimationsAsset {
         }
         return animation;
     }
-    public void loadEnemyAnimation(ImageAsset imageasset) throws SlickException {
+    public void loadEnemyAnimation(GameAsset imageasset) throws SlickException {
     	
     	SpriteSheet spriteSheetKnight = new SpriteSheet("texture/Knight_enemy_1.png", 128, 128);
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);

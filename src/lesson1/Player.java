@@ -14,6 +14,8 @@ public class Player {
 	private float speed = 0.1f;
 	private int damage = 20;
 	private Map map;
+	private Epée playerSword;
+	private Armure playerArmor;
 	private int pv = 70;
 	private int animstate = 0;
 	private Image image;
@@ -88,10 +90,22 @@ public class Player {
 		this.animstate = animstate;
 	}
 	public int getDamage() {
-		return damage;
+		return damage + playerSword.getDegats();
 	}
 	public void setDamage(int damage) {
-		this.damage = damage;
+		this.damage = damage * ( Math.floorMod(100, (100-playerArmor.getArmure())));
+	}
+	public Epée getPlayerSword() {
+		return playerSword;
+	}
+	public void setPlayerSword(Epée playerSword) {
+		this.playerSword = playerSword;
+	}
+	public Armure getPlayerArmor() {
+		return playerArmor;
+	}
+	public void setPlayerArmor(Armure playerArmor) {
+		this.playerArmor = playerArmor;
 	}
 	
 	

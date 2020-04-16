@@ -19,7 +19,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	ImageAsset imageasset = new ImageAsset();
+	GameAsset GameAsset = new GameAsset();
 	Texture text;
 	Input input;
 	TiledMap map;
@@ -36,17 +36,20 @@ public class WindowGame extends BasicGame {
     }
     
     public void loadText(GameContainer container) throws SlickException {
-    	imageasset.loadImage();
-    	imageasset.loadEnemie();
-    	imageasset.loadMap();
+    	GameAsset.loadImage();
+    	GameAsset.loadEnemie();
+    	GameAsset.loadMap();
+    	GameAsset.loadObject();
     	input = container.getInput();
     	camera = new Camera();
     	p1 = new Player();
-    	this.map = imageasset.map1.getMap();
-    	p1.setMap(imageasset.map1);
+    	this.map = GameAsset.map1.getMap();
+    	p1.setMap(GameAsset.map1);
     	animationasset = new AnimationsAsset();
     	battle = new Battle(p1);
-    	p1.setImage(imageasset.hero);
+    	p1.setImage(GameAsset.hero);
+    	p1.setPlayerArmor(GameAsset.copperArmor);
+    	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
     }
 
@@ -61,7 +64,7 @@ public class WindowGame extends BasicGame {
     	loadText(container);
     	animationasset.addAnimation(spriteSheet, p1);
     	animationasset.loadBattlersAnimation(battlers, p1);
-    	animationasset.loadEnemyAnimation(imageasset);
+    	animationasset.loadEnemyAnimation(GameAsset);
     	this.hud.init(container);
     	
 
@@ -111,10 +114,10 @@ public class WindowGame extends BasicGame {
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
                 else if ("changement".equals(map.getObjectType(0, objectID))) {
-                	p1.setMap(imageasset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
+                	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
-                	this.map = imageasset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
+                	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
                 	
                 }
             }
