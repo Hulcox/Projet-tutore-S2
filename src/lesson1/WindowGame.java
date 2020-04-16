@@ -157,6 +157,10 @@ public class WindowGame extends BasicGame {
     }
 
     @Override
+    public void keyReleased(int key, char c) {
+    	p1.setMoving(false);
+    }
+    
 
     
     
