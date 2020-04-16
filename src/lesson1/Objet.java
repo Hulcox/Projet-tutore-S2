@@ -10,7 +10,6 @@ public abstract class Objet {
 	}
 	
 	
-	
 	public int getPrix() {
 		return this.prix;
 	}
