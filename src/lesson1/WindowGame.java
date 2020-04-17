@@ -55,6 +55,17 @@ public class WindowGame extends BasicGame {
     	hud = new BattleHUD(p1,camera,battle);
     	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
     	inventory.setOpen(false);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+       	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.gobelinMeat);
     }
 
     

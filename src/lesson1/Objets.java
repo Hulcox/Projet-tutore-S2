@@ -4,7 +4,7 @@ public abstract class Objets {
 	protected int prix;
 	protected String nom;
 	protected boolean loot;
-	
+	protected int number = 1;
 	public Objets (int prix, String nom, boolean loot) {
 		this.prix = prix;
 		this.nom = nom;
@@ -20,6 +20,13 @@ public abstract class Objets {
 	public int getSellingPrice() {
 		return this.prix/2;
 	}
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
 
 
 

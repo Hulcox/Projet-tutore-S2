@@ -11,6 +11,7 @@ public class GameAsset {
 	Map map1, grotte1;
 	Epée copperSword, ironSword, diamondSword;
 	Armure copperArmor, ironArmor, diamondArmor;
+	MonsterDrop metalscrap, gobelinMeat;
 	private ArrayList<Map> allMaps;
 	public void loadImage() throws SlickException{
 		battle1 = new Image("texture/battle_ground.png");
@@ -41,6 +42,10 @@ public class GameAsset {
 		copperArmor = new Armure(150, "Copper armor", false, 10);
 		ironArmor = new Armure(400, "Iron armor", false, 15);
 		diamondArmor = new Armure(1500, "Diamond armor", false, 30);
+		//Loot de mob
+		metalscrap = new MonsterDrop(50,"Metal scrap", true);
+		gobelinMeat = new MonsterDrop(25, "Gobelin meat", true);
+		
 		
 		
 	}

@@ -21,6 +21,21 @@ public class Inventaire{
 		this.player = player;
 		this.image = image;
 		this.camera = camera;
+		this.inventoryList = new ArrayList<Objets>();
+	}
+	
+	public void AddObjet(Objets objet) {
+		boolean found = false;
+		for(Objets i : inventoryList) {
+			if(i.getNom() == objet.getNom()) {
+				i.setNumber(i.getNumber() + 1);
+				found = true;
+			}
+		}
+		if (!found) {
+			inventoryList.add(objet);
+		}
+		
 	}
 	
 	public ArrayList<Objets> getInventoryList() {
@@ -30,11 +45,20 @@ public class Inventaire{
 		this.inventoryList = inventoryList;
 	}
 	 public void render(GameContainer container, Graphics g) { 
+		 int x = 40, y = 320;
 		 Font font = g.getFont();
 		 g.resetTransform();
 		 this.image.draw(0,0);
 		 font.drawString(140,127,"Armure : " + player.getPlayerArmor().getNom() + " Defence : "  + player.getPlayerArmor().getArmure(), Color.yellow);
 		 font.drawString(140,225,"Epée: " + player.getPlayerSword().getNom() + " Attaque : "  + player.getPlayerSword().getDegats(), Color.yellow);
+		 for (Objets i : inventoryList) {
+			 font.drawString(x, y, i.getNom() + " x"+ i.getNumber());
+			 y += 20;
+			 if (y >= 440) {
+				 y = 320;
+				 x += 200;		
+			 }
+		 }
 		 
 	 }
 
