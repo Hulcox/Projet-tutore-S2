@@ -19,6 +19,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
+	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
 	Input input;
@@ -40,6 +41,7 @@ public class WindowGame extends BasicGame {
     	GameAsset.loadEnemie();
     	GameAsset.loadMap();
     	GameAsset.loadObject();
+    	
     	input = container.getInput();
     	camera = new Camera();
     	p1 = new Player();
@@ -51,6 +53,8 @@ public class WindowGame extends BasicGame {
     	p1.setPlayerArmor(GameAsset.copperArmor);
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
+    	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
+    	inventory.setOpen(false);
     }
 
     
@@ -75,7 +79,7 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-		if  (battle.isInBattle()) {
+		if  (battle.isInBattle()) { //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
     			this.hud.render(container, g);
 		}
@@ -86,6 +90,10 @@ public class WindowGame extends BasicGame {
 		    this.map.render(0, 0, 1);
 	    	this.map.render(0, 0, 2);
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
+	    	if (this.inventory.isOpen()) {
+	    		this.inventory.render(container, g);
+	    	}
+	    	
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
 	        	RNG = (int) (Math.random()*100);
@@ -166,14 +174,22 @@ public class WindowGame extends BasicGame {
     
     public void keyPressed(int key, char c) {
 
-    	if (!battle.isInBattle()) { //Commande hors bataille
+    	if (!battle.isInBattle() && !inventory.isOpen()) { //Commande hors bataille
 	        switch (key) {
 	        case Input.KEY_UP:    p1.setDirection(0); p1.setMoving(true); break;
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
 	        case Input.KEY_DOWN:  p1.setDirection(2); p1.setMoving(true); break;
 	        case Input.KEY_RIGHT: p1.setDirection(3); p1.setMoving(true); break;
 	        case Input.KEY_ESCAPE: container.exit(); break;
+	        case Input.KEY_E: inventory.setOpen(true);break;
+	        
 	        }
+
+    	}
+    	else if(inventory.isOpen()) {
+    		switch (key) {
+    			case Input.KEY_E: inventory.setOpen(false);break;
+    		}
     	}
     	else {
     		switch (key) { //Commande bataille
