@@ -57,14 +57,6 @@ public class WindowGame extends BasicGame {
     	inventory.setOpen(false);
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-       	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.gobelinMeat);
     }
 

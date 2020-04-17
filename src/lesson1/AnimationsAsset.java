@@ -34,7 +34,9 @@ public class AnimationsAsset {
     public void loadEnemyAnimation(GameAsset imageasset) throws SlickException {
     	
     	SpriteSheet spriteSheetKnight = new SpriteSheet("texture/Knight_enemy_1.png", 128, 128);
+    	SpriteSheet spriteSheetGobelin = new SpriteSheet("texture/gobelin.png",128,128);
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
+    	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
     	
     }
     public void setEnemyAnimation(SpriteSheet spriteSheet, int numberOfFrame, Enemie enemie) {
