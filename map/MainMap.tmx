@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="6">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="8">
  <tileset firstgid="1" source="Herbe.tsx"/>
  <tileset firstgid="19" source="BatArbre.tsx"/>
  <tileset firstgid="37" source="HautArbre.tsx"/>
  <tileset firstgid="79" source="TerrainMontagne.tsx"/>
  <tileset firstgid="187" source="logicSolid.tsx"/>
+ <tileset firstgid="212" source="Pnj.tsx"/>
  <layer id="1" name="Calque 1" width="100" height="100">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu3aoRUAIAhAQTpTuv8S6gASeT69YNEk/yIZEemYAQMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAww8ZGCsv5yOPYn+XZFTi32vR/8M9OifeeVcDz0qH97u8qGHHgwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwMBfBibJh58GQJwAAA==
@@ -17,7 +18,7 @@
  </layer>
  <layer id="3" name="Calque 3" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3RMQ7CMAwF0F4GGIABGIABGID7ckS+Nw/phlSGF+lLttO00es0Wf8osMql1skmmavr3n2v+nNySa7VtDWaj2btiLIJbFPvkn0yV9fjfa/6W3JPHtW0NZqPZu2IsgkcUh+TUzJX1+N9r/pn8kre1bQ1mo9m7YiSAAECBAgQIECAAAECPxX4tLf1uo2VCwn4HwvB+ywBAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIEFhY4Atlw18nQJwAAA==
+   H4sIAAAAAAAECu3RMY7CQAwF0FyGpYAtgAIoWArgvhyH4/DduZi0ZCXeSF+yPRlN8jJN1n8UWOWlfpJ1MlfXe/e96o/JKTlX09ZoPpq1I8omsEm9TX6Tuboe73vVX5K/5FpNW6P5aNaOKJvALvU+OSRzdT3e96q/JffkUU1bo/lo1o4oCXylwOsrv9pHEyBAgAABAgQ+I/Bs1/S6jZULCfgfC8G7lgABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQILCzwBgu0kPJAnAAA
   </data>
  </layer>
  <layer id="4" name="Logic" width="100" height="100">
@@ -39,5 +40,6 @@
     <property name="dety" type="int" value="607"/>
    </properties>
   </object>
+  <object id="7" name="Cid" type="vendeur" x="800" y="192" width="32" height="32"/>
  </objectgroup>
 </map>

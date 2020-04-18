@@ -6,7 +6,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 public class GameAsset {
-	Image battle1,hero, InventoryBackground, battleGrotte;
+	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop;
 	Enemie knight, gobelin;
 	Map map1, grotte1;
 	Epée copperSword, ironSword, diamondSword;
@@ -18,6 +18,8 @@ public class GameAsset {
 		battleGrotte = new Image("texture/battle_groundGrotte1.png");
 		hero = new Image("texture/hero.png");
 		InventoryBackground = new Image("texture/inventory.png");
+		InventoryShop = new Image("texture/ShopInventory.png");
+		
 	}
 	
 	public void loadEnemie() throws SlickException{ //Enemy

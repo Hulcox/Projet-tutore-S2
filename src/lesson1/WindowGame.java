@@ -32,6 +32,7 @@ public class WindowGame extends BasicGame {
 	Battle battle;
 	EventObject singleFireEvent;
 	BattleHUD hud;
+	SellingGUI sellGUI;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
@@ -53,6 +54,7 @@ public class WindowGame extends BasicGame {
     	p1.setPlayerArmor(GameAsset.copperArmor);
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
+    	sellGUI = new SellingGUI(GameAsset.InventoryShop);
     	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
     	inventory.setOpen(false);
     	inventory.AddObjet(GameAsset.metalscrap);
@@ -92,11 +94,14 @@ public class WindowGame extends BasicGame {
 		    this.map.render(0, 0, 0);
 		    this.map.render(0, 0, 1);
 	    	this.map.render(0, 0, 2);
+	    	
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
 	    	if (this.inventory.isOpen()) {
 	    		this.inventory.render(container, g);
 	    	}
-	    	
+	    	if (this.sellGUI.isShopOpen() && this.sellGUI.isPlayerOverArea()) {
+	    		this.sellGUI.render(container, g);
+	    	}
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
 	        	RNG = (int) (Math.random()*100);
@@ -115,7 +120,7 @@ public class WindowGame extends BasicGame {
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
-        for (int objectID = 0; objectID < map.getObjectCount(0); objectID++) {				//Transition du joueur
+        for (int objectID = 0; objectID < map.getObjectCount(0); objectID++) {				//Detection des events sur la tiled map.
             if (p1.getX() > map.getObjectX(0, objectID)
                     && p1.getX() < map.getObjectX(0, objectID) + map.getObjectWidth(0, objectID)
                     && p1.getY() > map.getObjectY(0, objectID)
@@ -124,6 +129,10 @@ public class WindowGame extends BasicGame {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
+                else if ("vendeur".equals(map.getObjectType(0, objectID))) {
+                	this.sellGUI.setPlayerOverArea(true);
+                	
+                }
                 else if ("changement".equals(map.getObjectType(0, objectID))) {
                 	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
@@ -131,6 +140,10 @@ public class WindowGame extends BasicGame {
                 	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
                 	
                 }
+
+            }
+            else {
+            	this.sellGUI.setPlayerOverArea(false);
             }
          }
     	singleFireEvent.update(delta);
@@ -177,23 +190,21 @@ public class WindowGame extends BasicGame {
     
     public void keyPressed(int key, char c) {
 
-    	if (!battle.isInBattle() && !inventory.isOpen()) { //Commande hors bataille
+    	if (!battle.isInBattle()) { //Commande hors bataille
 	        switch (key) {
 	        case Input.KEY_UP:    p1.setDirection(0); p1.setMoving(true); break;
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
 	        case Input.KEY_DOWN:  p1.setDirection(2); p1.setMoving(true); break;
 	        case Input.KEY_RIGHT: p1.setDirection(3); p1.setMoving(true); break;
 	        case Input.KEY_ESCAPE: container.exit(); break;
-	        case Input.KEY_E: inventory.setOpen(true);break;
+	        case Input.KEY_E: inventory.setOpen(!inventory.isOpen());break;
+	        case Input.KEY_A: sellGUI.setShopOpen(!sellGUI.isShopOpen());break;
 	        
 	        }
 
     	}
-    	else if(inventory.isOpen()) {
-    		switch (key) {
-    			case Input.KEY_E: inventory.setOpen(false);break;
-    		}
-    	}
+
+ 
     	else {
     		switch (key) { //Commande bataille
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
