@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="2">
+ <tileset firstgid="1" source="Paysage.tsx"/>
+ <tileset firstgid="31" source="House.tsx"/>
+ <tileset firstgid="108" source="logicSolid.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu3SQREAAAyDMOrf9IQsDwxwWTV5wAADDDDAAAMMMMAAAwy8M3CslrLfEA4AAA==
+  </data>
+ </layer>
+ <layer id="2" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAWjITAaAqMhMPRDgB/oBXIwLX0Ocs9AgFF76RPqo+E8Gs6UhAAp5RUl9hCrdzQ9ExtSlKkbruFMSnoeqDCgLOaGt24Am0/HfBAOAAA=
+  </data>
+ </layer>
+ <layer id="3" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECuWXt27EMBBE1RsqDZeOldNVjpWz73zOOefs/+/9WGyjYmcBCmbhAR4EkLscjG6PgOqqquoCDOFZggF8/1rJc9AxHWZvBEZhDMZhAnKVPL28k+xPwTTMwCx0IFcq7xwG87AAi7AEy5ArlXcFg1VYg3XYgE1oaouFbehCD3bAk8rbp3kX9mAfDuAQmjpi4RhO4BTOwJPKe07zBVzCFVzDDTR1y8Id3MMDPIInlfeJ5md4gVd4g3do6oOFT/iCb/gBTyqv15uzp/LmnO31prwllPKW0H/M673r6D0UrbPfVM1z9B6K1pmv+v9G76FonfmqvNF7KFpnviqv1bX9VHnb9rPzVN7onEbrzFfljc5ptM58Vd7onEbrzFfljc5ptM58VV6ra/up8rbtZ+elvCW+jZJniW+j5PkLvUeVPxAOAAA=
+  </data>
+ </layer>
+ <layer id="4" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2SUQqEMAxEe2Dv/72W5cE41CYutYvUgkzSeU1MdSulbH969rZTF3NObbo3y/bNctn3z9bLck/vy5yuPpf7Ne8t+DMG39V592veW/BnDL6r8+7XvLfge8wd3op977jHqGb0/aPzv/or9u3NzP+u2rpb9YlbHHsRg6/KWVX1idX3OGLwVb1GzdUnbnHsZRjYkfr2Pd4m96F6JL6Z+sQtjr2IwVflrKr6xOp7HDH4ql6j5uoTtzj2MgzsSF21L3PP1JHf7UqtD+2s1pAQDgAA
+  </data>
+ </layer>
+ <objectgroup id="5" name="Transition" width="30" height="30">
+  <object id="1" name="gotomainmap" type="changement" x="3" y="386" width="45" height="122">
+   <properties>
+    <property name="detmap" value="map1"/>
+    <property name="detx" type="int" value="650"/>
+    <property name="dety" type="int" value="200"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
