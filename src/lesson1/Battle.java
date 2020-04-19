@@ -5,6 +5,7 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class Battle {
@@ -17,6 +18,7 @@ public class Battle {
 	private Image imgBackground;
 	private Font font;
 	private boolean isInBattle = false;
+	private boolean next = false;
 	public Enemie getEnemie1() {
 		return enemie1;
 	}
@@ -51,11 +53,19 @@ public class Battle {
 		
 		if (time > 1) {   //ENEMY TURN
 			this.damagetaken = false;
-			if (player.getMap().getArrayList().get(i).getPv() <= 0) {
-				this.setInBattle(false);
-				player.getMap().getArrayList().get(i).setPv(player.getMap().getArrayList().get(i).getMaxHp());
-				this.time = 0;
-				this.player.setAnimstate(0);
+			if (player.getMap().getArrayList().get(i).getPv() <= 0) { //Battle win
+				if (this.next) {
+					this.next = false;
+					this.setInBattle(false);
+					player.getMap().getArrayList().get(i).setPv(player.getMap().getArrayList().get(i).getMaxHp());
+					this.time = 0;
+					this.player.setAnimstate(0);
+					player.getInventaire().AddObjet(player.getMap().getArrayList().get(i).getLoot());
+				}
+				else {
+					g.drawString("Victory ! " + "Loot : " + player.getMap().getArrayList().get(i).getLoot().getNom() + " Press 'e' to continue" , 100, 240);
+					time = 2;
+				}
 			}
 			if (time > 2) {
 				g.drawAnimation(player.getBattleanim()[0], 0, 240);
@@ -98,6 +108,12 @@ public class Battle {
 	}
 	public void setIndex(int index) {
 		this.index = index;
+	}
+	public boolean isNext() {
+		return next;
+	}
+	public void setNext(boolean next) {
+		this.next = next;
 	}
 
 

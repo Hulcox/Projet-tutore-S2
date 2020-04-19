@@ -10,6 +10,7 @@ public class Enemie {
 	private int degats;
 	private int maxHp;
 	private int level;
+	private MonsterDrop loot;
 	private Animation[] battleanim = new Animation[2];
 	public int getPv() {
 		return pv;
@@ -46,12 +47,13 @@ public class Enemie {
 		this.maxHp = this.pv;
 	}
 
-	public Enemie (int pv, int degats, int level, String name) {
+	public Enemie (int pv, int degats, int level, String name, MonsterDrop loot) {
 		this.setDegats(degats);
 		this.setName(name);
 		this.setPv(pv);
 		this.maxHp = pv;
 		this.setLevel(level);
+		this.loot = loot;
 	}
 	public int getMaxHp() {
 		return maxHp;
@@ -65,6 +67,12 @@ public class Enemie {
 	}
 	public void Getxp(){
 		
+	}
+	public MonsterDrop getLoot() {
+		return loot;
+	}
+	public void setLoot(MonsterDrop loot) {
+		this.loot = loot;
 	}
 	
 

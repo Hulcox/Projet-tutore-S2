@@ -8,7 +8,7 @@ import org.newdawn.slick.SlickException;
 public class GameAsset {
 	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop;
 	Enemie knight, gobelin;
-	Map map1, grotte1;
+	Map map1, grotte1, Village;
 	Epée copperSword, ironSword, diamondSword;
 	Armure copperArmor, ironArmor, diamondArmor;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
@@ -23,18 +23,19 @@ public class GameAsset {
 	}
 	
 	public void loadEnemie() throws SlickException{ //Enemy
-		gobelin = new Enemie(30,5,2, "Gobelin");
-		knight = new Enemie(40,5,2,"knight");
+		gobelin = new Enemie(30,5,2, "Gobelin", this.gobelinMeat);
+		knight = new Enemie(40,5,2,"knight", this.metalscrap);
 
 	}
 	
 	public void loadMap() throws SlickException{
 		map1 = new Map("MainMap.tmx", true,battle1, "map1");
 		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1");
+		Village = new Map ("Village.tmx", false, battle1, "Village");
 		map1.addEncounrers(knight); 
 		grotte1.addEncounrers(gobelin);
 		allMaps = new ArrayList<Map>();
-		allMaps.add(map1); allMaps.add(grotte1);
+		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village);
 		
 	}
 	

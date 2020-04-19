@@ -20,6 +20,7 @@ public class Player {
 	private int pv = 70;
 	private int animstate = 0;
 	private Image image;
+	private Inventaire inventaire;
 	private Animation[] animations = new Animation[8];
 	private Animation[] battleanim = new Animation[2];
 	public Animation[] getAnimations() {
@@ -113,6 +114,12 @@ public class Player {
 	}
 	public void setMoney(int money) {
 		this.money = money;
+	}
+	public Inventaire getInventaire() {
+		return inventaire;
+	}
+	public void setInventaire(Inventaire inventaire) {
+		this.inventaire = inventaire;
 	}
 	
 	

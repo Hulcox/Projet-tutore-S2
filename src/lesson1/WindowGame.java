@@ -39,9 +39,9 @@ public class WindowGame extends BasicGame {
     
     public void loadText(GameContainer container) throws SlickException {
     	GameAsset.loadImage();
+    	GameAsset.loadObject();
     	GameAsset.loadEnemie();
     	GameAsset.loadMap();
-    	GameAsset.loadObject();
     	
     	input = container.getInput();
     	camera = new Camera();
@@ -55,6 +55,7 @@ public class WindowGame extends BasicGame {
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
     	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
+    	p1.setInventaire(inventory);
     	inventory.setOpen(false);
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.metalscrap);
@@ -218,6 +219,7 @@ public class WindowGame extends BasicGame {
     		switch (key) { //Commande bataille
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
+    		case Input.KEY_E: battle.setNext(true);
     		}
     	}
     }
