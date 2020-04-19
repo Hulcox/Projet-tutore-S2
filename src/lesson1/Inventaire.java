@@ -41,13 +41,17 @@ public class Inventaire{
 			}
 			if (!found) {
 				inventoryList.add(objet);
+				
 			}
 		}
 		
 	}
+	public void RemoveObject(Objets o) {
+			inventoryList.remove(o);
+	}
 	
 	public ArrayList<Objets> getInventoryList() {
-		return inventoryList;
+		return this.inventoryList;
 	}
 	public void setInventoryList(ArrayList<Objets> inventoryList) {
 		this.inventoryList = inventoryList;
@@ -76,6 +80,9 @@ public class Inventaire{
 
 	public void setOpen(boolean open) {
 		Open = open;
+	}
+	public Player getPlayer() {
+		return this.player;
 	}
 	
 }

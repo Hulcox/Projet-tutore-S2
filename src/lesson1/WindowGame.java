@@ -59,16 +59,14 @@ public class WindowGame extends BasicGame {
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.gobelinMeat);
+    	inventory.AddObjet(GameAsset.gobelinMeat);
+    	inventory.AddObjet(GameAsset.gobelinSpear);
+    	inventory.AddObjet(GameAsset.Poncho);
     	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory);
     	sellGUI.AddTrade(GameAsset.copperArmor, container);
     	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	
+
     	
     }
 
@@ -85,6 +83,7 @@ public class WindowGame extends BasicGame {
     	animationasset.loadBattlersAnimation(battlers, p1);
     	animationasset.loadEnemyAnimation(GameAsset);
     	this.hud.init(container);
+    	this.sellGUI.init(container);
     	
 
     }

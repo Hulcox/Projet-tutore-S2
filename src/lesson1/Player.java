@@ -11,6 +11,7 @@ public class Player {
 	private float x = 300, y = 300;
 	private int direction = 0;
 	private boolean moving = false;
+	private int money = 0;
 	private float speed = 0.1f;
 	private int damage = 20;
 	private Map map;
@@ -106,6 +107,12 @@ public class Player {
 	}
 	public void setPlayerArmor(Armure playerArmor) {
 		this.playerArmor = playerArmor;
+	}
+	public int getMoney() {
+		return money;
+	}
+	public void setMoney(int money) {
+		this.money = money;
 	}
 	
 	

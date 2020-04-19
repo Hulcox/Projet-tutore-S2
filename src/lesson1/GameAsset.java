@@ -11,7 +11,7 @@ public class GameAsset {
 	Map map1, grotte1;
 	Epée copperSword, ironSword, diamondSword;
 	Armure copperArmor, ironArmor, diamondArmor;
-	MonsterDrop metalscrap, gobelinMeat;
+	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	private ArrayList<Map> allMaps;
 	public void loadImage() throws SlickException{
 		battle1 = new Image("texture/battle_ground.png");
@@ -50,14 +50,14 @@ public class GameAsset {
 		//Loot de mob
 		metalscrap = new MonsterDrop(50,"Metal scrap", true);
 		gobelinMeat = new MonsterDrop(25, "Gobelin meat", true);
-		
+		gobelinSpear = new MonsterDrop(25,"Gobelin spear", true);
+		Poncho = new MonsterDrop(25,"Poncho", true);
 		
 		
 	}
 	public Map searchMap(String name) {
 		for(Map i : allMaps) {
 			if(i.getName().equals(name)) {
-               	System.out.println("found!");
 				return i;	
 			}
 		}

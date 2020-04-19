@@ -20,6 +20,7 @@ public class SellingGUI implements ComponentListener {
 	private int x,y;
 	private String InfoBox = "What do you want ?";
 	private Inventaire inventory;
+	private MouseOverArea sellingButton;
 	
 	public SellingGUI(Image image , Inventaire inventory) {
 		this.image = image;
@@ -30,6 +31,12 @@ public class SellingGUI implements ComponentListener {
 		this.inventory = inventory;
 
 	}
+	  public void init(GameContainer container) throws SlickException {
+		  Image buttonImage = new Image("texture/buttons.png");
+		  sellingButton = new MouseOverArea(container, buttonImage, 425,77,this);
+	
+	
+	  }
 	public void AddTrade(Objets objet, GameContainer container) throws SlickException {
 		Image buttonImage = new Image("texture/buttons.png");
 		trades.add(objet);
@@ -53,6 +60,7 @@ public class SellingGUI implements ComponentListener {
 		  int j = 0;
 		  g.resetTransform();
 		  g.drawImage(image, 0, 0);
+		  g.drawString("Money : " + this.inventory.getPlayer().getMoney(), 450, 40);
 		  for (int i = 0; i < InfoBox.length(); i++) {
 			  padding ++;
 			  if (padding > 17)
@@ -64,7 +72,8 @@ public class SellingGUI implements ComponentListener {
 			  txtx += 10;
 			  g.drawString(Character.toString((this.InfoBox.charAt(i))),440+txtx,407+txty);
 		  }
-		  
+		  this.sellingButton.render(container, g);
+		  g.drawString("Sell drops", 435, 82);
 		  for (MouseOverArea i : buttonsList) {
 			i.render(container, g);
 			g.drawString(trades.get(j).getNom(), i.getX()+10, i.getY()+5); 		
@@ -77,10 +86,34 @@ public class SellingGUI implements ComponentListener {
 	@Override
 	public void componentActivated(AbstractComponent source) {
 		int j = 0;
+		
+		
+		if (source == this.sellingButton) {
+			ArrayList<Objets> toSell = new ArrayList<Objets>();
+			int finalsell = 0;
+			for (Objets o : this.inventory.getInventoryList())
+			  if (o.getType() == "MonsterDrop")
+			    toSell.add(o);
+
+			for (Objets o : toSell) { 
+				finalsell += o.getPrix()*o.getNumber();
+				this.inventory.RemoveObject(o);
+			}	
+		
+			this.inventory.getPlayer().setMoney(this.inventory.getPlayer().getMoney() + finalsell);
+			this.InfoBox = "Thanks your price : " + finalsell;
+		}
+		
 		for (MouseOverArea i : buttonsList) {
 			if (source == i) {
-				this.setInfoBox("You bought : " + trades.get(j).getNom() + " for : " + trades.get(j).getPrix());
-				this.inventory.AddObjet(trades.get(j));
+				if (trades.get(j).getPrix() < this.inventory.getPlayer().getMoney()) {
+					this.setInfoBox("You bought : " + trades.get(j).getNom() + " for : " + trades.get(j).getPrix());
+					this.inventory.AddObjet(trades.get(j));
+					this.inventory.getPlayer().setMoney(this.inventory.getPlayer().getMoney()-trades.get(j).getPrix());
+				}
+				else {
+					this.setInfoBox("Not enough money !");
+				}
 			}
 			j++;
 		}
