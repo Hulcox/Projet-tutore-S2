@@ -6,6 +6,7 @@ public class Epée extends Objets implements lootable {
 	public Epée(int prix, String nom,  boolean loot,int degats) {
 		super(prix, nom, loot);
 		this.degats = degats;
+		this.type = "Epée";
 	}
 
 	@Override

@@ -26,14 +26,22 @@ public class Inventaire{
 	
 	public void AddObjet(Objets objet) {
 		boolean found = false;
-		for(Objets i : inventoryList) {
-			if(i.getNom() == objet.getNom()) {
-				i.setNumber(i.getNumber() + 1);
-				found = true;
-			}
+		if (objet.getType() == "Epée") {
+			this.player.setPlayerSword((Epée) objet);
 		}
-		if (!found) {
-			inventoryList.add(objet);
+		else if  (objet.getType() == "Armure") {
+			this.player.setPlayerArmor((Armure) objet);
+		}
+		else {
+			for(Objets i : inventoryList) {
+				if(i.getNom() == objet.getNom()) {
+					i.setNumber(i.getNumber() + 1);
+					found = true;
+				}
+			}
+			if (!found) {
+				inventoryList.add(objet);
+			}
 		}
 		
 	}

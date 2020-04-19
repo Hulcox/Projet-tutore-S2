@@ -6,6 +6,7 @@ public class Armure extends Objets implements lootable {
 	public Armure(int prix, String nom, boolean loot, int armure) {
 		super(prix, nom, loot);
 		this.armure = armure;
+		this.type = "Armure";
 
 	}
 

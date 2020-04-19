@@ -1,8 +1,11 @@
 package lesson1;
 
 public class MonsterDrop extends Objets implements lootable {
+	
+	
 	public MonsterDrop(int prix, String nom, boolean loot) {
 		super(prix, nom, loot);
+		this.type = "MonsterDrop";
 
 	}
 	public int getSellingPrice() {

@@ -5,6 +5,7 @@ public abstract class Objets {
 	protected String nom;
 	protected boolean loot;
 	protected int number = 1;
+	protected String type;
 	public Objets (int prix, String nom, boolean loot) {
 		this.prix = prix;
 		this.nom = nom;
@@ -25,6 +26,9 @@ public abstract class Objets {
 	}
 	public void setNumber(int number) {
 		this.number = number;
+	}
+	public String getType() {
+		return this.type;
 	}
 
 

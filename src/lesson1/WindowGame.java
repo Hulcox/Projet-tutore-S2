@@ -54,12 +54,22 @@ public class WindowGame extends BasicGame {
     	p1.setPlayerArmor(GameAsset.copperArmor);
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
-    	sellGUI = new SellingGUI(GameAsset.InventoryShop);
     	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
     	inventory.setOpen(false);
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.gobelinMeat);
+    	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory);
+    	sellGUI.AddTrade(GameAsset.copperArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	
     }
 
     
@@ -198,7 +208,7 @@ public class WindowGame extends BasicGame {
 	        case Input.KEY_RIGHT: p1.setDirection(3); p1.setMoving(true); break;
 	        case Input.KEY_ESCAPE: container.exit(); break;
 	        case Input.KEY_E: inventory.setOpen(!inventory.isOpen());break;
-	        case Input.KEY_A: sellGUI.setShopOpen(!sellGUI.isShopOpen());break;
+	        case Input.KEY_A: sellGUI.setShopOpen(!sellGUI.isShopOpen()); sellGUI.setInfoBox("Hello what do you want ?");break;
 	        
 	        }
 
