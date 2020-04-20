@@ -7,30 +7,38 @@ import org.newdawn.slick.Font;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.gui.AbstractComponent;
+import org.newdawn.slick.gui.ComponentListener;
+import org.newdawn.slick.gui.MouseOverArea;
 
 
 
-public class Inventaire{
+public class Inventaire implements ComponentListener{
 	private Player player;
 	private Image image;
 	private ArrayList<Objets> inventoryList;
 	private Camera camera;
 	private boolean Open;
+	private SpellGUI spellgui;
 	
-	public Inventaire(Player player, Image image, Camera camera) {
+	public Inventaire(Player player, Image image, Camera camera)  {
 		this.player = player;
 		this.image = image;
 		this.camera = camera;
 		this.inventoryList = new ArrayList<Objets>();
 	}
 	
-	public void AddObjet(Objets objet) {
+	public void AddObjet(Objets objet){
 		boolean found = false;
 		if (objet.getType() == "Epée") {
 			this.player.setPlayerSword((Epée) objet);
 		}
 		else if  (objet.getType() == "Armure") {
 			this.player.setPlayerArmor((Armure) objet);
+		}
+		else if (objet.getType() == "potions") {
+			
 		}
 		else {
 			for(Objets i : inventoryList) {
@@ -83,6 +91,20 @@ public class Inventaire{
 	}
 	public Player getPlayer() {
 		return this.player;
+	}
+
+	@Override
+	public void componentActivated(AbstractComponent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public SpellGUI getSpellgui() {
+		return spellgui;
+	}
+
+	public void setSpellgui(SpellGUI spellgui) {
+		this.spellgui = spellgui;
 	}
 	
 }

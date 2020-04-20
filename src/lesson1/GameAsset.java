@@ -10,6 +10,7 @@ public class GameAsset {
 	Enemie knight, gobelin;
 	Map map1, grotte1, Village;
 	Epée copperSword, ironSword, diamondSword;
+	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	private ArrayList<Map> allMaps;
@@ -53,6 +54,10 @@ public class GameAsset {
 		gobelinMeat = new MonsterDrop(25, "Gobelin meat", true);
 		gobelinSpear = new MonsterDrop(25,"Gobelin spear", true);
 		Poncho = new MonsterDrop(25,"Poncho", true);
+		//Potions
+		potion = new Potions(20,"potion",false,20);
+		superPotion = new Potions(40,"Super potion", false, 40);
+		Hypotion = new Potions(80,"potion X", false, 80);
 		
 		
 	}
