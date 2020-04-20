@@ -15,7 +15,9 @@ public class SpellGUI implements ComponentListener{
 	private ArrayList<Objets> trades;
 	private ArrayList<MouseOverArea> buttonsList;
 	private GameContainer container;
-	private int x,y;
+	private int x = 100,y = 0;
+	private boolean IsOpen = false;
+	//private Image buttonImage = new Image("texture/buttons.png");
 	
 	
 	
@@ -24,10 +26,10 @@ public class SpellGUI implements ComponentListener{
 		this.trades = new ArrayList<Objets>();
 	}
 	
-	public void AddMouseOverArea(Objets objet) throws SlickException {
-		Image buttonImage = new Image("texture/buttons.png");
+	public void AddMouseOverArea(Objets objet)  {
+		
 		trades.add(objet);
-		buttonsList.add(new MouseOverArea(container, buttonImage, x,y,this));
+		//buttonsList.add(new MouseOverArea(container, buttonImage, x,y,this));
 		if (y <= 400) {
 			y += 40;
 		}
@@ -42,15 +44,26 @@ public class SpellGUI implements ComponentListener{
 	
 	
 	 public void render(GameContainer container, Graphics g) {
-		 
+		 g.resetTransform();
+		 int j = 0;
+		  for (MouseOverArea i : buttonsList) {
+			i.render(container, g);
+			g.drawString(trades.get(j).getNom(), i.getX()+10, i.getY()+5); 		
+			j++;
+		  }
 	 }
 	
 	@Override
 	public void componentActivated(AbstractComponent source) {
-		int j =0;
+		int j = 0;
 		for (MouseOverArea i : buttonsList) {
-			if (source == i) {
-
+			if (source == i){
+				if (this.trades.get(j).getType() == "potions") {
+					Potions potionTemp = (Potions) this.trades.get(j);
+					this.inventory.getPlayer().setPv(this.inventory.getPlayer().getPv() + potionTemp.getHealingValue());
+					buttonsList.remove(i);
+					trades.remove(j);
+				}
 			}
 			j++;
 		}
@@ -63,6 +76,14 @@ public class SpellGUI implements ComponentListener{
 
 	public void setInventory(Inventaire inventory) {
 		this.inventory = inventory;
+	}
+
+	public boolean isIsOpen() {
+		return IsOpen;
+	}
+
+	public void setIsOpen(boolean isOpen) {
+		IsOpen = isOpen;
 	}
 
 }

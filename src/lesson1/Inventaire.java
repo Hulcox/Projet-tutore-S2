@@ -29,7 +29,7 @@ public class Inventaire implements ComponentListener{
 		this.inventoryList = new ArrayList<Objets>();
 	}
 	
-	public void AddObjet(Objets objet){
+	public void AddObjet(Objets objet) {
 		boolean found = false;
 		if (objet.getType() == "Epée") {
 			this.player.setPlayerSword((Epée) objet);
@@ -38,7 +38,7 @@ public class Inventaire implements ComponentListener{
 			this.player.setPlayerArmor((Armure) objet);
 		}
 		else if (objet.getType() == "potions") {
-			
+			this.spellgui.AddMouseOverArea(objet);
 		}
 		else {
 			for(Objets i : inventoryList) {
