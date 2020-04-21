@@ -104,13 +104,12 @@ public class WindowGame extends BasicGame {
 		    this.map.render(0, 0, 0);
 		    this.map.render(0, 0, 1);
 	    	this.map.render(0, 0, 2);
-	    	
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
+	    	if (sellGUI.isPlayerOverArea()){
+	    		this.sellGUI.render(container, g);
+	    	}
 	    	if (this.inventory.isOpen()) {
 	    		this.inventory.render(container, g);
-	    	}
-	    	if (this.sellGUI.isShopOpen() && this.sellGUI.isPlayerOverArea()) {
-	    		this.sellGUI.render(container, g);
 	    	}
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
@@ -134,14 +133,21 @@ public class WindowGame extends BasicGame {
             if (p1.getX() > map.getObjectX(0, objectID)
                     && p1.getX() < map.getObjectX(0, objectID) + map.getObjectWidth(0, objectID)
                     && p1.getY() > map.getObjectY(0, objectID)
-                    && p1.getY() < map.getObjectY(0, objectID) + map.getObjectHeight(0, objectID)) {
+                    && p1.getY() < map.getObjectY(0, objectID) + map.getObjectHeight(0, objectID)) { //Si le joueur est dans un event
+            	
+            	
                 if ("transition".equals(map.getObjectType(0, objectID))) {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
                 else if ("vendeur".equals(map.getObjectType(0, objectID))) {
-                	this.sellGUI.setPlayerOverArea(true);
-                	
+                	if (sellGUI.isShopOpen()) {
+                		this.sellGUI.setPlayerOverArea(true);
+                	}
+                	else {
+                		this.sellGUI.setPlayerOverArea(false);
+                	}
+                		
                 }
                 else if ("changement".equals(map.getObjectType(0, objectID))) {
                 	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
@@ -152,10 +158,11 @@ public class WindowGame extends BasicGame {
                 }
 
             }
-            else {
-            	this.sellGUI.setPlayerOverArea(false);
-            }
+ 
+
+ 
          }
+        
     	singleFireEvent.update(delta);
         if (p1.isMoving()) {
             float futurX = getFuturX(delta);
@@ -196,8 +203,6 @@ public class WindowGame extends BasicGame {
     }
     
 
-    
-    
     public void keyPressed(int key, char c) {
 
     	if (!battle.isInBattle()) { //Commande hors bataille
