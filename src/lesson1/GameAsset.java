@@ -33,7 +33,7 @@ public class GameAsset {
 		map1 = new Map("MainMap.tmx", true,battle1, "map1");
 		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1");
 		Village = new Map ("Village.tmx", false, battle1, "Village");
-		map1.addEncounrers(knight); 
+		map1.addEncounrers(knight);
 		grotte1.addEncounrers(gobelin);
 		allMaps = new ArrayList<Map>();
 		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village);
