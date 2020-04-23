@@ -9,7 +9,7 @@ public class GameAsset {
 	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop;
 	Enemie knight, gobelin;
 	Map map1, grotte1, Village;
-	Epée copperSword, ironSword, diamondSword;
+	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
@@ -45,6 +45,7 @@ public class GameAsset {
 		copperSword = new Epée(100, "Copper sword", false, 10);
 		ironSword = new Epée(300, "Iron sword", false, 20);
 		diamondSword = new Epée(1000, "Diamond sword", false, 40);
+		GodGun = new Epée(9999,"Gun",false,9999);
 		//Armure
 		copperArmor = new Armure(150, "Copper armor", false, 10);
 		ironArmor = new Armure(400, "Iron armor", false, 15);

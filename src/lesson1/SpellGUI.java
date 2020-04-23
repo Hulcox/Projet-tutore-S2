@@ -17,9 +17,12 @@ public class SpellGUI implements ComponentListener{
 	private GameContainer container;
 	private int x = 100,y = 0;
 	private boolean IsOpen = false;
+
 	//private Image buttonImage = new Image("texture/buttons.png");
 	
 	
+	
+	//public void init
 	
 	public SpellGUI (){
 		this.buttonsList = new ArrayList<MouseOverArea>();

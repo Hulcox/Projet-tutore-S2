@@ -52,7 +52,7 @@ public class WindowGame extends BasicGame {
     	battle = new Battle(p1);
     	p1.setImage(GameAsset.hero);
     	p1.setPlayerArmor(GameAsset.copperArmor);
-    	p1.setPlayerSword(GameAsset.copperSword);
+    	p1.setPlayerSword(GameAsset.GodGun);
     	hud = new BattleHUD(p1,camera,battle);
     	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
     	p1.setInventaire(inventory);
