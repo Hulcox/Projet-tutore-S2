@@ -33,6 +33,7 @@ public class WindowGame extends BasicGame {
 	EventObject singleFireEvent;
 	BattleHUD hud;
 	SellingGUI sellGUI;
+	SpellGUI spellgui;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
@@ -66,9 +67,13 @@ public class WindowGame extends BasicGame {
     	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory);
     	sellGUI.AddTrade(GameAsset.copperArmor, container);
     	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	
+    	spellgui = new SpellGUI(container, inventory);
+    	spellgui.AddMouseOverArea(GameAsset.Hypotion);
+    	spellgui.AddMouseOverArea(GameAsset.superPotion);
+    	spellgui.AddMouseOverArea(GameAsset.superPotion);
+    	spellgui.AddMouseOverArea(GameAsset.superPotion);
+    	spellgui.AddMouseOverArea(GameAsset.superPotion);
 
-    	
     }
 
     
@@ -96,7 +101,11 @@ public class WindowGame extends BasicGame {
     public void render(GameContainer container, Graphics g) throws SlickException {
 		if  (battle.isInBattle()) { //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
+    			
     			this.hud.render(container, g);
+    			if(spellgui.isIsOpen()) {
+    				spellgui.render(container, g);
+    			}
 		}
 		else {
 			g.translate(container.getWidth() / 2 - (int) camera.getxCam(), 
@@ -116,7 +125,7 @@ public class WindowGame extends BasicGame {
 	        	RNG = (int) (Math.random()*100);
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
-	        	if (RNG < 2) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        	if (RNG < 20) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
 	        		camera.setPrevXcam(camera.getxCam());
@@ -225,6 +234,7 @@ public class WindowGame extends BasicGame {
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
     		case Input.KEY_E: battle.setNext(true);
+    		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen());
     		}
     	}
     }

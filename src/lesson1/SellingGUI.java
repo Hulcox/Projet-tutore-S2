@@ -22,6 +22,7 @@ public class SellingGUI implements ComponentListener {
 	private Inventaire inventory;
 	private MouseOverArea sellingButton;
 	
+	
 	public SellingGUI(Image image , Inventaire inventory) {
 		this.image = image;
 		this.buttonsList = new ArrayList<MouseOverArea>();
@@ -108,7 +109,11 @@ public class SellingGUI implements ComponentListener {
 			if (source == i) {
 				if (trades.get(j).getPrix() < this.inventory.getPlayer().getMoney()) {
 					this.setInfoBox("You bought : " + trades.get(j).getNom() + " for : " + trades.get(j).getPrix());
-					this.inventory.AddObjet(trades.get(j));
+					try {
+						this.inventory.AddObjet(trades.get(j));
+					} catch (SlickException e) {
+						e.printStackTrace();
+					}
 					this.inventory.getPlayer().setMoney(this.inventory.getPlayer().getMoney()-trades.get(j).getPrix());
 				}
 				else {

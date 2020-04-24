@@ -29,7 +29,7 @@ public class Inventaire implements ComponentListener{
 		this.inventoryList = new ArrayList<Objets>();
 	}
 	
-	public void AddObjet(Objets objet) {
+	public void AddObjet(Objets objet) throws SlickException {
 		boolean found = false;
 		if (objet.getType() == "Epée") {
 			this.player.setPlayerSword((Epée) objet);

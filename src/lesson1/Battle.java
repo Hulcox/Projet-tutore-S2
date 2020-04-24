@@ -49,7 +49,7 @@ public class Battle {
 		font.drawString(550,30, "Pv : " + EnemiePv, Color.red);
 		font.drawString(0,30 , "Pv : " + playerPv, Color.green);	
 	}
-	public void TurnAnimation (Graphics g, Player player, int i) {
+	public void TurnAnimation (Graphics g, Player player, int i) throws SlickException {
 		
 		if (time > 1) {   //ENEMY TURN
 			this.damagetaken = false;
