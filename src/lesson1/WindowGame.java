@@ -67,9 +67,13 @@ public class WindowGame extends BasicGame {
     	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory);
     	sellGUI.AddTrade(GameAsset.copperArmor, container);
     	sellGUI.AddTrade(GameAsset.diamondArmor, container);
+    	sellGUI.AddTrade(GameAsset.potion, container);
+    	sellGUI.AddTrade(GameAsset.superPotion, container);
+    	sellGUI.AddTrade(GameAsset.Hypotion, container);
     	spellgui = new SpellGUI(container, inventory);
+    	inventory.setSpellgui(spellgui);
     	spellgui.AddMouseOverArea(GameAsset.Hypotion);
-    	spellgui.AddMouseOverArea(GameAsset.superPotion);
+    	spellgui.AddMouseOverArea(GameAsset.potion);
     	spellgui.AddMouseOverArea(GameAsset.superPotion);
     	spellgui.AddMouseOverArea(GameAsset.superPotion);
     	spellgui.AddMouseOverArea(GameAsset.superPotion);
@@ -99,9 +103,8 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-		if  (battle.isInBattle()) { //Boucle de la bataille
+		if  (battle.isInBattle()) {	 //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
-    			
     			this.hud.render(container, g);
     			if(spellgui.isIsOpen()) {
     				spellgui.render(container, g);

@@ -31,27 +31,29 @@ public class Inventaire implements ComponentListener{
 	
 	public void AddObjet(Objets objet) throws SlickException {
 		boolean found = false;
-		if (objet.getType() == "Epée") {
-			this.player.setPlayerSword((Epée) objet);
-		}
-		else if  (objet.getType() == "Armure") {
-			this.player.setPlayerArmor((Armure) objet);
-		}
-		else if (objet.getType() == "potions") {
-			this.spellgui.AddMouseOverArea(objet);
-		}
-		else {
-			for(Objets i : inventoryList) {
-				if(i.getNom() == objet.getNom()) {
-					i.setNumber(i.getNumber() + 1);
-					found = true;
+
+			if (objet.getType() == "Epée") {
+				this.player.setPlayerSword((Epée) objet);
+			}
+			else if  (objet.getType() == "Armure") {
+				this.player.setPlayerArmor((Armure) objet);
+			}
+			else if (objet.getType() == "potions") {
+				//System.out.println("adding items...");
+				this.spellgui.AddMouseOverArea(objet);
+			}
+			else {
+				for(Objets i : inventoryList) {
+					if(i.getNom() == objet.getNom()) {
+						i.setNumber(i.getNumber() + 1);
+						found = true;
+					}
+				}
+				if (!found) {
+					inventoryList.add(objet);
+					
 				}
 			}
-			if (!found) {
-				inventoryList.add(objet);
-				
-			}
-		}
 		
 	}
 	public void RemoveObject(Objets o) {

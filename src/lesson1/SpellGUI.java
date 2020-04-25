@@ -12,12 +12,13 @@ import org.newdawn.slick.gui.MouseOverArea;
 
 public class SpellGUI implements ComponentListener{
 	private Inventaire inventory;
-	private ArrayList<Objets> trades;
-	private ArrayList<MouseOverArea> buttonsList;
+	private ArrayList<Objets> Items;
+	private ArrayList<MouseOverArea> ItemsbuttonsList;
 	private GameContainer container;
 	private int x = 100,y = 0;
 	private boolean IsOpen = false;
-	private boolean AllowRender = true;
+	private boolean IsComponentActivated = true;
+	private AbstractComponent source;
 
 	
 	
@@ -25,17 +26,17 @@ public class SpellGUI implements ComponentListener{
 	//public void init
 	
 	public SpellGUI (GameContainer container, Inventaire inventory){
-		this.buttonsList = new ArrayList<MouseOverArea>();
-		this.trades = new ArrayList<Objets>();
+		this.ItemsbuttonsList = new ArrayList<MouseOverArea>();
+		this.Items = new ArrayList<Objets>();
 		this.container = container;
 		this.inventory = inventory;
 	}
 	
 	public void AddMouseOverArea(Objets objet) throws SlickException  {
-		
+		//System.out.println("Adding : " + objet.getNom());
 		Image buttonImage = new Image("texture/buttons.png");
-		trades.add(objet);
-		buttonsList.add(new MouseOverArea(this.container, buttonImage, x,y,this));
+		Items.add(objet);
+		ItemsbuttonsList.add(new MouseOverArea(this.container, buttonImage, x,y,this));
 		if (y <= 400) {
 			y += 40;
 		}
@@ -50,43 +51,49 @@ public class SpellGUI implements ComponentListener{
 	
 	
 	 public void render(GameContainer container, Graphics g) {
-		 g.resetTransform();
-		 int j = 0;
-		 if (this.isAllowRender()) {
-			  for (MouseOverArea i : buttonsList) {
-				i.render(container, g);
-				g.drawString(trades.get(j).getNom(), i.getX()+10, i.getY()+5); 		
-				j++;
-			  }
+		 if (!this.IsComponentActivated){
+			 g.resetTransform();
+			 int j = 0;
+				  for (MouseOverArea i : ItemsbuttonsList) {
+					i.render(container, g);
+					g.drawString(Items.get(j).getNom(), i.getX()+10, i.getY()+5);
+					j++;
+					
+				  }
+		 }
+		 else {
+			 this.refreshGUI();
 		 }
 	 }
 	
-	@Override
-	public void componentActivated(AbstractComponent source) {
+	public void refreshGUI() {
 		int j = 0;
-		ArrayList<Objets> toDelobj = new ArrayList<Objets>();
-		ArrayList<MouseOverArea> toDelBtnLst = new ArrayList<MouseOverArea>();
-		for (MouseOverArea i : buttonsList) {
-			if (source == i){
-				if (this.trades.get(j).getType() == "potions") {
-					Potions potionTemp = (Potions) this.trades.get(j);
+		MouseOverArea toDelBtnLst = null;
+		Objets toDelObjet = null;
+		for (MouseOverArea i : ItemsbuttonsList) {
+			if (this.source == i){
+				if (this.Items.get(j).getType() == "potions") {
+					Potions potionTemp = (Potions) this.Items.get(j);
 					this.inventory.getPlayer().setPv(this.inventory.getPlayer().getPv() + potionTemp.getHealingValue());
 					this.IsOpen = false;
 					this.inventory.getPlayer().setAnimstate(1);
-					toDelobj.add(this.trades.get(j));
-					toDelBtnLst.add(i);
+					toDelObjet = potionTemp;
+					toDelBtnLst = i;
 				}
 
 			}
 			j++;
 		}
-		for (Objets o : toDelobj) { 
-			this.trades.remove(o);
-		}	
-		for (MouseOverArea o : toDelBtnLst) {
-			this.buttonsList.remove(o);
-		}
-
+		
+		this.Items.remove(toDelObjet);
+		this.ItemsbuttonsList.remove(toDelBtnLst);
+		this.IsComponentActivated = false;
+	}
+	 
+	@Override	
+	public void componentActivated(AbstractComponent source) {
+		this.source = source;
+		this.IsComponentActivated = true;
 		
 	}
 
@@ -106,12 +113,6 @@ public class SpellGUI implements ComponentListener{
 		IsOpen = isOpen;
 	}
 
-	public boolean isAllowRender() {
-		return AllowRender;
-	}
 
-	public void setAllowRender(boolean allowRender) {
-		AllowRender = allowRender;
-	}
 
 }
