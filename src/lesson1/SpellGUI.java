@@ -15,7 +15,6 @@ public class SpellGUI implements ComponentListener{
 	private ArrayList<Objets> Items;
 	private ArrayList<MouseOverArea> ItemsbuttonsList;
 	private GameContainer container;
-	private int x = 100,y = 0;
 	private boolean IsOpen = false;
 	private boolean IsComponentActivated = true;
 	private AbstractComponent source;
@@ -36,15 +35,8 @@ public class SpellGUI implements ComponentListener{
 		//System.out.println("Adding : " + objet.getNom());
 		Image buttonImage = new Image("texture/buttons.png");
 		Items.add(objet);
-		ItemsbuttonsList.add(new MouseOverArea(this.container, buttonImage, x,y,this));
-		if (y <= 400) {
-			y += 40;
-		}
-		else {
-			y = 160;
-			x+= 160;
-		}
-		
+		ItemsbuttonsList.add(new MouseOverArea(this.container, buttonImage, 0,0,this));
+
 		
 		
 	}
@@ -54,10 +46,21 @@ public class SpellGUI implements ComponentListener{
 		 if (!this.IsComponentActivated){
 			 g.resetTransform();
 			 int j = 0;
+			 int x = 200, y = 0;
 				  for (MouseOverArea i : ItemsbuttonsList) {
+					i.setX(x);
+					i.setY(y);
 					i.render(container, g);
 					g.drawString(Items.get(j).getNom(), i.getX()+10, i.getY()+5);
 					j++;
+					if (y <= 400) {
+						y += 40;
+					}
+					else {
+						y = 160;
+						x+= 160;
+					}
+					
 					
 				  }
 		 }
@@ -76,7 +79,7 @@ public class SpellGUI implements ComponentListener{
 					Potions potionTemp = (Potions) this.Items.get(j);
 					this.inventory.getPlayer().setPv(this.inventory.getPlayer().getPv() + potionTemp.getHealingValue());
 					this.IsOpen = false;
-					this.inventory.getPlayer().setAnimstate(1);
+					this.inventory.getPlayer().setAnimstate(2);
 					toDelObjet = potionTemp;
 					toDelBtnLst = i;
 				}

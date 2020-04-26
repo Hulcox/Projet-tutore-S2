@@ -16,6 +16,7 @@ public class BattleHUD implements ComponentListener {
 	  private MouseOverArea attackButton;
 	  private MouseOverArea fleeButton;
 	  private MouseOverArea defendButton;
+	  private MouseOverArea ItemSpell;
 	  private Player player;
 	  private Camera camera;
 	  private Battle battle;
@@ -28,6 +29,7 @@ public class BattleHUD implements ComponentListener {
 	  
 	  public void init(GameContainer container) throws SlickException {
 		  Image buttonImage = new Image("texture/buttons.png");
+		  ItemSpell = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 4,this);
 		  attackButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 3,this);
 		  defendButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 2,this);
 		  fleeButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
@@ -37,6 +39,8 @@ public class BattleHUD implements ComponentListener {
 	  
 	  public void render(GameContainer container, Graphics g) { 
 		  g.setColor(Color.black);
+		  ItemSpell.render(container, g);
+		  g.drawString("Items/Spell", ItemSpell.getX() + X_PADDING, ItemSpell.getY() + Y_PADDING);
 		  attackButton.render(container, g);
 		  g.drawString("Attaquer", attackButton.getX() + X_PADDING, attackButton.getY() + Y_PADDING);
 		  defendButton.render(container, g);
@@ -46,15 +50,18 @@ public class BattleHUD implements ComponentListener {
 		  
 	  }
 	  public void componentActivated(AbstractComponent source) {
-		  if (source == attackButton) {
+		 if (source == attackButton) {
 		    player.setAnimstate(1);
-		}
+		 }
 		 if (source == fleeButton) {
 			 battle.setInBattle(false);
 			 player.getMap().getArrayList().get(battle.getIndex()).setPv(player.getMap().getArrayList().get(battle.getIndex()).getMaxHp());
 			 player.setAnimstate(0);
 			 camera.setxCam(camera.getPrevXcam()); 
 			 camera.setPrevYcam(camera.getPrevYcam());
+		 }
+		 if (source ==  ItemSpell) {
+			 player.getInventaire().getSpellgui().setIsOpen(!player.getInventaire().getSpellgui().isIsOpen());
 		 }
 	  }
 

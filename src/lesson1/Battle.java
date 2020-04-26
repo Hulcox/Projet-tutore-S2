@@ -19,6 +19,7 @@ public class Battle {
 	private Font font;
 	private boolean isInBattle = false;
 	private boolean next = false;
+	private boolean EnemyAttack = true;
 	public Enemie getEnemie1() {
 		return enemie1;
 	}
@@ -42,8 +43,12 @@ public class Battle {
 		camera.setxCam(0);
 		camera.setyCam(0);
 		g.drawImage(player.getMap().getBattleImg(),0,0);
-		if(singleFireEvent.isReady() && player.getAnimstate() == 1) {
-			time++;
+		if(singleFireEvent.isReady() && player.getAnimstate() >= 1) {
+			if (player.getAnimstate() == 2 && EnemyAttack) {
+				this.time = 2;
+				this.EnemyAttack = false;
+			}
+			time++; 
 		}
 		this.TurnAnimation(g, player, i);
 		font.drawString(550,30, "Pv : " + EnemiePv, Color.red);
@@ -60,6 +65,7 @@ public class Battle {
 					player.getMap().getArrayList().get(i).setPv(player.getMap().getArrayList().get(i).getMaxHp());
 					this.time = 0;
 					this.player.setAnimstate(0);
+					this.EnemyAttack = true;
 					player.getInventaire().AddObjet(player.getMap().getArrayList().get(i).getLoot());
 				}
 				else {
@@ -70,10 +76,11 @@ public class Battle {
 			if (time > 2) {
 				g.drawAnimation(player.getBattleanim()[0], 0, 240);
 				g.drawAnimation(player.getMap().getArrayList().get(i).getBattleanim()[1],0+player.getMap().getArrayList().get(i).getBattleanim()[1].getWidth()/2,240); //ENEMY ON PLAYER
-				if (time > 3) { //Battle win
+				if (time > 3) { //End turn
 					time = 0;
 					player.setAnimstate(0);
 					player.setPv(player.getPv()-player.getMap().getArrayList().get(i).getDegats());
+					this.EnemyAttack = true;
 				}
 			}
 			else {
