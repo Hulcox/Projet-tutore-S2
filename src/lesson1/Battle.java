@@ -40,6 +40,8 @@ public class Battle {
 		font = g.getFont();
 		String playerPv = Integer.toString(player.getPv());
 		String playerMaxPv = Integer.toString(player.getMaxPV());
+		String playerMana = Integer.toString(player.getMana());
+		String playerMaxMana = Integer.toString(player.getMaxMana());
 		String EnemiePv = Integer.toString(player.getMap().getArrayList().get(i).getPv());
 		camera.setxCam(0);
 		camera.setyCam(0);
@@ -53,6 +55,7 @@ public class Battle {
 		}
 		this.TurnAnimation(g, player, i);
 		font.drawString(550,30, "Pv : " + EnemiePv, Color.red);
+		font.drawString(0,45, "Mana : " + playerMana + "/" + playerMaxMana, Color.blue);
 		font.drawString(0,30 , "Pv : " + playerPv + "/"+playerMaxPv, Color.green);	
 	}
 	public void TurnAnimation (Graphics g, Player player, int i) throws SlickException {

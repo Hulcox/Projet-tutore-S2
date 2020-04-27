@@ -33,7 +33,7 @@ public class WindowGame extends BasicGame {
 	EventObject singleFireEvent;
 	BattleHUD hud;
 	SellingGUI sellGUI;
-	SpellGUI spellgui;
+	ItemsGUI itemsgui;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
@@ -46,7 +46,7 @@ public class WindowGame extends BasicGame {
     	
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player(70);
+    	p1 = new Player(70,20);
     	this.map = GameAsset.map1.getMap();
     	p1.setMap(GameAsset.map1);
     	animationasset = new AnimationsAsset();
@@ -57,7 +57,7 @@ public class WindowGame extends BasicGame {
     	hud = new BattleHUD(p1,camera,battle);
     	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
     	p1.setInventaire(inventory);
-    	inventory.setOpen(false);
+    	inventory.setOpen(false); //Inventaire initialisation
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.gobelinMeat);
@@ -70,13 +70,13 @@ public class WindowGame extends BasicGame {
     	sellGUI.AddTrade(GameAsset.potion, container);
     	sellGUI.AddTrade(GameAsset.superPotion, container);
     	sellGUI.AddTrade(GameAsset.Hypotion, container);
-    	spellgui = new SpellGUI(container, inventory);
-    	inventory.setSpellgui(spellgui);
-    	spellgui.AddMouseOverArea(GameAsset.Hypotion);
-    	spellgui.AddMouseOverArea(GameAsset.potion);
-    	spellgui.AddMouseOverArea(GameAsset.superPotion);
-    	spellgui.AddMouseOverArea(GameAsset.superPotion);
-    	spellgui.AddMouseOverArea(GameAsset.superPotion);
+    	itemsgui = new ItemsGUI(container, inventory);
+    	inventory.setitemsgui(itemsgui);
+    	itemsgui.AddMouseOverArea(GameAsset.Hypotion);
+    	itemsgui.AddMouseOverArea(GameAsset.potion);
+    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
+    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
+    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
 
     }
 
@@ -106,8 +106,8 @@ public class WindowGame extends BasicGame {
 		if  (battle.isInBattle()) {	 //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
     			this.hud.render(container, g);
-    			if(spellgui.isIsOpen()) {
-    				spellgui.render(container, g);
+    			if(itemsgui.isIsOpen()) {
+    				itemsgui.render(container, g);
     			}
 		}
 		else {
@@ -131,7 +131,7 @@ public class WindowGame extends BasicGame {
 	        	if (RNG < 20) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
-	        		spellgui.setIsOpen(false);
+	        		itemsgui.setIsOpen(false);
 	        		camera.setPrevXcam(camera.getxCam());
 	        		camera.setPrevYcam(camera.getyCam());
 	        	}
@@ -238,7 +238,7 @@ public class WindowGame extends BasicGame {
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
     		case Input.KEY_E: battle.setNext(true); break;
-    		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen()); break;
+    		case Input.KEY_S: itemsgui.setIsOpen(!itemsgui.isIsOpen()); break;
     		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;
     		}
     	}

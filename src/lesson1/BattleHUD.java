@@ -29,7 +29,7 @@ public class BattleHUD implements ComponentListener {
 	  
 	  public void init(GameContainer container) throws SlickException {
 		  Image buttonImage = new Image("texture/buttons.png");
-		  ItemSpell = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 4,this);
+		  ItemSpell = new MouseOverArea(container, buttonImage, 152+SPACE*2, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
 		  attackButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 3,this);
 		  defendButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 2,this);
 		  fleeButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
@@ -40,7 +40,7 @@ public class BattleHUD implements ComponentListener {
 	  public void render(GameContainer container, Graphics g) { 
 		  g.setColor(Color.black);
 		  ItemSpell.render(container, g);
-		  g.drawString("Items/Spell", ItemSpell.getX() + X_PADDING, ItemSpell.getY() + Y_PADDING);
+		  g.drawString("Items", ItemSpell.getX() + X_PADDING, ItemSpell.getY() + Y_PADDING);
 		  attackButton.render(container, g);
 		  g.drawString("Attaquer", attackButton.getX() + X_PADDING, attackButton.getY() + Y_PADDING);
 		  defendButton.render(container, g);
@@ -61,7 +61,7 @@ public class BattleHUD implements ComponentListener {
 			 camera.setPrevYcam(camera.getPrevYcam());
 		 }
 		 if (source ==  ItemSpell) {
-			 player.getInventaire().getSpellgui().setIsOpen(!player.getInventaire().getSpellgui().isIsOpen());
+			 player.getInventaire().getitemsgui().setIsOpen(!player.getInventaire().getitemsgui().isIsOpen());
 		 }
 		 if (source == defendButton) {
 			 player.setDefending(true);

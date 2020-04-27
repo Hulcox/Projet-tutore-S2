@@ -13,6 +13,7 @@ public class GameAsset {
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
 	KeyItem debug;
+	Booster boosterI;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	private ArrayList<Map> allMaps;
 	public void loadImage() throws SlickException{
@@ -62,6 +63,9 @@ public class GameAsset {
 		Hypotion = new Potions(80,"potion X", false, 80);
 		//Key object
 		debug = new KeyItem(1,"Item(s)",false);
+		//Spells
+		boosterI = new Booster(200,"booster I",false,true,2,10);
+		
 		
 		
 	}

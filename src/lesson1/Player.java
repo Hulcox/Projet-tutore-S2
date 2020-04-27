@@ -7,7 +7,8 @@ import org.newdawn.slick.Image;
 
 
 public class Player {
-
+	private int mana = 20;
+	private int MaxMana;
 	private float x = 300, y = 300;
 	private int direction = 0;
 	private boolean moving = false;
@@ -26,8 +27,11 @@ public class Player {
 	private Animation[] animations = new Animation[8];
 	private Animation[] battleanim = new Animation[2];
 	
-	public Player(int MaxPv) {
+	public Player(int MaxPv, int MaxMana) {
 		this.MaxPV = MaxPv;
+		this.MaxMana = MaxMana;
+		this.pv = MaxPV;
+		this.mana = this.MaxMana;
 	}
 	public Animation[] getAnimations() {
 		return animations;
@@ -148,6 +152,18 @@ public class Player {
 	}
 	public void setDefending(boolean defending) {
 		this.defending = defending;
+	}
+	public int getMana() {
+		return mana;
+	}
+	public void setMana(int mana) {
+		this.mana = mana;
+	}
+	public int getMaxMana() {
+		return MaxMana;
+	}
+	public void setMaxMana(int MaxMana) {
+		this.MaxMana  = MaxMana;
 	}
 	
 	

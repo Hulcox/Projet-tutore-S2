@@ -20,7 +20,7 @@ public class Inventaire implements ComponentListener{
 	private ArrayList<Objets> inventoryList;
 	private Camera camera;
 	private boolean Open;
-	private SpellGUI spellgui;
+	private ItemsGUI itemsgui;
 	
 	public Inventaire(Player player, Image image, Camera camera)  {
 		this.player = player;
@@ -40,8 +40,8 @@ public class Inventaire implements ComponentListener{
 			}
 			else if (objet.getType() == "potions") {
 				//System.out.println("adding items...");
-				if (this.spellgui.getItems().size() < 10) {
-					this.spellgui.AddMouseOverArea(objet);
+				if (this.itemsgui.getItems().size() < 10) {
+					this.itemsgui.AddMouseOverArea(objet);
 				}
 				else {
 					this.player.setMoney(this.player.getMoney()+objet.getPrix());
@@ -107,12 +107,12 @@ public class Inventaire implements ComponentListener{
 		
 	}
 
-	public SpellGUI getSpellgui() {
-		return spellgui;
+	public ItemsGUI getitemsgui() {
+		return itemsgui;
 	}
 
-	public void setSpellgui(SpellGUI spellgui) {
-		this.spellgui = spellgui;
+	public void setitemsgui(ItemsGUI itemsgui) {
+		this.itemsgui = itemsgui;
 	}
 	
 }

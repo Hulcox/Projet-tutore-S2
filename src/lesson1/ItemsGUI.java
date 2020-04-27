@@ -10,7 +10,7 @@ import org.newdawn.slick.gui.AbstractComponent;
 import org.newdawn.slick.gui.ComponentListener;
 import org.newdawn.slick.gui.MouseOverArea;
 
-public class SpellGUI implements ComponentListener{
+public class ItemsGUI implements ComponentListener{
 	private Inventaire inventory;
 	private ArrayList<Objets> Items;
 	private ArrayList<MouseOverArea> ItemsbuttonsList;
@@ -24,7 +24,7 @@ public class SpellGUI implements ComponentListener{
 	
 	//public void init
 	
-	public SpellGUI (GameContainer container, Inventaire inventory){
+	public ItemsGUI (GameContainer container, Inventaire inventory){
 		this.ItemsbuttonsList = new ArrayList<MouseOverArea>();
 		this.Items = new ArrayList<Objets>();
 		this.container = container;
