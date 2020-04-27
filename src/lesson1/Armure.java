@@ -2,7 +2,7 @@ package lesson1;
 
 public class Armure extends Objets implements lootable {
 
-	private int armure;
+	private double armure;
 	public Armure(int prix, String nom, boolean loot, int armure) {
 		super(prix, nom, loot);
 		this.armure = armure;
@@ -15,8 +15,11 @@ public class Armure extends Objets implements lootable {
 		return loot;
 	}
 
-	public int getArmure() {
+	public double getArmure() {
 		return armure;
+	}
+	public void setArmure(double armure) {
+		this.armure = armure;
 	}
 
 

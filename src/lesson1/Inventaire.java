@@ -40,7 +40,13 @@ public class Inventaire implements ComponentListener{
 			}
 			else if (objet.getType() == "potions") {
 				//System.out.println("adding items...");
-				this.spellgui.AddMouseOverArea(objet);
+				if (this.spellgui.getItems().size() < 10) {
+					this.spellgui.AddMouseOverArea(objet);
+				}
+				else {
+					this.player.setMoney(this.player.getMoney()+objet.getPrix());
+				}
+				
 			}
 			else {
 				for(Objets i : inventoryList) {

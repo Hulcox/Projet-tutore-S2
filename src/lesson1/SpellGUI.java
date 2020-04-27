@@ -99,7 +99,10 @@ public class SpellGUI implements ComponentListener{
 		this.IsComponentActivated = true;
 		
 	}
-
+	public ArrayList<Objets> getItems(){
+		return this.Items;
+		
+	}
 	public Inventaire getInventory() {
 		return inventory;
 	}

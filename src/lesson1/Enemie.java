@@ -7,7 +7,7 @@ import org.newdawn.slick.Image;
 public class Enemie {
 	private int pv;
 	private String name;
-	private int degats;
+	private double degats;
 	private int maxHp;
 	private int level;
 	private MonsterDrop loot;
@@ -37,7 +37,7 @@ public class Enemie {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getDegats() {
+	public double getDegats() {
 		return degats;
 	}
 	public void setDegats(int degats) {

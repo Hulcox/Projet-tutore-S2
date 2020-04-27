@@ -11,6 +11,7 @@ public class Player {
 	private float x = 300, y = 300;
 	private int direction = 0;
 	private boolean moving = false;
+	private boolean defending = false;
 	private int money = 0;
 	private float speed = 0.1f;
 	private int damage = 20;
@@ -73,6 +74,12 @@ public class Player {
 	public int getPv() {
 		return pv;
 	}
+	public void setDegats(double degats) {
+		if(this.isDefending()) {
+			degats = degats/2;
+		}
+		this.pv = (int) (this.getPv()-Math.round(degats*(100/(100+playerArmor.getArmure()))));
+	}
 	public void setPv(int pv) {
 		if(pv > this.MaxPV)
 		{
@@ -104,7 +111,7 @@ public class Player {
 		return damage + playerSword.getDegats();
 	}
 	public void setDamage(int damage) {
-		this.damage = damage * ( Math.floorMod(100, (100-playerArmor.getArmure())));
+		this.damage = damage;
 	}
 	public Epée getPlayerSword() {
 		return playerSword;
@@ -135,6 +142,12 @@ public class Player {
 	}
 	public void setMaxPV(int maxPV) {
 		MaxPV = maxPV;
+	}
+	public boolean isDefending() {
+		return defending;
+	}
+	public void setDefending(boolean defending) {
+		this.defending = defending;
 	}
 	
 	

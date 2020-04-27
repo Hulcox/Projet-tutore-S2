@@ -63,6 +63,10 @@ public class BattleHUD implements ComponentListener {
 		 if (source ==  ItemSpell) {
 			 player.getInventaire().getSpellgui().setIsOpen(!player.getInventaire().getSpellgui().isIsOpen());
 		 }
+		 if (source == defendButton) {
+			 player.setDefending(true);
+			 player.setAnimstate(2);
+		 }
 	  }
 
 

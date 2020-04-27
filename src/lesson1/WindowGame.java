@@ -131,6 +131,7 @@ public class WindowGame extends BasicGame {
 	        	if (RNG < 20) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
+	        		spellgui.setIsOpen(false);
 	        		camera.setPrevXcam(camera.getxCam());
 	        		camera.setPrevYcam(camera.getyCam());
 	        	}
@@ -236,8 +237,9 @@ public class WindowGame extends BasicGame {
     		switch (key) { //Commande bataille
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
-    		case Input.KEY_E: battle.setNext(true);
-    		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen());
+    		case Input.KEY_E: battle.setNext(true); break;
+    		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen()); break;
+    		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;
     		}
     	}
     }
