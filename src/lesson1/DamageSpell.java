@@ -2,7 +2,7 @@ package lesson1;
 
 public class DamageSpell extends Spells{
 	private int degats;
-	public DamageSpell(int prix, String nom, boolean loot, boolean onPlayer, int ManaCost, int degats) {
+	public DamageSpell(int prix, String nom, boolean loot, boolean onPlayer, int degats, int ManaCost) {
 		super(prix, nom, loot, onPlayer, ManaCost);
 		this.degats = degats;
 		this.typeSpell = "damagespell";

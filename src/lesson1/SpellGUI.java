@@ -39,7 +39,7 @@ public class SpellGUI implements ComponentListener{
 					i.setX(x);
 					i.setY(y);
 					i.render(container, g);
-					g.drawString(Spells.get(j).getNom(), i.getX()+10, i.getY()+5);
+					g.drawString(Spells.get(j).getNom() + " : " + Spells.get(j).getManaCost(), i.getX()+10, i.getY()+5);
 					j++;
 					if (y <= 400) {
 						y += 40;
@@ -76,21 +76,24 @@ public class SpellGUI implements ComponentListener{
 		int j = 0;
 		for (MouseOverArea i : SpellsbuttonsList) {
 			if (source == i){
-				if (this.Spells.get(j).getTypeSpell() == "booster") {
-					Booster boostertemp = (Booster) this.Spells.get(j);
-					this.inventory.getPlayer().setDamage(this.inventory.getPlayer().getDamage()*boostertemp.getModificateur());
-					this.inventory.getPlayer().setSpell(boostertemp);
-					this.inventory.getPlayer().setCasting(true);
-					this.IsOpen = false;
-					this.inventory.getPlayer().setAnimstate(1);
-				}
-				else if (this.Spells.get(j).getTypeSpell() == "damagespell") {
-					DamageSpell damageSpellTemp = (DamageSpell) this.Spells.get(j);
-					this.inventory.getPlayer().setDamage(this.inventory.getPlayer().getDamage()+damageSpellTemp.getDegats());
-					this.inventory.getPlayer().setSpell(damageSpellTemp);
-					this.inventory.getPlayer().setCasting(true);
-					this.IsOpen = false;
-					this.inventory.getPlayer().setAnimstate(1);
+				if(this.inventory.getPlayer().getMana()-this.Spells.get(j).getManaCost() >= 0) {
+					if (this.Spells.get(j).getTypeSpell() == "booster") {
+						Booster boostertemp = (Booster) this.Spells.get(j);
+						this.inventory.getPlayer().setDamage(this.inventory.getPlayer().getDamage()*boostertemp.getModificateur());
+						this.inventory.getPlayer().setSpell(boostertemp);
+						this.inventory.getPlayer().setCasting(true);
+						this.IsOpen = false;
+						this.inventory.getPlayer().setAnimstate(1);
+					}
+					else if (this.Spells.get(j).getTypeSpell() == "damagespell") {
+						DamageSpell damageSpellTemp = (DamageSpell) this.Spells.get(j);
+						this.inventory.getPlayer().setDamage(this.inventory.getPlayer().getBaseDamage()+damageSpellTemp.getDegats());
+						this.inventory.getPlayer().setSpell(damageSpellTemp);
+						this.inventory.getPlayer().setCasting(true);
+						this.IsOpen = false;
+						this.inventory.getPlayer().setAnimstate(1);
+					}
+					this.inventory.getPlayer().setMana(this.inventory.getPlayer().getMana()-this.Spells.get(j).getManaCost());
 				}
 
 

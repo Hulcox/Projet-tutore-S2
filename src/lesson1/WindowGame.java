@@ -251,7 +251,8 @@ public class WindowGame extends BasicGame {
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
     		case Input.KEY_E: battle.setNext(true); break;
-    		case Input.KEY_S: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
+    		case Input.KEY_I: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
+    		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen());break;
     		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;
     		}
     	}

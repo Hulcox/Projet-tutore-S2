@@ -70,6 +70,8 @@ public class Battle {
 					this.time = 0;
 					this.player.setAnimstate(0);
 					this.EnemyAttack = true;
+					player.setDefending(false);
+					player.setCasting(false);
 					player.setDamage(player.getBaseDamage());
 					player.getInventaire().AddObjet(player.getMap().getArrayList().get(i).getLoot());
 				}
@@ -83,6 +85,9 @@ public class Battle {
 				g.drawAnimation(player.getMap().getArrayList().get(i).getBattleanim()[1],0+player.getMap().getArrayList().get(i).getBattleanim()[1].getWidth()/2,240); //ENEMY ON PLAYER
 				if (time > 3) { //End turn
 					time = 0;
+					if(player.isCasting()) {
+						player.setDamage(player.getBaseDamage());
+					}
 					player.setAnimstate(0);
 					player.setDegats(player.getMap().getArrayList().get(i).getDegats());
 					this.EnemyAttack = true;
@@ -105,7 +110,7 @@ public class Battle {
 					g.drawAnimation(player.getBattleanim()[0], 0, 240); 
 					g.drawAnimation(player.getSpell().getAnimation()[0], 0+player.getSpell().getAnimation()[0].getWidth()/2,240+player.getSpell().getAnimation()[0].getHeight()/2);
 				}
-				else { //Casting spell on enemy
+				else if (!player.getSpell().isOnPlayer() && player.isCasting()){ //Casting spell on enemy
 					g.drawAnimation(player.getBattleanim()[0], 0, 240);
 					g.drawAnimation(player.getSpell().getAnimation()[0], 580-(player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth()/2+player.getSpell().getAnimation()[0].getWidth()/2), 360-(player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight()/2 + player.getSpell().getAnimation()[0].getHeight()/2));
 				}
@@ -117,6 +122,7 @@ public class Battle {
 				}//Damage spell
 				if (player.isCasting() && !player.getSpell().isOnPlayer()) {
 					player.getMap().getArrayList().get(i).setDamage(player.getMap().getArrayList().get(i).getPv()-player.getDamage());
+					
 				}
 			}
 		}

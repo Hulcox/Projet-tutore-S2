@@ -16,6 +16,9 @@ public abstract class Spells extends Objets{
 	public Animation[] getAnimation() {
 		return animation;
 	}
+	public int getManaCost() {
+		return this.ManaCost;
+	}
 
 	public void setAnimation(Animation[] animations) {
 		this.animation = animations;
