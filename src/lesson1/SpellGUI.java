@@ -77,15 +77,22 @@ public class SpellGUI implements ComponentListener{
 		for (MouseOverArea i : SpellsbuttonsList) {
 			if (source == i){
 				if (this.Spells.get(j).getTypeSpell() == "booster") {
-					System.out.println("okay");
 					Booster boostertemp = (Booster) this.Spells.get(j);
 					this.inventory.getPlayer().setDamage(this.inventory.getPlayer().getDamage()*boostertemp.getModificateur());
-					this.IsOpen = false;
-					this.inventory.getPlayer().setCasting(true);
 					this.inventory.getPlayer().setSpell(boostertemp);
+					this.inventory.getPlayer().setCasting(true);
+					this.IsOpen = false;
 					this.inventory.getPlayer().setAnimstate(1);
-	
 				}
+				else if (this.Spells.get(j).getTypeSpell() == "damagespell") {
+					DamageSpell damageSpellTemp = (DamageSpell) this.Spells.get(j);
+					this.inventory.getPlayer().setDamage(this.inventory.getPlayer().getDamage()+damageSpellTemp.getDegats());
+					this.inventory.getPlayer().setSpell(damageSpellTemp);
+					this.inventory.getPlayer().setCasting(true);
+					this.IsOpen = false;
+					this.inventory.getPlayer().setAnimstate(1);
+				}
+
 
 			}
 			j++;

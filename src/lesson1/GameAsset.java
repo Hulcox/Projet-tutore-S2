@@ -14,6 +14,7 @@ public class GameAsset {
 	Armure copperArmor, ironArmor, diamondArmor;
 	KeyItem debug;
 	Booster boosterI;
+	DamageSpell fireI, fireII, fireIII;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	private ArrayList<Map> allMaps;
 	public void loadImage() throws SlickException{
@@ -65,6 +66,9 @@ public class GameAsset {
 		debug = new KeyItem(1,"Item(s)",false);
 		//Spells
 		boosterI = new Booster(200,"booster I",false,true,2,10);
+		fireI = new DamageSpell(200,"Fire I",false,false,20,5);
+		fireII = new DamageSpell(400,"Fire II",false,false,40,10);
+		fireIII = new DamageSpell(800,"Fire III",false,false,80,20);
 		
 		
 		

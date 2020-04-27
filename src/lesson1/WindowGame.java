@@ -73,6 +73,9 @@ public class WindowGame extends BasicGame {
     	sellGUI.AddTrade(GameAsset.Hypotion, container);
     	spellgui = new SpellGUI(container, inventory);
     	spellgui.AddMouseOverArea(GameAsset.boosterI);
+    	spellgui.AddMouseOverArea(GameAsset.fireI);
+    	spellgui.AddMouseOverArea(GameAsset.fireII);
+    	spellgui.AddMouseOverArea(GameAsset.fireIII);
     	itemsgui = new ItemsGUI(container, inventory);
     	inventory.setitemsgui(itemsgui);
     	inventory.setSpellgui(spellgui);

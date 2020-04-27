@@ -107,12 +107,15 @@ public class Battle {
 				}
 				else { //Casting spell on enemy
 					g.drawAnimation(player.getBattleanim()[0], 0, 240);
-					g.drawAnimation(player.getSpell().getAnimation()[0], 580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth()-player.getBattleanim()[1].getWidth()/2, 360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight());
+					g.drawAnimation(player.getSpell().getAnimation()[0], 580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth()/2, 360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight()/2);
 				}
 			}
 			if (!damagetaken) {
 				damagetaken = true;
 				if (!player.isCasting()) {
+					player.getMap().getArrayList().get(i).setDamage(player.getMap().getArrayList().get(i).getPv()-player.getDamage());
+				}//Damage spell
+				if (player.isCasting() && !player.getSpell().isOnPlayer()) {
 					player.getMap().getArrayList().get(i).setDamage(player.getMap().getArrayList().get(i).getPv()-player.getDamage());
 				}
 			}
