@@ -46,7 +46,7 @@ public class WindowGame extends BasicGame {
     	
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player();
+    	p1 = new Player(70);
     	this.map = GameAsset.map1.getMap();
     	p1.setMap(GameAsset.map1);
     	animationasset = new AnimationsAsset();

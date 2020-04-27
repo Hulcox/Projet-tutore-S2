@@ -16,10 +16,16 @@ public class Enemie {
 		return pv;
 	}
 	public void setPv(int pv) {
-		this.pv = pv;
+		if (pv < 0) {
+			this.pv = 0;
+		}
+		else {
+			this.pv = pv;
+		}
+		
 	}
 	public void setDamage(int damage) {
-		if ((this.pv - damage) < 0)
+		if (damage < 0)
 			this.pv = 0;
 		else
 			this.pv = damage;

@@ -18,11 +18,16 @@ public class Player {
 	private Epée playerSword;
 	private Armure playerArmor;
 	private int pv = 70;
+	private int MaxPV;
 	private int animstate = 0;
 	private Image image;
 	private Inventaire inventaire;
 	private Animation[] animations = new Animation[8];
 	private Animation[] battleanim = new Animation[2];
+	
+	public Player(int MaxPv) {
+		this.MaxPV = MaxPv;
+	}
 	public Animation[] getAnimations() {
 		return animations;
 	}
@@ -69,10 +74,14 @@ public class Player {
 		return pv;
 	}
 	public void setPv(int pv) {
-		this.pv = pv;
+		if(pv > this.MaxPV)
+		{
+			this.pv = this.MaxPV;
+		}
+		else {
+			this.pv = pv;
+		}
 	}
-
-
 	public Image getImage() {
 		return image;
 	}
@@ -120,6 +129,12 @@ public class Player {
 	}
 	public void setInventaire(Inventaire inventaire) {
 		this.inventaire = inventaire;
+	}
+	public int getMaxPV() {
+		return MaxPV;
+	}
+	public void setMaxPV(int maxPV) {
+		MaxPV = maxPV;
 	}
 	
 	

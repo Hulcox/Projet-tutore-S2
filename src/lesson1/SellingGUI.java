@@ -98,6 +98,7 @@ public class SellingGUI implements ComponentListener {
 
 			for (Objets o : toSell) { 
 				finalsell += o.getPrix()*o.getNumber();
+				o.setNumber(1);
 				this.inventory.RemoveObject(o);
 			}	
 		
