@@ -76,6 +76,9 @@ public class WindowGame extends BasicGame {
     	spellgui.AddMouseOverArea(GameAsset.fireI);
     	spellgui.AddMouseOverArea(GameAsset.fireII);
     	spellgui.AddMouseOverArea(GameAsset.fireIII);
+    	spellgui.AddMouseOverArea(GameAsset.Ultima);
+    	spellgui.AddMouseOverArea(GameAsset.MaelStrom);
+    	spellgui.AddMouseOverArea(GameAsset.MegaStorm);
     	itemsgui = new ItemsGUI(container, inventory);
     	inventory.setitemsgui(itemsgui);
     	inventory.setSpellgui(spellgui);
