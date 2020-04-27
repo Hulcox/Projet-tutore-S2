@@ -35,8 +35,10 @@ public class AnimationsAsset {
     	
     	SpriteSheet spriteSheetKnight = new SpriteSheet("texture/Knight_enemy_1.png", 128, 128);
     	SpriteSheet spriteSheetGobelin = new SpriteSheet("texture/gobelin.png",128,128);
+    	SpriteSheet spriteSheetBooster = new SpriteSheet("texture/booster.png",92,92);
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
     	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
+    	this.setSpellAnimation(spriteSheetBooster, 10, imageasset.boosterI);
     	
     }
     public void setEnemyAnimation(SpriteSheet spriteSheet, int numberOfFrame, Enemie enemie) {
@@ -45,6 +47,11 @@ public class AnimationsAsset {
         animations[1] = loadAnimation(spriteSheet, 1, numberOfFrame, 0);
         enemie.setBattleanim(animations);
     	
+    }
+    public void setSpellAnimation(SpriteSheet spriteSheet, int numberOfFrame, Spells spell) {
+    	Animation animations[] = new Animation[1];
+        animations[0] = loadAnimation(spriteSheet, 1, numberOfFrame, 0);
+    	spell.setAnimation(animations);
     }
 
 }

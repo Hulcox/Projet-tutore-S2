@@ -13,9 +13,12 @@ public class Player {
 	private int direction = 0;
 	private boolean moving = false;
 	private boolean defending = false;
+	private boolean isCasting = false;
+	private Spells spell;
 	private int money = 0;
 	private float speed = 0.1f;
 	private int damage = 20;
+	private int baseDamage;
 	private Map map;
 	private Epée playerSword;
 	private Armure playerArmor;
@@ -32,6 +35,7 @@ public class Player {
 		this.MaxMana = MaxMana;
 		this.pv = MaxPV;
 		this.mana = this.MaxMana;
+		this.baseDamage = damage;
 	}
 	public Animation[] getAnimations() {
 		return animations;
@@ -164,6 +168,24 @@ public class Player {
 	}
 	public void setMaxMana(int MaxMana) {
 		this.MaxMana  = MaxMana;
+	}
+	public int getBaseDamage() {
+		return baseDamage;
+	}
+	public void setBaseDamage(int baseDamage) {
+		this.baseDamage = baseDamage;
+	}
+	public boolean isCasting() {
+		return isCasting;
+	}
+	public void setCasting(boolean isCasting) {
+		this.isCasting = isCasting;
+	}
+	public Spells getSpell() {
+		return spell;
+	}
+	public void setSpell(Spells spell) {
+		this.spell = spell;
 	}
 	
 	

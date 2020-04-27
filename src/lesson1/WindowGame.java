@@ -33,6 +33,7 @@ public class WindowGame extends BasicGame {
 	EventObject singleFireEvent;
 	BattleHUD hud;
 	SellingGUI sellGUI;
+	SpellGUI spellgui;
 	ItemsGUI itemsgui;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
@@ -70,8 +71,11 @@ public class WindowGame extends BasicGame {
     	sellGUI.AddTrade(GameAsset.potion, container);
     	sellGUI.AddTrade(GameAsset.superPotion, container);
     	sellGUI.AddTrade(GameAsset.Hypotion, container);
+    	spellgui = new SpellGUI(container, inventory);
+    	spellgui.AddMouseOverArea(GameAsset.boosterI);
     	itemsgui = new ItemsGUI(container, inventory);
     	inventory.setitemsgui(itemsgui);
+    	inventory.setSpellgui(spellgui);
     	itemsgui.AddMouseOverArea(GameAsset.Hypotion);
     	itemsgui.AddMouseOverArea(GameAsset.potion);
     	itemsgui.AddMouseOverArea(GameAsset.superPotion);
@@ -106,6 +110,9 @@ public class WindowGame extends BasicGame {
 		if  (battle.isInBattle()) {	 //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
     			this.hud.render(container, g);
+    			if (spellgui.isIsOpen()) {
+    				spellgui.render(container, g);
+    			}
     			if(itemsgui.isIsOpen()) {
     				itemsgui.render(container, g);
     			}
@@ -238,7 +245,7 @@ public class WindowGame extends BasicGame {
     		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
     		case Input.KEY_E: battle.setNext(true); break;
-    		case Input.KEY_S: itemsgui.setIsOpen(!itemsgui.isIsOpen()); break;
+    		case Input.KEY_S: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
     		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;
     		}
     	}

@@ -16,7 +16,8 @@ public class BattleHUD implements ComponentListener {
 	  private MouseOverArea attackButton;
 	  private MouseOverArea fleeButton;
 	  private MouseOverArea defendButton;
-	  private MouseOverArea ItemSpell;
+	  private MouseOverArea Items;
+	  private MouseOverArea Spells;
 	  private Player player;
 	  private Camera camera;
 	  private Battle battle;
@@ -29,7 +30,8 @@ public class BattleHUD implements ComponentListener {
 	  
 	  public void init(GameContainer container) throws SlickException {
 		  Image buttonImage = new Image("texture/buttons.png");
-		  ItemSpell = new MouseOverArea(container, buttonImage, 152+SPACE*2, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
+		  Spells = new MouseOverArea(container, buttonImage, 152+SPACE*2, container.getHeight() - (buttonImage.getHeight() + SPACE) * 2,this);
+		  Items = new MouseOverArea(container, buttonImage, 152+SPACE*2, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
 		  attackButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 3,this);
 		  defendButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 2,this);
 		  fleeButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
@@ -39,8 +41,10 @@ public class BattleHUD implements ComponentListener {
 	  
 	  public void render(GameContainer container, Graphics g) { 
 		  g.setColor(Color.black);
-		  ItemSpell.render(container, g);
-		  g.drawString("Items", ItemSpell.getX() + X_PADDING, ItemSpell.getY() + Y_PADDING);
+		  Spells.render(container, g);
+		  g.drawString("Spells", Spells.getX() + X_PADDING, Spells.getY() + Y_PADDING);
+		  Items.render(container, g);
+		  g.drawString("Items", Items.getX() + X_PADDING, Items.getY() + Y_PADDING);
 		  attackButton.render(container, g);
 		  g.drawString("Attaquer", attackButton.getX() + X_PADDING, attackButton.getY() + Y_PADDING);
 		  defendButton.render(container, g);
@@ -53,19 +57,22 @@ public class BattleHUD implements ComponentListener {
 		 if (source == attackButton) {
 		    player.setAnimstate(1);
 		 }
-		 if (source == fleeButton) {
+		 else if (source == fleeButton) {
 			 battle.setInBattle(false);
 			 player.getMap().getArrayList().get(battle.getIndex()).setPv(player.getMap().getArrayList().get(battle.getIndex()).getMaxHp());
 			 player.setAnimstate(0);
 			 camera.setxCam(camera.getPrevXcam()); 
 			 camera.setPrevYcam(camera.getPrevYcam());
 		 }
-		 if (source ==  ItemSpell) {
+		 else if (source ==  Items) {
 			 player.getInventaire().getitemsgui().setIsOpen(!player.getInventaire().getitemsgui().isIsOpen());
 		 }
-		 if (source == defendButton) {
+		 else if (source == defendButton) {
 			 player.setDefending(true);
 			 player.setAnimstate(2);
+		 }
+		 else if (source == Spells) {
+			 this.player.getInventaire().getSpellgui().setIsOpen(!this.player.getInventaire().getSpellgui().isIsOpen());
 		 }
 	  }
 

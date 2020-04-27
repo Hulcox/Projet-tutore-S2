@@ -70,6 +70,7 @@ public class Battle {
 					this.time = 0;
 					this.player.setAnimstate(0);
 					this.EnemyAttack = true;
+					player.setDamage(player.getBaseDamage());
 					player.getInventaire().AddObjet(player.getMap().getArrayList().get(i).getLoot());
 				}
 				else {
@@ -86,6 +87,7 @@ public class Battle {
 					player.setDegats(player.getMap().getArrayList().get(i).getDegats());
 					this.EnemyAttack = true;
 					player.setDefending(false);
+					player.setCasting(false);
 				}
 			}
 			else {
@@ -95,10 +97,24 @@ public class Battle {
 		}
 		else if (time > 0) { //PLAYER TURN
 			g.drawAnimation(player.getMap().getArrayList().get(i).getBattleanim()[0],580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth(),360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight());
-			g.drawAnimation(player.getBattleanim()[1], 580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth()-player.getBattleanim()[1].getWidth()/2, 360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight());//PLAYER ON ENEMY
+			if (!player.isCasting()) {
+				g.drawAnimation(player.getBattleanim()[1], 580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth()-player.getBattleanim()[1].getWidth()/2, 360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight());
+			}//PLAYER ON ENEMY
+			else {
+				if (player.getSpell().isOnPlayer()) { //Casting spell on player
+					g.drawAnimation(player.getBattleanim()[0], 0, 240); 
+					g.drawAnimation(player.getSpell().getAnimation()[0], 0+player.getSpell().getAnimation()[0].getWidth()/2,240+player.getSpell().getAnimation()[0].getHeight()/2);
+				}
+				else { //Casting spell on enemy
+					g.drawAnimation(player.getBattleanim()[0], 0, 240);
+					g.drawAnimation(player.getSpell().getAnimation()[0], 580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth()-player.getBattleanim()[1].getWidth()/2, 360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight());
+				}
+			}
 			if (!damagetaken) {
 				damagetaken = true;
-				player.getMap().getArrayList().get(i).setDamage(player.getMap().getArrayList().get(i).getPv()-player.getDamage());
+				if (!player.isCasting()) {
+					player.getMap().getArrayList().get(i).setDamage(player.getMap().getArrayList().get(i).getPv()-player.getDamage());
+				}
 			}
 		}
 		else {

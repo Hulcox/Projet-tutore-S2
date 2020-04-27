@@ -79,6 +79,7 @@ public class ItemsGUI implements ComponentListener{
 					Potions potionTemp = (Potions) this.Items.get(j);
 					this.inventory.getPlayer().setPv(this.inventory.getPlayer().getPv() + potionTemp.getHealingValue());
 					this.IsOpen = false;
+					this.inventory.getSpellgui().setIsOpen(false);
 					this.inventory.getPlayer().setAnimstate(2);
 					toDelObjet = potionTemp;
 					toDelBtnLst = i;

@@ -3,7 +3,7 @@ package lesson1;
 import org.newdawn.slick.Animation;
 
 public abstract class Spells extends Objets{
-	protected Animation animation;
+	protected Animation[] animation;
 	protected boolean onPlayer;
 	protected String typeSpell;
 	protected int ManaCost;
@@ -13,12 +13,12 @@ public abstract class Spells extends Objets{
 		this.onPlayer = onPlayer;
 		this.ManaCost = ManaCost;
 	}
-	public Animation getAnimation() {
+	public Animation[] getAnimation() {
 		return animation;
 	}
 
-	public void setAnimation(Animation animation) {
-		this.animation = animation;
+	public void setAnimation(Animation[] animations) {
+		this.animation = animations;
 	}
 	public boolean isOnPlayer() {
 		return onPlayer;
