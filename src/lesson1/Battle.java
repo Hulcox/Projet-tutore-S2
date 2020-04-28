@@ -76,16 +76,17 @@ public class Battle {
 					player.getInventaire().AddObjet(player.getMap().getArrayList().get(i).getLoot());
 				}
 				else {
+					g.drawAnimation(player.getBattleanim()[0], 0, 240);
 					g.drawString("Victory ! " + "Loot : " + player.getMap().getArrayList().get(i).getLoot().getNom() + " Press 'e' to continue" , 100, 240);
 					time = 2;
 				}
 			}
-			if (time > 2) {
+			else if (time > 2) {
 				g.drawAnimation(player.getBattleanim()[0], 0, 240);
 				g.drawAnimation(player.getMap().getArrayList().get(i).getBattleanim()[1],0+player.getMap().getArrayList().get(i).getBattleanim()[1].getWidth()/2,240); //ENEMY ON PLAYER
 				if (time > 3) { //End turn
 					time = 0;
-					if(player.isCasting()) {
+					if(player.isCasting() && !player.getSpell().isOnPlayer()) {
 						player.setDamage(player.getBaseDamage());
 					}
 					player.setAnimstate(0);
@@ -96,8 +97,8 @@ public class Battle {
 				}
 			}
 			else {
-				g.drawAnimation(player.getMap().getArrayList().get(i).getBattleanim()[0],580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth(),360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight());
 				g.drawAnimation(player.getBattleanim()[0], 0, 240);
+				g.drawAnimation(player.getMap().getArrayList().get(i).getBattleanim()[0],580-player.getMap().getArrayList().get(i).getBattleanim()[0].getWidth(),360-player.getMap().getArrayList().get(i).getBattleanim()[0].getHeight());
 			}
 		}
 		else if (time > 0) { //PLAYER TURN

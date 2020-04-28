@@ -19,6 +19,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
+	private boolean textrender = false;
 	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
@@ -35,19 +36,20 @@ public class WindowGame extends BasicGame {
 	SellingGUI sellGUI;
 	SpellGUI spellgui;
 	ItemsGUI itemsgui;
+	DialogueAsset dialogue;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
     
-    public void loadText(GameContainer container) throws SlickException {
+    public void loadAsset(GameContainer container) throws SlickException {
     	GameAsset.loadImage();
     	GameAsset.loadObject();
     	GameAsset.loadEnemie();
     	GameAsset.loadMap();
-    	
+    	GameAsset.loadText();
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player(70,20);
+    	p1 = new Player(70,999);
     	this.map = GameAsset.map1.getMap();
     	p1.setMap(GameAsset.map1);
     	animationasset = new AnimationsAsset();
@@ -98,7 +100,7 @@ public class WindowGame extends BasicGame {
     	container.setFullscreen(true);
         SpriteSheet spriteSheet = new SpriteSheet("texture/character.png", 64, 64);
         SpriteSheet battlers = new SpriteSheet("texture/FightAnimation.png", 196, 128);
-    	loadText(container);
+    	loadAsset(container);
     	animationasset.addAnimation(spriteSheet, p1);
     	animationasset.loadBattlersAnimation(battlers, p1);
     	animationasset.loadEnemyAnimation(GameAsset);
@@ -136,12 +138,15 @@ public class WindowGame extends BasicGame {
 	    	if (this.inventory.isOpen()) {
 	    		this.inventory.render(container, g);
 	    	}
+	    	if(this.textrender) {
+	    		this.dialogue.render(container, g);
+	    	}
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
 	        	RNG = (int) (Math.random()*100);
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
-	        	if (RNG < 20) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        	if (RNG < 2) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
 	        		itemsgui.setIsOpen(false);
@@ -166,7 +171,7 @@ public class WindowGame extends BasicGame {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
-                else if ("vendeur".equals(map.getObjectType(0, objectID))) {
+                if ("vendeur".equals(map.getObjectType(0, objectID))) {
                 	if (sellGUI.isShopOpen()) {
                 		this.sellGUI.setPlayerOverArea(true);
                 	}
@@ -175,14 +180,23 @@ public class WindowGame extends BasicGame {
                 	}
                 		
                 }
-                else if ("changement".equals(map.getObjectType(0, objectID))) {
+                if ("changement".equals(map.getObjectType(0, objectID))) {
                 	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
                 	
                 }
+                
+                if("Dialogue".equals(map.getObjectType(0, objectID))){
+                	this.dialogue = GameAsset.searchText(this.map.getObjectProperty(0, objectID, "personne","undefined"));
+                	this.textrender = true;
+                }
 
+
+            }
+            else {
+            	this.textrender  = false;
             }
  
 

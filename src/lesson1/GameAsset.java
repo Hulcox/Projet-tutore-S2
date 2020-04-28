@@ -16,6 +16,7 @@ public class GameAsset {
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
+	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
 	public void loadImage() throws SlickException{
 		battle1 = new Image("texture/battle_ground.png");
@@ -74,6 +75,13 @@ public class GameAsset {
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50);
 		
 	}
+	public void loadText() throws SlickException {
+		allTexts = new ArrayList<DialogueAsset>();
+		allTexts.add(new DialogueAsset("Hello warrior !","soldat"));
+		allTexts.add(new DialogueAsset("Save the princess", "King"));
+
+		
+	}
 	public Map searchMap(String name) {
 		for(Map i : allMaps) {
 			if(i.getName().equals(name)) {
@@ -86,6 +94,21 @@ public class GameAsset {
 	public ArrayList<Map> getallMaps(){
 		return this.allMaps;
 	}
+
+	public ArrayList<DialogueAsset> getAllTexts() {
+		return allTexts;
+	}
 	
+	public DialogueAsset searchText(String personne) throws SlickException {
+		for (DialogueAsset i : allTexts) {
+			if (i.getPersonne().contentEquals(personne)) {
+				return i;
+				
+			}
+		}
+		return new DialogueAsset("Probléme", "erreur");
+	}
+
+
 
 }
