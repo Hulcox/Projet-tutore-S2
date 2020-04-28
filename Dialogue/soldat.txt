@@ -1,6 +1,6 @@
 Hello warrior !
 I hope your doing well
-I am doing
-well
-Osmane cool
-uyes
+use arrow to move,
+key e to open inventory
+key a to interact.
+Good luck.

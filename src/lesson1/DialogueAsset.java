@@ -30,9 +30,9 @@ public class DialogueAsset {
 	public void render (GameContainer container, Graphics g) {
 		Font font = g.getFont();
 		g.resetTransform();
-		g.drawImage(image,236,380);
+		g.drawImage(image,0,380);
 		if (this.Index < this.textcol.size())
-			font.drawString( 246, 390,this.personne + " : " + this.textcol.get(this.Index),Color.white);
+			font.drawString( 10, 390,this.personne + " : " + this.textcol.get(this.Index),Color.white);
 		else 
 			this.Index = 0;
 		
