@@ -77,7 +77,7 @@ public class GameAsset {
 	}
 	public void loadText() throws SlickException {
 		allTexts = new ArrayList<DialogueAsset>();
-		allTexts.add(new DialogueAsset("Hello warrior !","soldat"));
+		allTexts.add(new DialogueAsset("Hello warrior !\n I hope your doing well","soldat"));
 		allTexts.add(new DialogueAsset("Save the princess", "King"));
 
 		
