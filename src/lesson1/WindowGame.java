@@ -2,6 +2,8 @@ package lesson1;
 
 
 
+import java.io.IOException;
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.Color;
@@ -41,7 +43,7 @@ public class WindowGame extends BasicGame {
         super("Lesson 1 :: WindowGame");
     }
     
-    public void loadAsset(GameContainer container) throws SlickException {
+    public void loadAsset(GameContainer container) throws SlickException, IOException {
     	GameAsset.loadImage();
     	GameAsset.loadObject();
     	GameAsset.loadEnemie();
@@ -100,7 +102,13 @@ public class WindowGame extends BasicGame {
     	container.setFullscreen(true);
         SpriteSheet spriteSheet = new SpriteSheet("texture/character.png", 64, 64);
         SpriteSheet battlers = new SpriteSheet("texture/FightAnimation.png", 196, 128);
-    	loadAsset(container);
+    	try {
+			loadAsset(container);
+		} catch (SlickException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     	animationasset.addAnimation(spriteSheet, p1);
     	animationasset.loadBattlersAnimation(battlers, p1);
     	animationasset.loadEnemyAnimation(GameAsset);
@@ -189,7 +197,13 @@ public class WindowGame extends BasicGame {
                 }
                 
                 if("Dialogue".equals(map.getObjectType(0, objectID))){
-                	this.dialogue = GameAsset.searchText(this.map.getObjectProperty(0, objectID, "personne","undefined"));
+                	try {
+						this.dialogue = GameAsset.searchText(this.map.getObjectProperty(0, objectID, "personne","undefined"));
+					} catch (SlickException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
                 	this.textrender = true;
                 }
 
@@ -254,7 +268,6 @@ public class WindowGame extends BasicGame {
 	        case Input.KEY_ESCAPE: container.exit(); break;
 	        case Input.KEY_E: inventory.setOpen(!inventory.isOpen());break;
 	        case Input.KEY_A: sellGUI.setShopOpen(!sellGUI.isShopOpen()); sellGUI.setInfoBox("Hello what do you want ?");break;
-	        
 	        }
 
     	}
@@ -268,6 +281,12 @@ public class WindowGame extends BasicGame {
     		case Input.KEY_I: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
     		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen());break;
     		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;
+    		}
+    	}
+    	
+    	if(this.textrender) {
+    		switch (key) { //Commande bataille
+    			case Input.KEY_A: dialogue.setIndex(dialogue.getIndex()+1);  break; 
     		}
     	}
     }

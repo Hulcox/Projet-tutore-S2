@@ -2,6 +2,9 @@ package lesson1;
 
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.newdawn.slick.Color;
@@ -13,22 +16,48 @@ import org.newdawn.slick.SlickException;
 
 public class DialogueAsset {
 	private Image image;
-	private String Text;
+	private String Text = "";
 	private String personne;
 	private ArrayList<String> textcol;
-	public DialogueAsset(String Text, String personne) throws SlickException {
+	private int Index = 0;
+	public DialogueAsset (String personne) throws SlickException, IOException {
 		this.setTextcol(new ArrayList<String>());
 		this.image = new Image("texture/DialogueBox.png");
-		this.Text = Text;
 		this.personne = personne;
+		this.AssignText();
 	}
 	
 	public void render (GameContainer container, Graphics g) {
 		Font font = g.getFont();
 		g.resetTransform();
 		g.drawImage(image,236,380);
-		font.drawString( 246, 390,this.personne + " : " +this.Text,Color.white);
+		if (this.Index < this.textcol.size())
+			font.drawString( 246, 390,this.personne + " : " + this.textcol.get(this.Index),Color.white);
+		else 
+			this.Index = 0;
 		
+	}
+	private void AssignText() throws IOException {
+		BufferedReader in = new BufferedReader(new FileReader("Dialogue/"+this.personne+".txt"));
+		String line;
+		String phraseTemp = "";
+		int i = 0;
+		while ((line = in.readLine()) != null)
+		{
+			if (i < 1) {
+				phraseTemp = phraseTemp + line + "\n";
+				i++;
+			}
+			else {
+				phraseTemp = phraseTemp + line + "\n";
+				textcol.add(phraseTemp);
+				i = 0;
+				phraseTemp = "";
+				
+			}
+		}
+		in.close();
+	      
 	}
 
 	public String getText() {
@@ -53,6 +82,14 @@ public class DialogueAsset {
 
 	public void setTextcol(ArrayList<String> textcol) {
 		this.textcol = textcol;
+	}
+
+	public int getIndex() {
+		return Index;
+	}
+
+	public void setIndex(int index) {
+		Index = index;
 	}
 
 }

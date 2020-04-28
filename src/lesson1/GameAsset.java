@@ -1,5 +1,6 @@
 package lesson1;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.newdawn.slick.Image;
@@ -75,10 +76,10 @@ public class GameAsset {
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50);
 		
 	}
-	public void loadText() throws SlickException {
+	public void loadText() throws SlickException, IOException {
 		allTexts = new ArrayList<DialogueAsset>();
-		allTexts.add(new DialogueAsset("Hello warrior !\n I hope your doing well ","soldat"));
-		allTexts.add(new DialogueAsset("Save the princess", "King"));
+		allTexts.add(new DialogueAsset("soldat"));
+		allTexts.add(new DialogueAsset("King"));
 
 		
 	}
@@ -99,14 +100,14 @@ public class GameAsset {
 		return allTexts;
 	}
 	
-	public DialogueAsset searchText(String personne) throws SlickException {
+	public DialogueAsset searchText(String personne) throws SlickException, IOException {
 		for (DialogueAsset i : allTexts) {
 			if (i.getPersonne().contentEquals(personne)) {
 				return i;
 				
 			}
 		}
-		return new DialogueAsset("Probléme", "erreur");
+		return new DialogueAsset("erreur");
 	}
 
 
