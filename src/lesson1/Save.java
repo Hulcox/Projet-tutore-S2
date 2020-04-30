@@ -43,9 +43,10 @@ public class Save {
 	        }
 	        myWriter.write("\n");
 	        for (Objets i: this.player.getInventaire().getitemsgui().getItems()) {
-	        	myWriter.write( Integer.toString(i.getID())+ "|");
+	        	myWriter.write( Integer.toString(i.getID())+ "|"); //line 16
 	        }
-	        
+	        myWriter.write("\n");
+	        myWriter.write(this.player.getDirection() + "\n"); //line 17
 	        
 	        myWriter.close();
 	        System.out.println("Successfully saved the game");
@@ -80,6 +81,7 @@ public class Save {
 			case 14: this.gameasset.loadSpells(this.gameasset.loadIDS(line)); break;
 			case 15: this.gameasset.loadSpells(this.gameasset.loadIDS(line)); break;
 			case 16: this.gameasset.loadSpells(this.gameasset.loadIDS(line)); break;
+			case 17: this.player.setDirection(Integer.parseInt(line)); break;
 			
 			}
 			nbline++;
