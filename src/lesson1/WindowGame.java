@@ -154,7 +154,7 @@ public class WindowGame extends BasicGame {
 	        	RNG = (int) (Math.random()*100);
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
-	        	if (RNG < 2) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        	if (RNG < 10) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
 	        		itemsgui.setIsOpen(false);
