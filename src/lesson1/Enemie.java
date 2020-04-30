@@ -1,8 +1,7 @@
 package lesson1;
 
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
+
 
 public class Enemie {
 	private int pv;

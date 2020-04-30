@@ -5,11 +5,9 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class Battle {
-	private boolean turn = true;
 	private boolean damagetaken = false;
 	private int time = 0;
 	private Enemie enemie1;
@@ -36,6 +34,7 @@ public class Battle {
 		this.imgBackground = imgBackground;
 	}
 	public void DrawBattle(Graphics g, Player player, Map map, Camera camera, int i,EventObject singleFireEvent) throws SlickException{
+		g.resetTransform();
 		this.index = i;
 		font = g.getFont();
 		String playerPv = Integer.toString(player.getPv());
@@ -43,8 +42,6 @@ public class Battle {
 		String playerMana = Integer.toString(player.getMana());
 		String playerMaxMana = Integer.toString(player.getMaxMana());
 		String EnemiePv = Integer.toString(player.getMap().getArrayList().get(i).getPv());
-		camera.setxCam(0);
-		camera.setyCam(0);
 		g.drawImage(player.getMap().getBattleImg(),0,0);
 		if(singleFireEvent.isReady() && player.getAnimstate() >= 1) {
 			if (player.getAnimstate() == 2 && EnemyAttack) {
@@ -59,7 +56,7 @@ public class Battle {
 		font.drawString(0,30 , "Pv : " + playerPv + "/"+playerMaxPv, Color.green);	
 	}
 	public void TurnAnimation (Graphics g, Player player, int i) throws SlickException {
-		
+		g.resetTransform();
 		if (time > 1) {   //ENEMY TURN
 			this.damagetaken = false;
 			if (player.getMap().getArrayList().get(i).getPv() <= 0) { //Battle win

@@ -13,7 +13,6 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
-import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.tiled.TiledMap;
 
@@ -39,6 +38,7 @@ public class WindowGame extends BasicGame {
 	SpellGUI spellgui;
 	ItemsGUI itemsgui;
 	DialogueAsset dialogue;
+	StartScreen menu;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
@@ -49,6 +49,8 @@ public class WindowGame extends BasicGame {
     	GameAsset.loadEnemie();
     	GameAsset.loadMap();
     	GameAsset.loadText();
+    	menu = new StartScreen();
+    	this.menu.init(container);
     	input = container.getInput();
     	camera = new Camera();
     	p1 = new Player(70,999);
@@ -60,7 +62,7 @@ public class WindowGame extends BasicGame {
     	p1.setPlayerArmor(GameAsset.copperArmor);
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
-    	inventory = new Inventaire(p1, GameAsset.InventoryBackground, camera);
+    	inventory = new Inventaire(p1, GameAsset.InventoryBackground);
     	p1.setInventaire(inventory);
     	inventory.setOpen(false); //Inventaire initialisation
     	inventory.AddObjet(GameAsset.metalscrap);
@@ -123,7 +125,10 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-		if  (battle.isInBattle()) {	 //Boucle de la bataille
+		if (!this.menu.isGameStart()) {
+			this.menu.render(container, g);
+		}
+		else if  (battle.isInBattle()) {	 //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
     			this.hud.render(container, g);
     			if (spellgui.isIsOpen()) {
@@ -158,8 +163,7 @@ public class WindowGame extends BasicGame {
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
 	        		itemsgui.setIsOpen(false);
-	        		camera.setPrevXcam(camera.getxCam());
-	        		camera.setPrevYcam(camera.getyCam());
+
 	        	}
 	        }
 		}
@@ -275,7 +279,7 @@ public class WindowGame extends BasicGame {
  
     	else {
     		switch (key) { //Commande bataille
-    		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
+    		case Input.KEY_F: battle.setInBattle(false);  break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
     		case Input.KEY_E: battle.setNext(true); break;
     		case Input.KEY_I: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
