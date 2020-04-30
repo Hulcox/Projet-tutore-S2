@@ -56,6 +56,7 @@ public class WindowGame extends BasicGame {
     	camera = new Camera();
     	p1 = new Player(70,999);
     	IngameHUD = new InGameHUD(p1);
+    	GameAsset.setPlayer(p1);
     	this.menu.init(container);
     	this.IngameHUD.init(container);
     	this.map = GameAsset.map1.getMap();
@@ -100,6 +101,7 @@ public class WindowGame extends BasicGame {
     	p1.setCamera(camera);
     	IngameHUD.getSave().setGameasset(GameAsset);
     	menu.setSave(IngameHUD.getSave());
+    	
     }
 
     

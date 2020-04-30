@@ -6,12 +6,18 @@ public abstract class Objets {
 	protected boolean loot;
 	protected int number = 1;
 	protected String type;
-	public Objets (int prix, String nom, boolean loot) {
+	protected int ID;
+	public Objets (int prix, String nom, boolean loot, int ID) {
 		this.prix = prix;
 		this.nom = nom;
 		this.loot = loot;
+		this.ID = ID;
 	}
 	
+	
+	public int getID() {
+		return this.ID;
+	}
 	public int getPrix() {
 		return prix;
 	}

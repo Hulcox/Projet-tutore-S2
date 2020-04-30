@@ -52,7 +52,7 @@ public class StartScreen implements ComponentListener{
 		if (source == continueGame) {
 			try {
 				save.LoadData();
-			} catch (IOException e) {
+			} catch (IOException | SlickException e) {
 				e.printStackTrace();
 			}
 			this.GameStart  = true;

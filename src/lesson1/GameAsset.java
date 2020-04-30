@@ -17,8 +17,10 @@ public class GameAsset {
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
+	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
+	private ArrayList<Objets> allAsset;
 	public void loadImage() throws SlickException{
 		battle1 = new Image("texture/battle_ground.png");
 		battleGrotte = new Image("texture/battle_groundGrotte1.png");
@@ -46,34 +48,35 @@ public class GameAsset {
 	}
 	
 	public void loadObject() {
+		allAsset = new ArrayList<Objets>();
 		//Epée
-		copperSword = new Epée(100, "Copper sword", false, 10);
-		ironSword = new Epée(300, "Iron sword", false, 20);
-		diamondSword = new Epée(1000, "Diamond sword", false, 40);
-		GodGun = new Epée(9999,"Gun",false,9999);
+		copperSword = new Epée(100, "Copper sword", false, 10,1); allAsset.add(copperSword);
+		ironSword = new Epée(300, "Iron sword", false, 20,2); allAsset.add(ironSword);
+		diamondSword = new Epée(1000, "Diamond sword", false, 40,3); allAsset.add(diamondSword);
+		GodGun = new Epée(9999,"Gun",false,9999,4); allAsset.add(GodGun);
 		//Armure
-		copperArmor = new Armure(150, "Copper armor", false, 10);
-		ironArmor = new Armure(400, "Iron armor", false, 15);
-		diamondArmor = new Armure(1500, "Diamond armor", false, 30);
+		copperArmor = new Armure(150, "Copper armor", false, 10,5); allAsset.add(copperArmor);
+		ironArmor = new Armure(400, "Iron armor", false, 15,6); allAsset.add(ironArmor);
+		diamondArmor = new Armure(199, "Diamond armor", false, 30,7); allAsset.add(diamondArmor);
 		//Loot de mob
-		metalscrap = new MonsterDrop(50,"Metal scrap", true);
-		gobelinMeat = new MonsterDrop(25, "Gobelin meat", true);
-		gobelinSpear = new MonsterDrop(25,"Gobelin spear", true);
-		Poncho = new MonsterDrop(25,"Poncho", true);
+		metalscrap = new MonsterDrop(50,"Metal scrap", true,8); allAsset.add(metalscrap);
+		gobelinMeat = new MonsterDrop(25, "Gobelin meat", true,9); allAsset.add(gobelinMeat);
+		gobelinSpear = new MonsterDrop(25,"Gobelin spear", true,10); allAsset.add(gobelinSpear);
+		Poncho = new MonsterDrop(25,"Poncho", true,11); allAsset.add(Poncho);
 		//Potions
-		potion = new Potions(20,"potion",false,20);
-		superPotion = new Potions(40,"Super potion", false, 40);
-		Hypotion = new Potions(80,"potion X", false, 80);
+		potion = new Potions(20,"potion",false,20,12); allAsset.add(potion);
+		superPotion = new Potions(40,"Super potion", false, 40,13); allAsset.add(superPotion);
+		Hypotion = new Potions(80,"potion X", false, 80,14); allAsset.add(Hypotion);
 		//Key object
-		debug = new KeyItem(1,"Item(s)",false);
+		debug = new KeyItem(1,"Item(s)",false,15); allAsset.add(debug);
 		//Spells
-		boosterI = new Booster(200,"booster I",false,true,2,10);
-		fireI = new DamageSpell(200,"Fire I",false,false,20,5);
-		fireII = new DamageSpell(400,"Fire II",false,false,40,10);
-		fireIII = new DamageSpell(800,"Fire III",false,false,80,20);
-		Ultima = new DamageSpell(800,"Ultima",false,false,160,40);
-		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45);
-		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50);
+		boosterI = new Booster(200,"booster I",false,true,2,10,16); allAsset.add(boosterI);
+		fireI = new DamageSpell(200,"Fire I",false,false,20,5,17); allAsset.add(fireI);
+		fireII = new DamageSpell(400,"Fire II",false,false,40,10,18); allAsset.add(fireII);
+		fireIII = new DamageSpell(800,"Fire III",false,false,80,20,19); allAsset.add(fireIII);
+		Ultima = new DamageSpell(800,"Ultima",false,false,160,40,20); allAsset.add(Ultima);
+		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
+		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
 		
 	}
 	public void loadText() throws SlickException, IOException {
@@ -83,10 +86,53 @@ public class GameAsset {
 
 		
 	}
+	public void loadWeapons(int ID) throws SlickException {
+		for (Objets j : allAsset) {
+			if(j.getID() == ID) {
+				this.player.getInventaire().AddObjet(j);
+			}
+			
+		}
+	}
+	public ArrayList<Integer> loadIDS(String IDString) {
+		ArrayList<Integer> ID = new ArrayList<Integer>();
+		String IDstr = "";
+		for (int i = 0; i < IDString.length(); i++) {
+			if(IDString.charAt(i) == '|') {
+				ID.add(Integer.parseInt(IDstr));
+				IDstr = "";
+			}
+			else {
+				IDstr += IDString.charAt(i);
+			}
+		}
+		return ID;
+	}
+	public void reset() {
+		ArrayList<Objets> tempObj = new ArrayList<Objets>();
+		this.player.getInventaire().getSpellgui().reset();
+		this.player.getInventaire().setInventoryList(tempObj);
+		this.player.getInventaire().getitemsgui().reset();
+		for (Objets o : allAsset) {
+			o.setNumber(1);
+		}
+	}
+	
+	public void loadSpells(ArrayList<Integer> ID) throws SlickException { //Changement de l'inventaire avec l'inventaire sauvegarder
+
+		for (int i : ID) {
+			for (Objets j : allAsset) {
+				if(j.getID() == i) {
+					this.player.getInventaire().AddObjet(j);
+				}
+				
+			}
+		}
+	}
+	
 	public Map searchMap(String name) {
 		for(Map i : allMaps) {
 			if(i.getName().equals(name)) {
-				System.out.println("found : "  + i.getName());
 				return i;	
 			}
 		}
@@ -109,6 +155,22 @@ public class GameAsset {
 			}
 		}
 		return new DialogueAsset("erreur");
+	}
+
+	public ArrayList<Objets> getAllAsset() {
+		return allAsset;
+	}
+
+	public void setAllAsset(ArrayList<Objets> allAsset) {
+		this.allAsset = allAsset;
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
 	}
 
 

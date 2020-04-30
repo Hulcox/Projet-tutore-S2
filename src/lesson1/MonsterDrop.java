@@ -3,8 +3,8 @@ package lesson1;
 public class MonsterDrop extends Objets implements lootable {
 	
 	
-	public MonsterDrop(int prix, String nom, boolean loot) {
-		super(prix, nom, loot);
+	public MonsterDrop(int prix, String nom, boolean loot, int ID) {
+		super(prix, nom, loot, ID);
 		this.type = "MonsterDrop";
 
 	}
