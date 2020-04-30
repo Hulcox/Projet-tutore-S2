@@ -6,17 +6,17 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/sbred/git/Projet-tutore-S2/lib/jinput.jar">
+	<classpathentry kind="lib" path="C:/Users/Elias/git/Projet-tutore-S2/lib/jinput.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/sbred/git/Projet-tutore-S2/lib/lwjgl.jar">
+	<classpathentry kind="lib" path="C:/Users/Elias/git/Projet-tutore-S2/lib/lwjgl.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/sbred/git/Projet-tutore-S2/lib/slick.jar">
+	<classpathentry kind="lib" path="C:/Users/Elias/git/Projet-tutore-S2/lib/slick.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
