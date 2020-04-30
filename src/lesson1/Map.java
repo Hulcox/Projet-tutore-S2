@@ -15,6 +15,9 @@ public class Map {
 	public TiledMap getMap() {
 		return map;
 	}
+	public void setTildeMap(TiledMap tiled) {
+		this.map = tiled;
+	}
 	public Map(String map, boolean IsEncounter, Image battleImg, String name) throws SlickException{
 		this.map = new TiledMap("map/" + map);
 		this.IsEncounter = IsEncounter;

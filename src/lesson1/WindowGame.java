@@ -51,12 +51,13 @@ public class WindowGame extends BasicGame {
     	GameAsset.loadMap();
     	GameAsset.loadText();
     	menu = new StartScreen();
-    	IngameHUD = new InGameHUD();
-    	this.menu.init(container);
-    	this.IngameHUD.init(container);
+
     	input = container.getInput();
     	camera = new Camera();
     	p1 = new Player(70,999);
+    	IngameHUD = new InGameHUD(p1);
+    	this.menu.init(container);
+    	this.IngameHUD.init(container);
     	this.map = GameAsset.map1.getMap();
     	p1.setMap(GameAsset.map1);
     	animationasset = new AnimationsAsset();
@@ -96,7 +97,9 @@ public class WindowGame extends BasicGame {
     	itemsgui.AddMouseOverArea(GameAsset.superPotion);
     	itemsgui.AddMouseOverArea(GameAsset.superPotion);
     	itemsgui.AddMouseOverArea(GameAsset.superPotion);
-
+    	p1.setCamera(camera);
+    	IngameHUD.getSave().setGameasset(GameAsset);
+    	menu.setSave(IngameHUD.getSave());
     }
 
     
@@ -128,6 +131,7 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
+		this.map = this.p1.getMap().getMap();
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
 		}

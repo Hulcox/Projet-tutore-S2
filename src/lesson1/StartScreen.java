@@ -1,5 +1,7 @@
 package lesson1;
 
+import java.io.IOException;
+
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -16,7 +18,7 @@ public class StartScreen implements ComponentListener{
 	private MouseOverArea continueGame;
 	private static final int Y_PADDING = 3; 
 	private static final int X_PADDING = 13;
-
+	private Save save;
 	
    public void init(GameContainer container) throws SlickException {
 	   	  Image buttonImage = new Image("texture/buttons.png");
@@ -47,7 +49,21 @@ public class StartScreen implements ComponentListener{
 		if(source == newGame) {
 			this.GameStart = true;
 		}
+		if (source == continueGame) {
+			try {
+				save.LoadData();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.GameStart  = true;
+		}
 		
+	}
+	public Save getSave() {
+		return save;
+	}
+	public void setSave(Save save) {
+		this.save = save;
 	}
 
 }

@@ -86,6 +86,7 @@ public class GameAsset {
 	public Map searchMap(String name) {
 		for(Map i : allMaps) {
 			if(i.getName().equals(name)) {
+				System.out.println("found : "  + i.getName());
 				return i;	
 			}
 		}
