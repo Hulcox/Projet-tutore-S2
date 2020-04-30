@@ -39,6 +39,7 @@ public class WindowGame extends BasicGame {
 	ItemsGUI itemsgui;
 	DialogueAsset dialogue;
 	StartScreen menu;
+	InGameHUD IngameHUD;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
@@ -50,7 +51,9 @@ public class WindowGame extends BasicGame {
     	GameAsset.loadMap();
     	GameAsset.loadText();
     	menu = new StartScreen();
+    	IngameHUD = new InGameHUD();
     	this.menu.init(container);
+    	this.IngameHUD.init(container);
     	input = container.getInput();
     	camera = new Camera();
     	p1 = new Player(70,999);
@@ -145,6 +148,7 @@ public class WindowGame extends BasicGame {
 		    this.map.render(0, 0, 1);
 	    	this.map.render(0, 0, 2);
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
+	    	this.IngameHUD.render(container, g);
 	    	if (sellGUI.isPlayerOverArea()){
 	    		this.sellGUI.render(container, g);
 	    	}
