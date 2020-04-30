@@ -74,7 +74,7 @@ public class WindowGame extends BasicGame {
     	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinSpear);
     	inventory.AddObjet(GameAsset.Poncho);
-    	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory);
+    	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory); //initialisations des vendables
     	sellGUI.AddTrade(GameAsset.copperArmor, container);
     	sellGUI.AddTrade(GameAsset.diamondArmor, container);
     	sellGUI.AddTrade(GameAsset.potion, container);
