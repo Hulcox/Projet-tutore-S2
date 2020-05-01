@@ -17,10 +17,12 @@ public class GameAsset {
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
+	Chest chest1;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
 	private ArrayList<Objets> allAsset;
+	private ArrayList<Chest> allChest;
 	public void loadImage() throws SlickException{
 		battle1 = new Image("texture/battle_ground.png");
 		battleGrotte = new Image("texture/battle_groundGrotte1.png");
@@ -53,6 +55,7 @@ public class GameAsset {
 	}
 	
 	public void loadObject() {
+		allChest = new ArrayList<Chest>();
 		allAsset = new ArrayList<Objets>();
 		//Epée
 		copperSword = new Epée(100, "Copper sword", false, 10,1); allAsset.add(copperSword);
@@ -82,7 +85,8 @@ public class GameAsset {
 		Ultima = new DamageSpell(800,"Ultima",false,false,160,40,20); allAsset.add(Ultima);
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
-		
+		//Chest
+		chest1 = new Chest(1,this.potion); allChest.add(chest1);
 	}
 	public void loadText() throws SlickException, IOException {
 		allTexts = new ArrayList<DialogueAsset>();
@@ -177,6 +181,14 @@ public class GameAsset {
 
 	public void setPlayer(Player player) {
 		this.player = player;
+	}
+
+	public ArrayList<Chest> getAllChest() {
+		return allChest;
+	}
+
+	public void setAllChest(ArrayList<Chest> allChest) {
+		this.allChest = allChest;
 	}
 
 
