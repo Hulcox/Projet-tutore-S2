@@ -9,7 +9,7 @@ import org.newdawn.slick.SlickException;
 public class GameAsset {
 	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop;
 	Enemie knight, gobelin;
-	Map map1, grotte1, Village;
+	Map map1, grotte1, Village, EtagedeDonjon, Dj_RDC_sg, Dj_ET1_escalier;
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
@@ -40,10 +40,15 @@ public class GameAsset {
 		map1 = new Map("MainMap.tmx", true,battle1, "map1");
 		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1");
 		Village = new Map ("Village.tmx", false, battle1, "Village");
+		EtagedeDonjon = new Map ("EtagedeDonjon.tmx", false, battle1, "EtagedeDonjon"); 
+		Dj_RDC_sg = new Map ("Dj_RDC_sg.tmx", false, battle1, "Dj_RDC_sg");
+		Dj_ET1_escalier = new Map ("Dj_ET1_escalier.tmx", true, battle1, "Dj_ET1_escalier");
 		map1.addEncounrers(knight);
 		grotte1.addEncounrers(gobelin);
+		Dj_ET1_escalier.addEncounrers(gobelin);
 		allMaps = new ArrayList<Map>();
-		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village);
+		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village); allMaps.add(EtagedeDonjon); allMaps.add(Dj_RDC_sg);
+		allMaps.add(Dj_ET1_escalier);
 		
 	}
 	
@@ -83,6 +88,7 @@ public class GameAsset {
 		allTexts = new ArrayList<DialogueAsset>();
 		allTexts.add(new DialogueAsset("soldat"));
 		allTexts.add(new DialogueAsset("King"));
+		allTexts.add(new DialogueAsset("Quete peau de gobelin"));
 
 		
 	}

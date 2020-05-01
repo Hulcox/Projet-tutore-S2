@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.4" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="10">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="10">
  <tileset firstgid="1" source="Herbe.tsx"/>
  <tileset firstgid="19" source="BatArbre.tsx"/>
  <tileset firstgid="37" source="HautArbre.tsx"/>
  <tileset firstgid="79" source="TerrainMontagne.tsx"/>
  <tileset firstgid="187" source="logicSolid.tsx"/>
  <tileset firstgid="212" source="Pnj.tsx"/>
+ <tileset firstgid="308" source="Terrain final.tsx"/>
+ <tileset firstgid="443" source="House.tsx"/>
+ <tileset firstgid="520" source="Paysage_V2.tsx"/>
  <layer id="1" name="Calque 1" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3aoRUAIAhAQTpTuv8S6gASeT69YNEk/yIZEemYAQMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAww8ZGCsv5yOPYn+XZFTi32vR/8M9OifeeVcDz0qH97u8qGHHgwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwMBfBibJh58GQJwAAA==
+   H4sIAAAAAAAECu3YQQrCMBBA0eiq4Mm8hofxIJ7UjiKEwtTdNCVvEZButPNfYulybW2xzIABBhhggAEGGGCAAQYYYIABBhhggIGPgVvzvsz7wnMaCLv8jtPu10OTMZpkPfQZo4//nXN16PdT9lnTuqbR4HH5PgP0PZ7dNT1qe7zW2e8tPWp73Nce2Yo9o0fdDGLeWYu4rkX9DPZ62B+1Pf7tDz30mPmMDP/ZmnkuR937tsVRv8P31p6L5m3eDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADDDDAAAMMMMAAAwwwwAADsxt4A05mDc5AnAAA
   </data>
  </layer>
  <layer id="2" name="Calque 2" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3Yt07EQBSFYd4BKIACeCdSaUJJKkklUJFpyDRkBAXx9Th32ZEuY3uNtGtLu/uPdPAEr8M3yGO5p4eCAAIItJdAry63T+lX8up2R34sq219VuL98vpqO/MnJTCgnkFlSMmr24/8WFbb+qzE++X11XbmT0pgWD0jyqiSV9fQn7GstvVZ8cf47cnuC2NsEUAAAQQ6T+C1826pbe/I5qJV8zGmY41HmWhbmfa88Bd32Ynq01Fm3DjVcgX8XNiZEoX5MInikvUsacWzxc/Jni5jXzlQDpUj5VihpAUSdcX/u3G72WfLmc5xrlwol8qVcq1Q0gLz6lpw2VF917VtbFFpZm2/0+/vlQflUXlSnhVKWmBFXasuJ6qfuraNrSnNzMebfv+ufCifypfyrVDSApvq2nK5Uf3WtW1sWwnlP+uNrT+8zwaxcreJDh+vL1ntZteccu+ic44e5mNOtxTWHb/mzKrf5of5EEIFJdE5zHtZCeuOX3OW6uPMhyAqKInOYfOxoYR1x6856/Vx5kMQFZRE52j0PCoar+ASu+oURd5F412FVcHNFnkXjVdwiV11iuA9pbuOv3NZe1Jp9DzTMKWFAvH3lfDOG2/tGwulfIH4+0p454239o2FUr5A/H0lvPPGW/+Npfyr4gwIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIdKbAD3UN6/NAnAAA
+   H4sIAAAAAAAECu3XPVMTURTG8WhFLxZAgXwMFAuoAC3Fl6EJKdCCihleShgUOhJhxkI06QBhsDCoX4/nhD0z130ZQrK7M4n/O/Nk7z27m938TiYLlQoDAQQQGCyBR7rdUeWxkjW3TxTuS1tbzUb8uKxa52BeEgJjqowrE0rW3E4K96WtrWYjflxWrXMwLwmBSVWeKFNK1ly7/tmXtraajfA9bivpNd/HFgEEEEBg+AR+Dt9HGthPZL3Iqx+v9F5LsbweWJnBvPGr4Larmq/EUgv2My1WIOyFXamq0A+TuHuk/Zbk8dsS9uRQt1FXGspn5Ug5VhhJgapK8e9ufL34IHnefSpfdfCJ8k35rjSVlsJICqyptCdvz47mu8Ha6gdKP8/2U13jTDlXfigXyqXCSApsq1STt6eueSNYW/2L0k8/fukabeVa+a38Uf4qjKTAR5Xa8vY0NW8Fa6uvKz6mNX/aRZ4F5/i5bPMXmJfzQhfp95mT/50P5zt6P16qJ/Fnzr5qL6Je0Y9y+u/9WJb7+yj+zLH1HP0opxHRVbwfs3L/pJrFnzk2px8RVEmbsB9pl6QfaSrF1ehHcba9vDP96EWtuHO8H8/1/AiH/08yw/M8ZCl8/kbeb6OMPKxUPF7z7btYvwq/sf/0Aqty9r9zvRe29ZpvP9CPUr4hG3LejBJe0Gu+3aIfIQ9zBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBHoSuAGfA2SZQJwAAA==
   </data>
  </layer>
  <layer id="3" name="Calque 3" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3Ru05VURAGYF5GLcRCKcACKISaIJfGiEJDuDYEUBtCAlTQQy89L0Pi4/CvbnKyTzgUOyD5dvInM7PW3nP4GBvzvESBN/lRb5N3ybC6/e561vrJZCr53JrydM27ZuUVZRF4n3o8+ZAMq9v1etb66WQmmW1NebrmXbPyirIIfEz9KZlIhtXtej1r/ZdkLplvTXm65l2z8oqSwKsSuB/xr/k34j3XCBAgQIAAAQIEni5wV16pdRkrn0nA/+OZ4K0lQIAAAQI9CXzNd5cGvr2cfiVZHZhr+xdYy4ofA2t+pl9PNgbm2n4FFvL57WQnWSyrdlPvJftlpuxf4FtWHCXHyfey7lfq38mfMlP2L7CZFZfJVbJV1p2lPk8uykzZv8BBVlwnN8lh/+tseETgJOd/k9vk9JG7jgkQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAwP8o8ABXz0bVQJwAAA==
+   H4sIAAAAAAAECu3RMW7CQBAFUC4TUgQKkiJQAAVwXy6DlOPkTzfFWjKVEXorfWlmdle2n1cr6xUFPvJS6+Qzmarrvfte9b/JPjlU09ZoPpq1K8om8JV6k2yTqbqO973qj8kpOVfT1mg+mrUryiawS/2d/CRTdR3ve9Vfkmtyq6at0Xw0a1eUBN5K4DHza/5mnnOMAAECBAgQIEDgeYF7u9LrNlYuJOB/LATvsQQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAYGGBf2sLLhVAnAAA
   </data>
  </layer>
  <layer id="4" name="Logic" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3Yy27TQBTG8TxkLyzTy7KC8iK9wK4tsKMUdkDLglLcVlzE5Z34TumJTkb2jBMncQT/kT55nBnPRL+TxEkGAxoCCCCAAALdBD6Gy5v6NiWO1Z37Mum83Fy/huP8BerqMv9d2QEBBBBAAAEE5iHwRYteJ/k6j41Ys1Egfre60ax4bv3bxisZmLVAtLe1rR6xUY+oMd6v+yyZxWdLrAnvj3Hz3JlbmV9Tun622B6flCvls3KpdF1TS/yTbRH1MDirhdfbakKrF0jr4bPczo6zeC1XWidGp7QagR96rArxKfGxn/6gjm3uN3b/6fJ99puur5TvCi0vkL6f4vso9id9T8X53re9aHkBr4fdn6ua2L16ms+4aE89hNiyeT3cLL2sNJ7O93Pq4RKTHUvepfGm3WI9fmmS3YN+N03m8ZFAybs0Ploo6cR6JEOcZgRK3qXxzNIMTSFQ8i6NT7Ell2QE3Nt+Y6f/c9m5/w5vut9nlh5saDBmMzeZsTsBr0f8rVHXpx6LecFQj8U4t90l/X+l0oV1if+xtFl7R5P2lS1l+77/UEdavwKPtP2u8rjfp/Hf774igVVlXXlw31/TkdaPwFDbxu9W1uf7VT+1sF2HCvUwieVoQz0N6rEctbBnsafY96sD5VB5ojxVaP0IHGnbY+VEeaY8V14otH4EXmrbU+WVcqa8Vt4otH4E3mrbd8p75Vy5UD4oNAQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAgb8CfwApRME0QJwAAA==
+   H4sIAAAAAAAECu3YS26DMBAA0Nz/Sv2RVu2ivVTtxUgTBJla4C6iZ8nCYDNW3gQMXC4KAQIECBA4JvCUTt9r9yG5b2s/wqzH3Rsb59jOF9jKy/xZzUCAAAECBAjMEPhsQa+r+jVjIjF3BfKz1Xsblfd7+2P3TB1nC2T7HrvnIxf5yBq37a17yRn3lpwT18et+b29sOp+e/XovaXP8dLqa6tvrT63ejRmC/GQ5T/y0eF6LiLfPSfKtsA6HzEq7Pr2jP/y0uLk2naVDYHvdmxJNYbkYz9xsG3/st709cfzbEKb2FxfT/k6yu0zrqmJP+NhQkc++vq8bNS+Vp91j2uhlEIg8rH3/6/6i/C6BwUq76p/cDrDC4HKu+ovwuseFKi8q/7B6QwvBCrvqr8Ir3tQILzzO3b+3hXv4Xvr/eB0hhcCkY/+TBslv3dEWz5CZ+5WPub6jkbP31fi3KU11jV/Y4lxtgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgMCYwC8vV/6eQJwAAA==
   </data>
  </layer>
  <objectgroup id="5" name="Transition" width="100" height="100">
@@ -34,10 +37,11 @@
     <property name="dety" type="int" value="864"/>
    </properties>
   </object>
-  <object id="2" name="transition_2" type="transition" x="614" y="629" width="60" height="55">
+  <object id="2" name="transition_2" type="changement" x="614" y="629" width="60" height="55">
    <properties>
-    <property name="detx" type="int" value="223"/>
-    <property name="dety" type="int" value="607"/>
+    <property name="detmap" value="EtagedeDonjon"/>
+    <property name="detx" type="int" value="177"/>
+    <property name="dety" type="int" value="842"/>
    </properties>
   </object>
   <object id="7" name="Cid" type="vendeur" x="769" y="144" width="92" height="78"/>
