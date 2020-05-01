@@ -3,6 +3,7 @@ package lesson1;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
@@ -40,11 +41,14 @@ public class WindowGame extends BasicGame {
 	DialogueAsset dialogue;
 	StartScreen menu;
 	InGameHUD IngameHUD;
+	Graphics g;
+	private ArrayList<Integer> ID;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
     
     public void loadAsset(GameContainer container) throws SlickException, IOException {
+    	this.ID = new ArrayList<Integer>();
     	GameAsset.loadImage();
     	GameAsset.loadObject();
     	GameAsset.loadEnemie();
@@ -61,6 +65,7 @@ public class WindowGame extends BasicGame {
     	this.IngameHUD.init(container);
     	this.map = GameAsset.map1.getMap();
     	p1.setMap(GameAsset.map1);
+    	this.MapLoading(GameAsset.map1.getMap());
     	animationasset = new AnimationsAsset();
     	battle = new Battle(p1);
     	p1.setImage(GameAsset.hero);
@@ -154,6 +159,16 @@ public class WindowGame extends BasicGame {
 		    this.map.render(0, 0, 1);
 	    	this.map.render(0, 0, 2);
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
+	    	if(this.ID.size() > 1) {
+		    	for (int i = 0; i < this.ID.size()-2; i++) {
+		    		for (Chest c : GameAsset.getAllChest()) {
+		    			if(c.getID() == this.ID.get(i)) {
+		    				c.render(container, g, this.ID.get(i+1), this.ID.get(i+2));
+		    			}
+		    		}
+
+		    	}
+	    	}
 	    	this.IngameHUD.render(container, g);
 	    	if (sellGUI.isPlayerOverArea()){
 	    		this.sellGUI.render(container, g);
@@ -176,9 +191,21 @@ public class WindowGame extends BasicGame {
 
 	        	}
 	        }
+
 		}
     	
     }
+	
+	public void MapLoading(TiledMap map) {
+		this.ID = new ArrayList<Integer>();
+		for (int objectID = 0; objectID < map.getObjectCount(0); objectID++) {
+			if ("Chest".equals(map.getObjectType(0, objectID))) {
+				this.ID.add(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID", "undefined")));
+				this.ID.add(map.getObjectX(0, objectID));
+				this.ID.add(map.getObjectY(0, objectID));
+			}
+		}
+	}
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
@@ -207,6 +234,7 @@ public class WindowGame extends BasicGame {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
+                	this.MapLoading(this.map);
                 	
                 }
                 
@@ -220,12 +248,18 @@ public class WindowGame extends BasicGame {
 					}
                 	this.textrender = true;
                 }
+                if ("Chest".equals(map.getObjectType(0, objectID))){
+                	
+                }
 
 
             }
             else {
             	this.textrender  = false;
             }
+            
+
+            
  
 
  

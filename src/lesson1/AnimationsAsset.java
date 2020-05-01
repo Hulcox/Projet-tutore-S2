@@ -40,6 +40,7 @@ public class AnimationsAsset {
     	SpriteSheet spriteSheetUltima = new SpriteSheet("texture/Ultima.png",186,315);
     	SpriteSheet spriteSheetMaelStrom = new SpriteSheet("texture/Maelstrom.png",130,128);
     	SpriteSheet spriteSheetMegaStorm = new SpriteSheet("texture/MegaStorm.png",140,176);
+    	SpriteSheet spriteSheetChest = new SpriteSheet("texture/Chest.png",32,32);
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
     	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
     	this.setSpellAnimation(spriteSheetBooster, 10, imageasset.boosterI);
@@ -49,6 +50,7 @@ public class AnimationsAsset {
     	this.setSpellAnimation(spriteSheetUltima, 4, imageasset.Ultima);
     	this.setSpellAnimation(spriteSheetMaelStrom, 5, imageasset.MaelStrom);
     	this.setSpellAnimation(spriteSheetMegaStorm, 8, imageasset.MegaStorm);
+    	this.setChestAnimation(spriteSheetChest, 12, imageasset.chest1);
     }
     public void setEnemyAnimation(SpriteSheet spriteSheet, int numberOfFrame, Enemie enemie) {
     	Animation animations[] = new Animation[2];
@@ -62,5 +64,12 @@ public class AnimationsAsset {
         animations[0] = loadAnimation(spriteSheet, 1, numberOfFrame, 0);
     	spell.setAnimation(animations);
     }
+    public void setChestAnimation(SpriteSheet spriteSheet, int numberOfFrame, Chest chest) {
+    	Animation animations[] = new Animation[2];
+        animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
+        animations[1] = loadAnimation(spriteSheet, 1, numberOfFrame, 0);
+        chest.setAnimations(animations);
+    }
+
 
 }
