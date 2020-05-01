@@ -2,8 +2,6 @@ package lesson1;
 
 
 
-import java.io.IOException;
-
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.Color;
@@ -13,6 +11,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
+import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.tiled.TiledMap;
 
@@ -20,9 +19,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	private boolean textrender = false;
-	Inventaire inventory;
-	GameAsset GameAsset = new GameAsset();
+	ImageAsset imageasset = new ImageAsset();
 	Texture text;
 	Input input;
 	TiledMap map;
@@ -34,66 +31,23 @@ public class WindowGame extends BasicGame {
 	Battle battle;
 	EventObject singleFireEvent;
 	BattleHUD hud;
-	SellingGUI sellGUI;
-	SpellGUI spellgui;
-	ItemsGUI itemsgui;
-	DialogueAsset dialogue;
-	StartScreen menu;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
     
-    public void loadAsset(GameContainer container) throws SlickException, IOException {
-    	GameAsset.loadImage();
-    	GameAsset.loadObject();
-    	GameAsset.loadEnemie();
-    	GameAsset.loadMap();
-    	GameAsset.loadText();
-    	menu = new StartScreen();
-    	this.menu.init(container);
+    public void loadText(GameContainer container) throws SlickException {
+    	imageasset.loadImage();
+    	imageasset.loadEnemie();
+    	imageasset.loadMap();
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player(70,999);
-    	this.map = GameAsset.map1.getMap();
-    	p1.setMap(GameAsset.map1);
+    	p1 = new Player();
+    	this.map = imageasset.map1.getMap();
+    	p1.setMap(imageasset.map1);
     	animationasset = new AnimationsAsset();
     	battle = new Battle(p1);
-    	p1.setImage(GameAsset.hero);
-    	p1.setPlayerArmor(GameAsset.copperArmor);
-    	p1.setPlayerSword(GameAsset.copperSword);
+    	p1.setImage(imageasset.hero);
     	hud = new BattleHUD(p1,camera,battle);
-    	inventory = new Inventaire(p1, GameAsset.InventoryBackground);
-    	p1.setInventaire(inventory);
-    	inventory.setOpen(false); //Inventaire initialisation
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.gobelinMeat);
-    	inventory.AddObjet(GameAsset.gobelinMeat);
-    	inventory.AddObjet(GameAsset.gobelinSpear);
-    	inventory.AddObjet(GameAsset.Poncho);
-    	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory);
-    	sellGUI.AddTrade(GameAsset.copperArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.potion, container);
-    	sellGUI.AddTrade(GameAsset.superPotion, container);
-    	sellGUI.AddTrade(GameAsset.Hypotion, container);
-    	spellgui = new SpellGUI(container, inventory);
-    	spellgui.AddMouseOverArea(GameAsset.boosterI);
-    	spellgui.AddMouseOverArea(GameAsset.fireI);
-    	spellgui.AddMouseOverArea(GameAsset.fireII);
-    	spellgui.AddMouseOverArea(GameAsset.fireIII);
-    	spellgui.AddMouseOverArea(GameAsset.Ultima);
-    	spellgui.AddMouseOverArea(GameAsset.MaelStrom);
-    	spellgui.AddMouseOverArea(GameAsset.MegaStorm);
-    	itemsgui = new ItemsGUI(container, inventory);
-    	inventory.setitemsgui(itemsgui);
-    	inventory.setSpellgui(spellgui);
-    	itemsgui.AddMouseOverArea(GameAsset.Hypotion);
-    	itemsgui.AddMouseOverArea(GameAsset.potion);
-    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
-    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
-    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
-
     }
 
     
@@ -104,18 +58,11 @@ public class WindowGame extends BasicGame {
     	container.setFullscreen(true);
         SpriteSheet spriteSheet = new SpriteSheet("texture/character.png", 64, 64);
         SpriteSheet battlers = new SpriteSheet("texture/FightAnimation.png", 196, 128);
-    	try {
-			loadAsset(container);
-		} catch (SlickException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    	loadText(container);
     	animationasset.addAnimation(spriteSheet, p1);
     	animationasset.loadBattlersAnimation(battlers, p1);
-    	animationasset.loadEnemyAnimation(GameAsset);
+    	animationasset.loadEnemyAnimation(imageasset);
     	this.hud.init(container);
-    	this.sellGUI.init(container);
     	
 
     }
@@ -125,18 +72,9 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-		if (!this.menu.isGameStart()) {
-			this.menu.render(container, g);
-		}
-		else if  (battle.isInBattle()) {	 //Boucle de la bataille
+		if  (battle.isInBattle()) {
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
     			this.hud.render(container, g);
-    			if (spellgui.isIsOpen()) {
-    				spellgui.render(container, g);
-    			}
-    			if(itemsgui.isIsOpen()) {
-    				itemsgui.render(container, g);
-    			}
 		}
 		else {
 			g.translate(container.getWidth() / 2 - (int) camera.getxCam(), 
@@ -145,25 +83,16 @@ public class WindowGame extends BasicGame {
 		    this.map.render(0, 0, 1);
 	    	this.map.render(0, 0, 2);
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
-	    	if (sellGUI.isPlayerOverArea()){
-	    		this.sellGUI.render(container, g);
-	    	}
-	    	if (this.inventory.isOpen()) {
-	    		this.inventory.render(container, g);
-	    	}
-	    	if(this.textrender) {
-	    		this.dialogue.render(container, g);
-	    	}
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
 	        	RNG = (int) (Math.random()*100);
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
-	        	if (RNG < 10) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        	if (RNG < 2) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
-	        		itemsgui.setIsOpen(false);
-
+	        		camera.setPrevXcam(camera.getxCam());
+	        		camera.setPrevYcam(camera.getyCam());
 	        	}
 	        }
 		}
@@ -172,55 +101,24 @@ public class WindowGame extends BasicGame {
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
-        for (int objectID = 0; objectID < map.getObjectCount(0); objectID++) {				//Detection des events sur la tiled map.
+        for (int objectID = 0; objectID < map.getObjectCount(0); objectID++) {				//Transition du joueur
             if (p1.getX() > map.getObjectX(0, objectID)
                     && p1.getX() < map.getObjectX(0, objectID) + map.getObjectWidth(0, objectID)
                     && p1.getY() > map.getObjectY(0, objectID)
-                    && p1.getY() < map.getObjectY(0, objectID) + map.getObjectHeight(0, objectID)) { //Si le joueur est dans un event
-            	
-            	
+                    && p1.getY() < map.getObjectY(0, objectID) + map.getObjectHeight(0, objectID)) {
                 if ("transition".equals(map.getObjectType(0, objectID))) {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
-                if ("vendeur".equals(map.getObjectType(0, objectID))) {
-                	if (sellGUI.isShopOpen()) {
-                		this.sellGUI.setPlayerOverArea(true);
-                	}
-                	else {
-                		this.sellGUI.setPlayerOverArea(false);
-                	}
-                		
-                }
-                if ("changement".equals(map.getObjectType(0, objectID))) {
-                	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
+                else if ("changement".equals(map.getObjectType(0, objectID))) {
+                	p1.setMap(imageasset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
-                	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
+                	this.map = imageasset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
                 	
                 }
-                
-                if("Dialogue".equals(map.getObjectType(0, objectID))){
-                	try {
-						this.dialogue = GameAsset.searchText(this.map.getObjectProperty(0, objectID, "personne","undefined"));
-					} catch (SlickException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-                	this.textrender = true;
-                }
-
-
             }
-            else {
-            	this.textrender  = false;
-            }
- 
-
- 
          }
-        
     	singleFireEvent.update(delta);
         if (p1.isMoving()) {
             float futurX = getFuturX(delta);
@@ -256,11 +154,6 @@ public class WindowGame extends BasicGame {
     }
 
     @Override
-    public void keyReleased(int key, char c) {
-    	p1.setMoving(false);
-    }
-    
-
     public void keyPressed(int key, char c) {
 
     	if (!battle.isInBattle()) { //Commande hors bataille
@@ -270,27 +163,12 @@ public class WindowGame extends BasicGame {
 	        case Input.KEY_DOWN:  p1.setDirection(2); p1.setMoving(true); break;
 	        case Input.KEY_RIGHT: p1.setDirection(3); p1.setMoving(true); break;
 	        case Input.KEY_ESCAPE: container.exit(); break;
-	        case Input.KEY_E: inventory.setOpen(!inventory.isOpen());break;
-	        case Input.KEY_A: sellGUI.setShopOpen(!sellGUI.isShopOpen()); sellGUI.setInfoBox("Hello what do you want ?");break;
 	        }
-
     	}
-
- 
     	else {
     		switch (key) { //Commande bataille
-    		case Input.KEY_F: battle.setInBattle(false);  break; 
+    		case Input.KEY_F: battle.setInBattle(false); camera.setxCam(camera.getPrevXcam()); camera.setPrevYcam(camera.getPrevYcam()); break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
-    		case Input.KEY_E: battle.setNext(true); break;
-    		case Input.KEY_I: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
-    		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen());break;
-    		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;
-    		}
-    	}
-    	
-    	if(this.textrender) {
-    		switch (key) { //Commande bataille
-    			case Input.KEY_A: dialogue.setIndex(dialogue.getIndex()+1);  break; 
     		}
     	}
     }
