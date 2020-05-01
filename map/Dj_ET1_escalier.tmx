@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="3">
+ <tileset firstgid="1" source="Terrain final.tsx"/>
+ <tileset firstgid="136" source="Pnj.tsx"/>
+ <tileset firstgid="232" source="logicSolid.tsx"/>
+ <layer id="1" name="sol" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAEChNkYGAQHMWjYTCM04AY0G/UxsTkGWrbCTJv1F7MMBgNZ8rT92i6Gk1Xo/loeOcjYvL4qBrMcmA0TEbDZKSkAQB07F10EA4AAA==
+  </data>
+ </layer>
+ <layer id="2" name="Murs/bordures" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAUjLQREgB5WoCIWJjIAlYHq9KmIlYi01wiozo6K2JBIe4WA6qqgaiuJ1IOuDKYPZI4AuiQOPsheagJS7IW5l1L7QeaQYi+l9iHrH7UXOTQQ7IFMVwhXUM4ajV/sYQiK35GWfweifGYFhjMTFTEL9ugcFR0NgdEQGA0BkkIAAEmJhHkQDgAA
+  </data>
+ </layer>
+ <layer id="3" name="Décors" width="30" height="30" opacity="0.96">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2QMQ4AIAgD+bS/8NHKRhjaiUFzJAxYKHIRBAQgAIH/CKx7ksuJq3OnCqerWaU5X6crb6U5X6crb6Wlb83srfXU3v6n3R+oIQABCEAAAo8ROGeLajMQDgAA
+  </data>
+ </layer>
+ <layer id="5" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2TvQ7AIAiEff8n7dKftZ0qac6BQOQiWzEhtAp8cMbWav1Nga0PnG0RDbOZUi+yrh60J9oZgfYY4aJH+GDqCEOeeIY7CiR8MFz0u4rNmFdqzMzqk5nXyp9p4J0X11Lze0fWib5bibH2dO6qzrqed586Lpur63v/DDc6i8fCvtRhuMjL8AwX88KzfOQx894dciTawzZd8aVAKVAKGAq8m+6ZchAOAAA=
+  </data>
+ </layer>
+ <objectgroup id="4" name="transition" width="30" height="30">
+  <object id="1" x="393" y="356" width="203" height="83">
+   <properties>
+    <property name="detmap" value="Dj_RDC_sg"/>
+    <property name="detx" value="418"/>
+    <property name="dety" value="527"/>
+   </properties>
+  </object>
+  <object id="2" name="Rica" type="Dialogue" x="453" y="479" width="81" height="60">
+   <properties>
+    <property name="personne" value="Quete peau de gobelin"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

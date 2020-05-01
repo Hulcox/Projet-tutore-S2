@@ -7,8 +7,8 @@ public abstract class Spells extends Objets{
 	protected boolean onPlayer;
 	protected String typeSpell;
 	protected int ManaCost;
-	public Spells(int prix, String nom, boolean loot, boolean onPlayer, int ManaCost) {
-		super(prix, nom, loot);
+	public Spells(int prix, String nom, boolean loot, boolean onPlayer, int ManaCost, int ID) {
+		super(prix, nom, loot, ID);
 		this.type = "spell";
 		this.onPlayer = onPlayer;
 		this.ManaCost = ManaCost;

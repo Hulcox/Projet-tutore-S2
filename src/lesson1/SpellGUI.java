@@ -52,6 +52,11 @@ public class SpellGUI implements ComponentListener{
 					
 				  }
 		 }
+	 
+	public void reset() {
+		this.SpellsbuttonsList = new ArrayList<MouseOverArea>();
+		this.Spells = new ArrayList<Spells>();
+	}
 
 	public Inventaire getInventory() {
 		return inventory;

@@ -26,6 +26,7 @@ public class Player {
 	private int MaxPV;
 	private int animstate = 0;
 	private Image image;
+	private Camera camera;
 	private Inventaire inventaire;
 	private Animation[] animations = new Animation[8];
 	private Animation[] battleanim = new Animation[2];
@@ -186,6 +187,12 @@ public class Player {
 	}
 	public void setSpell(Spells spell) {
 		this.spell = spell;
+	}
+	public Camera getCamera() {
+		return camera;
+	}
+	public void setCamera(Camera camera) {
+		this.camera = camera;
 	}
 	
 	

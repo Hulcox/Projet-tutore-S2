@@ -30,14 +30,13 @@ public class Inventaire implements ComponentListener{
 	public void AddObjet(Objets objet) throws SlickException {
 		boolean found = false;
 
-			if (objet.getType() == "Epée") {
+			if (objet.getType().equals("Epée")) {
 				this.player.setPlayerSword((Epée) objet);
 			}
-			else if  (objet.getType() == "Armure") {
+			else if  (objet.getType().equals( "Armure")) {
 				this.player.setPlayerArmor((Armure) objet);
 			}
-			else if (objet.getType() == "potions") {
-				//System.out.println("adding items...");
+			else if (objet.getType().equals("potions")) {
 				if (this.itemsgui.getItems().size() < 10) {
 					this.itemsgui.AddMouseOverArea(objet);
 				}
@@ -46,7 +45,7 @@ public class Inventaire implements ComponentListener{
 				}
 				
 			}
-			else if (objet.getType() == "spell") {
+			else if (objet.getType().equals("spell")) {
 				this.spellgui.AddMouseOverArea((Spells) objet);
 			}
 			else {

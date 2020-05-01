@@ -93,6 +93,11 @@ public class ItemsGUI implements ComponentListener{
 		this.ItemsbuttonsList.remove(toDelBtnLst);
 		this.IsComponentActivated = false;
 	}
+	
+	public void reset() {
+		this.ItemsbuttonsList = new ArrayList<MouseOverArea>();
+		this.Items = new ArrayList<Objets>();
+	}
 	 
 	@Override	
 	public void componentActivated(AbstractComponent source) {
@@ -103,6 +108,9 @@ public class ItemsGUI implements ComponentListener{
 	public ArrayList<Objets> getItems(){
 		return this.Items;
 		
+	}
+	public void setItems(ArrayList<Objets> Items) {
+		this.Items = Items;
 	}
 	public Inventaire getInventory() {
 		return inventory;

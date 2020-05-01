@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="11">
+ <tileset firstgid="1" source="Terrain final.tsx"/>
+ <tileset firstgid="136" source="logicSolid.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAEChNkYGAQHMV0CQMxYDjTE8PilZ52guwatZc+8TwazqPhTIu8PZquRtPVaLqiPA2M5iPKw5CYdDgazqPhTEw6IVXNQKcrfPbD5KhNAwBSGs06EA4AAA==
+  </data>
+ </layer>
+ <layer id="2" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAX0CgERoEUKUOwLpP2Q+DBxUmlc5ggDzYYBZSBDH4pjgHQsEh8mTiqNyxwloNkwYARk2EFxNpDOQeLDxEmlcZljCDQbBoSAjBIYB4nGJoYkTRZTAEkXyF56gVF76RPSo+E8Gs60CIHRdEWLUMU0czScMcOEFiKj4UyLUMU0czScMcOEFiLI4cwKtIAJiJnRLGKEioPkqIVZ0OwAcdHblchuw6KcIiEAp+4MrBAOAAA=
+  </data>
+ </layer>
+ <layer id="3" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2WwQrAIAxD/WgV/PvZWyhTBiFop55iMW199WBKd10CWgIF0qOG8CeJXtQjM55BPTr/Fs89iF7TFlOsqkh6QM6duLVFvJm6O/FbhC9U2b/Mi70H8+ZDDVzULMuPnZ/oWmHSRueH/yKD7vfMIGZv09fx+5mX6ekE7wNZrwWsEA4AAA==
+  </data>
+ </layer>
+ <layer id="4" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu1WywrDMAzr5++yB+tp/draMIFxU8dqzciggeBXLFnupdN0nV9t4CZEuHfx9SI+aiMc6LLYrZytZ/0IB7WXONCInOJjZtZqL47HeaIgVnmhA2kfI9+zvs/HnreHF9UVO3sqebOc+m5EXmZvjNYjeqtmYfd8htf2srzsPvfeX7x7m9nm7ffaVuPMSHs+o0NVZvpH0ht/mZoqozezv2gq28/wRphs7Z957f6yukfS6+f3cVZT6x2wWnpRQ18vxjvGWt6PND7kzg7g/c1rreoujkND/Z+1x85m8xX+CvgnjSkQDgAA
+  </data>
+ </layer>
+ <objectgroup id="6" name="Calque d'objets 2" width="30" height="30">
+  <object id="7" name="gotomap1" type="changement" x="131" y="899" width="83" height="51">
+   <properties>
+    <property name="detmap" value="map1"/>
+    <property name="detx" type="int" value="638"/>
+    <property name="dety" type="int" value="698"/>
+   </properties>
+  </object>
+  <object id="10" name="Salle2G" type="changement" x="133" y="173" width="52" height="42">
+   <properties>
+    <property name="detmap" value="Dj_RDC_sg"/>
+    <property name="detx" type="int" value="145"/>
+    <property name="dety" type="int" value="867"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
