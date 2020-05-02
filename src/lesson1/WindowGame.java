@@ -69,6 +69,7 @@ public class WindowGame extends BasicGame {
     	animationasset = new AnimationsAsset();
     	battle = new Battle(p1);
     	p1.setImage(GameAsset.hero);
+    	//armure et épee en cooper
     	p1.setPlayerArmor(GameAsset.copperArmor);
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
