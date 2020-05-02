@@ -4,13 +4,14 @@ import org.newdawn.slick.Animation;
 
 
 public class Enemie {
-	private int pv;
-	private String name;
-	private double degats;
-	private int maxHp;
-	private int level;
-	private MonsterDrop loot;
-	private Animation[] battleanim = new Animation[2];
+	protected int pv;
+	protected String name;
+	protected double degats;
+	protected int maxHp;
+	protected int level;
+	protected MonsterDrop loot;
+	protected Animation[] battleanim = new Animation[2];
+
 	public int getPv() {
 		return pv;
 	}
