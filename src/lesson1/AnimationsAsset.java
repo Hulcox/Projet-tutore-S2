@@ -65,9 +65,10 @@ public class AnimationsAsset {
     	spell.setAnimation(animations);
     }
     public void setChestAnimation(SpriteSheet spriteSheet, int numberOfFrame, Chest chest) {
-    	Animation animations[] = new Animation[2];
+    	Animation animations[] = new Animation[3];
         animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         animations[1] = loadAnimation(spriteSheet, 1, numberOfFrame, 0);
+        animations[2] = loadAnimation(spriteSheet, numberOfFrame-1, numberOfFrame, 0);
         chest.setAnimations(animations);
     }
 

@@ -21,7 +21,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	private boolean textrender = false;
+	private boolean textrender = false, chestTextRender = false;
 	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
@@ -37,6 +37,7 @@ public class WindowGame extends BasicGame {
 	BattleHUD hud;
 	SellingGUI sellGUI;
 	SpellGUI spellgui;
+	Chest tempchest;
 	ItemsGUI itemsgui;
 	DialogueAsset dialogue;
 	StartScreen menu;
@@ -165,7 +166,9 @@ public class WindowGame extends BasicGame {
 		    		for (Chest c : GameAsset.getAllChest()) {
 		    			if(c.getID() == this.ID.get(i)) {
 		    				c.render(container, g, this.ID.get(i+1), this.ID.get(i+2));
+
 		    			}
+		    			
 		    		}
 
 		    	}
@@ -180,6 +183,9 @@ public class WindowGame extends BasicGame {
 	    	}
 	    	if(this.textrender) {
 	    		this.dialogue.render(container, g);
+	    	}
+	    	if(this.chestTextRender) {
+	    		this.tempchest.renderText(container, g);
 	    	}
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
@@ -251,14 +257,22 @@ public class WindowGame extends BasicGame {
                 	this.textrender = true;
                 }
                 if("Chest".equals(map.getObjectType(0, objectID))) {
+                	tempchest = GameAsset.SearchChest(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if(sellGUI.isShopOpen()) {
-                		GameAsset.SearchChest(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined"))).setOpen(true);
+                		if(!tempchest.isOpen()) {
+                			p1.getInventaire().AddObjet(tempchest.getLoot());
+                			tempchest.setOpen(true);
+                		}
+                		this.chestTextRender = true;
+                		
                 	}
+
                 }
 
 
             }
             else {
+            	this.chestTextRender = false;
             	this.textrender  = false;
             }
             

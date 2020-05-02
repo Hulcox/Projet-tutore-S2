@@ -7,7 +7,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 public class GameAsset {
-	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop;
+	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage;
 	Enemie knight, gobelin;
 	Map map1, grotte1, Village, EtagedeDonjon, Dj_RDC_sg, Dj_ET1_escalier;
 	Epée copperSword, ironSword, diamondSword, GodGun;
@@ -24,6 +24,7 @@ public class GameAsset {
 	private ArrayList<Objets> allAsset;
 	private ArrayList<Chest> allChest;
 	public void loadImage() throws SlickException{
+		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
 		battleGrotte = new Image("texture/battle_groundGrotte1.png");
 		hero = new Image("texture/hero.png");
@@ -86,7 +87,7 @@ public class GameAsset {
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
 		//Chest
-		chest1 = new Chest(1,this.potion); allChest.add(chest1);
+		chest1 = new Chest(1,this.potion,this); allChest.add(chest1);
 	}
 	public void loadText() throws SlickException, IOException {
 		allTexts = new ArrayList<DialogueAsset>();
