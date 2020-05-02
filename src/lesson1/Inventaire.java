@@ -17,14 +17,20 @@ public class Inventaire implements ComponentListener{
 	private Player player;
 	private Image image;
 	private ArrayList<Objets> inventoryList;
+	private ArrayList<KeyItem> keyItemList;
 	private boolean Open;
 	private ItemsGUI itemsgui;
 	private SpellGUI spellgui;
+	
+	public void addKeyItem(KeyItem keyitem) {
+		this.keyItemList.add(keyitem);
+	}
 	
 	public Inventaire(Player player, Image image)  {
 		this.player = player;
 		this.image = image;
 		this.inventoryList = new ArrayList<Objets>();
+		this.keyItemList = new ArrayList<KeyItem>();
 	}
 	
 	public void AddObjet(Objets objet) throws SlickException {
@@ -47,6 +53,9 @@ public class Inventaire implements ComponentListener{
 			}
 			else if (objet.getType().equals("spell")) {
 				this.spellgui.AddMouseOverArea((Spells) objet);
+			}
+			else if(objet.getType().equals("key")) {
+				this.addKeyItem((KeyItem) objet);
 			}
 			else {
 				for(Objets i : inventoryList) {
