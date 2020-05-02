@@ -9,6 +9,7 @@ public class Enemie {
 	protected double degats;
 	protected int maxHp;
 	protected int level;
+	protected int xp;
 	protected MonsterDrop loot;
 	protected Animation[] battleanim = new Animation[2];
 
@@ -32,18 +33,23 @@ public class Enemie {
 		
 	}
 	public String getName() {
+
 		return name;
 	}
 	public void setName(String name) {
+
 		this.name = name;
 	}
 	public double getDegats() {
+
 		return degats;
 	}
 	public void setDegats(int degats) {
+
 		this.degats = degats;
 	}
 	public int getLevel() {
+
 		return level;
 	}
 	public void setLevel(int level) {
@@ -60,27 +66,37 @@ public class Enemie {
 		this.maxHp = pv;
 		this.setLevel(level);
 		this.loot = loot;
+		this.setXp(getLevel());
 	}
 	public int getMaxHp() {
+
 		return maxHp;
 	}
 	public Animation[] getBattleanim() {
+
 		return battleanim;
 	}
 	public void setBattleanim(Animation[] battleanim) {
 		this.battleanim = battleanim;
 		System.out.print("hello world");
 	}
-	public void Getxp(){
-		
-	}
+
 	public MonsterDrop getLoot() {
+
 		return loot;
 	}
 	public void setLoot(MonsterDrop loot) {
+
 		this.loot = loot;
 	}
-	
+
+	public int getXp() {
+		return xp;
+	}
+
+	public void setXp(int level) {
+		this.xp = (level*25);
+	}
 
 }
 
