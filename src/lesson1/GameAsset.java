@@ -3,6 +3,7 @@ package lesson1;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
@@ -18,11 +19,13 @@ public class GameAsset {
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	Chest chest1;
+	Quete PeauGobelin;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
 	private ArrayList<Objets> allAsset;
 	private ArrayList<Chest> allChest;
+	public ArrayList<Quete> allQuest;
 	public void loadImage() throws SlickException{
 		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
@@ -58,6 +61,7 @@ public class GameAsset {
 	public void loadObject() {
 		allChest = new ArrayList<Chest>();
 		allAsset = new ArrayList<Objets>();
+		allQuest = new ArrayList<Quete>();
 		//Epée
 		copperSword = new Epée(100, "Copper sword", false, 10,1); allAsset.add(copperSword);
 		ironSword = new Epée(300, "Iron sword", false, 20,2); allAsset.add(ironSword);
@@ -77,7 +81,7 @@ public class GameAsset {
 		superPotion = new Potions(40,"Super potion", false, 40,13); allAsset.add(superPotion);
 		Hypotion = new Potions(80,"potion X", false, 80,14); allAsset.add(Hypotion);
 		//Key object
-		debug = new KeyItem(1,"Item(s)",false,15); allAsset.add(debug);
+		debug = new KeyItem(1,"droit de passage",false,15); allAsset.add(debug);
 		//Spells
 		boosterI = new Booster(200,"booster I",false,true,2,10,16); allAsset.add(boosterI);
 		fireI = new DamageSpell(200,"Fire I",false,false,20,5,17); allAsset.add(fireI);
@@ -87,13 +91,15 @@ public class GameAsset {
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
 		//Chest
-		chest1 = new Chest(1,this.potion,this); allChest.add(chest1);
+		chest1 = new Chest(1,this.gobelinSpear,this); allChest.add(chest1);
+		//Initialisation des quetes
+		PeauGobelin = new Quete(this.gobelinMeat,3,this.debug,1); allQuest.add(PeauGobelin);
 	}
-	public void loadText() throws SlickException, IOException {
+	public void loadText(GameContainer container) throws SlickException, IOException {
 		allTexts = new ArrayList<DialogueAsset>();
-		allTexts.add(new DialogueAsset("soldat"));
-		allTexts.add(new DialogueAsset("King"));
-		allTexts.add(new DialogueAsset("Quete peau de gobelin"));
+		allTexts.add(new DialogueAsset("soldat",false));
+		allTexts.add(new DialogueAsset("King",false));
+		allTexts.add(new DialogueAsset("Quete peau de gobelin",true,this.PeauGobelin,container));
 
 		
 	}
@@ -165,7 +171,7 @@ public class GameAsset {
 				
 			}
 		}
-		return new DialogueAsset("erreur");
+		return new DialogueAsset("erreur",false);
 	}
 	public Chest SearchChest(int ID) {
 		for(Chest i : this.allChest) {

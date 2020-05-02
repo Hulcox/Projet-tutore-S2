@@ -54,7 +54,7 @@ public class WindowGame extends BasicGame {
     	GameAsset.loadObject();
     	GameAsset.loadEnemie();
     	GameAsset.loadMap();
-    	GameAsset.loadText();
+    	GameAsset.loadText(this.container);
     	menu = new StartScreen();
 
     	input = container.getInput();
@@ -79,6 +79,8 @@ public class WindowGame extends BasicGame {
     	inventory.setOpen(false); //Inventaire initialisation
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.metalscrap);
+    	inventory.AddObjet(GameAsset.gobelinMeat);
+    	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinSpear);
@@ -255,6 +257,9 @@ public class WindowGame extends BasicGame {
 						e.printStackTrace();
 					}
                 	this.textrender = true;
+                	if(this.dialogue.isHaveQuest()) {
+                		this.dialogue.verifQuete(p1);
+                	}
                 }
                 if("Chest".equals(map.getObjectType(0, objectID))) {
                 	tempchest = GameAsset.SearchChest(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
