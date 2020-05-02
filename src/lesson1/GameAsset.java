@@ -166,6 +166,14 @@ public class GameAsset {
 		}
 		return new DialogueAsset("erreur");
 	}
+	public Chest SearchChest(int ID) {
+		for(Chest i : this.allChest) {
+			if(i.getID() == ID) {
+				return i;
+			}
+		}
+		return null;
+	}
 
 	public ArrayList<Objets> getAllAsset() {
 		return allAsset;

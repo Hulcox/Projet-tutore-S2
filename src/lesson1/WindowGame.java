@@ -139,6 +139,7 @@ public class WindowGame extends BasicGame {
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
 		this.map = this.p1.getMap().getMap();
+		this.MapLoading(this.map);
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
 		}
@@ -247,6 +248,11 @@ public class WindowGame extends BasicGame {
 						e.printStackTrace();
 					}
                 	this.textrender = true;
+                }
+                if("Chest".equals(map.getObjectType(0, objectID))) {
+                	if(sellGUI.isShopOpen()) {
+                		GameAsset.SearchChest(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined"))).setOpen(true);
+                	}
                 }
 
 

@@ -9,6 +9,7 @@ public class Chest {
 	private int ID;
 	private Animation[] animations;
 	private Objets loot;
+	private int stage;
 
 	public Chest(int ID, Objets objet) {
 		this.ID = ID;
@@ -16,7 +17,7 @@ public class Chest {
 	}
 		
 	public void render(GameContainer container, Graphics g, int x , int y) { 
-		if (this.Open) {
+		if (!this.Open) {
 			g.drawAnimation(this.animations[0], x, y);
 		}
 		else {
