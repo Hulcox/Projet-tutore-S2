@@ -83,6 +83,7 @@ public class Inventaire implements ComponentListener{
 	}
 	 public void render(GameContainer container, Graphics g) { 
 		 int x = 40, y = 320;
+		 int xk = 350, yk =320;
 		 Font font = g.getFont();
 		 g.resetTransform();
 		 this.image.draw(0,0);
@@ -96,6 +97,15 @@ public class Inventaire implements ComponentListener{
 				 x += 200;		
 			 }
 		 }
+		 for (KeyItem k : this.keyItemList) {
+			 font.drawString(xk, yk, k.getNom());
+			 yk += 20;
+			 if (yk >= 440) {
+				 yk = 320;
+				 xk += 200;		
+			 }
+		 }
+
 		 
 	 }
 
