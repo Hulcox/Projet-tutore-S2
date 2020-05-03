@@ -33,6 +33,7 @@ public class WindowGame extends BasicGame {
 	Camera camera;
 	AnimationsAsset animationasset;
 	Battle battle;
+	BossBattle bossbattle;
 	EventObject singleFireEvent;
 	BattleHUD hud;
 	SellingGUI sellGUI;
@@ -59,7 +60,7 @@ public class WindowGame extends BasicGame {
 
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player(70,999);
+    	p1 = new Player(999,999);
     	IngameHUD = new InGameHUD(p1);
     	GameAsset.setPlayer(p1);
     	this.menu.init(container);
@@ -98,7 +99,6 @@ public class WindowGame extends BasicGame {
     	spellgui.AddMouseOverArea(GameAsset.fireIII);
     	spellgui.AddMouseOverArea(GameAsset.Ultima);
     	spellgui.AddMouseOverArea(GameAsset.MaelStrom);
-    	spellgui.AddMouseOverArea(GameAsset.MegaStorm);
     	itemsgui = new ItemsGUI(container, inventory);
     	inventory.setitemsgui(itemsgui);
     	inventory.setSpellgui(spellgui);
@@ -110,6 +110,8 @@ public class WindowGame extends BasicGame {
     	p1.setCamera(camera);
     	IngameHUD.getSave().setGameasset(GameAsset);
     	menu.setSave(IngameHUD.getSave());
+    	bossbattle = new BossBattle(p1);
+    	bossbattle.setBoss(GameAsset.KingGobelin);
     	
     }
 
@@ -146,6 +148,16 @@ public class WindowGame extends BasicGame {
 		this.MapLoading(this.map);
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
+		}
+		else if (bossbattle.isInBattle()) {
+			bossbattle.render(container, g, singleFireEvent);
+			this.hud.render(container, g);
+			if (spellgui.isIsOpen()) {
+				spellgui.render(container, g);
+			}
+			if(itemsgui.isIsOpen()) {
+				itemsgui.render(container, g);
+			}
 		}
 		else if  (battle.isInBattle()) {	 //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
@@ -330,7 +342,7 @@ public class WindowGame extends BasicGame {
 
     public void keyPressed(int key, char c) {
 
-    	if (!battle.isInBattle()) { //Commande hors bataille
+    	if (!battle.isInBattle() && !bossbattle.isInBattle()) { //Commande hors bataille
 	        switch (key) {
 	        case Input.KEY_UP:    p1.setDirection(0); p1.setMoving(true); break;
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
@@ -348,7 +360,7 @@ public class WindowGame extends BasicGame {
     		switch (key) { //Commande bataille
     		case Input.KEY_F: battle.setInBattle(false);  break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
-    		case Input.KEY_E: battle.setNext(true); break;
+    		case Input.KEY_E: battle.setNext(true); bossbattle.setNext(true);break;
     		case Input.KEY_I: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
     		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen());break;
     		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;

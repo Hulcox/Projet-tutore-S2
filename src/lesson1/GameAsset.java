@@ -20,6 +20,7 @@ public class GameAsset {
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	Chest chest1;
 	Quete PeauGobelin;
+	Boss KingGobelin;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
@@ -37,8 +38,10 @@ public class GameAsset {
 	}
 	
 	public void loadEnemie() throws SlickException{ //Enemy
+		//Random encounters
 		gobelin = new Enemie(30,5,2, "Gobelin", this.gobelinMeat);
 		knight = new Enemie(40,5,2,"knight", this.metalscrap);
+
 
 	}
 	
@@ -94,6 +97,9 @@ public class GameAsset {
 		chest1 = new Chest(1,this.gobelinSpear,this); allChest.add(chest1);
 		//Initialisation des quetes
 		PeauGobelin = new Quete(this.gobelinMeat,3,this.debug,1); allQuest.add(PeauGobelin);
+		//Boss
+		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm);
+
 	}
 	public void loadText(GameContainer container) throws SlickException, IOException {
 		allTexts = new ArrayList<DialogueAsset>();
