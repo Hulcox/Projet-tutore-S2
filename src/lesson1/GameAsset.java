@@ -26,7 +26,7 @@ public class GameAsset {
 	private ArrayList<Map> allMaps;
 	private ArrayList<Objets> allAsset;
 	private ArrayList<Chest> allChest;
-	public ArrayList<Quete> allQuest;
+	private ArrayList<Quete> allQuest;
 	public void loadImage() throws SlickException{
 		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
@@ -132,9 +132,8 @@ public class GameAsset {
 		return ID;
 	}
 	public void reset() {
-		ArrayList<Objets> tempObj = new ArrayList<Objets>();
 		this.player.getInventaire().getSpellgui().reset();
-		this.player.getInventaire().setInventoryList(tempObj);
+		this.player.getInventaire().reset();
 		this.player.getInventaire().getitemsgui().reset();
 		for (Objets o : allAsset) {
 			o.setNumber(1);
@@ -149,6 +148,25 @@ public class GameAsset {
 					this.player.getInventaire().AddObjet(j);
 				}
 				
+			}
+		}
+	}
+	public void loadChest(ArrayList<Integer> ID) {
+		for (int i : ID) {
+			for (Chest c : this.allChest) {
+				if(c.getID() == i) {
+					
+					c.setOpen(true);
+				}
+			}
+		}
+	}
+	public void loadQuest(ArrayList<Integer> ID) {
+		for (int i : ID) {
+			for (Quete q : this.allQuest) {
+				if (q.getID() == i) {
+					q.setComplete(true);
+				}
 			}
 		}
 	}
@@ -187,7 +205,9 @@ public class GameAsset {
 		}
 		return null;
 	}
-
+	public ArrayList<Quete> getAllQuest(){
+		return this.allQuest;
+	}
 	public ArrayList<Objets> getAllAsset() {
 		return allAsset;
 	}

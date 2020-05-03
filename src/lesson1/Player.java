@@ -242,6 +242,12 @@ public class Player {
 	public int getLevel() {
 		return level;
 	}
+	public void LevelInit(int level) {
+		this.level = level;
+	}
+	public void setMaxXp(int MaxXp) {
+		this.MaxXp = MaxXp;
+	}
 
 	public void setLevel() {
 		if(getXp() >= getMaxXp()) {

@@ -22,6 +22,15 @@ public class Inventaire implements ComponentListener{
 	private ItemsGUI itemsgui;
 	private SpellGUI spellgui;
 	
+	public void reset() {
+		this.inventoryList = new ArrayList<Objets>();
+		this.keyItemList = new ArrayList<KeyItem>();
+	}
+	
+	public ArrayList<KeyItem> getKeyItemList(){
+		return this.keyItemList;
+	}
+	
 	public void addKeyItem(KeyItem keyitem) {
 		this.keyItemList.add(keyitem);
 	}

@@ -86,6 +86,7 @@ public class WindowGame extends BasicGame {
     	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinSpear);
     	inventory.AddObjet(GameAsset.Poncho);
+    	inventory.AddObjet(GameAsset.debug);
     	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory); //initialisations des vendables
     	sellGUI.AddTrade(GameAsset.copperArmor, container);
     	sellGUI.AddTrade(GameAsset.diamondArmor, container);
@@ -206,7 +207,7 @@ public class WindowGame extends BasicGame {
 	        	RNG = (int) (Math.random()*100);
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
-	        	if (RNG < 10) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        	if (RNG < 2) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
 	        		itemsgui.setIsOpen(false);
