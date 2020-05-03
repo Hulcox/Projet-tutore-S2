@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 
 public class GameAsset {
@@ -21,6 +22,7 @@ public class GameAsset {
 	Chest chest1;
 	Quete PeauGobelin;
 	Boss KingGobelin;
+	Music maintheme, cave, Battle, Victory;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
@@ -46,12 +48,12 @@ public class GameAsset {
 	}
 	
 	public void loadMap() throws SlickException{
-		map1 = new Map("MainMap.tmx", true,battle1, "map1");
-		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1");
-		Village = new Map ("Village.tmx", false, battle1, "Village");
-		EtagedeDonjon = new Map ("EtagedeDonjon.tmx", false, battle1, "EtagedeDonjon"); 
-		Dj_RDC_sg = new Map ("Dj_RDC_sg.tmx", false, battle1, "Dj_RDC_sg");
-		Dj_ET1_escalier = new Map ("Dj_ET1_escalier.tmx", true, battle1, "Dj_ET1_escalier");
+		map1 = new Map("MainMap.tmx", true,battle1, "map1",this.maintheme);
+		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1",this.cave);
+		Village = new Map ("Village.tmx", false, battle1, "Village",this.maintheme);
+		EtagedeDonjon = new Map ("EtagedeDonjon.tmx", false, battle1, "EtagedeDonjon",this.cave); 
+		Dj_RDC_sg = new Map ("Dj_RDC_sg.tmx", false, battle1, "Dj_RDC_sg",this.cave);
+		Dj_ET1_escalier = new Map ("Dj_ET1_escalier.tmx", true, battle1, "Dj_ET1_escalier",this.cave);
 		map1.addEncounrers(knight);
 		grotte1.addEncounrers(gobelin);
 		Dj_ET1_escalier.addEncounrers(gobelin);
@@ -59,6 +61,12 @@ public class GameAsset {
 		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village); allMaps.add(EtagedeDonjon); allMaps.add(Dj_RDC_sg);
 		allMaps.add(Dj_ET1_escalier);
 		
+	}
+	public void loadMusic() throws SlickException {
+		maintheme = new Music("sound/MainTheme.ogg");
+		cave = new Music("sound/Cave.ogg");
+		Battle = new Music("sound/Battle.ogg");
+		Victory = new Music("sound/Victory.ogg");
 	}
 	
 	public void loadObject() {

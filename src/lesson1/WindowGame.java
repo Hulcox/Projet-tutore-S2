@@ -12,6 +12,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.opengl.Texture;
@@ -21,7 +22,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	private boolean textrender = false, chestTextRender = false;
+	private boolean textrender = false, chestTextRender = false, triggerMusic = false;
 	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
@@ -44,6 +45,7 @@ public class WindowGame extends BasicGame {
 	StartScreen menu;
 	InGameHUD IngameHUD;
 	Graphics g;
+	Music playedmusic;
 	private ArrayList<Integer> ID;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
@@ -51,6 +53,7 @@ public class WindowGame extends BasicGame {
     
     public void loadAsset(GameContainer container) throws SlickException, IOException {
     	this.ID = new ArrayList<Integer>();
+    	GameAsset.loadMusic();
     	GameAsset.loadImage();
     	GameAsset.loadObject();
     	GameAsset.loadEnemie();
@@ -113,7 +116,6 @@ public class WindowGame extends BasicGame {
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
     	bossbattle.setBoss(GameAsset.KingGobelin);
-    	
     }
 
     
@@ -136,6 +138,9 @@ public class WindowGame extends BasicGame {
     	animationasset.loadEnemyAnimation(GameAsset);
     	this.hud.init(container);
     	this.sellGUI.init(container);
+    	this.playedmusic = this.p1.getMap().getMusic();
+    	this.playedmusic.loop();
+
     	
 
     }
@@ -145,7 +150,9 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
+		
 		this.map = this.p1.getMap().getMap();
+	
 		this.MapLoading(this.map);
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
@@ -159,6 +166,14 @@ public class WindowGame extends BasicGame {
 			if(itemsgui.isIsOpen()) {
 				itemsgui.render(container, g);
 			}
+			if(p1.isAffichageState()) {
+				if(this.battle.isMusicTrigger()) {
+					this.playedmusic = GameAsset.Victory;
+					this.playedmusic.loop();
+					this.battle.setMusicTrigger(false);
+				}
+			}
+			this.triggerMusic = true;
 		}
 		else if  (battle.isInBattle()) {	 //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
@@ -169,8 +184,21 @@ public class WindowGame extends BasicGame {
     			if(itemsgui.isIsOpen()) {
     				itemsgui.render(container, g);
     			}
+    			if(p1.isAffichageState()) {
+    				if(this.battle.isMusicTrigger()) {
+    					this.playedmusic = GameAsset.Victory;
+    					this.playedmusic.loop();
+    					this.battle.setMusicTrigger(false);
+    				}
+    			}
+    			this.triggerMusic = true;
 		}
 		else {
+			if(triggerMusic) {
+				this.playedmusic = p1.getMap().getMusic();
+				this.playedmusic.loop();
+				this.triggerMusic = false;
+			}
 			g.translate(container.getWidth() / 2 - (int) camera.getxCam(), 
 	                container.getHeight() / 2 - (int) camera.getyCam());
 		    this.map.render(0, 0, 0);
@@ -207,7 +235,9 @@ public class WindowGame extends BasicGame {
 	        	RNG = (int) (Math.random()*100);
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
-	        	if (RNG < 2) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        	if (RNG < 5) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        		this.playedmusic = GameAsset.Battle;
+	        		this.playedmusic.loop();
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
 	        		itemsgui.setIsOpen(false);
@@ -258,6 +288,10 @@ public class WindowGame extends BasicGame {
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
                 	this.MapLoading(this.map);
+                	if(!p1.getMap().getMusic().equals(this.playedmusic)) {
+	                	this.playedmusic = this.p1.getMap().getMusic();
+	                	this.playedmusic.loop();
+                	}
                 	
                 }
                 
