@@ -55,12 +55,13 @@ public class DialogueAsset implements ComponentListener {
 		else 
 			this.Index = 0;
 		
-		if(this.quete.isComplete()) {
-			this.HaveQuest = false;
-			this.textcol = new ArrayList<String>();
-			this.textcol.add("Quest complete reward : " + "\n" + this.quete.getReward().getNom());
-		}
+
 		if(this.isHaveQuest()) {
+			if(this.quete.isComplete()) {
+				this.HaveQuest = false;
+				this.textcol = new ArrayList<String>();
+				this.textcol.add("Quest complete reward : " + "\n" + this.quete.getReward().getNom());
+			}
 			this.confirm.render(container, g);
 			g.drawString("Give", confirm.getX() + X_PADDING, confirm.getY() + Y_PADDING);
 		}
