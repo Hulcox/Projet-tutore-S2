@@ -12,6 +12,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.opengl.Texture;
@@ -21,7 +22,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	private boolean textrender = false;
+	private boolean textrender = false, chestTextRender = false, triggerMusic = false;
 	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
@@ -33,15 +34,18 @@ public class WindowGame extends BasicGame {
 	Camera camera;
 	AnimationsAsset animationasset;
 	Battle battle;
+	BossBattle bossbattle;
 	EventObject singleFireEvent;
 	BattleHUD hud;
 	SellingGUI sellGUI;
 	SpellGUI spellgui;
+	Chest tempchest;
 	ItemsGUI itemsgui;
 	DialogueAsset dialogue;
 	StartScreen menu;
 	InGameHUD IngameHUD;
 	Graphics g;
+	Music playedmusic;
 	private ArrayList<Integer> ID;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
@@ -49,16 +53,17 @@ public class WindowGame extends BasicGame {
     
     public void loadAsset(GameContainer container) throws SlickException, IOException {
     	this.ID = new ArrayList<Integer>();
+    	GameAsset.loadMusic();
     	GameAsset.loadImage();
     	GameAsset.loadObject();
     	GameAsset.loadEnemie();
     	GameAsset.loadMap();
-    	GameAsset.loadText();
+    	GameAsset.loadText(this.container);
     	menu = new StartScreen();
 
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player(70,999);
+    	p1 = new Player(999,999);
     	IngameHUD = new InGameHUD(p1);
     	GameAsset.setPlayer(p1);
     	this.menu.init(container);
@@ -69,6 +74,7 @@ public class WindowGame extends BasicGame {
     	animationasset = new AnimationsAsset();
     	battle = new Battle(p1);
     	p1.setImage(GameAsset.hero);
+    	//armure et épee en cooper
     	p1.setPlayerArmor(GameAsset.copperArmor);
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
@@ -79,8 +85,11 @@ public class WindowGame extends BasicGame {
     	inventory.AddObjet(GameAsset.metalscrap);
     	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinMeat);
+    	inventory.AddObjet(GameAsset.gobelinMeat);
+    	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinSpear);
     	inventory.AddObjet(GameAsset.Poncho);
+    	inventory.AddObjet(GameAsset.debug);
     	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory); //initialisations des vendables
     	sellGUI.AddTrade(GameAsset.copperArmor, container);
     	sellGUI.AddTrade(GameAsset.diamondArmor, container);
@@ -94,7 +103,6 @@ public class WindowGame extends BasicGame {
     	spellgui.AddMouseOverArea(GameAsset.fireIII);
     	spellgui.AddMouseOverArea(GameAsset.Ultima);
     	spellgui.AddMouseOverArea(GameAsset.MaelStrom);
-    	spellgui.AddMouseOverArea(GameAsset.MegaStorm);
     	itemsgui = new ItemsGUI(container, inventory);
     	inventory.setitemsgui(itemsgui);
     	inventory.setSpellgui(spellgui);
@@ -106,7 +114,8 @@ public class WindowGame extends BasicGame {
     	p1.setCamera(camera);
     	IngameHUD.getSave().setGameasset(GameAsset);
     	menu.setSave(IngameHUD.getSave());
-    	
+    	bossbattle = new BossBattle(p1);
+    	bossbattle.setBoss(GameAsset.KingGobelin);
     }
 
     
@@ -129,6 +138,9 @@ public class WindowGame extends BasicGame {
     	animationasset.loadEnemyAnimation(GameAsset);
     	this.hud.init(container);
     	this.sellGUI.init(container);
+    	this.playedmusic = GameAsset.MenuMusic;
+    	this.playedmusic.loop();
+
     	
 
     }
@@ -138,10 +150,31 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
+		
 		this.map = this.p1.getMap().getMap();
+	
 		this.MapLoading(this.map);
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
+			this.triggerMusic = true;
+		}
+		else if (bossbattle.isInBattle()) {
+			bossbattle.render(container, g, singleFireEvent);
+			this.hud.render(container, g);
+			if (spellgui.isIsOpen()) {
+				spellgui.render(container, g);
+			}
+			if(itemsgui.isIsOpen()) {
+				itemsgui.render(container, g);
+			}
+			if(p1.isAffichageState()) {
+				if(this.battle.isMusicTrigger()) {
+					this.playedmusic = GameAsset.Victory;
+					this.playedmusic.loop();
+					this.battle.setMusicTrigger(false);
+				}
+			}
+			this.triggerMusic = true;
 		}
 		else if  (battle.isInBattle()) {	 //Boucle de la bataille
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
@@ -152,8 +185,21 @@ public class WindowGame extends BasicGame {
     			if(itemsgui.isIsOpen()) {
     				itemsgui.render(container, g);
     			}
+    			if(p1.isAffichageState()) {
+    				if(this.battle.isMusicTrigger()) {
+    					this.playedmusic = GameAsset.Victory;
+    					this.playedmusic.loop();
+    					this.battle.setMusicTrigger(false);
+    				}
+    			}
+    			this.triggerMusic = true;
 		}
 		else {
+			if(triggerMusic) {
+				this.playedmusic = p1.getMap().getMusic();
+				this.playedmusic.loop();
+				this.triggerMusic = false;
+			}
 			g.translate(container.getWidth() / 2 - (int) camera.getxCam(), 
 	                container.getHeight() / 2 - (int) camera.getyCam());
 		    this.map.render(0, 0, 0);
@@ -164,7 +210,9 @@ public class WindowGame extends BasicGame {
 		    		for (Chest c : GameAsset.getAllChest()) {
 		    			if(c.getID() == this.ID.get(i)) {
 		    				c.render(container, g, this.ID.get(i+1), this.ID.get(i+2));
+
 		    			}
+		    			
 		    		}
 
 		    	}
@@ -180,12 +228,17 @@ public class WindowGame extends BasicGame {
 	    	if(this.textrender) {
 	    		this.dialogue.render(container, g);
 	    	}
+	    	if(this.chestTextRender) {
+	    		this.tempchest.renderText(container, g);
+	    	}
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
 	        	RNG = (int) (Math.random()*100);
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
-	        	if (RNG < 10) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        	if (RNG < 5) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        		this.playedmusic = GameAsset.Battle;
+	        		this.playedmusic.loop();
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
 	        		battle.setInBattle(true);
 	        		itemsgui.setIsOpen(false);
@@ -236,6 +289,10 @@ public class WindowGame extends BasicGame {
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
                 	this.MapLoading(this.map);
+                	if(!p1.getMap().getMusic().equals(this.playedmusic)) {
+	                	this.playedmusic = this.p1.getMap().getMusic();
+	                	this.playedmusic.loop();
+                	}
                 	
                 }
                 
@@ -248,16 +305,27 @@ public class WindowGame extends BasicGame {
 						e.printStackTrace();
 					}
                 	this.textrender = true;
+                	if(this.dialogue.isHaveQuest()) {
+                		this.dialogue.verifQuete(p1);
+                	}
                 }
                 if("Chest".equals(map.getObjectType(0, objectID))) {
+                	tempchest = GameAsset.SearchChest(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if(sellGUI.isShopOpen()) {
-                		GameAsset.SearchChest(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined"))).setOpen(true);
+                		if(!tempchest.isOpen()) {
+                			p1.getInventaire().AddObjet(tempchest.getLoot());
+                			tempchest.setOpen(true);
+                		}
+                		this.chestTextRender = true;
+                		
                 	}
+
                 }
 
 
             }
             else {
+            	this.chestTextRender = false;
             	this.textrender  = false;
             }
             
@@ -310,7 +378,7 @@ public class WindowGame extends BasicGame {
 
     public void keyPressed(int key, char c) {
 
-    	if (!battle.isInBattle()) { //Commande hors bataille
+    	if (!battle.isInBattle() && !bossbattle.isInBattle()) { //Commande hors bataille
 	        switch (key) {
 	        case Input.KEY_UP:    p1.setDirection(0); p1.setMoving(true); break;
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
@@ -328,7 +396,7 @@ public class WindowGame extends BasicGame {
     		switch (key) { //Commande bataille
     		case Input.KEY_F: battle.setInBattle(false);  break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
-    		case Input.KEY_E: battle.setNext(true); break;
+    		case Input.KEY_E: battle.setNext(true); bossbattle.setNext(true);break;
     		case Input.KEY_I: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;
     		case Input.KEY_S: spellgui.setIsOpen(!spellgui.isIsOpen());break;
     		case Input.KEY_D: p1.setDefending(true);p1.setAnimstate(2);break;

@@ -3,11 +3,13 @@ package lesson1;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 
 public class GameAsset {
-	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop;
+	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage;
 	Enemie knight, gobelin;
 	Map map1, grotte1, Village, EtagedeDonjon, Dj_RDC_sg, Dj_ET1_escalier;
 	Epée copperSword, ironSword, diamondSword, GodGun;
@@ -18,12 +20,17 @@ public class GameAsset {
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	Chest chest1;
+	Quete PeauGobelin;
+	Boss KingGobelin;
+	Music maintheme, cave, Battle, Victory, MenuMusic, Town;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
 	private ArrayList<Objets> allAsset;
 	private ArrayList<Chest> allChest;
+	private ArrayList<Quete> allQuest;
 	public void loadImage() throws SlickException{
+		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
 		battleGrotte = new Image("texture/battle_groundGrotte1.png");
 		hero = new Image("texture/hero.png");
@@ -33,18 +40,20 @@ public class GameAsset {
 	}
 	
 	public void loadEnemie() throws SlickException{ //Enemy
+		//Random encounters
 		gobelin = new Enemie(30,5,2, "Gobelin", this.gobelinMeat);
 		knight = new Enemie(40,5,2,"knight", this.metalscrap);
+
 
 	}
 	
 	public void loadMap() throws SlickException{
-		map1 = new Map("MainMap.tmx", true,battle1, "map1");
-		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1");
-		Village = new Map ("Village.tmx", false, battle1, "Village");
-		EtagedeDonjon = new Map ("EtagedeDonjon.tmx", false, battle1, "EtagedeDonjon"); 
-		Dj_RDC_sg = new Map ("Dj_RDC_sg.tmx", false, battle1, "Dj_RDC_sg");
-		Dj_ET1_escalier = new Map ("Dj_ET1_escalier.tmx", true, battle1, "Dj_ET1_escalier");
+		map1 = new Map("MainMap.tmx", true,battle1, "map1",this.maintheme);
+		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1",this.cave);
+		Village = new Map ("Village.tmx", false, battle1, "Village",this.Town);
+		EtagedeDonjon = new Map ("EtagedeDonjon.tmx", false, battle1, "EtagedeDonjon",this.cave); 
+		Dj_RDC_sg = new Map ("Dj_RDC_sg.tmx", false, battle1, "Dj_RDC_sg",this.cave);
+		Dj_ET1_escalier = new Map ("Dj_ET1_escalier.tmx", true, battle1, "Dj_ET1_escalier",this.cave);
 		map1.addEncounrers(knight);
 		grotte1.addEncounrers(gobelin);
 		Dj_ET1_escalier.addEncounrers(gobelin);
@@ -53,10 +62,19 @@ public class GameAsset {
 		allMaps.add(Dj_ET1_escalier);
 		
 	}
+	public void loadMusic() throws SlickException {
+		maintheme = new Music("sound/MainTheme.ogg");
+		cave = new Music("sound/Cave.ogg");
+		Battle = new Music("sound/Battle.ogg");
+		Victory = new Music("sound/Victory.ogg");
+		MenuMusic = new Music("sound/MenuMusic.ogg");
+		Town = new Music("sound/Town.ogg");
+	}
 	
 	public void loadObject() {
 		allChest = new ArrayList<Chest>();
 		allAsset = new ArrayList<Objets>();
+		allQuest = new ArrayList<Quete>();
 		//Epée
 		copperSword = new Epée(100, "Copper sword", false, 10,1); allAsset.add(copperSword);
 		ironSword = new Epée(300, "Iron sword", false, 20,2); allAsset.add(ironSword);
@@ -76,7 +94,7 @@ public class GameAsset {
 		superPotion = new Potions(40,"Super potion", false, 40,13); allAsset.add(superPotion);
 		Hypotion = new Potions(80,"potion X", false, 80,14); allAsset.add(Hypotion);
 		//Key object
-		debug = new KeyItem(1,"Item(s)",false,15); allAsset.add(debug);
+		debug = new KeyItem(1,"droit de passage",false,15); allAsset.add(debug);
 		//Spells
 		boosterI = new Booster(200,"booster I",false,true,2,10,16); allAsset.add(boosterI);
 		fireI = new DamageSpell(200,"Fire I",false,false,20,5,17); allAsset.add(fireI);
@@ -86,14 +104,19 @@ public class GameAsset {
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
 		//Chest
-		chest1 = new Chest(1,this.potion); allChest.add(chest1);
-	}
-	public void loadText() throws SlickException, IOException {
-		allTexts = new ArrayList<DialogueAsset>();
-		allTexts.add(new DialogueAsset("soldat"));
-		allTexts.add(new DialogueAsset("King"));
-		allTexts.add(new DialogueAsset("Rica"));
+		chest1 = new Chest(1,this.gobelinSpear,this); allChest.add(chest1);
+		//Initialisation des quetes
+		PeauGobelin = new Quete(this.gobelinMeat,3,this.debug,1); allQuest.add(PeauGobelin);
+		//Boss
+		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm);
 
+	}
+	public void loadText(GameContainer container) throws SlickException, IOException {
+		allTexts = new ArrayList<DialogueAsset>();
+
+		allTexts.add(new DialogueAsset("soldat",false));
+		allTexts.add(new DialogueAsset("King",false));
+		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
 		
 	}
 	public void loadWeapons(int ID) throws SlickException {
@@ -119,9 +142,8 @@ public class GameAsset {
 		return ID;
 	}
 	public void reset() {
-		ArrayList<Objets> tempObj = new ArrayList<Objets>();
 		this.player.getInventaire().getSpellgui().reset();
-		this.player.getInventaire().setInventoryList(tempObj);
+		this.player.getInventaire().reset();
 		this.player.getInventaire().getitemsgui().reset();
 		for (Objets o : allAsset) {
 			o.setNumber(1);
@@ -136,6 +158,25 @@ public class GameAsset {
 					this.player.getInventaire().AddObjet(j);
 				}
 				
+			}
+		}
+	}
+	public void loadChest(ArrayList<Integer> ID) {
+		for (int i : ID) {
+			for (Chest c : this.allChest) {
+				if(c.getID() == i) {
+					
+					c.setOpen(true);
+				}
+			}
+		}
+	}
+	public void loadQuest(ArrayList<Integer> ID) {
+		for (int i : ID) {
+			for (Quete q : this.allQuest) {
+				if (q.getID() == i) {
+					q.setComplete(true);
+				}
 			}
 		}
 	}
@@ -164,7 +205,7 @@ public class GameAsset {
 				
 			}
 		}
-		return new DialogueAsset("erreur");
+		return new DialogueAsset("erreur",false);
 	}
 	public Chest SearchChest(int ID) {
 		for(Chest i : this.allChest) {
@@ -174,7 +215,9 @@ public class GameAsset {
 		}
 		return null;
 	}
-
+	public ArrayList<Quete> getAllQuest(){
+		return this.allQuest;
+	}
 	public ArrayList<Objets> getAllAsset() {
 		return allAsset;
 	}

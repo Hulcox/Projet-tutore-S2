@@ -6,7 +6,9 @@ import org.newdawn.slick.Image;
 
 
 
+
 public class Player {
+	private boolean affichageState = false;
 	private int mana = 20;
 	private int MaxMana;
 	private float x = 300, y = 300;
@@ -30,6 +32,9 @@ public class Player {
 	private Inventaire inventaire;
 	private Animation[] animations = new Animation[8];
 	private Animation[] battleanim = new Animation[2];
+	private int level;
+	private int xp;
+	private int MaxXp;
 	
 	public Player(int MaxPv, int MaxMana) {
 		this.MaxPV = MaxPv;
@@ -37,6 +42,8 @@ public class Player {
 		this.pv = MaxPV;
 		this.mana = this.MaxMana;
 		this.baseDamage = damage;
+		this.setLevel();
+		this.setMaxXp();
 	}
 	public Animation[] getAnimations() {
 		return animations;
@@ -126,76 +133,136 @@ public class Player {
 		return playerSword;
 	}
 	public void setPlayerSword(Epée playerSword) {
+
 		this.playerSword = playerSword;
 	}
 	public Armure getPlayerArmor() {
+
 		return playerArmor;
 	}
 	public void setPlayerArmor(Armure playerArmor) {
+
 		this.playerArmor = playerArmor;
 	}
 	public int getMoney() {
+
 		return money;
 	}
 	public void setMoney(int money) {
+
 		this.money = money;
 	}
 	public Inventaire getInventaire() {
+
 		return inventaire;
 	}
 	public void setInventaire(Inventaire inventaire) {
+
 		this.inventaire = inventaire;
 	}
 	public int getMaxPV() {
+
 		return MaxPV;
 	}
 	public void setMaxPV(int maxPV) {
+
 		MaxPV = maxPV;
 	}
 	public boolean isDefending() {
+
 		return defending;
 	}
 	public void setDefending(boolean defending) {
+
 		this.defending = defending;
 	}
 	public int getMana() {
+
 		return mana;
 	}
 	public void setMana(int mana) {
+
 		this.mana = mana;
 	}
 	public int getMaxMana() {
+
 		return MaxMana;
 	}
 	public void setMaxMana(int MaxMana) {
+
 		this.MaxMana  = MaxMana;
 	}
 	public int getBaseDamage() {
+
 		return baseDamage;
 	}
 	public void setBaseDamage(int baseDamage) {
+
 		this.baseDamage = baseDamage;
 	}
 	public boolean isCasting() {
+
 		return isCasting;
 	}
 	public void setCasting(boolean isCasting) {
+
 		this.isCasting = isCasting;
 	}
 	public Spells getSpell() {
+
 		return spell;
 	}
 	public void setSpell(Spells spell) {
+
 		this.spell = spell;
 	}
 	public Camera getCamera() {
+
 		return camera;
 	}
 	public void setCamera(Camera camera) {
+
 		this.camera = camera;
 	}
-	
-	
-	
 
+	public int getXp() {
+		return xp;
+	}
+
+	public void setXp(int xp) {
+		this.xp = this.xp+xp;
+	}
+
+	public int getMaxXp() {
+		return MaxXp;
+	}
+
+	public void setMaxXp() {
+		this.MaxXp = getLevel()*100;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+	public void LevelInit(int level) {
+		this.level = level;
+	}
+	public void setMaxXp(int MaxXp) {
+		this.MaxXp = MaxXp;
+	}
+
+	public void setLevel() {
+		if(getXp() >= getMaxXp()) {
+			this.level = this.level + 1;
+			this.xp = 0;
+			setMaxXp();
+		}
+	}
+
+	public boolean isAffichageState() {
+		return affichageState;
+	}
+	public void setAffichageState(boolean affichageState) {
+		this.affichageState = affichageState;
+	}
 }

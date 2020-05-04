@@ -1,19 +1,24 @@
 package lesson1;
 
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+
 
 public class Chest {
 	private boolean Open = false;
 	private int ID;
 	private Animation[] animations;
 	private Objets loot;
-	private int stage;
+	private GameAsset gameasset;
+	private boolean playerOverArea = false;
 
-	public Chest(int ID, Objets objet) {
+	public Chest(int ID, Objets objet, GameAsset gameasset) {
 		this.ID = ID;
 		this.loot = objet;
+		this.gameasset = gameasset;
 	}
 		
 	public void render(GameContainer container, Graphics g, int x , int y) { 
@@ -21,9 +26,15 @@ public class Chest {
 			g.drawAnimation(this.animations[0], x, y);
 		}
 		else {
-			g.drawAnimation(this.animations[1], x, y);
+			g.drawAnimation(this.animations[2], x, y);
 		}
    }
+	public void renderText(GameContainer container, Graphics g) {
+		Font font = g.getFont();
+		//g.resetTransform();
+		g.drawImage(gameasset.InfoImage,0,380);
+		font.drawString( 10, 390, "Item that was in this chest : " + this.loot.getNom() ,Color.white);
+	}
 
 	public int getID() {
 		return ID;
@@ -55,6 +66,14 @@ public class Chest {
 
 	public void setLoot(Objets loot) {
 		this.loot = loot;
+	}
+
+	public boolean isPlayerOverArea() {
+		return playerOverArea;
+	}
+
+	public void setPlayerOverArea(boolean playerOverArea) {
+		this.playerOverArea = playerOverArea;
 	}
 
 }

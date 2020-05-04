@@ -47,7 +47,24 @@ public class Save {
 	        }
 	        myWriter.write("\n");
 	        myWriter.write(this.player.getDirection() + "\n"); //line 17
-	        
+	        myWriter.write(this.player.getLevel() + "\n"); //line 18 player level
+	        myWriter.write(this.player.getXp() + "\n"); //line 19 player current xp
+	        myWriter.write(this.player.getMaxXp() + "\n"); // line 20 player max xp
+	        for (Objets i : this.player.getInventaire().getKeyItemList()) {
+	        	myWriter.write( Integer.toString(i.getID())+ "|"); //line 21
+	        }
+	        myWriter.write("\n");
+	        for(Chest i : this.gameasset.getAllChest()) {
+	        	if(i.isOpen()) {
+	        		myWriter.write( Integer.toString(i.getID())+ "|"); //line 22 open chest
+	        	}
+	        }
+	        myWriter.write("\n");
+	        for(Quete i : this.gameasset.getAllQuest()) {
+	        	if(i.isComplete()) {
+	        		myWriter.write( Integer.toString(i.getID())+ "|"); //line 23 Quest complete
+	        	}
+	        }
 	        myWriter.close();
 	        System.out.println("Successfully saved the game");
 	      } catch (IOException e) {
@@ -82,7 +99,12 @@ public class Save {
 			case 15: this.gameasset.loadSpells(this.gameasset.loadIDS(line)); break;
 			case 16: this.gameasset.loadSpells(this.gameasset.loadIDS(line)); break;
 			case 17: this.player.setDirection(Integer.parseInt(line)); break;
-			
+			case 18: this.player.LevelInit(Integer.parseInt(line));break;
+			case 19: this.player.setXp(Integer.parseInt(line));break;
+			case 20: this.player.setMaxXp(Integer.parseInt(line));break;
+			case 21: this.gameasset.loadSpells(this.gameasset.loadIDS(line));break;
+			case 22: this.gameasset.loadChest(this.gameasset.loadIDS(line));break;
+			case 23: this.gameasset.loadQuest(this.gameasset.loadIDS(line)); break;
 			}
 			nbline++;
 

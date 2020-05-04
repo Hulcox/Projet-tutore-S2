@@ -17,14 +17,29 @@ public class Inventaire implements ComponentListener{
 	private Player player;
 	private Image image;
 	private ArrayList<Objets> inventoryList;
+	private ArrayList<KeyItem> keyItemList;
 	private boolean Open;
 	private ItemsGUI itemsgui;
 	private SpellGUI spellgui;
+	
+	public void reset() {
+		this.inventoryList = new ArrayList<Objets>();
+		this.keyItemList = new ArrayList<KeyItem>();
+	}
+	
+	public ArrayList<KeyItem> getKeyItemList(){
+		return this.keyItemList;
+	}
+	
+	public void addKeyItem(KeyItem keyitem) {
+		this.keyItemList.add(keyitem);
+	}
 	
 	public Inventaire(Player player, Image image)  {
 		this.player = player;
 		this.image = image;
 		this.inventoryList = new ArrayList<Objets>();
+		this.keyItemList = new ArrayList<KeyItem>();
 	}
 	
 	public void AddObjet(Objets objet) throws SlickException {
@@ -47,6 +62,9 @@ public class Inventaire implements ComponentListener{
 			}
 			else if (objet.getType().equals("spell")) {
 				this.spellgui.AddMouseOverArea((Spells) objet);
+			}
+			else if(objet.getType().equals("key")) {
+				this.addKeyItem((KeyItem) objet);
 			}
 			else {
 				for(Objets i : inventoryList) {
@@ -74,6 +92,7 @@ public class Inventaire implements ComponentListener{
 	}
 	 public void render(GameContainer container, Graphics g) { 
 		 int x = 40, y = 320;
+		 int xk = 350, yk =320;
 		 Font font = g.getFont();
 		 g.resetTransform();
 		 this.image.draw(0,0);
@@ -87,6 +106,15 @@ public class Inventaire implements ComponentListener{
 				 x += 200;		
 			 }
 		 }
+		 for (KeyItem k : this.keyItemList) {
+			 font.drawString(xk, yk, k.getNom());
+			 yk += 20;
+			 if (yk >= 440) {
+				 yk = 320;
+				 xk += 200;		
+			 }
+		 }
+
 		 
 	 }
 

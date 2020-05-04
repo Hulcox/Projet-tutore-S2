@@ -8,6 +8,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 public class Battle {
+	private boolean musicTrigger = true;
 	private boolean damagetaken = false;
 	private int time = 0;
 	private Enemie enemie1;
@@ -19,18 +20,22 @@ public class Battle {
 	private boolean next = false;
 	private boolean EnemyAttack = true;
 	public Enemie getEnemie1() {
+
 		return enemie1;
 	}
 	public void setEnemie1(Enemie enemie1) {
+
 		this.enemie1 = enemie1;
 	}
 	public Battle(Player player) {
+
 		this.player = player;
 	}
 	public Image getImgBackground() {
 		return imgBackground;
 	}
 	public void setImgBackground(Image imgBackground) {
+
 		this.imgBackground = imgBackground;
 	}
 	public void DrawBattle(Graphics g, Player player, Map map, Camera camera, int i,EventObject singleFireEvent) throws SlickException{
@@ -42,6 +47,10 @@ public class Battle {
 		String playerMana = Integer.toString(player.getMana());
 		String playerMaxMana = Integer.toString(player.getMaxMana());
 		String EnemiePv = Integer.toString(player.getMap().getArrayList().get(i).getPv());
+		String playerXp = Integer.toString(player.getXp());
+		String playerMaxXp = Integer.toString(player.getMaxXp());
+		String playerLevel = Integer.toString(player.getLevel());
+
 		g.drawImage(player.getMap().getBattleImg(),0,0);
 		if(singleFireEvent.isReady() && player.getAnimstate() >= 1) {
 			if (player.getAnimstate() == 2 && EnemyAttack) {
@@ -53,7 +62,8 @@ public class Battle {
 		this.TurnAnimation(g, player, i);
 		font.drawString(550,30, "Pv : " + EnemiePv, Color.red);
 		font.drawString(0,45, "Mana : " + playerMana + "/" + playerMaxMana, Color.blue);
-		font.drawString(0,30 , "Pv : " + playerPv + "/"+playerMaxPv, Color.green);	
+		font.drawString(0,30 , "Pv : " + playerPv + "/"+playerMaxPv, Color.green);
+		font.drawString(0,60, "XP : " + playerXp + "/" + playerMaxXp + " Level : " + playerLevel , Color.yellow);
 	}
 	public void TurnAnimation (Graphics g, Player player, int i) throws SlickException {
 		g.resetTransform();
@@ -61,6 +71,7 @@ public class Battle {
 			this.damagetaken = false;
 			if (player.getMap().getArrayList().get(i).getPv() <= 0) { //Battle win
 				if (this.next) {
+					
 					this.next = false;
 					this.setInBattle(false);
 					player.getMap().getArrayList().get(i).setPv(player.getMap().getArrayList().get(i).getMaxHp());
@@ -71,8 +82,14 @@ public class Battle {
 					player.setCasting(false);
 					player.setDamage(player.getBaseDamage());
 					player.getInventaire().AddObjet(player.getMap().getArrayList().get(i).getLoot());
+					player.setXp(this.player.getMap().getArrayList().get(i).getXp());
+					player.setLevel();
+					this.player.setAffichageState(false);
+					this.musicTrigger = true;
+					
 				}
 				else {
+					this.player.setAffichageState(true);
 					g.drawAnimation(player.getBattleanim()[0], 0, 240);
 					g.drawString("Victory ! " + "Loot : " + player.getMap().getArrayList().get(i).getLoot().getNom() + " Press 'e' to continue" , 100, 240);
 					time = 2;
@@ -149,6 +166,12 @@ public class Battle {
 	}
 	public void setNext(boolean next) {
 		this.next = next;
+	}
+	public boolean isMusicTrigger() {
+		return musicTrigger;
+	}
+	public void setMusicTrigger(boolean musicTrigger) {
+		this.musicTrigger = musicTrigger;
 	}
 
 
