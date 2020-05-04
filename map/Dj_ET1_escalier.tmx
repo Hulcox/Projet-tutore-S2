@@ -33,7 +33,7 @@
   </object>
   <object id="2" name="Rica" type="Dialogue" x="453" y="479" width="81" height="60">
    <properties>
-    <property name="personne" value="Quete peau de gobelin"/>
+    <property name="personne" value="Rica"/>
    </properties>
   </object>
  </objectgroup>

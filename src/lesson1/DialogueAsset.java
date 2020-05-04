@@ -55,9 +55,16 @@ public class DialogueAsset implements ComponentListener {
 		else 
 			this.Index = 0;
 		
-		if(this.isHaveQuest()) {
+
+		if(this.isHaveQuest()) { //Detection des quetes
+			if(this.quete.isComplete()) {
+				this.HaveQuest = false;
+				this.textcol = new ArrayList<String>();
+				this.textcol.add("Quest complete reward : " + "\n" + this.quete.getReward().getNom());
+			}
 			this.confirm.render(container, g);
 			g.drawString("Give", confirm.getX() + X_PADDING, confirm.getY() + Y_PADDING);
+
 		}
 		
 	}
@@ -86,19 +93,39 @@ public class DialogueAsset implements ComponentListener {
 	
 	public void verifQuete(Player player) throws SlickException {
 		if (this.click) {
-			for (Objets m : player.getInventaire().getInventoryList()) {
-					if(m.getNom().equals(this.quete.getLoot().getNom()) && m.getNumber() > this.quete.getNumber()) {
-						player.getInventaire().AddObjet(this.quete.getReward());
-						this.quete.setComplete(true);
-						this.HaveQuest = false;
-						m.setNumber(m.getNumber()-this.quete.getNumber());
-						this.textcol = new ArrayList<String>();
-						this.textcol.add("Quest complete reward : " + "\n" + this.quete.getReward().getNom());
-					}
-					else {
-						this.click = false;
-					}
+			if(this.quete.getLoot().getType() == "MonsterDrop") {
+				for (Objets m : player.getInventaire().getInventoryList()) {
+						if(m.getNom().equals(this.quete.getLoot().getNom()) && m.getNumber() > this.quete.getNumber()) {
+							player.getInventaire().AddObjet(this.quete.getReward());
+							this.quete.setComplete(true);
+							this.HaveQuest = false;
+							m.setNumber(m.getNumber()-this.quete.getNumber());
+							this.textcol = new ArrayList<String>();
+							this.textcol.add("Quest complete reward : " + "\n" + this.quete.getReward().getNom());
+						}
+						else {
+							this.click = false;
+						}
 				}
+			}
+			else if(this.quete.getLoot().getType() == "key") {
+				boolean trouvé = false;
+				for (Objets m : player.getInventaire().getKeyItemList()) {
+						if(m.getNom().equals(this.quete.getLoot().getNom())) {
+							trouvé = true;
+							this.quete.setComplete(true);
+							this.HaveQuest = false;
+							this.textcol = new ArrayList<String>();
+							this.textcol.add("Quest complete reward : " + "\n" + this.quete.getReward().getNom());
+						}
+						else {
+							this.click = false;
+						}
+				}
+				if(trouvé) {
+					player.getInventaire().AddObjet(this.quete.getReward());
+				}
+			}
 		}
 		
 	}

@@ -1,18 +1,18 @@
 package lesson1;
 
 public class Quete {
-	private MonsterDrop loot;
+	private Objets loot;
 	private int number;
 	private KeyItem reward;
 	private int ID;
 	private boolean Complete = false;
-	public Quete(MonsterDrop loot, int number, KeyItem reward, int ID) {
+	public Quete(Objets loot, int number, KeyItem reward, int ID) {
 		this.loot = loot;
 		this.number = number;
 		this.reward = reward;
 		this.ID  = ID;
 	}
-	public MonsterDrop getLoot() {
+	public Objets getLoot() {
 		return loot;
 	}
 	public void setLoot(MonsterDrop loot) {

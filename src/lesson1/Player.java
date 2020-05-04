@@ -6,7 +6,9 @@ import org.newdawn.slick.Image;
 
 
 
+
 public class Player {
+	private boolean affichageState = false;
 	private int mana = 20;
 	private int MaxMana;
 	private float x = 300, y = 300;
@@ -247,6 +249,12 @@ public class Player {
 	public int getLevel() {
 		return level;
 	}
+	public void LevelInit(int level) {
+		this.level = level;
+	}
+	public void setMaxXp(int MaxXp) {
+		this.MaxXp = MaxXp;
+	}
 
 	public void setLevel() {
 		if(getXp() >= getMaxXp()) {
@@ -254,5 +262,12 @@ public class Player {
 			this.xp = 0;
 			setMaxXp();
 		}
+	}
+
+	public boolean isAffichageState() {
+		return affichageState;
+	}
+	public void setAffichageState(boolean affichageState) {
+		this.affichageState = affichageState;
 	}
 }

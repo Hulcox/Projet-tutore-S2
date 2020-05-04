@@ -22,6 +22,15 @@ public class Inventaire implements ComponentListener{
 	private ItemsGUI itemsgui;
 	private SpellGUI spellgui;
 	
+	public void reset() {
+		this.inventoryList = new ArrayList<Objets>();
+		this.keyItemList = new ArrayList<KeyItem>();
+	}
+	
+	public ArrayList<KeyItem> getKeyItemList(){
+		return this.keyItemList;
+	}
+	
 	public void addKeyItem(KeyItem keyitem) {
 		this.keyItemList.add(keyitem);
 	}
@@ -55,7 +64,8 @@ public class Inventaire implements ComponentListener{
 				this.spellgui.AddMouseOverArea((Spells) objet);
 			}
 			else if(objet.getType().equals("key")) {
-				this.addKeyItem((KeyItem) objet);
+				KeyItem temp = (KeyItem) objet;
+				this.keyItemList.add(temp);
 			}
 			else {
 				for(Objets i : inventoryList) {
