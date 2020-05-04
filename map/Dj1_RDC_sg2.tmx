@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="3">
+ <tileset firstgid="1" source="Terrain final.tsx"/>
+ <tileset firstgid="136" source="Pnj.tsx"/>
+ <tileset firstgid="232" source="logicSolid.tsx"/>
+ <layer id="1" name="Sol" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAEChNkYGAQHMWjYUDjNCAGNJ/amJh0S207QeaN2osZBqPhTHn6Hk1XgyddEYoLbOmdkJ5Recz4HQ2T0TAZTQOjaWA0DQyONAAA4ORTMhAOAAA=
+  </data>
+ </layer>
+ <layer id="3" name="Décors" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu3QMQoAMAgEQT+d/6ffMliFsTtED2bGECBAgACBd4GT0+as12J7mteKPCJAgAABAh8LXLMAM2QQDgAA
+  </data>
+ </layer>
+ <layer id="2" name="Murs/Bordures" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAUDEQIiQEsVqIiFifSEMlCdPhWxEpH2GgHV2VERGxJprxCR6ohVJkCkwlF7iQwoHMpGwxl7wIy0dMUKDAYmPJgZLZgY8agFmcOCpp5cLno8EJteybVvVN9oCIyGwGgIjIbAaAjQMgQAK5GfCRAOAAA=
+  </data>
+ </layer>
+ <layer id="5" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2UsQrAIAxE/f8v7WLb1U5N1hvkkJNAe4EMgegzT7E1R4WBI6DqZOZQM3M/Ju5o6sK8GGj0JFcZX+Gy96aet4rLvgH1vH/h4r1ijR5YzyMWnpNETtaz/gcPsljjv8LOs4jzMhuwARuwARvYauAF0Q69PhAOAAA=
+  </data>
+ </layer>
+ <objectgroup id="4" name="transition" width="30" height="30">
+  <object id="1" name="Dj1_RDC_sg" type="changement" x="422" y="451" width="79" height="48">
+   <properties>
+    <property name="detmap" value="Dj1_RDC_sg"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="115"/>
+   </properties>
+  </object>
+  <object id="2" name="demonMask" type="Chest" x="445" y="255" width="32" height="96">
+   <properties>
+    <property name="ID" type="int" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

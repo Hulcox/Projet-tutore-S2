@@ -89,7 +89,6 @@ public class WindowGame extends BasicGame {
     	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinSpear);
     	inventory.AddObjet(GameAsset.Poncho);
-    	inventory.AddObjet(GameAsset.debug);
     	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory); //initialisations des vendables
     	sellGUI.AddTrade(GameAsset.copperArmor, container);
     	sellGUI.AddTrade(GameAsset.diamondArmor, container);
@@ -116,7 +115,7 @@ public class WindowGame extends BasicGame {
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
     	bossbattle.setBoss(GameAsset.KingGobelin);
-    	p1.getInventaire().AddObjet(GameAsset.debug);
+    	
     }
 
     

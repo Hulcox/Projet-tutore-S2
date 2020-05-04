@@ -37,11 +37,11 @@
     <property name="dety" type="int" value="864"/>
    </properties>
   </object>
-  <object id="2" name="transition_2" type="changement" x="614" y="629" width="60" height="55">
+  <object id="2" name="Dj1_RDC_sp" type="changement" x="614" y="629" width="60" height="55">
    <properties>
-    <property name="detmap" value="EtagedeDonjon"/>
-    <property name="detx" type="int" value="177"/>
-    <property name="dety" type="int" value="842"/>
+    <property name="detmap" value="Dj1_RDC_sp"/>
+    <property name="detx" type="int" value="461"/>
+    <property name="dety" type="int" value="560"/>
    </properties>
   </object>
   <object id="7" name="Cid" type="vendeur" x="769" y="144" width="92" height="78"/>

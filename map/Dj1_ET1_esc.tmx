@@ -15,23 +15,24 @@
  </layer>
  <layer id="3" name="Décors" width="30" height="30" opacity="0.96">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2QMQ4AIAgD+bS/8NHKRhjaiUFzJAxYKHIRBAQgAIH/CKx7ksuJq3OnCqerWaU5X6crb6U5X6crb6Wlb83srfXU3v6n3R+oIQABCEAAAo8ROGeLajMQDgAA
+   H4sIAAAAAAAECu2QMQ4AIAgD+bS/8NHK1qmdGDRHQgKpFLkqAgIQgMB/BNY9KeXE1b3TRdLdrNOSb9Kdt9OSb9Kdt9PaV7Pfaj+1V/+0taGGAAQgAAEIPErgAD+AKp0QDgAA
   </data>
  </layer>
  <layer id="5" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2TvQ7AIAiEff8n7dKftZ0qac6BQOQiWzEhtAp8cMbWav1Nga0PnG0RDbOZUi+yrh60J9oZgfYY4aJH+GDqCEOeeIY7CiR8MFz0u4rNmFdqzMzqk5nXyp9p4J0X11Lze0fWib5bibH2dO6qzrqed586Lpur63v/DDc6i8fCvtRhuMjL8AwX88KzfOQx894dciTawzZd8aVAKVAKGAq8m+6ZchAOAAA=
+   H4sIAAAAAAAECu2TSwrAIAxEvf9Ju+ln265qKCMiUTOYXSOESPN5yUhTivM3Bba8sLdZNPRmSj/LuXLS7minBZpzhIsZ4Y2lJQ114hluaeBwYbiYdxXrsa/0mJk2J7OvVj/ToBcPrqbm9x9pkfZtJUf71tau6lz3671lnYO7Jxc9LZ7hMvuM2NKH4Y56sTGGi33hWRbqmH3vDDkc7WGHjvxQIBQIBRQFXhbByIoQDgAA
   </data>
  </layer>
  <objectgroup id="4" name="transition" width="30" height="30">
-  <object id="1" x="393" y="356" width="203" height="83">
+  <object id="1" name="Dj1_RDC_sg" type="changementc" x="393" y="356" width="203" height="83">
    <properties>
-    <property name="detmap" value="Dj_RDC_sg"/>
+    <property name="detmap" value="Dj1_RDC_sg"/>
     <property name="detx" value="418"/>
     <property name="dety" value="527"/>
+    <property name="key" value="droit de passage"/>
    </properties>
   </object>
-  <object id="2" name="Rica" type="Dialogue" x="453" y="479" width="81" height="60">
+  <object id="2" name="Rica" type="Dialogue" x="424" y="479" width="81" height="60">
    <properties>
     <property name="personne" value="Rica"/>
    </properties>

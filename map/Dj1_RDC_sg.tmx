@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="9">
+ <tileset firstgid="1" source="Terrain final.tsx"/>
+ <tileset firstgid="136" source="logicSolid.tsx"/>
+ <tileset firstgid="161" source="Pnj.tsx"/>
+ <layer id="1" name="Sol" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAEChNkYGAQHCAsBrSXnhjmT3raCbJr1F76xPNoOI+GMy3y9mi6Gk1Xo+mK8jQwmo8oD0Ni0uFoOI+GMzHphFQ1o+mKvukKFN7ocQSLA1rRABW7/rsQDgAA
+  </data>
+ </layer>
+ <layer id="5" name="Décors" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2U6wnDMAyEs1036AYdoZ2/1Y+Dy4dsqUlooMRgrLPuoQSSZbnW9Qb+9w08T3o0z30lM0R/y06sVlee6w3NMOo7l3VHU3GqPjMDdzTixDna9K548qTOsTg6vTeqK27VD9/gaI9yeF/5Vn36dTF9NbefXS/xXDurxY8zeN8sfSuu6XiQQ+x+R9bMIT4yy72YQ+xcr4O3d9PP8a9qfwZlZnfqHXVGxhmLubfmEPE9+Xvp1G7N3Ls3i5raGZ1c4sdMjB61aK8gucLZf2gl/ABypCUvw+QSS8MM3fs50gan0s+0npHVZ2mzWbp3e2buZmzlvQHh6YQgEA4AAA==
+  </data>
+ </layer>
+ <layer id="2" name="Murs/Bordures" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGDggArRagUTsC1TvR6IekB3CQAwDykCGPok4Bqg+lkQ9IDuUgBgGjIAMOxJxNlB9Dol6QHYYAjEMCMEYdKAFkOwYtRcpMKjMHA1nKgcoDuNGwxlHwFBZeDScqRygOIwbDWccAUNl4dFwpnKA4jBuNJxxBAyVhUdyOLMCw5IZKTwZgWwmGmEWJHtATOQ2NHIcoCmjGhcAdMcoMBAOAAA=
+  </data>
+ </layer>
+ <layer id="4" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECs2VyW7DMAxE8/m5tAnaU/u11RwGeBhQW53EESCQImcRHcO5XM5b12a9uz8aR3uXJ7zXWdx7u4Dvvxp951W8cTcTW5Tvq9a7+fJ3f8Yz6M1LX+a+w3/eQeqs+NpL0VxH9mY5Obu+1qaGa7NIzsxX2N5Onxlu1zf1e2fqVhj2R/P6/pVGVaPurN/zrXizWvr63ozWWPUld5RbV1G43qp8K3xVS83E5Jn4ypf9nTx98kytd/DV/Y5uzvSqeempnDO4V9Ue/f975ryeM+PoveIzWc2pf2TeEZceyhObZ+JH81Za5Dq3vuOsrn769rjCZk81ruzn2VjV09c9R3KZq59ncxxH/R1f663GVd+fJvgN0a+Wfx7Y8u3xf+GjlN8OPouAPez4B5E1/ZUQDgAA
+  </data>
+ </layer>
+ <objectgroup id="3" name="transition" width="30" height="30">
+  <object id="1" name="Dj1_RDC_sp" type="changement" x="85" y="895" width="83" height="56">
+   <properties>
+    <property name="detmap" value="Dj1_RDC_sp"/>
+    <property name="detx" type="int" value="157"/>
+    <property name="dety" type="int" value="239"/>
+   </properties>
+  </object>
+  <object id="6" name="Dj1_ET1_esc" type="changement" x="785" y="724" width="59" height="53">
+   <properties>
+    <property name="detmap" value="Dj1_ET1_esc"/>
+    <property name="detx" type="int" value="492"/>
+    <property name="dety" type="int" value="620"/>
+   </properties>
+  </object>
+  <object id="7" name="Potion" type="Chest" x="288" y="799" width="32" height="96">
+   <properties>
+    <property name="ID" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="8" name="Dj1_RDC_sg2" type="changementc" x="453" y="107" width="52" height="42">
+   <properties>
+    <property name="detmap" value="Dj1_RDC_sg2"/>
+    <property name="detx" type="int" value="463"/>
+    <property name="dety" type="int" value="433"/>
+    <property name="key" value="droit de passage"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

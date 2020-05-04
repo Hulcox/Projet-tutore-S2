@@ -11,16 +11,16 @@ import org.newdawn.slick.SlickException;
 public class GameAsset {
 	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage;
 	Enemie knight, gobelin;
-	Map map1, grotte1, Village, EtagedeDonjon, Dj_RDC_sg, Dj_ET1_escalier;
+	Map map1, grotte1, Village, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb;
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
-	KeyItem debug,masque;
+	KeyItem debug,demonMask, key;
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
-	Chest chest1,chest2;
-	Quete PeauGobelin;
+	Chest chest1,chest2,chest3;
+	Quete PeauGobelin, masquedemo;
 	Boss KingGobelin;
 	Music maintheme, cave, Battle, Victory, MenuMusic, Town;
 	private Player player;
@@ -49,17 +49,23 @@ public class GameAsset {
 	
 	public void loadMap() throws SlickException{
 		map1 = new Map("MainMap.tmx", true,battle1, "map1",this.maintheme);
-		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1",this.cave);
 		Village = new Map ("Village.tmx", false, battle1, "Village",this.Town);
-		EtagedeDonjon = new Map ("EtagedeDonjon.tmx", false, battle1, "EtagedeDonjon",this.cave); 
-		Dj_RDC_sg = new Map ("Dj_RDC_sg.tmx", false, battle1, "Dj_RDC_sg",this.cave);
-		Dj_ET1_escalier = new Map ("Dj_ET1_escalier.tmx", true, battle1, "Dj_ET1_escalier",this.cave);
+		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1",this.cave);
+		Dj1_RDC_sp = new Map ("Dj1_RDC_sp.tmx", true, battleGrotte, "Dj1_RDC_sp",this.cave); 
+		Dj1_RDC_sg = new Map ("Dj1_RDC_sg.tmx", true, battleGrotte, "Dj1_RDC_sg",this.cave);
+		Dj1_ET1_esc = new Map ("Dj1_ET1_esc.tmx", true, battleGrotte, "Dj1_ET1_esc",this.cave);
+		Dj1_RDC_sg2 = new Map ("Dj1_RDC_sg2.tmx", true, battleGrotte, "Dj1_RDC_sg2",this.cave);
+		Dj1_RDC_sb = new Map ("Dj1_RDC_sb.tmx", false, battleGrotte, "Dj1_RDC_sb",this.cave);
 		map1.addEncounrers(knight);
 		grotte1.addEncounrers(gobelin);
-		Dj_ET1_escalier.addEncounrers(gobelin);
+		Dj1_ET1_esc.addEncounrers(gobelin);
+		Dj1_RDC_sp.addEncounrers(gobelin);
+		Dj1_RDC_sg.addEncounrers(gobelin);
+		Dj1_RDC_sg2.addEncounrers(gobelin);
+		Dj1_RDC_sb.addEncounrers(gobelin);
 		allMaps = new ArrayList<Map>();
-		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village); allMaps.add(EtagedeDonjon); allMaps.add(Dj_RDC_sg);
-		allMaps.add(Dj_ET1_escalier);
+		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village); allMaps.add(Dj1_RDC_sp); allMaps.add(Dj1_RDC_sg);
+		allMaps.add(Dj1_ET1_esc); allMaps.add(Dj1_RDC_sg2); allMaps.add(Dj1_RDC_sb);
 		
 	}
 	public void loadMusic() throws SlickException {
@@ -95,7 +101,7 @@ public class GameAsset {
 		Hypotion = new Potions(80,"potion X", false, 80,14); allAsset.add(Hypotion);
 		//Key object
 		debug = new KeyItem(1,"droit de passage",false,15); allAsset.add(debug);
-		masque = new KeyItem(1,"masque",false,23); allAsset.add(masque);
+		demonMask = new KeyItem(1,"Masque demoniaque",false,23); allAsset.add(demonMask);
 		//Spells
 		boosterI = new Booster(200,"booster I",false,true,2,10,16); allAsset.add(boosterI);
 		fireI = new DamageSpell(200,"Fire I",false,false,20,5,17); allAsset.add(fireI);
@@ -107,18 +113,20 @@ public class GameAsset {
 		//Chest
 		chest1 = new Chest(1,this.gobelinSpear,this); allChest.add(chest1);
 		chest2 = new Chest(2,this.potion,this); allChest.add(chest2);
+		chest3 = new Chest(3,this.demonMask,this); allChest.add(chest3);
 		//Initialisation des quetes
-		PeauGobelin = new Quete(this.debug,3,this.masque,1); allQuest.add(PeauGobelin);
+		PeauGobelin = new Quete(this.gobelinMeat,3,this.debug,1); allQuest.add(PeauGobelin);
+		masquedemo = new Quete(this.demonMask,3,this.key,1); allQuest.add(masquedemo);
 		//Boss
 		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm);
 
 	}
 	public void loadText(GameContainer container) throws SlickException, IOException {
 		allTexts = new ArrayList<DialogueAsset>();
-
 		allTexts.add(new DialogueAsset("soldat",false));
 		allTexts.add(new DialogueAsset("King",false));
-		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
+		//allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
+		allTexts.add(new DialogueAsset("Konor",true,this.masquedemo,container));
 		
 	}
 	public void loadWeapons(int ID) throws SlickException {
