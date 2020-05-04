@@ -322,6 +322,22 @@ public class WindowGame extends BasicGame {
                 	}
 
                 }
+                if("changementc".equals(map.getObjectType(0, objectID))){
+                	String keyName = this.map.getObjectProperty(0, objectID, "key","undefined");
+                	for (KeyItem k : p1.getInventaire().getKeyItemList()) {
+                		if (k.getNom().equals(keyName)) {
+                        	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
+                            p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
+                            p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
+                        	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
+                        	this.MapLoading(this.map);
+                        	if(!p1.getMap().getMusic().equals(this.playedmusic)) {
+        	                	this.playedmusic = this.p1.getMap().getMusic();
+        	                	this.playedmusic.loop();
+                        	}
+                		}
+                	}
+                }
 
 
             }
