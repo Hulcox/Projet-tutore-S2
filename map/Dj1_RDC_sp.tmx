@@ -23,7 +23,7 @@
    H4sIAAAAAAAECu1UywrDMAzr5++yB+thj6+ddRAI47hJsw4GNoQ4dmTZKs2ylP1KgZMRcZ3Nx+J5757V4VxaO4ppvtfP6jB3M4czMob67Hl0B5bm61yZsB28nINhf0b8buvi1oqEmMf5s+cVaNMlBrVg2NHziLEGML1YxQD3LV7qGGkHHs+LWNYzdcE9mtYgFrFsBs2rz5o9+xG8fr5Ivz28PfPonUiTiPdhIPyrTwVP+L28ExQhdIbXf7OQoBGM9It0bsCHw1mvR/JmjSrvyy76dzc7813hf5Ld9bl31tRGTt+ZjauVLgVKgVLg7xX4ACGs/ngQDgAA
   </data>
  </layer>
- <objectgroup id="6" name="transition"  width="30" height="30">
+ <objectgroup id="6" name="transition" width="30" height="30">
   <object id="7" name="map1" type="changement" x="421" y="582" width="83" height="51">
    <properties>
     <property name="detmap" value="map1"/>
@@ -45,7 +45,7 @@
   </object>
   <object id="13" name="Konor" type="Dialogue" x="391" y="227" width="80" height="77">
    <properties>
-    <property name="personne" value="konor"/>
+    <property name="personne" value="Konor"/>
    </properties>
   </object>
   <object id="14" name="Dj1_RDC_sb" type="changementc" x="709" y="174" width="52" height="42">
