@@ -64,6 +64,7 @@ public class DialogueAsset implements ComponentListener {
 			}
 			this.confirm.render(container, g);
 			g.drawString("Give", confirm.getX() + X_PADDING, confirm.getY() + Y_PADDING);
+
 		}
 		
 	}
