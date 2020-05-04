@@ -113,10 +113,10 @@ public class GameAsset {
 	}
 	public void loadText(GameContainer container) throws SlickException, IOException {
 		allTexts = new ArrayList<DialogueAsset>();
+
 		allTexts.add(new DialogueAsset("soldat",false));
 		allTexts.add(new DialogueAsset("King",false));
-		allTexts.add(new DialogueAsset("Quete peau de gobelin",true,this.PeauGobelin,container));
-
+		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
 		
 	}
 	public void loadWeapons(int ID) throws SlickException {
