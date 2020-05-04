@@ -90,7 +90,7 @@ public class Battle {
 					
 				}
 				else {
-					if(!this.xptake) {
+					if(!this.xptake) { //xp actualisation
 						player.setXp(this.player.getMap().getArrayList().get(i).getXp());
 						player.setLevel();
 						this.xptake = true;
