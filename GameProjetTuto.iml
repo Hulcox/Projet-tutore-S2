@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="file://C:/Users/sbred/git/Projet-tutor-S2/GameProjetTuto/lib/jinput.jar" />
-    <libelement value="file://C:/Users/sbred/git/Projet-tutor-S2/GameProjetTuto/lib/lwjgl.jar" />
-    <libelement value="file://C:/Users/sbred/git/Projet-tutor-S2/GameProjetTuto/lib/slick.jar" />
+    <libelement value="file://C:/Users/Elias/git/Projet-tutore-S2/lib/jinput.jar" />
+    <libelement value="file://C:/Users/Elias/git/Projet-tutore-S2/lib/lwjgl.jar" />
+    <libelement value="file://C:/Users/Elias/git/Projet-tutore-S2/lib/slick.jar" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
@@ -15,7 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="13.0.2" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library name="jinput.jar">
         <CLASSES>
@@ -38,6 +38,24 @@
       <library name="slick.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/slick.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jogg-0.0.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jorbis-0.0.15.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
