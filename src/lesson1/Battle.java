@@ -10,6 +10,7 @@ import org.newdawn.slick.SlickException;
 public class Battle {
 	private boolean musicTrigger = true;
 	private boolean damagetaken = false;
+	private boolean xptake = false;
 	private int time = 0;
 	private Enemie enemie1;
 	private int index;
@@ -70,6 +71,7 @@ public class Battle {
 		if (time > 1) {   //ENEMY TURN
 			this.damagetaken = false;
 			if (player.getMap().getArrayList().get(i).getPv() <= 0) { //Battle win
+				
 				if (this.next) {
 					
 					this.next = false;
@@ -82,13 +84,17 @@ public class Battle {
 					player.setCasting(false);
 					player.setDamage(player.getBaseDamage());
 					player.getInventaire().AddObjet(player.getMap().getArrayList().get(i).getLoot());
-					player.setXp(this.player.getMap().getArrayList().get(i).getXp());
-					player.setLevel();
+					this.xptake = false;
 					this.player.setAffichageState(false);
 					this.musicTrigger = true;
 					
 				}
 				else {
+					if(!this.xptake) { //xp actualisation
+						player.setXp(this.player.getMap().getArrayList().get(i).getXp());
+						player.setLevel();
+						this.xptake = true;
+					}
 					this.player.setAffichageState(true);
 					g.drawAnimation(player.getBattleanim()[0], 0, 240);
 					g.drawString("Victory ! " + "Loot : " + player.getMap().getArrayList().get(i).getLoot().getNom() + " Press 'e' to continue" , 100, 240);
