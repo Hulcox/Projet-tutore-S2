@@ -259,7 +259,9 @@ public class Player {
 	public void setLevel() {
 		if(getXp() >= getMaxXp()) {
 			this.level = this.level + 1;
+			int xptransition = getXp() - getMaxXp();
 			this.xp = 0;
+			this.xp =+ xptransition;
 			setMaxXp();
 		}
 	}
