@@ -211,6 +211,7 @@ public class GameAsset {
 	public DialogueAsset searchText(String personne) throws SlickException, IOException {
 		for (DialogueAsset i : allTexts) {
 			if (i.getPersonne().equals(personne)) {
+				System.out.println(i.getPersonne());
 				return i;
 				
 			}
