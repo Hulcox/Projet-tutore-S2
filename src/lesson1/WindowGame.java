@@ -138,7 +138,7 @@ public class WindowGame extends BasicGame {
     	animationasset.loadEnemyAnimation(GameAsset);
     	this.hud.init(container);
     	this.sellGUI.init(container);
-    	this.playedmusic = this.p1.getMap().getMusic();
+    	this.playedmusic = GameAsset.MenuMusic;
     	this.playedmusic.loop();
 
     	
@@ -156,6 +156,7 @@ public class WindowGame extends BasicGame {
 		this.MapLoading(this.map);
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
+			this.triggerMusic = true;
 		}
 		else if (bossbattle.isInBattle()) {
 			bossbattle.render(container, g, singleFireEvent);
