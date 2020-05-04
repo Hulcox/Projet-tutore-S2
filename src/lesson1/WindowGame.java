@@ -116,6 +116,7 @@ public class WindowGame extends BasicGame {
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
     	bossbattle.setBoss(GameAsset.KingGobelin);
+    	p1.getInventaire().AddObjet(GameAsset.debug);
     }
 
     

@@ -64,7 +64,8 @@ public class Inventaire implements ComponentListener{
 				this.spellgui.AddMouseOverArea((Spells) objet);
 			}
 			else if(objet.getType().equals("key")) {
-				this.addKeyItem((KeyItem) objet);
+				KeyItem temp = (KeyItem) objet;
+				this.keyItemList.add(temp);
 			}
 			else {
 				for(Objets i : inventoryList) {
