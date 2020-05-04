@@ -15,7 +15,7 @@ public class GameAsset {
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
-	KeyItem debug, masquemagique;
+	KeyItem debug,masque;
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
@@ -95,7 +95,7 @@ public class GameAsset {
 		Hypotion = new Potions(80,"potion X", false, 80,14); allAsset.add(Hypotion);
 		//Key object
 		debug = new KeyItem(1,"droit de passage",false,15); allAsset.add(debug);
-		masquemagique = new KeyItem(1,"masque magique",false,23); allAsset.add(masquemagique);
+		masque = new KeyItem(1,"masque",false,23); allAsset.add(masque);
 		//Spells
 		boosterI = new Booster(200,"booster I",false,true,2,10,16); allAsset.add(boosterI);
 		fireI = new DamageSpell(200,"Fire I",false,false,20,5,17); allAsset.add(fireI);
@@ -108,7 +108,7 @@ public class GameAsset {
 		chest1 = new Chest(1,this.gobelinSpear,this); allChest.add(chest1);
 		chest2 = new Chest(2,this.potion,this); allChest.add(chest2);
 		//Initialisation des quetes
-		PeauGobelin = new Quete(this.gobelinMeat,3,this.debug,1); allQuest.add(PeauGobelin);
+		PeauGobelin = new Quete(this.debug,3,this.masque,1); allQuest.add(PeauGobelin);
 		//Boss
 		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm);
 
