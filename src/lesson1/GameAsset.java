@@ -125,7 +125,7 @@ public class GameAsset {
 		allTexts = new ArrayList<DialogueAsset>();
 		allTexts.add(new DialogueAsset("soldat",false));
 		allTexts.add(new DialogueAsset("King",false));
-		//allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
+		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
 		allTexts.add(new DialogueAsset("Konor",true,this.masquedemo,container));
 		
 	}
