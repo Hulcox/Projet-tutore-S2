@@ -23,7 +23,7 @@
    H4sIAAAAAAAECu2TSwrAIAxEvf9Ju+ln265qKCMiUTOYXSOESPN5yUhTivM3Bba8sLdZNPRmSj/LuXLS7minBZpzhIsZ4Y2lJQ114hluaeBwYbiYdxXrsa/0mJk2J7OvVj/ToBcPrqbm9x9pkfZtJUf71tau6lz3671lnYO7Jxc9LZ7hMvuM2NKH4Y56sTGGi33hWRbqmH3vDDkc7WGHjvxQIBQIBRQFXhbByIoQDgAA
   </data>
  </layer>
- <objectgroup id="4" name="transition" width="30" height="30">
+ <objectgroup id="4" name="transition"  width="30" height="30">
   <object id="1" name="Dj1_RDC_sg" type="changementc" x="393" y="356" width="203" height="83">
    <properties>
     <property name="detmap" value="Dj1_RDC_sg"/>
@@ -32,7 +32,7 @@
     <property name="key" value="droit de passage"/>
    </properties>
   </object>
-  <object id="2" name="Rica" type="Dialogue" x="424" y="479" width="81" height="60">
+  <object id="2" name="Rica" type="Dialogue" x="419" y="479" width="81" height="60">
    <properties>
     <property name="personne" value="Rica"/>
    </properties>

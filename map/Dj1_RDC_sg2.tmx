@@ -18,13 +18,13 @@
    H4sIAAAAAAAECmNgGAUDEQIiQEsVqIiFifSEMlCdPhWxEpH2GgHV2VERGxJprxCR6ohVJkCkwlF7iQwoHMpGwxl7wIy0dMUKDAYmPJgZLZgY8agFmcOCpp5cLno8EJteybVvVN9oCIyGwGgIjIbAaAjQMgQAK5GfCRAOAAA=
   </data>
  </layer>
- <layer id="5" name="Logic" width="30" height="30">
+ <layer id="5" name="Logic" width="30" height="30"  width="30" height="30">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu2UsQrAIAxE/f8v7WLb1U5N1hvkkJNAe4EMgegzT7E1R4WBI6DqZOZQM3M/Ju5o6sK8GGj0JFcZX+Gy96aet4rLvgH1vH/h4r1ijR5YzyMWnpNETtaz/gcPsljjv8LOs4jzMhuwARuwARvYauAF0Q69PhAOAAA=
   </data>
  </layer>
- <objectgroup id="4" name="transition" width="30" height="30">
-  <object id="1" name="Dj1_RDC_sg" type="changement" x="422" y="451" width="79" height="48">
+ <objectgroup id="4" name="transition">
+  <object id="1" name="Dj1_RDC_sg" type="changement" x="422" y="452" width="79" height="48">
    <properties>
     <property name="detmap" value="Dj1_RDC_sg"/>
     <property name="detx" type="int" value="480"/>

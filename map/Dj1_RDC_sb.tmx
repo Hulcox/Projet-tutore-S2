@@ -22,8 +22,8 @@
    H4sIAAAAAAAECu2QwQrDMAxD+/m7bZ/c6iB49ZT51LKCDUGyLCXB2zb1OlZwxek2e8WburOrf3q3+2udp79XT+1XmaQnTfet9PoW+1XGOr3knJsT6U2cXnP5yH/l6HVG2BW95sqQpzs4NyemDDV6zTUnp9+cc3OifSuk11xe8pTl3JyYMtToNdfc3Pg5tHfQk1eZrnwvURn24ne92/2X8/pH9V2ljLXJnjfgvSQ8O7+7lLEmt3gta/YlrJnap4y16q29fQmrd/rZwGxgNvCEDeyUulrjEA4AAA==
   </data>
  </layer>
- <objectgroup id="4" name="transition" width="30" height="30">
-  <object id="1" name="boss" type="boss" x="416" y="227" width="189" height="144">
+ <objectgroup id="4" name="transition"  width="30" height="30">
+  <object id="1" name="boss" type="boss" x="416" y="228" width="189" height="144">
    <properties>
     <property name="ID" type="int" value="1"/>
    </properties>

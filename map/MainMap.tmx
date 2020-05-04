@@ -37,7 +37,7 @@
     <property name="dety" type="int" value="864"/>
    </properties>
   </object>
-  <object id="2" name="Dj1_RDC_sp" type="changement" x="614" y="629" width="60" height="55">
+  <object id="2" name="Dj1_RDC_sp" type="changement" x="611" y="629" width="60" height="55">
    <properties>
     <property name="detmap" value="Dj1_RDC_sp"/>
     <property name="detx" type="int" value="461"/>
