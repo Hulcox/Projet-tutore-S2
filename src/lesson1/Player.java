@@ -236,7 +236,12 @@ public class Player {
 	}
 
 	public void setMaxXp() {
-		this.MaxXp = getLevel()*100;
+		if(getLevel() <= 10)
+			this.MaxXp = (int)(Math.sqrt(Math.exp(getLevel())))+1;
+		if(getLevel() > 10 && getLevel() <= 20)
+			this.MaxXp = (int)((Math.sqrt(Math.exp(getLevel())))/getLevel())*7;
+		if(getLevel() > 20 && getLevel() <= 30)
+			this.MaxXp = (int)((Math.sqrt(Math.exp(getLevel())))/getLevel())*5;
 	}
 
 	public int getLevel() {
