@@ -56,7 +56,7 @@ public class DialogueAsset implements ComponentListener {
 			this.Index = 0;
 		
 
-		if(this.isHaveQuest()) {
+		if(this.isHaveQuest()) { //Detection des quetes
 			if(this.quete.isComplete()) {
 				this.HaveQuest = false;
 				this.textcol = new ArrayList<String>();
