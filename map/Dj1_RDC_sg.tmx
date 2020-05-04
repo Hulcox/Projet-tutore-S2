@@ -23,7 +23,7 @@
    H4sIAAAAAAAECs2VyW7DMAxE8/m5tAnaU/u11RwGeBhQW53EESCQImcRHcO5XM5b12a9uz8aR3uXJ7zXWdx7u4Dvvxp951W8cTcTW5Tvq9a7+fJ3f8Yz6M1LX+a+w3/eQeqs+NpL0VxH9mY5Obu+1qaGa7NIzsxX2N5Onxlu1zf1e2fqVhj2R/P6/pVGVaPurN/zrXizWvr63ozWWPUld5RbV1G43qp8K3xVS83E5Jn4ypf9nTx98kytd/DV/Y5uzvSqeempnDO4V9Ue/f975ryeM+PoveIzWc2pf2TeEZceyhObZ+JH81Za5Dq3vuOsrn769rjCZk81ruzn2VjV09c9R3KZq59ncxxH/R1f663GVd+fJvgN0a+Wfx7Y8u3xf+GjlN8OPouAPez4B5E1/ZUQDgAA
   </data>
  </layer>
- <objectgroup id="3" name="transition"  width="30" height="30">
+ <objectgroup id="3" name="transition" width="30" height="30">
   <object id="1" name="Dj1_RDC_sp" type="changement" x="85" y="895" width="83" height="56">
    <properties>
     <property name="detmap" value="Dj1_RDC_sp"/>
