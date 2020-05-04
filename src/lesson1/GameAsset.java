@@ -92,7 +92,7 @@ public class GameAsset {
 		allTexts = new ArrayList<DialogueAsset>();
 		allTexts.add(new DialogueAsset("soldat"));
 		allTexts.add(new DialogueAsset("King"));
-		allTexts.add(new DialogueAsset("Quete peau de gobelin"));
+		allTexts.add(new DialogueAsset("Rica"));
 
 		
 	}
