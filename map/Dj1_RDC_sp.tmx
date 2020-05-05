@@ -50,7 +50,7 @@
   </object>
   <object id="14" name="Dj1_RDC_sb" type="changementc" x="709" y="119" width="52" height="44">
    <properties>
-    <property name="detmap" value="Dj1_salleboss"/>
+    <property name="detmap" value="Dj1_RDC_sb"/>
     <property name="detx" type="int" value="511"/>
     <property name="dety" type="int" value="608"/>
     <property name="key" value="cle du boss"/>
