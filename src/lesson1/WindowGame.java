@@ -316,10 +316,12 @@ public class WindowGame extends BasicGame {
                 		if(!tempchest.isOpen()) {
                 			p1.getInventaire().AddObjet(tempchest.getLoot());
                 			tempchest.setOpen(true);
+                			this.sellGUI.setShopOpen(false);
                 		}
                 		this.chestTextRender = true;
                 		
                 	}
+                	
 
                 }
                 else if("changementc".equals(map.getObjectType(0, objectID))){
