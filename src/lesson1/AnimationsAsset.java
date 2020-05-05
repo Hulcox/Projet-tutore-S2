@@ -75,6 +75,7 @@ public class AnimationsAsset {
         animations[2] = loadAnimation(spriteSheet, numberOfFrame-1, numberOfFrame, 0);
         chest.setAnimations(animations);
         imageasset.chest2.setAnimations(animations);
+        imageasset.chest3.setAnimations(animations);
     }
 
 

@@ -263,6 +263,7 @@ public class WindowGame extends BasicGame {
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
+    	
         for (int objectID = 0; objectID < map.getObjectCount(0); objectID++) {				//Detection des events sur la tiled map.
             if (p1.getX() > map.getObjectX(0, objectID)
                     && p1.getX() < map.getObjectX(0, objectID) + map.getObjectWidth(0, objectID)
@@ -274,7 +275,7 @@ public class WindowGame extends BasicGame {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
-                if ("vendeur".equals(map.getObjectType(0, objectID))) {
+                else if ("vendeur".equals(map.getObjectType(0, objectID))) {
                 	if (sellGUI.isShopOpen()) {
                 		this.sellGUI.setPlayerOverArea(true);
                 	}
@@ -283,7 +284,7 @@ public class WindowGame extends BasicGame {
                 	}
                 		
                 }
-                if ("changement".equals(map.getObjectType(0, objectID))) {
+                else if ("changement".equals(map.getObjectType(0, objectID))) {
                 	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
@@ -296,7 +297,7 @@ public class WindowGame extends BasicGame {
                 	
                 }
                 
-                if("Dialogue".equals(map.getObjectType(0, objectID))){
+                else if("Dialogue".equals(map.getObjectType(0, objectID))){
                 	try {
 						this.dialogue = GameAsset.searchText(this.map.getObjectProperty(0, objectID, "personne","undefined"));
 					} catch (SlickException e) {
@@ -309,19 +310,21 @@ public class WindowGame extends BasicGame {
                 		this.dialogue.verifQuete(p1);
                 	}
                 }
-                if("Chest".equals(map.getObjectType(0, objectID))) {
+                else if("Chest".equals(map.getObjectType(0, objectID))) {
                 	tempchest = GameAsset.SearchChest(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if(sellGUI.isShopOpen()) {
                 		if(!tempchest.isOpen()) {
                 			p1.getInventaire().AddObjet(tempchest.getLoot());
                 			tempchest.setOpen(true);
+                			this.sellGUI.setShopOpen(false);
                 		}
                 		this.chestTextRender = true;
                 		
                 	}
+                	
 
                 }
-                if("changementc".equals(map.getObjectType(0, objectID))){
+                else if("changementc".equals(map.getObjectType(0, objectID))){
                 	String keyName = this.map.getObjectProperty(0, objectID, "key","undefined");
                 	for (KeyItem k : p1.getInventaire().getKeyItemList()) {
                 		if (k.getNom().equals(keyName)) {
@@ -339,11 +342,11 @@ public class WindowGame extends BasicGame {
                 }
 
 
+
+
             }
-            else {
-            	this.chestTextRender = false;
-            	this.textrender  = false;
-            }
+
+
             
 
             
@@ -354,6 +357,8 @@ public class WindowGame extends BasicGame {
         
     	singleFireEvent.update(delta);
         if (p1.isMoving()) {
+        	this.chestTextRender = false;
+        	this.textrender  = false;
             float futurX = getFuturX(delta);
             float futurY = getFuturY(delta);
             boolean collision = isCollision(futurX, futurY);
