@@ -15,7 +15,7 @@ public class GameAsset {
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
-	KeyItem debug,demonMask, key;
+	KeyItem debug, demonMask, key;
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
@@ -102,6 +102,7 @@ public class GameAsset {
 		//Key object
 		debug = new KeyItem(1,"droit de passage",false,15); allAsset.add(debug);
 		demonMask = new KeyItem(1,"Masque demoniaque",false,23); allAsset.add(demonMask);
+		key = new KeyItem(1,"cle du boss",false,24); allAsset.add(key);
 		//Spells
 		boosterI = new Booster(200,"booster I",false,true,2,10,16); allAsset.add(boosterI);
 		fireI = new DamageSpell(200,"Fire I",false,false,20,5,17); allAsset.add(fireI);
