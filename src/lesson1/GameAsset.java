@@ -23,6 +23,7 @@ public class GameAsset {
 	Quete PeauGobelin, masquedemo;
 	Boss KingGobelin;
 	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA;
+	DialogueAsset bossAtxt;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
@@ -129,9 +130,12 @@ public class GameAsset {
 
 	}
 	public void loadText(GameContainer container) throws SlickException, IOException {
+		bossAtxt = new DialogueAsset("Bossa", false);
+		this.KingGobelin.setDialogue(bossAtxt);
 		allTexts = new ArrayList<DialogueAsset>();
 		allTexts.add(new DialogueAsset("soldat",false));
 		allTexts.add(new DialogueAsset("King",false));
+		
 		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
 		allTexts.add(new DialogueAsset("Konor",true,this.masquedemo,container));
 		

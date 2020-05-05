@@ -18,6 +18,7 @@ public class Boss extends Enemie {
     private boolean isDefeated = false;
     private boolean Trigger = true;
     private Music music;
+    private DialogueAsset dialogue;
     public void setDamage(int damage) {
     	this.pv = damage;
         if(this.pv < (this.maxHp-(this.maxHp*0.49))) {
@@ -67,7 +68,7 @@ public class Boss extends Enemie {
         this.Spell3 = Spell3;
         this.ID = ID;
         this.music = music;
-
+       
     }
     public void render(GameContainer container, Graphics g) {
     	g.drawImage(image, x,y);
@@ -127,6 +128,12 @@ public class Boss extends Enemie {
 	}
 	public void setTrigger(boolean trigger) {
 		Trigger = trigger;
+	}
+	public DialogueAsset getDialogue() {
+		return dialogue;
+	}
+	public void setDialogue(DialogueAsset dialogue) {
+		this.dialogue = dialogue;
 	}
 
 }

@@ -271,6 +271,8 @@ public class WindowGame extends BasicGame {
             if("boss".equals(map.getObjectType(0, objectID))){
             	temp = GameAsset.searchBoss(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
             	if (!temp.isDefeated()) {
+            		this.dialogue = this.temp.getDialogue();
+            		this.textrender = true;
             		this.temp.setX( (map.getObjectX(0, objectID)+(map.getObjectWidth(0, objectID)/2))-temp.getImage().getWidth()/2);
             		this.temp.setY( (map.getObjectY(0, objectID)+(map.getObjectHeight(0, objectID)/2))-temp.getImage().getHeight()/2);
             		this.bossrender = true;
