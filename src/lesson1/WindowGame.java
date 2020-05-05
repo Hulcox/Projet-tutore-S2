@@ -22,7 +22,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	private boolean textrender = false, chestTextRender = false, triggerMusic = false, bossrender = false;
+	private boolean textrender = false, chestTextRender = false, triggerMusic = false, bossrender = false, DisplayinfoMessage = false;
 	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
@@ -48,6 +48,7 @@ public class WindowGame extends BasicGame {
 	Music playedmusic;
 	Boss temp;
 	private ArrayList<Integer> ID;
+	private String info;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
@@ -115,7 +116,6 @@ public class WindowGame extends BasicGame {
     	IngameHUD.getSave().setGameasset(GameAsset);
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
-    	p1.getInventaire().AddObjet(GameAsset.demonMask);
     	
     }
 
@@ -239,6 +239,11 @@ public class WindowGame extends BasicGame {
 	    	if(this.chestTextRender) {
 	    		this.tempchest.renderText(container, g);
 	    	}
+	    	if(this.DisplayinfoMessage) {
+	    		g.setColor(Color.white);
+	    		g.drawImage(GameAsset.InfoImage, 10, 390);
+	    		g.drawString(this.info, 20, 400);
+	    	}
 
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
@@ -347,6 +352,7 @@ public class WindowGame extends BasicGame {
                 }
                 else if("changementc".equals(map.getObjectType(0, objectID))){
                 	String keyName = this.map.getObjectProperty(0, objectID, "key","undefined");
+                	boolean textfound = false;
                 	for (KeyItem k : p1.getInventaire().getKeyItemList()) {
                 		if (k.getNom().equals(keyName)) {
                         	p1.setMap(GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")));
@@ -354,15 +360,21 @@ public class WindowGame extends BasicGame {
                             p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                         	this.map = GameAsset.searchMap(this.map.getObjectProperty(0, objectID, "detmap", "undefined")).getMap();
                         	this.MapLoading(this.map);
+                        	textfound = true;
                         	if(!p1.getMap().getMusic().equals(this.playedmusic)) {
         	                	this.playedmusic = this.p1.getMap().getMusic();
         	                	this.playedmusic.loop();
                         	}
                 		}
                 	}
+                	if(!textfound) {
+                		this.info = ("You need the item : " + keyName);
+                		this.DisplayinfoMessage = true;
+                	}
                 }
                 else if("boss".equals(map.getObjectType(0, objectID))) {
                 	if (!this.temp.isDefeated()) {
+                		this.textrender = false;
                 		this.playedmusic = this.temp.getMusic();
                 		this.bossbattle.setBoss(temp);
                 		this.bossbattle.setInBattle(true);
@@ -388,6 +400,7 @@ public class WindowGame extends BasicGame {
         if (p1.isMoving()) {
         	this.chestTextRender = false;
         	this.textrender  = false;
+        	this.DisplayinfoMessage = false;
             float futurX = getFuturX(delta);
             float futurY = getFuturY(delta);
             boolean collision = isCollision(futurX, futurY);
