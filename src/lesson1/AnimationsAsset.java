@@ -41,11 +41,13 @@ public class AnimationsAsset {
     	SpriteSheet spriteSheetMaelStrom = new SpriteSheet("texture/Maelstrom.png",130,128);
     	SpriteSheet spriteSheetMegaStorm = new SpriteSheet("texture/MegaStorm.png",140,176);
     	SpriteSheet spriteSheetChest = new SpriteSheet("texture/Chest.png",32,32);
-    	SpriteSheet spriteSheetKingGobelin = new SpriteSheet("texture/KingGobelin.png",320,320);
+    	SpriteSheet spriteSheetKingGobelin = new SpriteSheet("texture/Floressia.png",320,320);
+    	//Enemy animations
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
     	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
-    	this.setEnemyAnimation(spriteSheetKingGobelin, 2, imageasset.KingGobelin);
-    	//SpellAnimation
+    	//Boss animations
+    	this.setBossAnimation(spriteSheetKingGobelin, 10, imageasset.KingGobelin);
+    	//SpellAnimations
     	this.setSpellAnimation(spriteSheetBooster, 10, imageasset.boosterI);
     	this.setSpellAnimation(spriteSheetFire, 6, imageasset.fireI);
     	this.setSpellAnimation(spriteSheetFire, 6, imageasset.fireII);
@@ -53,7 +55,7 @@ public class AnimationsAsset {
     	this.setSpellAnimation(spriteSheetUltima, 4, imageasset.Ultima);
     	this.setSpellAnimation(spriteSheetMaelStrom, 5, imageasset.MaelStrom);
     	this.setSpellAnimation(spriteSheetMegaStorm, 8, imageasset.MegaStorm);
-    	//Chest animation
+    	//Chest animations
     	this.setChestAnimation(spriteSheetChest, 12, imageasset.chest1, imageasset);
     }
     public void setEnemyAnimation(SpriteSheet spriteSheet, int numberOfFrame, Enemie enemie) {
@@ -67,6 +69,13 @@ public class AnimationsAsset {
     	Animation animations[] = new Animation[1];
         animations[0] = loadAnimation(spriteSheet, 1, numberOfFrame, 0);
     	spell.setAnimation(animations);
+    }
+    public void setBossAnimation(SpriteSheet spriteSheet, int numberOfFrame, Boss boss) {
+    	Animation animations[] = new Animation[3];
+    	animations[0] = loadAnimation(spriteSheet, 0, numberOfFrame, 1);
+    	animations[1] = loadAnimation(spriteSheet, 0, numberOfFrame, 0);
+    	animations[2] = loadAnimation(spriteSheet, 0, numberOfFrame, 2);
+    	boss.setBattleanim(animations);
     }
     public void setChestAnimation(SpriteSheet spriteSheet, int numberOfFrame, Chest chest, GameAsset imageasset) {
     	Animation animations[] = new Animation[3];

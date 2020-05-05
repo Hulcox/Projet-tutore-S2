@@ -11,7 +11,7 @@ public class Enemie {
 	protected int level;
 	protected int xp;
 	protected MonsterDrop loot;
-	protected Animation[] battleanim = new Animation[2];
+	protected Animation[] battleanim = new Animation[3];
 
 	public int getPv() {
 		return pv;

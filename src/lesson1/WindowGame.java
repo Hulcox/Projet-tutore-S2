@@ -122,6 +122,7 @@ public class WindowGame extends BasicGame {
     
     @Override
     public void init(GameContainer container) throws SlickException {
+
     	singleFireEvent = new EventObject(1000, false);
     	this.container = container;
     	container.setFullscreen(true);
@@ -251,6 +252,8 @@ public class WindowGame extends BasicGame {
 	        	prevX = p1.getX();
 	        	prevY = p1.getY();
 	        	if (RNG < 5) { //Taux de pourcentage de rencontre des monstres en fonction des pas du personnages.
+	        		this.bossbattle.setNext(false);
+	        		this.battle.setNext(false);
 	        		this.playedmusic = GameAsset.Battle;
 	        		this.playedmusic.loop();
 	        		enemieselect = (int) (Math.random()*(p1.getMap().getArrayList().size()));
@@ -467,7 +470,7 @@ public class WindowGame extends BasicGame {
     	}
     	
     	if(this.textrender) {
-    		switch (key) { //Commande bataille
+    		switch (key) { 
     			case Input.KEY_A: dialogue.setIndex(dialogue.getIndex()+1);  break; 
     		}
     	}

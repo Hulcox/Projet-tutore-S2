@@ -64,6 +64,7 @@ public class BossBattle {
 					this.player.setAnimstate(0);
 					this.EnemyAttack = true;
 					this.boss.setDefeated(true);
+					this.player.setAffichageState(false);
 					player.setDefending(false);
 					player.setCasting(false);
 					player.setDamage(player.getBaseDamage());
@@ -72,6 +73,7 @@ public class BossBattle {
 					player.getInventaire().getSpellgui().AddMouseOverArea(this.boss.getSpell3());
 				}
 				else {
+					this.player.setAffichageState(true);
 					g.drawAnimation(player.getBattleanim()[0], 0, 240);
 					g.drawString("Victory ! loot : " + this.boss.getSpell3().getNom()  + " Press 'e' to continue" , 100, 240);
 					time = 2;
@@ -86,12 +88,12 @@ public class BossBattle {
 				else { //SPELL ON PLAYER
 					this.bossCasting = true;
 					if(!boss.getCurrentSpell().isOnPlayer()) { //damaging spell
-						g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
+						g.drawAnimation(boss.getBattleanim()[2],580-boss.getBattleanim()[2].getWidth(),360-boss.getBattleanim()[2].getHeight());
 						g.drawAnimation(boss.getCurrentSpell().getAnimation()[0], 0+player.getAnimations()[0].getWidth()/2,240+player.getAnimations()[0].getHeight()/2);
 						
 					}
 					else { //Buff spell
-						g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
+						g.drawAnimation(boss.getBattleanim()[2],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
 						g.drawAnimation(boss.getCurrentSpell().getAnimation()[0], 580-(boss.getBattleanim()[0].getWidth()/2+boss.getCurrentSpell().getAnimation()[0].getWidth()/2), 360-(boss.getBattleanim()[0].getHeight()/2 + boss.getCurrentSpell().getAnimation()[0].getHeight()/2));
 					}
 					
