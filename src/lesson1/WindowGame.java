@@ -140,7 +140,7 @@ public class WindowGame extends BasicGame {
     	this.sellGUI.init(container);
     	this.playedmusic = GameAsset.MenuMusic;
     	this.playedmusic.loop();
-
+    	//this.playedmusic.setVolume(-1);
     	
 
     }
@@ -152,7 +152,7 @@ public class WindowGame extends BasicGame {
     public void render(GameContainer container, Graphics g) throws SlickException {
 		
 		this.map = this.p1.getMap().getMap();
-	
+		this.playedmusic.setVolume(this.IngameHUD.getSound());
 		this.MapLoading(this.map);
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
