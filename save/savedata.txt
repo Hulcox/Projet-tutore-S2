@@ -5,20 +5,38 @@
 50
 20
 0
+<<<<<<< HEAD
 510.69976806640625
 323.309326171875
 543.9569091796875
 351.71820068359375
 Dj1_RDC_sb
+=======
+708.8841552734375
+308.39422607421875
+562.6826782226562
+398.9925537109375
+Dj1_RDC_sp
+>>>>>>> branch 'master' of https://github.com/Hulcox/Projet-tutore-S2.git
 1
 5
 16|17|18|19|20|21|
 8|8|9|10|11|
 14|12|13|13|13|
+<<<<<<< HEAD
 2
+=======
+0
+>>>>>>> branch 'master' of https://github.com/Hulcox/Projet-tutore-S2.git
 1
 0
 2
+<<<<<<< HEAD
 15|23|24|
 3|
 1|2|
+=======
+23|24|
+
+2|
+>>>>>>> branch 'master' of https://github.com/Hulcox/Projet-tutore-S2.git

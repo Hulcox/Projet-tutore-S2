@@ -22,7 +22,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	private boolean textrender = false, chestTextRender = false, triggerMusic = false;
+	private boolean textrender = false, chestTextRender = false, triggerMusic = false, bossrender = false;
 	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
@@ -46,6 +46,7 @@ public class WindowGame extends BasicGame {
 	InGameHUD IngameHUD;
 	Graphics g;
 	Music playedmusic;
+	Boss temp;
 	private ArrayList<Integer> ID;
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
@@ -114,7 +115,7 @@ public class WindowGame extends BasicGame {
     	IngameHUD.getSave().setGameasset(GameAsset);
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
-    	bossbattle.setBoss(GameAsset.KingGobelin);
+    	p1.getInventaire().AddObjet(GameAsset.demonMask);
     	
     }
 
@@ -140,7 +141,7 @@ public class WindowGame extends BasicGame {
     	this.sellGUI.init(container);
     	this.playedmusic = GameAsset.MenuMusic;
     	this.playedmusic.loop();
-    	//this.playedmusic.setVolume(-1);
+
     	
 
     }
@@ -166,6 +167,10 @@ public class WindowGame extends BasicGame {
 			}
 			if(itemsgui.isIsOpen()) {
 				itemsgui.render(container, g);
+			}
+			if(temp.isTrigger()) {
+				this.playedmusic.loop();
+				temp.setTrigger(false);
 			}
 			if(p1.isAffichageState()) {
 				if(this.battle.isMusicTrigger()) {
@@ -217,6 +222,9 @@ public class WindowGame extends BasicGame {
 
 		    	}
 	    	}
+	    	if(this.bossrender) {
+	    		this.temp.render(container, g);
+	    	}
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
 	    	this.IngameHUD.render(container, g);
 	    	if (sellGUI.isPlayerOverArea()){
@@ -231,6 +239,7 @@ public class WindowGame extends BasicGame {
 	    	if(this.chestTextRender) {
 	    		this.tempchest.renderText(container, g);
 	    	}
+
 	        if ((Math.abs(p1.getX() - prevX) > 30 || Math.abs(p1.getY() - prevY) > 30) && p1.getMap().isIsEncounter()) //Rencontre aléatoire de monstre
 	        {
 	        	RNG = (int) (Math.random()*100);
@@ -252,12 +261,24 @@ public class WindowGame extends BasicGame {
 	
 	public void MapLoading(TiledMap map) {
 		this.ID = new ArrayList<Integer>();
+		this.bossrender = false;
 		for (int objectID = 0; objectID < map.getObjectCount(0); objectID++) {
 			if ("Chest".equals(map.getObjectType(0, objectID))) {
 				this.ID.add(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID", "undefined")));
 				this.ID.add(map.getObjectX(0, objectID));
 				this.ID.add(map.getObjectY(0, objectID));
 			}
+            if("boss".equals(map.getObjectType(0, objectID))){
+            	temp = GameAsset.searchBoss(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
+            	if (!temp.isDefeated()) {
+            		this.dialogue = this.temp.getDialogue();
+            		this.textrender = true;
+            		this.temp.setX( (map.getObjectX(0, objectID)+(map.getObjectWidth(0, objectID)/2))-temp.getImage().getWidth()/2);
+            		this.temp.setY( (map.getObjectY(0, objectID)+(map.getObjectHeight(0, objectID)/2))-temp.getImage().getHeight()/2);
+            		this.bossrender = true;
+            	}
+            }
+
 		}
 	}
 
@@ -340,6 +361,14 @@ public class WindowGame extends BasicGame {
                 		}
                 	}
                 }
+                else if("boss".equals(map.getObjectType(0, objectID))) {
+                	if (!this.temp.isDefeated()) {
+                		this.playedmusic = this.temp.getMusic();
+                		this.bossbattle.setBoss(temp);
+                		this.bossbattle.setInBattle(true);
+                	}
+                }
+
 
 
 
