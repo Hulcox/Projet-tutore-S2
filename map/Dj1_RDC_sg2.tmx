@@ -28,7 +28,7 @@
    <properties>
     <property name="detmap" value="Dj1_RDC_sg"/>
     <property name="detx" type="int" value="480"/>
-    <property name="dety" type="int" value="115"/>
+    <property name="dety" type="int" value="129"/>
    </properties>
   </object>
   <object id="2" name="demonMask" type="Chest" x="445" y="255" width="32" height="96">

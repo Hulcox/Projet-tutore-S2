@@ -31,8 +31,8 @@
   <object id="2" name="Dj1_RDC_sp" type="changement" x="466" y="629" width="86" height="35">
    <properties>
     <property name="detmap" value="Dj1_RDC_sp"/>
-    <property name="detx" type="int" value="735"/>
-    <property name="dety" type="int" value="228"/>
+    <property name="detx" type="int" value="736"/>
+    <property name="dety" type="int" value="172"/>
    </properties>
   </object>
  </objectgroup>

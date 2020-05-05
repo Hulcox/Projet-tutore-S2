@@ -27,8 +27,8 @@
   <object id="1" name="Dj1_RDC_sp" type="changement" x="85" y="895" width="83" height="56">
    <properties>
     <property name="detmap" value="Dj1_RDC_sp"/>
-    <property name="detx" type="int" value="157"/>
-    <property name="dety" type="int" value="239"/>
+    <property name="detx" type="int" value="160"/>
+    <property name="dety" type="int" value="180"/>
    </properties>
   </object>
   <object id="6" name="Dj1_ET1_esc" type="changement" x="785" y="723" width="59" height="53">
@@ -43,7 +43,7 @@
     <property name="ID" type="int" value="1"/>
    </properties>
   </object>
-  <object id="8" name="Dj1_RDC_sg2" type="changementc" x="453" y="107" width="52" height="42">
+  <object id="8" name="Dj1_RDC_sg2" type="changementc" x="454" y="48" width="52" height="52">
    <properties>
     <property name="detmap" value="Dj1_RDC_sg2"/>
     <property name="detx" type="int" value="463"/>

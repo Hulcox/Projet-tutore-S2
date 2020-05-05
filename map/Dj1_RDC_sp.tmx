@@ -5,12 +5,12 @@
  <tileset firstgid="161" source="Pnj.tsx"/>
  <layer id="1" name="Sol" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAEChNkYGAQHMV0CQMxYDjTE8PilZ52guwatZc+8TwazqPhTIu8PZquRtPVYEpXzNB6k5HM+hOWnkmlhaD2CSDVaaSaMaoe0R4YDYvRsBhNA4M7DQAAfBx4aBAOAAA=
+   H4sIAAAAAAAEChNkYGAQHMV0CQMxYDjTE8PilZ52guwatZc+8TwazqPhTIu8PZquRtPVcExXsHRNLI0cBsTqGVWHqP9Hw2I0LEbTwNBKAwBjh9Q4EA4AAA==
   </data>
  </layer>
  <layer id="2" name="Murs/bordures" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAX0CgERoEUKUOwLpP2Q+DBxUmlc5ggDzYYBZSBDH4pjgHQsEh8mTiqNyxwloNkwYARk2EFxNpDOQeLDxEmlcZljCDQbBoRgDDrQAkh2jNqLFBhUZo6GM5UDFIdxo+GMI2CoLDySw5kVGJZMJGDkoCdFH0gtC7LmUfZoCIyGwGgIjIYAzhAAAKzkCtkQDgAA
+   H4sIAAAAAAAECmNgGAX0CgERoEUKUOwLpP2Q+DBxUmlc5ggDzYYBZSBDH4pjgHQsEh8mTiqNyxwloNkwYARk2EFxNpDOQeLDxEmlcZljCDQbBoRgDDrQAkh2jNqLFBhUZo6GM5UDFIdxo+GMI2CoLDySw5kVGJZMJGBmaNgzkqAHZj4LVC85FKw8R44rcswZ1TMaAqMhMBoCQyEEAM4cpCgQDgAA
   </data>
  </layer>
  <layer id="3" name="Décors" width="30" height="30">
@@ -23,7 +23,7 @@
    H4sIAAAAAAAECu1UywrDMAzr5++yB+thj6+ddRAI47hJsw4GNoQ4dmTZKs2ylP1KgZMRcZ3Nx+J5757V4VxaO4ppvtfP6jB3M4czMob67Hl0B5bm61yZsB28nINhf0b8buvi1oqEmMf5s+cVaNMlBrVg2NHziLEGML1YxQD3LV7qGGkHHs+LWNYzdcE9mtYgFrFsBs2rz5o9+xG8fr5Ivz28PfPonUiTiPdhIPyrTwVP+L28ExQhdIbXf7OQoBGM9It0bsCHw1mvR/JmjSrvyy76dzc7813hf5Ld9bl31tRGTt+ZjauVLgVKgVLg7xX4ACGs/ngQDgAA
   </data>
  </layer>
- <objectgroup id="6" name="transition"  width="30" height="30">
+ <objectgroup id="6" name="transition" width="30" height="30">
   <object id="7" name="map1" type="changement" x="421" y="582" width="83" height="51">
    <properties>
     <property name="detmap" value="map1"/>
@@ -31,7 +31,7 @@
     <property name="dety" type="int" value="698"/>
    </properties>
   </object>
-  <object id="10" name="Dj1_RDC_sg" type="changement" x="133" y="173" width="52" height="42">
+  <object id="10" name="Dj1_RDC_sg" type="changement" x="133" y="118" width="52" height="42">
    <properties>
     <property name="detmap" value="Dj1_RDC_sg"/>
     <property name="detx" type="int" value="127"/>
@@ -45,14 +45,14 @@
   </object>
   <object id="13" name="Konor" type="Dialogue" x="391" y="227" width="80" height="77">
    <properties>
-    <property name="personne" value="konor"/>
+    <property name="personne" value="Konor"/>
    </properties>
   </object>
-  <object id="14" name="Dj1_RDC_sb" type="changementc" x="709" y="174" width="52" height="42">
+  <object id="14" name="Dj1_RDC_sb" type="changementc" x="709" y="119" width="52" height="44">
    <properties>
     <property name="detmap" value="Dj1_salleboss"/>
     <property name="detx" type="int" value="511"/>
-    <property name="dety" type="int" value="611"/>
+    <property name="dety" type="int" value="608"/>
     <property name="key" value="cle du boss"/>
    </properties>
   </object>
