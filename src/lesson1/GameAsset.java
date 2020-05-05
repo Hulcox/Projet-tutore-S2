@@ -116,7 +116,7 @@ public class GameAsset {
 		chest3 = new Chest(3,this.demonMask,this); allChest.add(chest3);
 		//Initialisation des quetes
 		PeauGobelin = new Quete(this.gobelinMeat,3,this.debug,1); allQuest.add(PeauGobelin);
-		masquedemo = new Quete(this.demonMask,3,this.key,1); allQuest.add(masquedemo);
+		masquedemo = new Quete(this.demonMask,3,this.key,2); allQuest.add(masquedemo);
 		//Boss
 		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm);
 
