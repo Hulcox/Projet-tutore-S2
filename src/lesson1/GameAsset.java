@@ -9,7 +9,7 @@ import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 
 public class GameAsset {
-	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage;
+	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1;
 	Enemie knight, gobelin;
 	Map map1, grotte1, Village, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb;
 	Epée copperSword, ironSword, diamondSword, GodGun;
@@ -22,13 +22,14 @@ public class GameAsset {
 	Chest chest1,chest2,chest3;
 	Quete PeauGobelin, masquedemo;
 	Boss KingGobelin;
-	Music maintheme, cave, Battle, Victory, MenuMusic, Town;
+	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
 	private ArrayList<Objets> allAsset;
 	private ArrayList<Chest> allChest;
 	private ArrayList<Quete> allQuest;
+	private ArrayList<Boss> allBoss;
 	public void loadImage() throws SlickException{
 		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
@@ -36,6 +37,7 @@ public class GameAsset {
 		hero = new Image("texture/hero.png");
 		InventoryBackground = new Image("texture/inventory.png");
 		InventoryShop = new Image("texture/ShopInventory.png");
+		OrbeBoss1 = new Image("texture/boss1.png");
 		
 	}
 	
@@ -75,12 +77,14 @@ public class GameAsset {
 		Victory = new Music("sound/Victory.ogg");
 		MenuMusic = new Music("sound/MenuMusic.ogg");
 		Town = new Music("sound/Town.ogg");
+		BossA = new Music("sound/Bossa.ogg");
 	}
 	
 	public void loadObject() {
 		allChest = new ArrayList<Chest>();
 		allAsset = new ArrayList<Objets>();
 		allQuest = new ArrayList<Quete>();
+		allBoss = new ArrayList<Boss>();
 		//Epée
 		copperSword = new Epée(100, "Copper sword", false, 10,1); allAsset.add(copperSword);
 		ironSword = new Epée(300, "Iron sword", false, 20,2); allAsset.add(ironSword);
@@ -111,15 +115,17 @@ public class GameAsset {
 		Ultima = new DamageSpell(800,"Ultima",false,false,160,40,20); allAsset.add(Ultima);
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
-		//Chest
+		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
+		//Chest ID,ITEM
 		chest1 = new Chest(1,this.gobelinSpear,this); allChest.add(chest1);
 		chest2 = new Chest(2,this.potion,this); allChest.add(chest2);
 		chest3 = new Chest(3,this.demonMask,this); allChest.add(chest3);
-		//Initialisation des quetes
+		//Initialisation des quetes OBJET ATTENDU, QUANTITE, RECOMPENSE, ID
 		PeauGobelin = new Quete(this.gobelinMeat,3,this.debug,1); allQuest.add(PeauGobelin);
 		masquedemo = new Quete(this.demonMask,3,this.key,2); allQuest.add(masquedemo);
-		//Boss
-		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm);
+		//Boss PV, DEGATS, NIVEAU, NOM, SORT1, SORT2, SORT3, ID
+		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm,this.BossA,1);
+		this.KingGobelin.setImage(this.OrbeBoss1); allBoss.add(KingGobelin);
 
 	}
 	public void loadText(GameContainer container) throws SlickException, IOException {
@@ -225,6 +231,15 @@ public class GameAsset {
 			}
 		}
 		return null;
+	}
+	
+	public Boss searchBoss(int ID) {
+		for (Boss b: this.allBoss) {
+			if(b.getID() == ID) {
+				return b;
+			}
+		}
+		return this.KingGobelin;
 	}
 	public ArrayList<Quete> getAllQuest(){
 		return this.allQuest;

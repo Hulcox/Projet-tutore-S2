@@ -63,6 +63,7 @@ public class BossBattle {
 					this.time = 0;
 					this.player.setAnimstate(0);
 					this.EnemyAttack = true;
+					this.boss.setDefeated(true);
 					player.setDefending(false);
 					player.setCasting(false);
 					player.setDamage(player.getBaseDamage());

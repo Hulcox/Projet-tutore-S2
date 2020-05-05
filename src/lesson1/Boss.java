@@ -1,5 +1,10 @@
 package lesson1;
 
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.Music;
+
 public class Boss extends Enemie {
 
     private Spells Spell1;
@@ -7,8 +12,12 @@ public class Boss extends Enemie {
     private Spells Spell3;
     private Spells currentSpell;
     private int BaseDamage;
-    
-    
+    private Image image;
+    private int ID;
+    private int x, y;
+    private boolean isDefeated = false;
+    private boolean Trigger = true;
+    private Music music;
     public void setDamage(int damage) {
     	this.pv = damage;
         if(this.pv < (this.maxHp-(this.maxHp*0.49))) {
@@ -49,14 +58,19 @@ public class Boss extends Enemie {
     }
 
     
-    public Boss(int pv, int degats, int level, String name, MonsterDrop loot, Spells Spell1, Spells Spell2, Spells Spell3) {
+    public Boss(int pv, int degats, int level, String name, MonsterDrop loot, Spells Spell1, Spells Spell2, Spells Spell3,Music music, int ID) {
         super(pv, degats, level, name, loot);
         this.BaseDamage = degats;
         this.Spell1 = Spell1;
         this.setCurrentSpell(Spell1);
         this.Spell2 = Spell2;
         this.Spell3 = Spell3;
+        this.ID = ID;
+        this.music = music;
 
+    }
+    public void render(GameContainer container, Graphics g) {
+    	g.drawImage(image, x,y);
     }
 
 	public Spells getCurrentSpell() {
@@ -71,6 +85,48 @@ public class Boss extends Enemie {
 	}
 	public void setBaseDamage(int baseDamage) {
 		BaseDamage = baseDamage;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
+	public Image getImage() {
+		return image;
+	}
+	public void setImage(Image image) {
+		this.image = image;
+	}
+	public boolean isDefeated() {
+		return isDefeated;
+	}
+	public void setDefeated(boolean isDefeated) {
+		this.isDefeated = isDefeated;
+	}
+	public int getX() {
+		return x;
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int y) {
+		this.y = y;
+	}
+	public Music getMusic() {
+		return music;
+	}
+	public void setMusic(Music music) {
+		this.music = music;
+	}
+	public boolean isTrigger() {
+		return Trigger;
+	}
+	public void setTrigger(boolean trigger) {
+		Trigger = trigger;
 	}
 
 }
