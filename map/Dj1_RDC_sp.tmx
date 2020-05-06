@@ -18,7 +18,7 @@
    H4sIAAAAAAAECu1RwQ7BUBAsEhyRiCN+AAdXfAIJFw4uLnonxBf5TNPoJpPXt+mT157sSyY7b7o7206TxI4lUG8Cd7JnTnIQ5VnmvuEbRO7JeKbxaePScdDlBvAQH2ek9DrMO97UOSJeF5W97F/F3gYMm0CLjcFf+f3XvTLn2BWuPSh9YFB48hW2KDvgCJyAPXAAYs8YBhNgqhidoS+BK5Dm/IIqx/0+LT/plzoDmQMLEZT6gP5UnrFclp/0rkDWwEaEyFqWX6S9Oh6an8/A/We+Hk2rOj9tj+gx7yoeVi0BS8ASsAT+K4EPfRJ8BRAOAAA=
   </data>
  </layer>
- <layer id="4" name="Logic" width="30" height="30">
+ <layer id="4" name="Logic" width="30" height="30" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu1UywrDMAzr5++yB+thj6+ddRAI47hJsw4GNoQ4dmTZKs2ylP1KgZMRcZ3Nx+J5757V4VxaO4ppvtfP6jB3M4czMob67Hl0B5bm61yZsB28nINhf0b8buvi1oqEmMf5s+cVaNMlBrVg2NHziLEGML1YxQD3LV7qGGkHHs+LWNYzdcE9mtYgFrFsBs2rz5o9+xG8fr5Ivz28PfPonUiTiPdhIPyrTwVP+L28ExQhdIbXf7OQoBGM9It0bsCHw1mvR/JmjSrvyy76dzc7813hf5Ld9bl31tRGTt+ZjauVLgVKgVLg7xX4ACGs/ngQDgAA
   </data>
