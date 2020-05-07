@@ -49,8 +49,16 @@
     <property name="personne" value="soldat"/>
    </properties>
   </object>
-  <object id="10" name="Marchand ambulant" type="vendeur" x="1046" y="245" width="50" height="55"/>
-  <object id="11" name="Marchand ambulant" type="vendeur" x="1142" y="245" width="50" height="55"/>
+  <object id="10" name="Marchand ambulant" type="vendeur" x="1046" y="245" width="50" height="55">
+   <properties>
+    <property name="ID" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="11" name="Marchand ambulant" type="vendeur" x="1142" y="245" width="50" height="55">
+   <properties>
+    <property name="ID" type="int" value="2"/>
+   </properties>
+  </object>
   <object id="12" x="447" y="354" width="32" height="96"/>
  </objectgroup>
 </map>
