@@ -29,12 +29,16 @@ public class BattleHUD implements ComponentListener {
 	  }
 	  
 	  public void init(GameContainer container) throws SlickException {
-		  Image buttonImage = new Image("texture/buttons.png");
-		  Spells = new MouseOverArea(container, buttonImage, 152+SPACE*2, container.getHeight() - (buttonImage.getHeight() + SPACE) * 2,this);
-		  Items = new MouseOverArea(container, buttonImage, 152+SPACE*2, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
-		  attackButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 3,this);
-		  defendButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 2,this);
-		  fleeButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight() - (buttonImage.getHeight() + SPACE) * 1,this);
+		  Image spellimg = new Image("texture/spellbutton.png");
+		  Image attackimg = new Image("texture/AttackButton.png");
+		  Image fleeimg = new Image("texture/fleebutton.png");
+		  Image Defenceimg = new Image("texture/DefenseButton.png");
+		  Image itemimg = new Image("texture/itemsButton.png");
+		  Spells = new MouseOverArea(container, spellimg, 152+SPACE*2, container.getHeight() - (spellimg.getHeight() + SPACE) * 2,this);
+		  Items = new MouseOverArea(container, itemimg, 152+SPACE*2, container.getHeight() - (spellimg.getHeight() + SPACE) * 1,this);
+		  attackButton = new MouseOverArea(container, attackimg, SPACE, container.getHeight() - (spellimg.getHeight() + SPACE) * 3,this);
+		  defendButton = new MouseOverArea(container, Defenceimg, SPACE, container.getHeight() - (spellimg.getHeight() + SPACE) * 2,this);
+		  fleeButton = new MouseOverArea(container, fleeimg, SPACE, container.getHeight() - (spellimg.getHeight() + SPACE) * 1,this);
 		  
 	
 	  }
@@ -42,15 +46,15 @@ public class BattleHUD implements ComponentListener {
 	  public void render(GameContainer container, Graphics g) { 
 		  g.setColor(Color.black);
 		  Spells.render(container, g);
-		  g.drawString("Spells", Spells.getX() + X_PADDING, Spells.getY() + Y_PADDING);
+		  //g.drawString("Spells", Spells.getX() + X_PADDING, Spells.getY() + Y_PADDING);
 		  Items.render(container, g);
-		  g.drawString("Items", Items.getX() + X_PADDING, Items.getY() + Y_PADDING);
+		  //g.drawString("Items", Items.getX() + X_PADDING, Items.getY() + Y_PADDING);
 		  attackButton.render(container, g);
-		  g.drawString("Attaquer", attackButton.getX() + X_PADDING, attackButton.getY() + Y_PADDING);
+		  //g.drawString("Attaquer", attackButton.getX() + X_PADDING, attackButton.getY() + Y_PADDING);
 		  defendButton.render(container, g);
-		  g.drawString("Defendre", defendButton.getX() + X_PADDING, defendButton.getY() + Y_PADDING);
+		  //g.drawString("Defendre", defendButton.getX() + X_PADDING, defendButton.getY() + Y_PADDING);
 		  fleeButton.render(container, g);
-		  g.drawString("Fuire", fleeButton.getX() + X_PADDING, fleeButton.getY() + Y_PADDING);
+		  //g.drawString("Fuire", fleeButton.getX() + X_PADDING, fleeButton.getY() + Y_PADDING);
 		  
 	  }
 	  public void componentActivated(AbstractComponent source) {
