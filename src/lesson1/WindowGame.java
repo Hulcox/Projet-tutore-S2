@@ -60,12 +60,12 @@ public class WindowGame extends BasicGame {
     	GameAsset.loadObject();
     	GameAsset.loadEnemie();
     	GameAsset.loadMap();
-    	GameAsset.loadText(this.container);
     	menu = new StartScreen();
-
     	input = container.getInput();
     	camera = new Camera();
     	p1 = new Player(999,999);
+    	GameAsset.initinventory(p1);
+    	GameAsset.loadText(this.container);
     	IngameHUD = new InGameHUD(p1);
     	GameAsset.setPlayer(p1);
     	this.menu.init(container);
@@ -80,7 +80,7 @@ public class WindowGame extends BasicGame {
     	p1.setPlayerArmor(GameAsset.copperArmor);
     	p1.setPlayerSword(GameAsset.copperSword);
     	hud = new BattleHUD(p1,camera,battle);
-    	inventory = new Inventaire(p1, GameAsset.InventoryBackground);
+    	this.inventory = GameAsset.inventory;
     	p1.setInventaire(inventory);
     	inventory.setOpen(false); //Inventaire initialisation
     	inventory.AddObjet(GameAsset.metalscrap);
@@ -91,12 +91,7 @@ public class WindowGame extends BasicGame {
     	inventory.AddObjet(GameAsset.gobelinMeat);
     	inventory.AddObjet(GameAsset.gobelinSpear);
     	inventory.AddObjet(GameAsset.Poncho);
-    	sellGUI = new SellingGUI(GameAsset.InventoryShop, inventory); //initialisations des vendables
-    	sellGUI.AddTrade(GameAsset.copperArmor, container);
-    	sellGUI.AddTrade(GameAsset.diamondArmor, container);
-    	sellGUI.AddTrade(GameAsset.potion, container);
-    	sellGUI.AddTrade(GameAsset.superPotion, container);
-    	sellGUI.AddTrade(GameAsset.Hypotion, container);
+    	//sellGUI = GameAsset.sellGUI1;
     	spellgui = new SpellGUI(container, inventory);
     	spellgui.AddMouseOverArea(GameAsset.boosterI);
     	spellgui.AddMouseOverArea(GameAsset.fireI);
@@ -116,6 +111,7 @@ public class WindowGame extends BasicGame {
     	IngameHUD.getSave().setGameasset(GameAsset);
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
+    	sellGUI = GameAsset.sellGUI1;
     	
     }
 
@@ -139,7 +135,7 @@ public class WindowGame extends BasicGame {
     	animationasset.loadBattlersAnimation(battlers, p1);
     	animationasset.loadEnemyAnimation(GameAsset);
     	this.hud.init(container);
-    	this.sellGUI.init(container);
+    	
     	this.playedmusic = GameAsset.MenuMusic;
     	this.playedmusic.loop();
 
@@ -228,7 +224,9 @@ public class WindowGame extends BasicGame {
 	    	}
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
 	    	this.IngameHUD.render(container, g);
+
 	    	if (sellGUI.isPlayerOverArea()){
+		    	this.sellGUI.init(container);
 	    		this.sellGUI.render(container, g);
 	    	}
 	    	if (this.inventory.isOpen()) {
@@ -305,6 +303,7 @@ public class WindowGame extends BasicGame {
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
                 else if ("vendeur".equals(map.getObjectType(0, objectID))) {
+                	this.sellGUI = GameAsset.searchsellGUI(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if (sellGUI.isShopOpen()) {
                 		this.sellGUI.setPlayerOverArea(true);
                 	}

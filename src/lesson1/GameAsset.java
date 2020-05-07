@@ -23,7 +23,9 @@ public class GameAsset {
 	Quete PeauGobelin, masquedemo;
 	Boss KingGobelin;
 	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA;
+	Inventaire inventory;
 	DialogueAsset bossAtxt;
+	SellingGUI sellGUI1, sellGUI2;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
@@ -31,6 +33,7 @@ public class GameAsset {
 	private ArrayList<Chest> allChest;
 	private ArrayList<Quete> allQuest;
 	private ArrayList<Boss> allBoss;
+	private ArrayList<SellingGUI> allSells;
 	public void loadImage() throws SlickException{
 		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
@@ -47,7 +50,9 @@ public class GameAsset {
 		gobelin = new Enemie(30,5,2, "Gobelin", this.gobelinMeat);
 		knight = new Enemie(40,5,2,"knight", this.metalscrap);
 
-
+	}
+	public void initinventory(Player player) {
+		this.inventory = new Inventaire(player, this.InventoryBackground);
 	}
 	
 	public void loadMap() throws SlickException{
@@ -117,6 +122,7 @@ public class GameAsset {
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
+		
 		//Chest ID,ITEM
 		chest1 = new Chest(1,this.gobelinSpear,this); allChest.add(chest1);
 		chest2 = new Chest(2,this.potion,this); allChest.add(chest2);
@@ -127,9 +133,11 @@ public class GameAsset {
 		//Boss PV, DEGATS, NIVEAU, NOM, SORT1, SORT2, SORT3, ID
 		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm,this.BossA,1);
 		this.KingGobelin.setImage(this.OrbeBoss1); allBoss.add(KingGobelin);
+		
 
 	}
 	public void loadText(GameContainer container) throws SlickException, IOException {
+		allSells = new ArrayList<SellingGUI>();
 		bossAtxt = new DialogueAsset("Bossa", false);
 		this.KingGobelin.setDialogue(bossAtxt);
 		allTexts = new ArrayList<DialogueAsset>();
@@ -138,6 +146,15 @@ public class GameAsset {
 		
 		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
 		allTexts.add(new DialogueAsset("Konor",true,this.masquedemo,container));
+		//Selling GUI init
+		sellGUI1 = new SellingGUI(InventoryShop,inventory,1); allSells.add(sellGUI1); //sellGUI1
+		sellGUI1.AddTrade(copperArmor, container);
+    	sellGUI1.AddTrade(diamondArmor, container);
+    	sellGUI1.AddTrade(potion, container);
+    	sellGUI1.AddTrade(superPotion, container);
+    	sellGUI1.AddTrade(Hypotion, container);
+    	sellGUI2 = new SellingGUI(InventoryShop,inventory,2); allSells.add(sellGUI2); //sellGUI2
+    	sellGUI2.AddTrade(Hypotion, container);
 		
 	}
 	public void loadWeapons(int ID) throws SlickException {
@@ -244,6 +261,14 @@ public class GameAsset {
 			}
 		}
 		return this.KingGobelin;
+	}
+	public SellingGUI searchsellGUI(int ID) {
+		for (SellingGUI i : this.allSells) {
+			if(i.getID() == ID) {
+				return i;
+			}
+		}
+		return this.sellGUI1;
 	}
 	public ArrayList<Quete> getAllQuest(){
 		return this.allQuest;

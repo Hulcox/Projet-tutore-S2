@@ -21,15 +21,16 @@ public class SellingGUI implements ComponentListener {
 	private String InfoBox = "What do you want ?";
 	private Inventaire inventory;
 	private MouseOverArea sellingButton;
+	private int ID;
 	
-	
-	public SellingGUI(Image image , Inventaire inventory) {
+	public SellingGUI(Image image , Inventaire inventory, int ID) {
 		this.image = image;
 		this.buttonsList = new ArrayList<MouseOverArea>();
 		this.trades = new ArrayList<Objets>();
 		this.x = 0;
 		this.y = 160;
 		this.inventory = inventory;
+		this.setID(ID);
 
 	}
 	  public void init(GameContainer container) throws SlickException {
@@ -159,6 +160,12 @@ public class SellingGUI implements ComponentListener {
 	}
 	public void setInfoBox(String infoBox) {
 		InfoBox = infoBox;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
 	}
 	
 
