@@ -226,7 +226,7 @@ public class WindowGame extends BasicGame {
 	    	this.IngameHUD.render(container, g);
 
 	    	if (sellGUI.isPlayerOverArea()){
-		    	this.sellGUI.init(container);
+		    	
 	    		this.sellGUI.render(container, g);
 	    	}
 	    	if (this.inventory.isOpen()) {
@@ -305,6 +305,7 @@ public class WindowGame extends BasicGame {
                 else if ("vendeur".equals(map.getObjectType(0, objectID))) {
                 	this.sellGUI = GameAsset.searchsellGUI(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if (sellGUI.isShopOpen()) {
+                		this.sellGUI.init(container);
                 		this.sellGUI.setPlayerOverArea(true);
                 	}
                 	else {
