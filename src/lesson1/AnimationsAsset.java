@@ -37,16 +37,19 @@ public class AnimationsAsset {
     	SpriteSheet spriteSheetGobelin = new SpriteSheet("texture/gobelin.png",128,128);
     	SpriteSheet spriteSheetBooster = new SpriteSheet("texture/booster.png",92,92);
     	SpriteSheet spriteSheetFire = new SpriteSheet("texture/Fire.png",98,64);
+    	SpriteSheet spriteSheetWaterSpike = new SpriteSheet("texture/WaterSpike.png",80,96);
     	SpriteSheet spriteSheetUltima = new SpriteSheet("texture/Ultima.png",186,315);
     	SpriteSheet spriteSheetMaelStrom = new SpriteSheet("texture/Maelstrom.png",130,128);
     	SpriteSheet spriteSheetMegaStorm = new SpriteSheet("texture/MegaStorm.png",140,176);
     	SpriteSheet spriteSheetChest = new SpriteSheet("texture/Chest.png",32,32);
     	SpriteSheet spriteSheetKingGobelin = new SpriteSheet("texture/Floressia.png",320,320);
+    	SpriteSheet spriteSheetCagnazzo = new SpriteSheet("texture/Cagnazzo.png",320,320);
     	//Enemy animations
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
     	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
     	//Boss animations
     	this.setBossAnimation(spriteSheetKingGobelin, 10, imageasset.KingGobelin);
+    	this.setBossAnimation(spriteSheetCagnazzo, 21, imageasset.Cagnazzo);
     	//SpellAnimations
     	this.setSpellAnimation(spriteSheetBooster, 10, imageasset.boosterI);
     	this.setSpellAnimation(spriteSheetFire, 6, imageasset.fireI);
@@ -55,6 +58,7 @@ public class AnimationsAsset {
     	this.setSpellAnimation(spriteSheetUltima, 4, imageasset.Ultima);
     	this.setSpellAnimation(spriteSheetMaelStrom, 5, imageasset.MaelStrom);
     	this.setSpellAnimation(spriteSheetMegaStorm, 8, imageasset.MegaStorm);
+    	this.setSpellAnimation(spriteSheetWaterSpike, 3, imageasset.WaterSpike);
     	//Chest animations
     	this.setChestAnimation(spriteSheetChest, 12, imageasset.chest1, imageasset);
     }

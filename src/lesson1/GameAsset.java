@@ -17,14 +17,14 @@ public class GameAsset {
 	Armure copperArmor, ironArmor, diamondArmor;
 	KeyItem debug, demonMask, key;
 	Booster boosterI;
-	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm;
+	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm, WaterSpike;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
 	Chest chest1,chest2,chest3;
 	Quete PeauGobelin, masquedemo;
-	Boss KingGobelin;
+	Boss KingGobelin, Cagnazzo;
 	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA;
 	Inventaire inventory;
-	DialogueAsset bossAtxt;
+	DialogueAsset bossAtxt,Cagnazzotxt;
 	SellingGUI sellGUI1, sellGUI2;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
@@ -120,7 +120,8 @@ public class GameAsset {
 		fireIII = new DamageSpell(800,"Fire III",false,false,80,20,19); allAsset.add(fireIII);
 		Ultima = new DamageSpell(800,"Ultima",false,false,160,40,20); allAsset.add(Ultima);
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
-		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm);
+		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm); 
+		WaterSpike = new DamageSpell(400,"Water spike",false,false,85,20,25); allAsset.add(WaterSpike); //LAST ID:25
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
 		
 		//Chest ID,ITEM
@@ -133,6 +134,8 @@ public class GameAsset {
 		//Boss PV, DEGATS, NIVEAU, NOM, SORT1, SORT2, SORT3, ID
 		KingGobelin = new Boss(500,15,1,"King gobelin",this.gobelinSpear,this.fireI,this.fireII,this.MegaStorm,this.BossA,1);
 		this.KingGobelin.setImage(this.OrbeBoss1); allBoss.add(KingGobelin);
+		Cagnazzo = new Boss(1000,30,1,"Cagnazzo",this.gobelinSpear,this.WaterSpike,this.WaterSpike,this.MaelStrom,this.BossA,2);
+		this.Cagnazzo.setImage(this.OrbeBoss1); allBoss.add(this.Cagnazzo);
 		
 
 	}
@@ -140,6 +143,8 @@ public class GameAsset {
 		allSells = new ArrayList<SellingGUI>();
 		bossAtxt = new DialogueAsset("Bossa", false);
 		this.KingGobelin.setDialogue(bossAtxt);
+		Cagnazzotxt = new DialogueAsset("Cagnazzo", false);
+		this.Cagnazzo.setDialogue(Cagnazzotxt);
 		allTexts = new ArrayList<DialogueAsset>();
 		allTexts.add(new DialogueAsset("soldat",false));
 		allTexts.add(new DialogueAsset("King",false));
