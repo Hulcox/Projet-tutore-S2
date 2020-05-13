@@ -71,7 +71,7 @@ public class AnimationsAsset {
     }
     public void setSpellAnimation(SpriteSheet spriteSheet, int numberOfFrame, Spells spell) {
     	Animation animations[] = new Animation[1];
-        animations[0] = loadAnimation(spriteSheet, 1, numberOfFrame, 0);
+        animations[0] = loadAnimation(spriteSheet, 0, numberOfFrame, 0);
     	spell.setAnimation(animations);
     }
     public void setBossAnimation(SpriteSheet spriteSheet, int numberOfFrame, Boss boss) {
