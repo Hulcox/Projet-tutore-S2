@@ -2,8 +2,8 @@ package lesson1;
 
 public class Potions extends Objets{
 	private int healingValue;
-	public Potions(int prix, String nom, boolean loot, int healingValue, int ID) {
-		super(prix, nom, loot, ID);
+	public Potions(int prix, String nom,  int healingValue, int ID) {
+		super(prix, nom,  ID);
 		this.healingValue = healingValue;
 		this.type = "potions";
 

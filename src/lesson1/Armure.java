@@ -1,19 +1,15 @@
 package lesson1;
 
-public class Armure extends Objets implements lootable {
+public class Armure extends Objets {
 
 	private double armure;
-	public Armure(int prix, String nom, boolean loot, int armure, int ID) {
-		super(prix, nom, loot, ID);
+	public Armure(int prix, String nom,  int armure, int ID) {
+		super(prix, nom,  ID);
 		this.armure = armure;
 		this.type = "Armure";
 
 	}
 
-	@Override
-	public boolean isLootable() {
-		return loot;
-	}
 
 	public double getArmure() {
 		return armure;

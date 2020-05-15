@@ -92,36 +92,36 @@ public class GameAsset {
 		allQuest = new ArrayList<Quete>();
 		allBoss = new ArrayList<Boss>();
 		//Epée
-		copperSword = new Epée(100, "Copper sword", false, 10,1); allAsset.add(copperSword);
-		ironSword = new Epée(300, "Iron sword", false, 20,2); allAsset.add(ironSword);
-		diamondSword = new Epée(1000, "Diamond sword", false, 40,3); allAsset.add(diamondSword);
-		GodGun = new Epée(9999,"Gun",false,9999,4); allAsset.add(GodGun);
+		copperSword = new Epée(100, "Copper sword", 10,1); allAsset.add(copperSword);
+		ironSword = new Epée(300, "Iron sword",  20,2); allAsset.add(ironSword);
+		diamondSword = new Epée(1000, "Diamond sword",  40,3); allAsset.add(diamondSword);
+		GodGun = new Epée(9999,"Gun",9999,4); allAsset.add(GodGun);
 		//Armure
-		copperArmor = new Armure(150, "Copper armor", false, 10,5); allAsset.add(copperArmor);
-		ironArmor = new Armure(400, "Iron armor", false, 15,6); allAsset.add(ironArmor);
-		diamondArmor = new Armure(199, "Diamond armor", false, 30,7); allAsset.add(diamondArmor);
+		copperArmor = new Armure(150, "Copper armor", 10,5); allAsset.add(copperArmor);
+		ironArmor = new Armure(400, "Iron armor", 15,6); allAsset.add(ironArmor);
+		diamondArmor = new Armure(199, "Diamond armor",30,7); allAsset.add(diamondArmor);
 		//Loot de mob
-		metalscrap = new MonsterDrop(50,"Metal scrap", true,8); allAsset.add(metalscrap);
-		gobelinMeat = new MonsterDrop(25, "Gobelin meat", true,9); allAsset.add(gobelinMeat);
-		gobelinSpear = new MonsterDrop(25,"Gobelin spear", true,10); allAsset.add(gobelinSpear);
-		Poncho = new MonsterDrop(25,"Poncho", true,11); allAsset.add(Poncho);
+		metalscrap = new MonsterDrop(50,"Metal scrap", 8); allAsset.add(metalscrap);
+		gobelinMeat = new MonsterDrop(25, "Gobelin meat", 9); allAsset.add(gobelinMeat);
+		gobelinSpear = new MonsterDrop(25,"Gobelin spear", 10); allAsset.add(gobelinSpear);
+		Poncho = new MonsterDrop(25,"Poncho", 11); allAsset.add(Poncho);
 		//Potions
-		potion = new Potions(20,"potion",false,20,12); allAsset.add(potion);
-		superPotion = new Potions(40,"Super potion", false, 40,13); allAsset.add(superPotion);
-		Hypotion = new Potions(80,"potion X", false, 80,14); allAsset.add(Hypotion);
+		potion = new Potions(20,"potion",20,12); allAsset.add(potion);
+		superPotion = new Potions(40,"Super potion",  40,13); allAsset.add(superPotion);
+		Hypotion = new Potions(80,"potion X",  80,14); allAsset.add(Hypotion);
 		//Key object
-		debug = new KeyItem(1,"droit de passage",false,15); allAsset.add(debug);
-		demonMask = new KeyItem(1,"Masque demoniaque",false,23); allAsset.add(demonMask);
-		key = new KeyItem(1,"cle du boss",false,24); allAsset.add(key);
+		debug = new KeyItem(1,"droit de passage",15); allAsset.add(debug);
+		demonMask = new KeyItem(1,"Masque demoniaque",23); allAsset.add(demonMask);
+		key = new KeyItem(1,"cle du boss",24); allAsset.add(key);
 		//Spells
-		boosterI = new Booster(200,"booster I",false,true,2,10,16); allAsset.add(boosterI);
-		fireI = new DamageSpell(200,"Fire I",false,false,20,5,17); allAsset.add(fireI);
-		fireII = new DamageSpell(400,"Fire II",false,false,40,10,18); allAsset.add(fireII);
-		fireIII = new DamageSpell(800,"Fire III",false,false,80,20,19); allAsset.add(fireIII);
-		Ultima = new DamageSpell(800,"Ultima",false,false,160,40,20); allAsset.add(Ultima);
-		MaelStrom = new DamageSpell(800,"MaelStrom",false,false,200,45,21); allAsset.add(MaelStrom);
-		MegaStorm = new DamageSpell(800,"Mega storm",false,false,250,50,22); allAsset.add(MegaStorm); 
-		WaterSpike = new DamageSpell(400,"Water spike",false,false,85,20,25); allAsset.add(WaterSpike); //LAST ID:25
+		boosterI = new Booster(200,"booster I",true,2,10,16); allAsset.add(boosterI);
+		fireI = new DamageSpell(200,"Fire I",false,20,5,17); allAsset.add(fireI);
+		fireII = new DamageSpell(400,"Fire II",false,40,10,18); allAsset.add(fireII);
+		fireIII = new DamageSpell(800,"Fire III",false,80,20,19); allAsset.add(fireIII);
+		Ultima = new DamageSpell(800,"Ultima",false,160,40,20); allAsset.add(Ultima);
+		MaelStrom = new DamageSpell(800,"MaelStrom",false,200,45,21); allAsset.add(MaelStrom);
+		MegaStorm = new DamageSpell(800,"Mega storm",false,250,50,22); allAsset.add(MegaStorm); 
+		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:25
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
 		
 		//Chest ID,ITEM

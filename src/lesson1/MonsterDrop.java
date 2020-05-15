@@ -1,10 +1,10 @@
 package lesson1;
 
-public class MonsterDrop extends Objets implements lootable {
+public class MonsterDrop extends Objets {
 	
 	
-	public MonsterDrop(int prix, String nom, boolean loot, int ID) {
-		super(prix, nom, loot, ID);
+	public MonsterDrop(int prix, String nom, int ID) {
+		super(prix, nom, ID);
 		this.type = "MonsterDrop";
 
 	}
@@ -12,9 +12,6 @@ public class MonsterDrop extends Objets implements lootable {
 		return this.prix;
 	}
 
-	@Override
-	public boolean isLootable() {
-		return this.loot;
-	}
+
 
 }

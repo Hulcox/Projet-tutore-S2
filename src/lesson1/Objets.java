@@ -3,14 +3,13 @@ package lesson1;
 public abstract class Objets {
 	protected int prix;
 	protected String nom;
-	protected boolean loot;
+
 	protected int number = 1;
 	protected String type;
 	protected int ID;
-	public Objets (int prix, String nom, boolean loot, int ID) {
+	public Objets (int prix, String nom, int ID) {
 		this.prix = prix;
 		this.nom = nom;
-		this.loot = loot;
 		this.ID = ID;
 	}
 	
