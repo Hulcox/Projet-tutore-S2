@@ -11,7 +11,7 @@ import org.newdawn.slick.SlickException;
 public class GameAsset {
 	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1;
 	Enemie knight, gobelin;
-	Map map1, grotte1, Village, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb;
+	Map map1, grotte1, Vialor, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb;
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
@@ -57,7 +57,7 @@ public class GameAsset {
 	
 	public void loadMap() throws SlickException{
 		map1 = new Map("MainMap.tmx", true,battle1, "map1",this.maintheme);
-		Village = new Map ("Village.tmx", false, battle1, "Village",this.Town);
+		Vialor = new Map ("Vialor.tmx", false, battle1, "Vialor",this.Town);
 		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1",this.cave);
 		Dj1_RDC_sp = new Map ("Dj1_RDC_sp.tmx", true, battleGrotte, "Dj1_RDC_sp",this.cave); 
 		Dj1_RDC_sg = new Map ("Dj1_RDC_sg.tmx", true, battleGrotte, "Dj1_RDC_sg",this.cave);
@@ -72,7 +72,7 @@ public class GameAsset {
 		Dj1_RDC_sg2.addEncounrers(gobelin);
 		Dj1_RDC_sb.addEncounrers(gobelin);
 		allMaps = new ArrayList<Map>();
-		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Village); allMaps.add(Dj1_RDC_sp); allMaps.add(Dj1_RDC_sg);
+		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Vialor); allMaps.add(Dj1_RDC_sp); allMaps.add(Dj1_RDC_sg);
 		allMaps.add(Dj1_ET1_esc); allMaps.add(Dj1_RDC_sg2); allMaps.add(Dj1_RDC_sb);
 		
 	}

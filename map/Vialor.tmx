@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="10">
+ <tileset firstgid="1" source="Paysage.tsx"/>
+ <tileset firstgid="31" source="House.tsx"/>
+ <tileset firstgid="108" name="Paysage" tilewidth="32" tileheight="32" tilecount="30" columns="10">
+  <image source="Paysage.png" width="320" height="96"/>
+ </tileset>
+ <tileset firstgid="138" source="WaterSet.tsx"/>
+ <tileset firstgid="223" source="Terrain final.tsx"/>
+ <tileset firstgid="358" source="Pnj.tsx"/>
+ <tileset firstgid="454" source="logicSolid.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2WUQrAIAxD67V3l91yB5jCAv0QW2rch/VDUtDmmbKxFREpG667ZsL6Mx+YTXfm6py6Xp1Zs3R9uNznTc9W17Nzfup70Zblw2Q2FoMLj4haeUf7ER56Rr4r9rJykXukzHmDw/T0eO3GRR5LPbNhnsF9mJ4eL3B76umPngEv2p+97/q+qdDs8zj57X+s3oxe8JbE/BAOAAA=
+  </data>
+ </layer>
+ <layer id="3" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECsWXyU7DQAyGi8QNiriwiAvrCSicoIUTa8u+t+z7Dm/A8wIvANz5RqolKxonnSgFS59mYjv++08iVcnncrn8P9CD5n/Qhu47fCTwSd1FPwzAIAzBMIxASDjNLviC7wR+qLsYhTEYhwJMwCSEhNN02iG6U/RPQxFKMAOzEBJp/M4hMA8LsAhLsAwhkcbvOgIbsAlbsA07EBJp/NYQOIQjOIYTOIWQEL+FFt6POkXWkrqWfCs5F9dwA7dwB/fwACEhfvU9ZeZX6ho6n+Xe+Y1GFc1ak3Wd36yizKAKrMAqrIEVPr9Wb1J+l4Y92IcDqIIVWfo9Q+QcLuASrsAKeZ+tekj+keYneIYXeAUr9PtsPR8rb81sJK/9Ws/Hyjcy3+rRfq3nY+X1zLgz8dW0X+v5WHmtG3cmvpr26+ZE/4P17Lh93Jn4atqvzNXakkta487EV4v6dfPT6Orfpe/Xe92j/fZRcOjw5XQ97V77dRqdHqK/RbTEi1yHrFG/f6Xr8/tW9yxrkl/x3cgqZ5KF30b0pEd0o36dNx/Sn3aN6jq/zf426kBDdNuVXrO/jXrVIXWzF71fxi57GxAOAAA=
+  </data>
+ </layer>
+ <layer id="5" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAX0DAE3oGXuQOwBxJ5A7AXE9ACBQEuCgDgYiEOAOBSIyQV1jMTrjAEqjQXiOCCOB+IEIAaBTBLMgOhgYNhIgp50oKYMkD1AnAXE2UA8CkZDYDQERkNgNARGQ2A0BFBDIJeEuhVV5ygPOQSmD1A4tkIdAaOR3TTKxh8CBwcozvC7amBkAcaeHxkQDgAA
+  </data>
+ </layer>
+ <layer id="7" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2WS24CQQxEJ/e/FxsSFIiScJy4BE8qGXenB2aSWWDJ+NtVtmHB7mWadk8tbzDNlLe4o8vhGv92X3+jXhdhguN5+e9Rew09pzffER9D1+LNM/pcmnWEFwysMLQLb+Vn8d5cG+XlHVi6L5zYfO/8vYIhm3m9VvnwwpWtv5nDC47mqXZag9dnhddzc/3PmH0f+hHqcor4K5QdvLakn+/N72BJXr4nt+yt3aXaVbI274Xl9vM/eZfi9vvi3256yXgd3626PMZv4Y3mHQff7dZ5fVZ8dieubG+vVj+4vbetGpiOcY8PjltwPJd9eu61GU8xUtXI0TNiHXOkv+pxXvfprXLUHrGOK7+SVr7qHc1tiTfvl+PRnXp9W9mXObLtzd6rtW6V8deI+Y+h+Vr/2/6S9wdy1T9eEA4AAA==
+  </data>
+ </layer>
+ <objectgroup id="6" name="Transition" width="30" height="30">
+  <object id="1" name=" Gora " type="vendeur" x="245" y="150" width="50" height="55"/>
+  <object id="3" name="Un couple lambda" type="Dialogue" x="650" y="123" width="55" height="75"/>
+  <object id="5" name="Willy" type="Dialogue" x="374" y="660" width="50" height="55"/>
+  <object id="6" name="Jeune Vialorais" type="Dialogue" x="726" y="850" width="50" height="55"/>
+  <object id="7" name="MainMap" type="Changementc" x="794" y="915" width="73" height="36">
+   <properties>
+    <property name="detmap" value="map1"/>
+    <property name="detx" type="int" value="1856"/>
+    <property name="dety" type="int" value="189"/>
+   </properties>
+  </object>
+  <object id="8" name="MainMap" type="changement" x="6" y="335" width="33" height="100">
+   <properties>
+    <property name="detmap" value="map1"/>
+    <property name="detx" type="int" value="650"/>
+    <property name="dety" type="int" value="200"/>
+   </properties>
+  </object>
+  <object id="9" x="118" y="756" width="50" height="55"/>
+ </objectgroup>
+</map>
