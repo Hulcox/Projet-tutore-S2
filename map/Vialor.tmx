@@ -6,27 +6,27 @@
   <image source="Paysage.png" width="320" height="96"/>
  </tileset>
  <tileset firstgid="138" source="WaterSet.tsx"/>
- <tileset firstgid="223" source="Terrain final.tsx"/>
- <tileset firstgid="358" source="Pnj.tsx"/>
- <tileset firstgid="454" source="logicSolid.tsx"/>
+ <tileset firstgid="228" source="Terrain final.tsx"/>
+ <tileset firstgid="363" source="Pnj.tsx"/>
+ <tileset firstgid="459" source="logicSolid.tsx"/>
  <layer id="1" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2WUQrAIAxD67V3l91yB5jCAv0QW2rch/VDUtDmmbKxFREpG667ZsL6Mx+YTXfm6py6Xp1Zs3R9uNznTc9W17Nzfup70Zblw2Q2FoMLj4haeUf7ER56Rr4r9rJykXukzHmDw/T0eO3GRR5LPbNhnsF9mJ4eL3B76umPngEv2p+97/q+qdDs8zj57X+s3oxe8JbE/BAOAAA=
+   H4sIAAAAAAAECu2W0QqAIAxF9bf7l/rP3jLoQIi6sWYP6sO4VNs93kFUDCHEAWtPmag/8x2JS43MJWOuvTPnPK4X1/c9Zq+5ft3zmd6PuySfN1fq1Tz34OJhUc0Zaz0WHjM1z173Z+WSu6WeO4fj6anxGo1LHkk1u/Hs4TyenhovuCXVzFt74FnnZ5/bnm8qOvs+Vn75H6u0owtXV/mpEA4AAA==
   </data>
  </layer>
  <layer id="3" name="Calque 2" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECsWXyU7DQAyGi8QNiriwiAvrCSicoIUTa8u+t+z7Dm/A8wIvANz5RqolKxonnSgFS59mYjv++08iVcnncrn8P9CD5n/Qhu47fCTwSd1FPwzAIAzBMIxASDjNLviC7wR+qLsYhTEYhwJMwCSEhNN02iG6U/RPQxFKMAOzEBJp/M4hMA8LsAhLsAwhkcbvOgIbsAlbsA07EBJp/NYQOIQjOIYTOIWQEL+FFt6POkXWkrqWfCs5F9dwA7dwB/fwACEhfvU9ZeZX6ho6n+Xe+Y1GFc1ak3Wd36yizKAKrMAqrIEVPr9Wb1J+l4Y92IcDqIIVWfo9Q+QcLuASrsAKeZ+tekj+keYneIYXeAUr9PtsPR8rb81sJK/9Ws/Hyjcy3+rRfq3nY+X1zLgz8dW0X+v5WHmtG3cmvpr26+ZE/4P17Lh93Jn4atqvzNXakkta487EV4v6dfPT6Orfpe/Xe92j/fZRcOjw5XQ97V77dRqdHqK/RbTEi1yHrFG/f6Xr8/tW9yxrkl/x3cgqZ5KF30b0pEd0o36dNx/Sn3aN6jq/zf426kBDdNuVXrO/jXrVIXWzF71fxi57GxAOAAA=
+   H4sIAAAAAAAECsWX10oEQRBFx0cx4IsBX4xPRlCMKJjTrjnnnP/AP1Z/QH3yNGxBMXTNTA+7euHQvVW9dff2LCxbF0VR3T/QjOd/UIPvO3yk8EnfqQ3aoQM6oQu6IUTOsxG+4DuFH/pOPdALfdAPAzAIIXKezjvEd4TzozAG4zABkxCiPHlnMJiFOZiHBViEEOXJW8CgCOuwAZuwBSHKk/cAg0M4gmM4gVMIkeQdqoqi4RJTrNPqtdSrqTldww3cwh3cwwOESPLq9xSYXyx56Ho59y5vXCd4nlbY1+Utl5YYtAwrsAprYMmX1zqbVt/mwA7swh7sg6Vy5j3D5Bwu4BKuwJJ8n61+SP2Rw0/wDC/wCpb099l6PlbdmpmlrvNaz8eqZ5lvndF5redj1fXMpDvx9XRe6/lYde2bdCe+ns7r5sR/g/XspH3Snfh6Oq/M1d5SS1uT7sTXi+d18/P46s+l36/3+ozO20rDoeWr6X7evc7rPBo8xD+LeEkWeR2yxvP+la8v71sps6xpeSV3llXupBx5s/jJGfGN53XZfMj5vGvc1+Wt9H+jejzEt1b5Vfq/UYu6pCb24vcLddDKchAOAAA=
   </data>
  </layer>
  <layer id="5" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAX0DAE3oGXuQOwBxJ5A7AXE9ACBQEuCgDgYiEOAOBSIyQV1jMTrjAEqjQXiOCCOB+IEIAaBTBLMgOhgYNhIgp50oKYMkD1AnAXE2UA8CkZDYDQERkNgNARGQ2A0BFBDIJeEuhVV5ygPOQSmD1A4tkIdAaOR3TTKxh8CBwcozvC7amBkAcaeHxkQDgAA
+   H4sIAAAAAAAECmNgGAX0DAE3oGXuQOwBxJ5A7AXE9ACBQEuCgDgYiEOAOBSIyQXNjMTrjAEqjQXiOCCOB+IEIAaBPBLMgOhgYNhGgp50oKYMIM4E4iwgzgbiUTAaAqMhMBoCoyEwGgKjIYAaAkUk1K2oOkd5yCEwZ4DCsRXqCBiN7KZRNv4QODZAcYbfVQMjCwCxztZyEA4AAA==
   </data>
  </layer>
  <layer id="7" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2WS24CQQxEJ/e/FxsSFIiScJy4BE8qGXenB2aSWWDJ+NtVtmHB7mWadk8tbzDNlLe4o8vhGv92X3+jXhdhguN5+e9Rew09pzffER9D1+LNM/pcmnWEFwysMLQLb+Vn8d5cG+XlHVi6L5zYfO/8vYIhm3m9VvnwwpWtv5nDC47mqXZag9dnhddzc/3PmH0f+hHqcor4K5QdvLakn+/N72BJXr4nt+yt3aXaVbI274Xl9vM/eZfi9vvi3256yXgd3626PMZv4Y3mHQff7dZ5fVZ8dieubG+vVj+4vbetGpiOcY8PjltwPJd9eu61GU8xUtXI0TNiHXOkv+pxXvfprXLUHrGOK7+SVr7qHc1tiTfvl+PRnXp9W9mXObLtzd6rtW6V8deI+Y+h+Vr/2/6S9wdy1T9eEA4AAA==
+   H4sIAAAAAAAECu2WS24CQQxEJ/c/GhsSFIiScJe4BE8qGXenB2aSWWDJ+NtVtmHB7mWadk8tbzDNlLe4o8vhGv92X3+jXhdhguN5+e9Rew09pzffER9D1+LNM/pcmnWEFwysMLQLb+Vn8d5cG+XlHVi6L5zYfO/8vYIhm3m9VvnwwpWtv5nDC47mqXZag9dnhddzc/3PmH0f+hHqcor4K5QdvLakn+/N72BJXr4nt+yt3aXaVbI274Xl9vM/eZfi9vvi3256yXgd3626PMZv4Y3mHQff7dZ5fVZ8dieubG+vVj+4vbetGpiOcY8PjltwPJd9eu61GU8xUtXI0TNiHXOkv+pxXvfprXLUHrGOK7+SVr7qHc1tiTfvl+PRnXp9W9mXObLtzd6rtW6V8deI+Y+h+Vr/2/6S9wf6PxzFEA4AAA==
   </data>
  </layer>
  <objectgroup id="6" name="Transition" width="30" height="30">
