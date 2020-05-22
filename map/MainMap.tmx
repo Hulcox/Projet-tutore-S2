@@ -27,10 +27,10 @@
  </layer>
  <layer id="4" name="Logic" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
- <objectgroup id="5" name="Transition" width="100" height="100">
+ <objectgroup id="5" name="Transition"  width="100" height="100">
   <object id="2" name="Dj1_RDC_sp" type="changement" x="611" y="629" width="60" height="55">
    <properties>
     <property name="detmap" value="Dj1_RDC_sp"/>
@@ -67,6 +67,12 @@
    </properties>
   </object>
   <object id="15" x="1942" y="275" width="50" height="55"/>
-  <object id="16" x="1826" y="669" width="58" height="57"/>
+  <object id="16" name="Dj2_RDC_sp" type="changement" x="1826" y="669" width="58" height="57">
+   <properties>
+    <property name="detmap" value="Dj2_RDC_sp"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="910"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

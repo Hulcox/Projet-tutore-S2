@@ -34,7 +34,7 @@
   <object id="3" name="Un couple lambda" type="Dialogue" x="650" y="123" width="55" height="75"/>
   <object id="5" name="Willy" type="Dialogue" x="374" y="660" width="50" height="55"/>
   <object id="6" name="Jeune Vialorais" type="Dialogue" x="726" y="850" width="50" height="55"/>
-  <object id="7" name="MainMap" type="Changementc" x="794" y="915" width="73" height="36">
+  <object id="7" name="map1" type="changement" x="794" y="915" width="73" height="36">
    <properties>
     <property name="detmap" value="map1"/>
     <property name="detx" type="int" value="1856"/>

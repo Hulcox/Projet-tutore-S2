@@ -9,16 +9,17 @@ import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 
 public class GameAsset {
-	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1;
-	Enemie knight, gobelin;
-	Map map1, grotte1, Vialor, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb;
+	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1, Henniktamer, battle_groundBoss2;
+	Enemie knight, gobelin, Hypou;
+	Map map1, grotte1, Vialor, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb, Dj2_RDC_sp, Dj2_RDC_s2, 
+	Dj2_RDC_tphd, Dj2_RDC_tphg, Dj2_RDC_tpbd, Dj2_RDC_tpbg, Dj2_RDC_sb;
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
 	KeyItem debug, demonMask, key;
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm, WaterSpike;
-	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho;
+	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho, Hypoueye;
 	Chest chest1,chest2,chest3;
 	Quete PeauGobelin, masquedemo;
 	Boss KingGobelin, Cagnazzo;
@@ -38,6 +39,8 @@ public class GameAsset {
 		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
 		battleGrotte = new Image("texture/battle_groundGrotte1.png");
+		Henniktamer = new Image("texture/Henniktamer.png");
+		battle_groundBoss2 = new Image("texture/battle_groundBoss2.png");
 		hero = new Image("texture/hero.png");
 		InventoryBackground = new Image("texture/inventory.png");
 		InventoryShop = new Image("texture/ShopInventory.png");
@@ -49,6 +52,7 @@ public class GameAsset {
 		//Random encounters
 		gobelin = new Enemie(30,5,2, "Gobelin", this.gobelinMeat);
 		knight = new Enemie(40,5,2,"knight", this.metalscrap);
+		Hypou = new Enemie(40,5,2,"Hypou", this.Hypoueye);
 
 	}
 	public void initinventory(Player player) {
@@ -64,6 +68,14 @@ public class GameAsset {
 		Dj1_ET1_esc = new Map ("Dj1_ET1_esc.tmx", true, battleGrotte, "Dj1_ET1_esc",this.cave);
 		Dj1_RDC_sg2 = new Map ("Dj1_RDC_sg2.tmx", true, battleGrotte, "Dj1_RDC_sg2",this.cave);
 		Dj1_RDC_sb = new Map ("Dj1_RDC_sb.tmx", false, battleGrotte, "Dj1_RDC_sb",this.cave);
+		Dj2_RDC_sp = new Map ("Dj2_RDC_sp.tmx", true, battle_groundBoss2, "Dj2_RDC_sp",this.cave);
+		Dj2_RDC_s2 = new Map ("Dj2_RDC_s2.tmx", true, Henniktamer, "Dj2_RDC_s2",this.cave);
+		Dj2_RDC_tphg = new Map ("Dj2_RDC_tphg.tmx", false, Henniktamer, "Dj2_RDC_tphg",this.cave);
+		Dj2_RDC_tphd = new Map ("Dj2_RDC_tphd.tmx", false, Henniktamer, "Dj2_RDC_tphd",this.cave);
+		Dj2_RDC_tpbg = new Map ("Dj2_RDC_tpbg.tmx", false, Henniktamer, "Dj2_RDC_tpbg",this.cave);
+		Dj2_RDC_tpbd = new Map ("Dj2_RDC_tpbd.tmx", false, Henniktamer, "Dj2_RDC_tpbd",this.cave);
+		Dj2_RDC_sb = new Map ("Dj2_RDC_sb.tmx", false, Henniktamer, "Dj2_RDC_sb",this.cave);
+		
 		map1.addEncounrers(knight);
 		grotte1.addEncounrers(gobelin);
 		Dj1_ET1_esc.addEncounrers(gobelin);
@@ -71,9 +83,13 @@ public class GameAsset {
 		Dj1_RDC_sg.addEncounrers(gobelin);
 		Dj1_RDC_sg2.addEncounrers(gobelin);
 		Dj1_RDC_sb.addEncounrers(gobelin);
+		Dj2_RDC_sp.addEncounrers(gobelin);
+		Dj2_RDC_s2.addEncounrers(gobelin);
 		allMaps = new ArrayList<Map>();
 		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Vialor); allMaps.add(Dj1_RDC_sp); allMaps.add(Dj1_RDC_sg);
-		allMaps.add(Dj1_ET1_esc); allMaps.add(Dj1_RDC_sg2); allMaps.add(Dj1_RDC_sb);
+		allMaps.add(Dj1_ET1_esc); allMaps.add(Dj1_RDC_sg2); allMaps.add(Dj1_RDC_sb); allMaps.add(Dj2_RDC_sp); 
+		allMaps.add(Dj2_RDC_s2); allMaps.add(Dj2_RDC_tphg); allMaps.add(Dj2_RDC_tphd); allMaps.add(Dj2_RDC_tpbg); allMaps.add(Dj2_RDC_tpbd); 
+		allMaps.add(Dj2_RDC_sb);
 		
 	}
 	public void loadMusic() throws SlickException {
@@ -105,6 +121,7 @@ public class GameAsset {
 		gobelinMeat = new MonsterDrop(25, "Gobelin meat", 9); allAsset.add(gobelinMeat);
 		gobelinSpear = new MonsterDrop(25,"Gobelin spear", 10); allAsset.add(gobelinSpear);
 		Poncho = new MonsterDrop(25,"Poncho", 11); allAsset.add(Poncho);
+		Hypoueye = new MonsterDrop(25,"Hypoueye", 26); allAsset.add(Hypoueye);
 		//Potions
 		potion = new Potions(20,"potion",20,12); allAsset.add(potion);
 		superPotion = new Potions(40,"Super potion",  40,13); allAsset.add(superPotion);
@@ -121,7 +138,7 @@ public class GameAsset {
 		Ultima = new DamageSpell(800,"Ultima",false,160,40,20); allAsset.add(Ultima);
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,250,50,22); allAsset.add(MegaStorm); 
-		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:25
+		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:26
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
 		
 		//Chest ID,ITEM
