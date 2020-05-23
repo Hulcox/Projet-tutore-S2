@@ -164,9 +164,28 @@ public class Player {
 
 		return MaxPV;
 	}
-	public void setMaxPV(int maxPV) {
+	public void setMaxPV() {
 
-		MaxPV = maxPV;
+		if(getLevel() <= 10)
+			this.MaxPV += 10 ;
+		if(getLevel() > 10 && getLevel() <= 20)
+			this.MaxPV += 20 ;
+		if(getLevel() > 20 && getLevel() <= 30)
+			this.MaxPV += 25 ;
+		if(getLevel() > 30 && getLevel() <= 40)
+			this.MaxPV += 30 ;
+		if(getLevel() > 40 && getLevel() <= 50)
+			this.MaxPV += 50 ;
+		if(getLevel() > 50 && getLevel() <= 60)
+			this.MaxPV += 60 ;
+		if(getLevel() > 60 && getLevel() <= 70)
+			this.MaxPV += 65 ;
+		if(getLevel() > 70 && getLevel() <= 80)
+			this.MaxPV += 70;
+		if(getLevel() > 80 && getLevel() <= 90)
+			this.MaxPV += 75 ;
+		if(getLevel() > 90 && getLevel() <= 99)
+			this.MaxPV += 80 ;
 	}
 	public boolean isDefending() {
 
@@ -182,15 +201,33 @@ public class Player {
 	}
 	public void setMana(int mana) {
 
-		this.mana = mana;
+		this.mana = this.mana + mana;
 	}
 	public int getMaxMana() {
 
 		return MaxMana;
 	}
-	public void setMaxMana(int MaxMana) {
-
-		this.MaxMana  = MaxMana;
+	public void setMaxMana() {
+		if(getLevel() <= 10)
+			this.MaxMana += 10 ;
+		if(getLevel() > 10 && getLevel() <= 20)
+			this.MaxMana += 20 ;
+		if(getLevel() > 20 && getLevel() <= 30)
+			this.MaxMana += 30 ;
+		if(getLevel() > 30 && getLevel() <= 40)
+			this.MaxMana += 45 ;
+		if(getLevel() > 40 && getLevel() <= 50)
+			this.MaxMana += 50 ;
+		if(getLevel() > 50 && getLevel() <= 60)
+			this.MaxMana += 60 ;
+		if(getLevel() > 60 && getLevel() <= 70)
+			this.MaxMana += 70 ;
+		if(getLevel() > 70 && getLevel() <= 80)
+			this.MaxMana += 75;
+		if(getLevel() > 80 && getLevel() <= 90)
+			this.MaxMana += 80 ;
+		if(getLevel() > 90 && getLevel() <= 99)
+			this.MaxMana += 100 ;
 	}
 	public int getBaseDamage() {
 
@@ -244,6 +281,18 @@ public class Player {
 			this.MaxXp = (int)((Math.sqrt(Math.exp(getLevel())))/getLevel())*7;
 		if(getLevel() > 20 && getLevel() <= 30)
 			this.MaxXp = (int)((Math.sqrt(Math.exp(getLevel())))/getLevel())*5;
+		if(getLevel() > 30 && getLevel() < 50)
+			this.MaxXp = (int)((Math.sqrt(Math.exp(getLevel())))/getLevel())*4;
+		if(getLevel() >= 50 && getLevel() <= 60)
+			this.MaxXp = (int) ((Math.sqrt(Math.exp(getLevel()+1)))/(getLevel()+1) * (getLevel()+1));
+		if(getLevel() > 60 && getLevel() <= 70)
+			this.MaxXp = (int) ((Math.sqrt(Math.exp(getLevel()+1)))/(getLevel()+1) * (getLevel()+1))/2;
+		if(getLevel() > 60 && getLevel() <= 70)
+			this.MaxXp = (int) ((Math.sqrt(Math.exp(getLevel()+1)))/(getLevel()+1) * (getLevel()+1))/4;
+		if(getLevel() > 70 && getLevel() <= 80)
+			this.MaxXp = (int) ((Math.sqrt(Math.exp(getLevel()+1)))/(getLevel()+1) * (getLevel()+1))/5;
+		if(getLevel() > 80 && getLevel() <= 99)
+			this.MaxXp = (int) ((Math.sqrt(Math.exp(getLevel()+1)))/(getLevel()+1) * (getLevel()+1))/6;
 	}
 
 	public int getLevel() {
@@ -263,6 +312,7 @@ public class Player {
 			this.xp = 0;
 			this.xp =+ xptransition;
 			setMaxXp();
+			setMaxMana();
 		}
 	}
 
