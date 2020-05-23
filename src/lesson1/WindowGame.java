@@ -49,6 +49,9 @@ public class WindowGame extends BasicGame {
 	Boss temp;
 	private ArrayList<Integer> ID;
 	private String info;
+
+	private HUD hud_player = new HUD("texture/hud/Hud_player.png",10,10);
+
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
     }
@@ -139,7 +142,7 @@ public class WindowGame extends BasicGame {
     	this.playedmusic = GameAsset.MenuMusic;
     	this.playedmusic.loop();
 
-    	
+		this.hud_player.init();
 
     }
     
@@ -148,7 +151,7 @@ public class WindowGame extends BasicGame {
 
 	@Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-		
+
 		this.map = this.p1.getMap().getMap();
 		this.playedmusic.setVolume(this.IngameHUD.getSound());
 		this.MapLoading(this.map);
@@ -224,6 +227,8 @@ public class WindowGame extends BasicGame {
 	    	}
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
 	    	this.IngameHUD.render(container, g);
+
+			this.hud_player.render(g);
 
 	    	if (sellGUI.isPlayerOverArea()){
 		    	

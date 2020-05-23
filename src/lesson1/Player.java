@@ -44,6 +44,8 @@ public class Player {
 		this.baseDamage = damage;
 		this.setLevel();
 		this.setMaxXp();
+		this.setMaxMana();
+		this.setMaxPV();
 	}
 	public Animation[] getAnimations() {
 		return animations;
@@ -304,6 +306,12 @@ public class Player {
 	public void setMaxXp(int MaxXp) {
 		this.MaxXp = MaxXp;
 	}
+	public void setMaxPV(int MaxPV) {
+		this.MaxPV = MaxPV;
+	}
+	public void setMaxMana(int MaxMana) {
+		this.MaxMana = MaxMana;
+	}
 
 	public void setLevel() {
 		if(getXp() >= getMaxXp()) {
@@ -313,6 +321,7 @@ public class Player {
 			this.xp =+ xptransition;
 			setMaxXp();
 			setMaxMana();
+			setMaxPV();
 		}
 	}
 
