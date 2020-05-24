@@ -20,6 +20,10 @@ public class Battle {
 	private boolean isInBattle = false;
 	private boolean next = false;
 	private boolean EnemyAttack = true;
+
+	private HUD hud_player;
+	private HUD hud_enemie;
+
 	public Enemie getEnemie1() {
 
 		return enemie1;
@@ -43,14 +47,14 @@ public class Battle {
 		g.resetTransform();
 		this.index = i;
 		font = g.getFont();
-		String playerPv = Integer.toString(player.getPv());
+		/*String playerPv = Integer.toString(player.getPv());
 		String playerMaxPv = Integer.toString(player.getMaxPV());
 		String playerMana = Integer.toString(player.getMana());
 		String playerMaxMana = Integer.toString(player.getMaxMana());
 		String EnemiePv = Integer.toString(player.getMap().getArrayList().get(i).getPv());
 		String playerXp = Integer.toString(player.getXp());
 		String playerMaxXp = Integer.toString(player.getMaxXp());
-		String playerLevel = Integer.toString(player.getLevel());
+		String playerLevel = Integer.toString(player.getLevel());*/
 
 		g.drawImage(player.getMap().getBattleImg(),0,0);
 		if(singleFireEvent.isReady() && player.getAnimstate() >= 1) {
@@ -61,10 +65,19 @@ public class Battle {
 			time++; 
 		}
 		this.TurnAnimation(g, player, i);
-		font.drawString(550,30, "Pv : " + EnemiePv, Color.red);
+		/*font.drawString(550,30, "Pv : " + EnemiePv, Color.red);
 		font.drawString(0,45, "Mana : " + playerMana + "/" + playerMaxMana, Color.blue);
 		font.drawString(0,30 , "Pv : " + playerPv + "/"+playerMaxPv, Color.green);
-		font.drawString(0,60, "XP : " + playerXp + "/" + playerMaxXp + " Level : " + playerLevel , Color.yellow);
+		font.drawString(0,60, "XP : " + playerXp + "/" + playerMaxXp + " Level : " + playerLevel , Color.yellow);*/
+
+		this.hud_player = new HUD("texture/hud/Hud_player.png", 5, -5, player); // hud player
+		this.hud_player.initPlayer();
+		this.hud_player.renderPlayer(g);
+
+		this.hud_enemie = new HUD("texture/hud/Hud_enemie.png", 357,-34, player.getMap().getArrayList().get(i)); //hud enemie
+		this.hud_enemie.initEnemie();
+		this.hud_enemie.renderEnemie(g);
+
 	}
 	public void TurnAnimation (Graphics g, Player player, int i) throws SlickException {
 		g.resetTransform();

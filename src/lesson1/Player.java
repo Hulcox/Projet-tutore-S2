@@ -36,16 +36,15 @@ public class Player {
 	private int xp;
 	private int MaxXp;
 	
-	public Player(int MaxPv, int MaxMana) {
-		this.MaxPV = MaxPv;
-		this.MaxMana = MaxMana;
-		this.pv = MaxPV;
-		this.mana = this.MaxMana;
+	public Player(int pv, int mana) {
 		this.baseDamage = damage;
 		this.setLevel();
-		this.setMaxXp();
-		this.setMaxMana();
-		this.setMaxPV();
+		this.setMaxXp(0);
+		this.setMaxMana(mana);
+		this.setMaxPV(pv);
+		this.setPv(getMaxPV());
+		this.setMana(getMaxMana());
+		MaxXp();
 	}
 	public Animation[] getAnimations() {
 		return animations;
@@ -166,8 +165,7 @@ public class Player {
 
 		return MaxPV;
 	}
-	public void setMaxPV() {
-
+	public void MaxPV() {
 		if(getLevel() <= 10)
 			this.MaxPV += 10 ;
 		if(getLevel() > 10 && getLevel() <= 20)
@@ -203,13 +201,13 @@ public class Player {
 	}
 	public void setMana(int mana) {
 
-		this.mana = this.mana + mana;
+		this.mana = mana;
 	}
 	public int getMaxMana() {
 
 		return MaxMana;
 	}
-	public void setMaxMana() {
+	public void MaxMana() {
 		if(getLevel() <= 10)
 			this.MaxMana += 10 ;
 		if(getLevel() > 10 && getLevel() <= 20)
@@ -276,7 +274,7 @@ public class Player {
 		return MaxXp;
 	}
 
-	public void setMaxXp() {
+	public void MaxXp() {
 		if(getLevel() <= 10)
 			this.MaxXp = (int)(Math.sqrt(Math.exp(getLevel())))+1;
 		if(getLevel() > 10 && getLevel() <= 20)
@@ -319,9 +317,9 @@ public class Player {
 			int xptransition = getXp() - getMaxXp();
 			this.xp = 0;
 			this.xp =+ xptransition;
-			setMaxXp();
-			setMaxMana();
-			setMaxPV();
+			MaxXp();
+			MaxMana();
+			MaxPV();
 		}
 	}
 
