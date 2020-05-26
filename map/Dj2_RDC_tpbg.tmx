@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="3">
  <tileset firstgid="1" source="WaterSet.tsx"/>
- <tileset firstgid="86" source="Pnj.tsx"/>
- <tileset firstgid="182" source="logicSolid.tsx"/>
+ <tileset firstgid="96" source="Pnj.tsx"/>
+ <tileset firstgid="192" source="logicSolid.tsx"/>
  <layer id="1" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3SQREAAAyDMETUv9YJWR4Y4LJq8oABBhhggAEGGGCAAQYYeGfgAJATXzoQDgAA
+   H4sIAAAAAAAEChNjYGAQG8WjYTCaBkbTwGgaGE0Do2lgNA0MUBpgxWMvG1AOhHG1VbzxyOHSAxOXoEBvHAV6YfaP0rjjlZZhwwWMO00o5qZjPIoD7WKEYlE62isLtMsfiuXoaC8t43DUbOrmHQAACnpTEA4AAA==
   </data>
  </layer>
  <layer id="2" name="Calque 2" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2Suw6CQBBFsRAflKINlmoCUhIT1N7//yPuTZhmwoo7bGExm5yQzcxwdi9kmS9PwBPwBDwBT8AT+IcENjjENhG7iAvV6G0ScY/wPtH7SsTb4F1/ceeokdD5ZDbG2+F9B3ACR7BSsNaOhOoy26Pv10XvBVzBDWiv1ObqnI31apd1b/WeceZSsceedyWFqrG3AnJOq1c7uec3fYzwW0/1LPWG7vOBj4TyWOqVeevTmrPVJ3PuxU+BNQAE+hNYEA4AAA==
+   H4sIAAAAAAAECu2SuwrCQBBFY+G79tForYKP2sZXaeEf+P+f4bmQwDBEzJotFGbgsJO9k9zsZYsiKhKIBCKBSCASiAR+IYE+PzHIxDDhQFtmd5nYJ/iemb1At1zVe3rsCb9fPd9L7cratI4MTmAOM+g4pB3gBu/0Z6mdWJuWfFewhg1430r7pOvdVF/v9e3zP/ouyWtqGNErYzE2+5pZgM2mzXmtp3p7l3THvJ7Lt+5MD/xEXRa5fO13Uvs2Oad62fnw5VJQL6iun5oQDgAA
   </data>
  </layer>
  <layer id="3" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3QMQ0AAAzDsBIdfxoDUamXAyCHExEgQIAAAQIECBAgQKAXuH7hMBZ43VOmFRAOAAA=
+   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCoyEwGgKjITBwIcCKx2o2oBwI4wLeuCSIEJcgQg0uJXG4JEbFB30IcAFdqAnF3HR0rTjQLkYoFqWjvbJAu/yhWI4O9k6kgx2jVlA3BACUtxIaEA4AAA==
   </data>
  </layer>
  <layer id="5" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu1Syw7AIAjz/z9olz1uc/us0WRciEY0HGZWEqKmQEtjSgw6QAfoAB2gA3TgCw4sIiIyvTtFcmKWN/7Ge4gxuyT2xt2GYi1c59j+2hv1p+QqmQtFirVw9EKjN0o7entt3Sjv6B9T/mhenVvTpfhsvKobJ3brjdF9e3ls/Qy8l4jegvK2BrzvB+vC4o8QDgAA
+   H4sIAAAAAAAECu1Qyw7AIAjz/7+Kyx63uX3RSiIXohMNh5lA0mymQGlTiooEIoFIIBKIBCKBPyRAOMITVk+emrzLWoRGT1h1TzQeRZv/dQlHIL542aPnW2/uv4ANyJUm4Xo8z/KN1qp5sM7qvtV0CQZmIL5n/bY0ZW+PX01XfPGXvY3WrN9RHd2/gu6No3cnPDqA8n4B772ncBAOAAA=
   </data>
  </layer>
  <objectgroup id="4" name="Transition" width="30" height="30">

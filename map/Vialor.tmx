@@ -6,30 +6,30 @@
   <image source="Paysage.png" width="320" height="96"/>
  </tileset>
  <tileset firstgid="138" source="WaterSet.tsx"/>
- <tileset firstgid="228" source="Terrain final.tsx"/>
- <tileset firstgid="363" source="Pnj.tsx"/>
- <tileset firstgid="459" source="logicSolid.tsx"/>
+ <tileset firstgid="233" source="Terrain final.tsx"/>
+ <tileset firstgid="368" source="Pnj.tsx"/>
+ <tileset firstgid="464" source="logicSolid.tsx"/>
  <layer id="1" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2W0QqAIAxF9bf7l/rP3jLoQIi6sWYP6sO4VNs93kFUDCHEAWtPmag/8x2JS43MJWOuvTPnPK4X1/c9Zq+5ft3zmd6PuySfN1fq1Tz34OJhUc0Zaz0WHjM1z173Z+WSu6WeO4fj6anxGo1LHkk1u/Hs4TyenhovuCXVzFt74FnnZ5/bnm8qOvs+Vn75H6u0owtXV/mpEA4AAA==
+   H4sIAAAAAAAECu2W0QqAIAxF9bf7mV76zsigAyHqxpo9qA/jUm33eAdRMYQQB6wjZaL+zLcnLjUyl4y59s6c87heXN/3mL3m+nXPZ3o/7pJ83lypV/Pcg4uHRTVnrPVYeMzUPHvdn5VL7pZ67hyOp6fGazQueSTV7Mazh/N4emq84JZUM2/tgWedn31ue76p6Oz7WPnlf6zSji7dZyjVEA4AAA==
   </data>
  </layer>
  <layer id="3" name="Calque 2" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECsWX10oEQRBFx0cx4IsBX4xPRlCMKJjTrjnnnP/AP1Z/QH3yNGxBMXTNTA+7euHQvVW9dff2LCxbF0VR3T/QjOd/UIPvO3yk8EnfqQ3aoQM6oQu6IUTOsxG+4DuFH/pOPdALfdAPAzAIIXKezjvEd4TzozAG4zABkxCiPHlnMJiFOZiHBViEEOXJW8CgCOuwAZuwBSHKk/cAg0M4gmM4gVMIkeQdqoqi4RJTrNPqtdSrqTldww3cwh3cwwOESPLq9xSYXyx56Ho59y5vXCd4nlbY1+Utl5YYtAwrsAprYMmX1zqbVt/mwA7swh7sg6Vy5j3D5Bwu4BKuwJJ8n61+SP2Rw0/wDC/wCpb099l6PlbdmpmlrvNaz8eqZ5lvndF5redj1fXMpDvx9XRe6/lYde2bdCe+ns7r5sR/g/XspH3Snfh6Oq/M1d5SS1uT7sTXi+d18/P46s+l36/3+ozO20rDoeWr6X7evc7rPBo8xD+LeEkWeR2yxvP+la8v71sps6xpeSV3llXupBx5s/jJGfGN53XZfMj5vGvc1+Wt9H+jejzEt1b5Vfq/UYu6pCb24vcLddDKchAOAAA=
+   H4sIAAAAAAAECsWXx04DQQyGwxkScaGIC/VEPUGAEwm9J/Qeen0DHhp4Aco3UixZq/Huziohlj7NrO31n38mUpR8LpfLt4AeNFtBO7of8JnAF3UX/TAAgzAEwzACIeE0u+AbfhL4pe5iFMZgHCZgEqYgJJym0w7RnaZ/BoowC3MwDyGRxe8CAiUowyIswTKERBa/mwhswTbswC5UICSy+D1C4BhO4BTO4BxCQvwW27irOiXWsnqWfIGcixu4hTu4hwd4hJAQv/qdCvOrdQ2db+Te+Y1GDc3rJus6v42KFQatwhqswwZY4fNr9SblqzTswT4cwCFY0Ui/F4hcwhXU4BqskO+zVQ/JP9H8DC/wCm9ghf4+W/dj5a2ZafLar3U/Vj7NfKtH+7Xux8rrmXFn4qtpv9b9WHmtG3cmvpr26+ZEf4P17Lh93Jn4atqvzNXakkta487EV4v6dfOz6OrPpd/Xe92j/fZRcOjw5XQ96177dRqdHqKfRbTEizyHrFG//6Xr8/te9yxrkl/xnWaVM2mE3zR60iO6Ub/Omw/pz7pGdZ3fZv83KqAhuh1Kr9n/jXrVIXWzF70/84XVPxAOAAA=
   </data>
  </layer>
  <layer id="5" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAX0DAE3oGXuQOwBxJ5A7AXE9ACBQEuCgDgYiEOAOBSIyQXNjMTrjAEqjQXiOCCOB+IEIAaBPBLMgOhgYNhGgp50oKYMIM4E4iwgzgbiUTAaAqMhMBoCoyEwGgKjIYAaAkUk1K2oOkd5yCEwZ4DCsRXqCBiN7KZRNv4QODZAcYbfVQMjCwCxztZyEA4AAA==
+   H4sIAAAAAAAECmNgGAX0DAE3oGXuQOwBxJ5A7AXE9ACBQEuCgDgYiEOAOBSIyQUdjMTrjAEqjQXiOCCOB+IEIAaBYhLMgOhgYNhNgp50oKYMIM4E4iwgzgbiUTAaAqMhMBoCoyEwGgKjIYAaAuUk1K2oOkd5yCGwcIDCsRXqCBiN7KZRNv4QOD1AcYbfVQMjCwD0fOqFEA4AAA==
   </data>
  </layer>
  <layer id="7" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2WS24CQQxEJ/c/GhsSFIiScJe4BE8qGXenB2aSWWDJ+NtVtmHB7mWadk8tbzDNlLe4o8vhGv92X3+jXhdhguN5+e9Rew09pzffER9D1+LNM/pcmnWEFwysMLQLb+Vn8d5cG+XlHVi6L5zYfO/8vYIhm3m9VvnwwpWtv5nDC47mqXZag9dnhddzc/3PmH0f+hHqcor4K5QdvLakn+/N72BJXr4nt+yt3aXaVbI274Xl9vM/eZfi9vvi3256yXgd3626PMZv4Y3mHQff7dZ5fVZ8dieubG+vVj+4vbetGpiOcY8PjltwPJd9eu61GU8xUtXI0TNiHXOkv+pxXvfprXLUHrGOK7+SVr7qHc1tiTfvl+PRnXp9W9mXObLtzd6rtW6V8deI+Y+h+Vr/2/6S9wf6PxzFEA4AAA==
+   H4sIAAAAAAAECu2WS24CQQxEJ/e/HBsSFBIl4SRxCZ5UMu5OD8xMWGDJ+NtVtmHB7mWadk8tbzDNlLe4o8vhEv91X3+jXhdhguN5+e9Rew09pTc/ER9D1+LNM/pcmnWEFwysMLQLb+Vn8d5cG+XlHVi6L5zYfO/8vYIhm3m9VvnwwpWtv5nDC47mqXZag9dnhddzc/2vmH0f+hnq8hHxdyg7eG1JP9+b38GSvHxPbtlbu0u1q2Rt3jPL9ed/8i7F7ffFv970nPE6vlt1eYzfwhvNOw6+20fn9Vnx2Z24sr29Wv3g9t62amA6xi0+OG7B8Vz26bnVZjzFSFUjR8+IdcyR/qrHed2nt8pRu8c6rvxKWvmqdzRX8WaeHI9i9/p6vPBhezhzaxVvxtiClzmyzbOMxq2ZM/4aMf8xNGvrf9uWvL/6BAtHEA4AAA==
   </data>
  </layer>
- <objectgroup id="6" name="Transition" width="30" height="30">
+ <objectgroup id="6" name="Transition">
   <object id="1" name=" Gora " type="vendeur" x="245" y="150" width="50" height="55"/>
   <object id="3" name="Un couple lambda" type="Dialogue" x="650" y="123" width="55" height="75"/>
   <object id="5" name="Willy" type="Dialogue" x="374" y="660" width="50" height="55"/>

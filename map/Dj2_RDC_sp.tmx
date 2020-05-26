@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="4">
  <tileset firstgid="1" source="WaterSet.tsx"/>
- <tileset firstgid="91" source="Pnj.tsx"/>
- <tileset firstgid="187" source="logicSolid.tsx"/>
+ <tileset firstgid="96" source="Pnj.tsx"/>
+ <tileset firstgid="192" source="logicSolid.tsx"/>
  <layer id="3" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3SQREAAAyDMEzUv9UJWR4Y4LJq8oABBhhggAEGGGCAAQYYeGfgAEfrsXIQDgAA
+   H4sIAAAAAAAECu3SQREAAAyDMFTUv9QJWR4Y4LJq8oABBhhggAEGGGCAAQYYeGfgAD7igqsQDgAA
   </data>
  </layer>
  <layer id="1" name="Calque 2" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCoyGAPwTYgdIcVMKc+K1CkdUG8nSohHVRTMbPsQVK21EJ2+O3CkV2oOw1B7qCkUrYBsVH+Dmj9pIf7pSGsywwakQJYBmgPHq6oNReQnbC5EftxZ93kGWx5SNYOBKiqR3O3ATSFMg9XEBMbXvRzSOWT2l6JtYedHXUttcbGKYgjG4POh+XvQA0Bqx2EA4AAA==
+   H4sIAAAAAAAECu2SPQ6AIAyFcfJvd9MbqLsxEb2A97+Nj4GBBiiGjiV5Ic0r/cgDY3RpApqAJqAJaAL5BFrYnZD6PCpwV1SbkPZgcr6wsG8hPXlU4Fohprv7H+6B/obRyfj+/IW+0lXC9XO5Xbnp1GM5L2ifGM3wae61OXNM7ys3/Z7Uib2vz5HbpXMemT/l7jNA0lw6r7Su/c+lHNonzX2RqRPl0DrF/QBiRfhGEA4AAA==
   </data>
  </layer>
  <layer id="4" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCoyEwGgKkhoAAUAMQN5Cqj1L1ikADgJju9hoB7QViutsLtHYUjIYA3UIgj242jVo0GgKDJwQAiChUJBAOAAA=
+   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCoyEwGgKkhoAAUIMwqZqooF4ZaIYaFcwh1QgzoAZLUjWNqh8NgSEWAsVDzL2jzh0NAWqEAADN6MbdEA4AAA==
   </data>
  </layer>
  <layer id="6" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2TUQrAIAxDvf+V9rXtd7vT9KMMsmFTLExGBBFp7DNBS9FQAkpACSgBJdBPYKnlzNmn3dVMZuvFjpm55oG5o2m9dfcEgfoW0IobCAukozkz7+ftz2Rwwcpj+yUX2X/3i+Fn+GXeVjYX+7H7Ub8sB3UR7lEPr860/p7uNCGsFxdZBTsQDgAA
+   H4sIAAAAAAAECu2RwQrAMAhD/f+v8rTtun3R7EEGOVSlUhhEkFJM89pUhMUEmAATYAJMYJ6A2riz57Rv2skcXtlSE3Z2J9e9MvdzbbRekaAwPwtacgthgXQ1ZzW/TANWOrjoiftxL6xdXAXwLi5gf53zyDDq7veiX3a/+r9ZDuoq3NsOH0G7f6R7XAjrC1SXgckQDgAA
   </data>
  </layer>
  <objectgroup id="5" name="Transition" width="30" height="30">

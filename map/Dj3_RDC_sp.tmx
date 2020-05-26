@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="WaterSet" tilewidth="32" tileheight="32" tilecount="95" columns="19">
+  <image source="WaterSet.png" width="608" height="160"/>
+ </tileset>
+ <tileset firstgid="96" source="House.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu3QgQAAAAACoP0Vlh3kQijBgAEDBqrAgAEDBgwYMHA4MCysGDUQDgAA
+  </data>
+ </layer>
+</map>
