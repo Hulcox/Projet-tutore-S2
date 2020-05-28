@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="7">
  <tileset firstgid="1" name="WaterSet" tilewidth="32" tileheight="32" tilecount="95" columns="19">
   <image source="WaterSet.png" width="608" height="160"/>
  </tileset>
  <tileset firstgid="96" source="House.tsx"/>
+ <tileset firstgid="173" source="volcanv0.tsx"/>
+ <tileset firstgid="293" source="Paysage_V2.tsx"/>
+ <tileset firstgid="323" source="Pnj.tsx"/>
+ <tileset firstgid="419" source="logicSolid.tsx"/>
  <layer id="1" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3QgQAAAAACoP0Vlh3kQijBgAEDBqrAgAEDBgwYMHA4MCysGDUQDgAA
+   H4sIAAAAAAAECu1UQQ6AMAjj/3/xD578gf/RRZs0DSw4F71wWIAC7QLT1czWOjWDD97Admp458n78/ob1uMY6VG+EY6RntJ9/kb+mrPuquL+dzh7PtHegbMeMLVck/WVQ2Pm0Rxirsn66I0s82RquL7nR1zAuReYWq7J+sqhMfNoDjHXZH30RjbLU3Xz/weLmXnHm/XM/XmaDRvVxd28fsZK99o3zwQ+Zqg2ygP37Mw5R/d5q+v1M9Z09/s0n3NZ/wCJdtLeEA4AAA==
   </data>
  </layer>
+ <layer id="4" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECsVWy07DQAws4jP6L/w3cC6o3KASt7aHKlw59oqHdCrLsb2bbJSsZDnZx4zttZ1sNv14FvUi8np7X0rthOhN5L2BcIrtn8L3JXJo4J1i+1H4TiLnBt4W2xGrfSClu9e2RxiRW4hVNGrvPsP4DsCzM2vxdmLrT4VcAp8wPcXftXhtnKN6ze4q85e5yHDx3fIC3+s15MU5DmJEvKxB9JDtQy949noK99pew/kaDNql9VVeINHQ9RrtKWF45+wZfDcyIYbuPY8SMwjj/MFNida8vLNk+/2bku21OeLhLcHr1cRY3k6M/xXJ+ob1F7GxNbEEL3Nf18RYXvoCH5B/zCWtuUeW/4dXE5Y3y2WsEZM+sO611n7dqAdK82ZYxK3BHJA4E5rXWZ51Kqv50v9GiyGtNQ9uryYx/yR9Kxq1vMCIcLyajPg4X8uL3I32MgfH5FmEBbvAxRiSF/Vj792rSZzPRonXW2fdZrilNeDq/qKf6aPFmIOXd8NeoDXuay5//wAq4tLoEA4AAA==
+  </data>
+ </layer>
+ <layer id="5" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAWjIUBaCOzEo3w3HrlRqdEQGKwhcHKwOmyQuwtfWQBz+miZAAuJUXo0BEZDYDCFAKjcH4iy/xrQ3iuDKSCGoVtcGIehp2jsJQDTQQxOEA4AAA==
+  </data>
+ </layer>
+ <layer id="6" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2RSwrDMBBD0/sfoxctWjwQZiSbZFNoDUZj/eym1/Vfv/QF3q/ravvkW7S8tGklXt6meVfzJS3x3Cv9ZPs7fE79iffskzn1J/7JXZ5N/YlXVtrp9rt8Tv2J517vSPOdDv899E4c2oSTf+JSFl6ZO8tzPrcu92k+3ep0L3dMHJqjfCwynBOSASdf0+R3XbOfpz4yO++ux/VdV3rHxHvvTv/2e3lf+01N47/iO9DHOSGd+BOmvHg6mFPHyrfOE2299ySzetY3+bl50Zofz4T+9kl3rnnR/B1w3sHcNDxg86KByvhMB9g0PGDzooHK+EwH2DQ8YPNKY7s/ZRJP1rF5uXP1rGf6Eo/u2LzSJn3i1Jl4v4+Z7oZ4wdTfOj6jklltEA4AAA==
+  </data>
+ </layer>
+ <objectgroup id="7" name="Transition" width="30" height="30">
+  <object id="1" name="Dj3_RDC_s2" type="changement" x="449.371" y="765.72" width="60.3633" height="43.5957">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="865"/>
+   </properties>
+  </object>
+  <object id="2" x="406.057" y="854.704" width="50" height="50"/>
+  <object id="3" name="Dj3_RDC_sp" type="transition" x="854" y="728" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_sp"/>
+    <property name="detx" type="int" value="255"/>
+    <property name="dety" type="int" value="865"/>
+   </properties>
+  </object>
+  <object id="5" x="361" y="459" width="236" height="166"/>
+  <object id="6" name="clebossfinal" type="Chest" x="773" y="772" width="32" height="96">
+   <properties>
+    <property name="ID" type="int" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

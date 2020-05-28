@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="1">
+ <tileset firstgid="1" source="volcanv0.tsx"/>
+ <tileset firstgid="121" source="WaterSet.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu3SQREAAAyDMETUv9YJWR4Y4LJq8oABBhhggAEGGGCAAQYYeGfgAJATXzoQDgAA
+  </data>
+ </layer>
+ <layer id="2" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECs1WQQoCMRBbH6DiUT2rZ/X/f9vpIRDCtOkoKwqlbWaStA2Ky/Kfn30c6xDjSMebxYhSXp6DcYlxJeYsRpSpJd/nFox7jAcxHcZ8otkl3+cZ3a8Yb2I5jPlEs8vsPiDtYqEDNcwjPnqyObuPemV7aGV81EYz55PpO4z5Ix+tcT7OI6szX7VHe84n03UY80c+WuN82m+G8+F662e+as/s+b2a9ikGe+ia+2f0ez3Ze6lX2+OT9aNWmUfvxX7QHPWjpzrrdwO+ild1Xb9mB1/FnU61rtnBV/GqruvX7OCruNOp1jVH+Cpe1XX9miN8FXc61brmCF/Fq7quX3OEr+JOp1rXHOGreFXX9WuO8FXc6VTrmiN8Fa/qun7Osb1t823/qRl3Gt/Wt37b3vm2ftue7y/ftneGT/EVdJNCWBAOAAA=
+  </data>
+ </layer>
+ <layer id="3" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCoyEwGgLEhoAzUCE6JlbvqLrBHwLocQvij4LhEwKj8Tt84nLUJ9QLAQBt3stbEA4AAA==
+  </data>
+ </layer>
+</map>

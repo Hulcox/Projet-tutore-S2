@@ -19,12 +19,12 @@
    H4sIAAAAAAAECu3QgQAAAADDoPlTH+SFUGHAgAEDBgwYMGDAgAEDjwMDe25clxAOAAA=
   </data>
  </layer>
- <layer id="4" name="Logic" width="30" height="30" visible="0">
+ <layer id="4" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu2WzQ7CMAyDedRc+BEc4P1P+INamqJeWJsJwSxZbhKIu3RSdzjs+IYJhDaxhqN7X+PJf0YRanAVb02Je3QdpT6KUIOzeGlK3KPrKPVRhBr0fN2XOtzCFw+DPYX4S753Pc9DRI9tLXlhmfPvotVGhB6ZvN+G399QYknXZ6l7u1+OnZ+t2SfHs/3cD5/enF2vUnyhEVrAaoQMoBFawGqEDPY5V0/5fZb7nLeZc3aJnCiI8fiX8+VZuYdRI7Tg3kWrsPy+yR5871Qh1Jh7PoPzjpycHNP/lEjuUzwBNJMSMhAOAAA=
   </data>
  </layer>
- <objectgroup id="3" name="Transition">
+ <objectgroup id="3" name="Transition" width="30" height="30">
   <object id="1" name="boss" x="444" y="251" width="68" height="67"/>
  </objectgroup>
 </map>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="2">
+ <tileset firstgid="1" source="volcanv0.tsx"/>
+ <tileset firstgid="121" source="logicSolid.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2UvQ7CMAyEw0QZEe0MvP9LYktYMicubkxIlwxWf3z2V5+rrKWUdcb0YP4Dh/wDZ/F9kbgM9v/25m2DuXfhPSSef+QyT0/AZLrsecg8RS7TZbnMU+QyXZaLdVfxFwM1vzyzfSlTZ7XQZ89hdV5Tu/f7MoZev3F93tfV+rMc2xd6jPOyOsbZ+z7i7u0T6di+cE6mi/qzPNsXcpmO9Y3es30hl+mi/q155LbWZ/WT+3luZX2M6kb7rDyM6Bt75G1OvPboXeths6rG39dqeuWMZzO39n0BlrQSoRAOAAA=
+  </data>
+ </layer>
+ <layer id="2" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2UsQ7CMAxE+wPQGZihM/D//4YzuHJfU/mqMICaSFFy9vni85Bh6OvoEzjZAM62x2QQKi+RmdMXu11t3+ZI/aLy6tXLaPQwLVMrdLfIw3bGWxVWAtHDu5KPoaeBl+2MF2v8Hv2VWKsH6vk7PKO/kmvxUOqpV2K11eqPmqpeqz+++2096nfcJ/CLE1D/F7V3VU/9X9R3Vb3sf2H/xOwn03N+9r+wf2LX8TPTcx5P+mH/xORTT8X0w/6JyVffIY9+mCfey2e9Y/rx+Na5l7+l0+P/PYEP3pOQ3RAOAAA=
+  </data>
+ </layer>
+ <layer id="3" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu3QgQAAAADDoPlTH+SFUGHAgAEDBgwYMGDAgAEDjwMDe25clxAOAAA=
+  </data>
+ </layer>
+ <layer id="4" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2QWw7CMBADe21uD1Y1qmVlCSIbfmik4H16aI7jPvcL/PcLPF6fn/cXLyKmn8y91xnDSe1kjLzg0cucereKA8vjbs7Iz7mjfneN73MutQ4WXq7yhZcM6j5PnLPvcnyYwSPrs341z14q82j2Zzl76Gyefs4r5zLjSm+053Oz2H2ItZO++FBn1pWZFU2/zFe8P9kVTwc9s/2/8ND9xJMAD725e16A90X3UC5XcbiqEu/mV/5V/frHaxH+la6519vwNFHF9fb3HbGcJ6dRbUZ4AriiHdIQDgAA
+  </data>
+ </layer>
+ <objectgroup id="5" name="Transition" width="30" height="30">
+  <object id="1" name="Finalboss" type="boss" x="422" y="422" width="146" height="145"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="19">
+ <tileset firstgid="1" source="volcanv0.tsx"/>
+ <tileset firstgid="121" source="Paysage_V2.tsx"/>
+ <tileset firstgid="151" source="logicSolid.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2V0QnDMAwFPUS+OkAG6P7D1SYcNYdAMiQ/rT/Mi3JnuVVKc7TWjj9cr/6dvaI52KGuuvbYP6edUc98vq669uYeXNvZ537nXp1N5O17z/+n8Bsm75o5/Uj35T5pTg13wp2Zl3H62aOGO+HkKsdnvxPuzLyM088eNdwJJ1c5PvudcGfmZZx+9qjhTji5yvHZ74Q7My/j9Dv7uzBacGfWN+P0e/dzowV3Vvt6367vfVf4OYw6mnHkrbjuGfWzM+rI2+dezyiajWdYcZ6Ysz/Hr9Yf/3TDIBAOAAA=
+  </data>
+ </layer>
+ <layer id="2" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2WywoCMQxF/QF1reJSXav//2/2gBcvJelDB9xMoEynObkp6TS62fzPtiX1Lhj7aksZR+wo69yh0tfrSZP3M+Nwj7LOZXrOoJ1xa968Nl5D6ncOhjPUMuOIHWWdu5S4azBuZc0t44gdZWvO9X2uu+Pfv/t9PsMSJ97vsPJQ22MZXh9iIqvZli7x8LUpj2pLfSId7ZV9OoteS7fnvxfgUcYz0SEeY5/OsvZLXuJlkY58qo/eeUa8cz2/tCJOPtfTWsQ71/O3dORzPa31dHv+lo58a97lvivuZ2ZR/+udH/76d0HnRa/A6Avcz8y43+or3usyXXTUZ/y3QftnT9/2yZYueVumWO1jKRYd1Ue9Vk/VVn0y4+BHWZ0BeaPzZ11nzBzLOHyjrHOZnjNrXirwsdHaOEed63s2819thvW8uit+f2f+q82wI/fxU8XlZy8js6o+EA4AAA==
+  </data>
+ </layer>
+ <layer id="3" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2W3QmAMAyEu5XoCg7gGO7ixP5AoA85kmsTfbCCRNLrd2dQsZRxvD2BI9Ewk90b25Pt1nh1vXnG/vwJzJfFYpxTcIyd4DFawaJndBWBo2paxLVwDEvTWny0zrAYLfKTPsNitMJHlWExWuQnfYbFaIWP6oYWlH6kL8PStJHvkXKrT4uZDWLU/S++k7X/uI6bgPf/xauLSxZL8uRvdcxkt2b6w74TVN6cUBAOAAA=
+  </data>
+ </layer>
+ <layer id="5" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2QSQ4CMAwD+f8H+C7kMJJl4pAilguVqiyeOFUvl9+d6311uvqqxNDfsnA11x3ve60zrnkNq31yYsdUz3W4TnOWmtjN4KfMxHWaz3aezlAT04zqmus7Ul8Z/InTDAxxyypXebr4VkwM/S2r3D9//AH+M8XHiV0Hv0SXns4zbdKTJ32drdxruHdH3ePek+bsaT15T9rpHucn70lzn9N68p600z3OT96T5j6ndXlPN/kxk/R//7M/wP93UTd3uva2LFzNdsf7XuuMa17Dal/z0qmJaUZ1zU888NaYvJQh37LKkRNPvYrfziqnOTs3Xq+wuqvydN07cerHmxOrnt/Ob8PyMs4QDgAA
+  </data>
+ </layer>
+ <objectgroup id="4" name="Transition" width="30" height="30">
+  <object id="1" name="7" type="transition" x="87" y="87" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="830"/>
+    <property name="dety" type="int" value="480"/>
+   </properties>
+  </object>
+  <object id="3" name="6" type="transition" x="759" y="151" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="845"/>
+    <property name="dety" type="int" value="180"/>
+   </properties>
+  </object>
+  <object id="4" name="6" x="86" y="822" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="785"/>
+    <property name="dety" type="int" value="110"/>
+   </properties>
+  </object>
+  <object id="5" name="1" type="transition" x="758" y="759" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="865"/>
+   </properties>
+  </object>
+  <object id="6" name="Dj3_RDC_s3" type="changementc" x="439" y="377" width="80" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s3"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="580"/>
+   </properties>
+  </object>
+  <object id="7" name="8" type="transition" x="439" y="151" width="80" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="785"/>
+    <property name="dety" type="int" value="850"/>
+   </properties>
+  </object>
+  <object id="8" name="9" type="transition" x="88" y="343" width="80" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="545"/>
+   </properties>
+  </object>
+  <object id="9" name="2" type="transition" x="791" y="343" width="80" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="175"/>
+    <property name="dety" type="int" value="850"/>
+   </properties>
+  </object>
+  <object id="10" name="1" type="transition" x="791" y="566" width="80" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="865"/>
+   </properties>
+  </object>
+  <object id="11" name="4" type="transition" x="440" y="760" width="80" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="110"/>
+    <property name="dety" type="int" value="180"/>
+   </properties>
+  </object>
+  <object id="12" name="2" type="transition" x="151" y="150" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="175"/>
+    <property name="dety" type="int" value="850"/>
+   </properties>
+  </object>
+  <object id="13" name="5" type="transition" x="822" y="85" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="95"/>
+   </properties>
+  </object>
+  <object id="14" name="7" type="transition" x="151" y="759" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="830"/>
+    <property name="dety" type="int" value="480"/>
+   </properties>
+  </object>
+  <object id="15" name="3" x="822" y="821" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_s2"/>
+    <property name="detx" type="int" value="130"/>
+    <property name="dety" type="int" value="575"/>
+   </properties>
+  </object>
+  <object id="17" name="tunique de lave" type="Chest" x="539" y="445" width="32" height="96">
+   <properties>
+    <property name="ID" type="int" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="3">
+ <tileset firstgid="1" source="volcanv0.tsx"/>
+ <tileset firstgid="121" source="Pnj.tsx"/>
+ <tileset firstgid="217" source="Paysage_V2.tsx"/>
+ <tileset firstgid="247" source="logicSolid.tsx"/>
+ <layer id="1" name="Calque 1" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECs2QWQ7CQAxDyx24/1khH0+yonqcgbJ8ICfeMuV+HMf9R7/b86777b7J9cBrH1xH9Uzmnu/7WUd5lNd9ku9ZMvDs2oumqLpmlFe/zviVY055dDpA8g7xkVcfmnJpPutxGfp7pu8u/y7/rTvvvpO8/l+vzPTsIrdcDl2xvOwul3jNMydMnU6vXrR0I+n0TPAf7tY70zet9Ml3Os+qN2muM/Gp90yvTvjU73TyU6QHP/suVp6MdjF3LK9yZHexOshoHzOaIppmVZ/M2rE7T/qdZ/dW/8a+uztX8f29qfeq971yl9tgemvp6u03VVt1kVt5VFv5V5p2MOMvhHOYPHS5vPJ4r+qc9ukbmDWrM3pCMsn3af0Bl/EYKhAOAAA=
+  </data>
+ </layer>
+ <layer id="2" name="Calque 2" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCwyEEPgE9gQ3T0m8g+3ABfHK49BArjs9sfHLEmo9PHch8ZDvQ+fj0UiJXRYnmUb2jITAaAqMhMBoCoyGAIwQAbLgwRxAOAAA=
+  </data>
+ </layer>
+ <layer id="4" name="Calque 3" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu1TQQ7CMAzbB4AzcAbOwP//RqwqUlUtrb0F2GGR0qqZ46SdM027Zb7AwciO5qcOKYNBOosD9mx+Mb/iEBiDQSqLA/Zmfjd/4BAYg0EqiwP2af4yf+MQGINBKotTsUFb6WFFJ2rxHreiE7Vuj1vRiVq3x63oRK37TW61l3/hobVfWa1raA1Wx0okf611Da3B6liJ5K+1rqE1WB0rkfx1TtdzsfzKO+NWX2DtnC3NXztnS/PbOVP7b/P9v4542jlT+2/zva7KE/XvfKN7OG7E4zjfo/79O3uPEY/zsbt6D5Z3hGPu8QGF86G8EA4AAA==
+  </data>
+ </layer>
+ <layer id="5" name="Logic" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu1QQQ7AIAjb/1+1X+06OTRpmuIc7rRgYii0BeU4+vQGegN/28A1PvTFfbuXmLl7Kj3Yk/3bvUt9TjOrVf36xtkMx/Fc5rUvctYAZz3Au+g8rgav41wN+iyGR32as3dwJ+eBZ3rVIg+P82l95Gdc+Dg6P/MOZ56sjh7MMwb/FKse9jF+mgcenojAwTGGFlE5zaGbRXgiAqseHEfWZD7WKK54uAfewrUVXJ2LeV/4udcKXvlXa3oDvYH9DdyKbGeQEA4AAA==
+  </data>
+ </layer>
+ <objectgroup id="3" name="Transition" width="30" height="30">
+  <object id="1" name="Dj3_RDC_sp" type="changementc" x="389" y="415" width="178" height="62.599">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_sp"/>
+    <property name="detx" type="int" value="880"/>
+    <property name="dety" type="int" value="880"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

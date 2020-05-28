@@ -29,7 +29,7 @@
    H4sIAAAAAAAECu2WS24CQQxEJ/e/HBsSFBIl4SRxCZ5UMu5OD8xMWGDJ+NtVtmHB7mWadk8tbzDNlLe4o8vhEv91X3+jXhdhguN5+e9Rew09pTc/ER9D1+LNM/pcmnWEFwysMLQLb+Vn8d5cG+XlHVi6L5zYfO/8vYIhm3m9VvnwwpWtv5nDC47mqXZag9dnhddzc/2vmH0f+hnq8hHxdyg7eG1JP9+b38GSvHxPbtlbu0u1q2Rt3jPL9ed/8i7F7ffFv970nPE6vlt1eYzfwhvNOw6+20fn9Vnx2Z24sr29Wv3g9t62amA6xi0+OG7B8Vz26bnVZjzFSFUjR8+IdcyR/qrHed2nt8pRu8c6rvxKWvmqdzRX8WaeHI9i9/p6vPBhezhzaxVvxtiClzmyzbOMxq2ZM/4aMf8xNGvrf9uWvL/6BAtHEA4AAA==
   </data>
  </layer>
- <objectgroup id="6" name="Transition">
+ <objectgroup id="6" name="Transition"  width="30" height="30">
   <object id="1" name=" Gora " type="vendeur" x="245" y="150" width="50" height="55"/>
   <object id="3" name="Un couple lambda" type="Dialogue" x="650" y="123" width="55" height="75"/>
   <object id="5" name="Willy" type="Dialogue" x="374" y="660" width="50" height="55"/>

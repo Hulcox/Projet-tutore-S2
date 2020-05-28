@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="7">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="9">
  <tileset firstgid="1" source="WaterSet.tsx"/>
  <tileset firstgid="96" source="Paysage_V2.tsx"/>
  <tileset firstgid="126" source="logicSolid.tsx"/>
@@ -10,20 +10,20 @@
  </layer>
  <layer id="2" name="Calque 2" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2TSw7CMAxEy4rfnh3cALgAQoULcP/b4FlYekLBJaYsImLJ8jSZeOKpMgw9ugPdgV84sLSmq5lyXXHBo3FPM+W5Qnc07i3Iq+0xI+7duJ/GaMSoFzWFI26Nru63mCkvalYR/6p7MI/2lpqfmH5wnVicrM87O6tUD2Lqcp24ZV2fQ5Wz0ocSJ+vzFv6q76agG3Gyuq+z1X63pqt3wf/mb4pzR5zsvNR0TE1hX2d1zre67O89vbpeidOart6Ivx1in1WV68Tay87L/hncdc38IKY8fdhZ5RTvnc9PeDDuPhAOAAA=
+   H4sIAAAAAAAECu1Vuw7CMBArE6+draxMwB9A6Q/w/3+DPZxkofRIjjBEJNIpburYPUdRh6GPnkBP4BcJrCG6qVTbgg88g3upVNcC3wnch1M3vNPyuDO4uWMC0dNST2KPW+J7gtaqUt2hkzv+2feIkEYUc1es56DrismJ5nzAXhY1FKuvritu2df64Ky9ag4pTjTnveRL3V3C1+NEfd97K31uzZf3Qs/N7pT27XGi/aqnYfUktnWdjfOtr+qbps3ml+K05ss7YndHsfXKWdcV8120X9WP4O6L8BdGzn//ib2sT9kv5fwCvg0ktxAOAAA=
   </data>
  </layer>
  <layer id="3" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAWjITAaAiMpBHiAnuUFYj4gFqKjx+WBdikAsSIQqwIxvYAR0CJjIDYBYgt6WTpqz2gIDIMQqCTCD8SoIcKYUSWjITAaAlQOAWLyJjFqqOysUeMGaQgAAHOCxWwQDgAA
+   H4sIAAAAAAAECmNgGAWjITAaAiMpBHiAnuUFYj4gFqKjx+WBdikAsSIQqwIxvYAR0CJjIDYBYgt6WTpqz2gIUDEEKokwixg1RBgzqmQ0BIZtCBCTR4hRM2wDaNRjIzoEAOxEgEsQDgAA
   </data>
  </layer>
- <layer id="5" name="Logic" width="30" height="30" visible="0">
+ <layer id="5" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2SsQ6EMAxD+XImjhU+GTw8ySoSzaV3Q6GRqlhJajeGaRoxHBgO/MOB+ST95Ym+saa5GtEn8EYbv4Vv03Ufb40JNPUdojF0o05d57I+82+L0bEreN2xZnrVZQ/lMrwHZqZ1X/ierotf2Zz1OavHvd50/X8CswuZumd62X2dCwwnmbpner3q6v3swy5krztWv3VfcZScqim87li9rK7utsQ3utsptFQOb6nN7QwW+QBGRtM8EA4AAA==
+   H4sIAAAAAAAECu1S0QqAMAjsy3uqXuuT2xEHx4JNtIK1CctDnafXpmnYUGAo8IYCc2r65LHOWOPcpNFqmFHKi7A3XtWxKIwhif9gtZ55+caglWLVTuOKUePVWfso/jsvd4XPTXPErInqzH5f8XJur/fu6+XjPS+v6kvMnvSMq2euVV7Mz324C73GFSMf3Rc98p6IwTSuGLnWeDFzxLz7RjhxtwXePc25VA52gdXqjqvs9j0BQXn7PhAOAAA=
   </data>
  </layer>
- <objectgroup id="4" name="Transition">
+ <objectgroup id="4" name="Transition" width="30" height="30">
   <object id="1" name="Dj2_RDC_sb" type="changement" x="452" y="287" width="52" height="46">
    <properties>
     <property name="detmap" value="Dj2_RDC_sb"/>
@@ -31,28 +31,28 @@
     <property name="dety" type="int" value="910"/>
    </properties>
   </object>
-  <object id="2" name="Dj2_RDC_tphg" type="changementc" x="311" y="529" width="49" height="50">
+  <object id="2" name="Dj2_RDC_tphg" type="changementc" x="311" y="497" width="49" height="50">
    <properties>
     <property name="detmap" value="Dj2_RDC_tphg"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="675"/>
    </properties>
   </object>
-  <object id="3" name="Dj2_RDC_tphd" type="changementc" x="598" y="530" width="49" height="50">
+  <object id="3" name="Dj2_RDC_tphd" type="changementc" x="598" y="498" width="49" height="50">
    <properties>
     <property name="detmap" value="Dj2_RDC_tphd"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="675"/>
    </properties>
   </object>
-  <object id="4" name="Dj2_RDC_tpbg" type="changement" x="310" y="793" width="49" height="50">
+  <object id="4" name="Dj2_RDC_tpbg" type="changement" x="310" y="729" width="49" height="50">
    <properties>
     <property name="detmap" value="Dj2_RDC_tpbg"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="480"/>
    </properties>
   </object>
-  <object id="5" name="Dj2_RDC_tpbd" type="changementc" x="600" y="794" width="49" height="50">
+  <object id="5" name="Dj2_RDC_tpbd" type="changementc" x="600" y="730" width="49" height="50">
    <properties>
     <property name="detmap" value="Dj2_RDC_tpbd"/>
     <property name="detx" type="int" value="480"/>
@@ -64,6 +64,20 @@
     <property name="detmap" value="Dj2_RDC_sp"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="910"/>
+   </properties>
+  </object>
+  <object id="7" name="Dj2_RDC_tphd" type="changementc" x="598" y="498" width="49" height="50">
+   <properties>
+    <property name="detmap" value="Dj2_RDC_tphd"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="675"/>
+   </properties>
+  </object>
+  <object id="8" name="Dj2_RDC_tphd" type="changementc" x="598" y="498" width="49" height="50">
+   <properties>
+    <property name="detmap" value="Dj2_RDC_tphd"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="675"/>
    </properties>
   </object>
  </objectgroup>

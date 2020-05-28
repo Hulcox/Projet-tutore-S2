@@ -30,7 +30,7 @@
    H4sIAAAAAAAECu2VSW7cMBREnfsfKZsMSBbJfbKOvuMyygVSoloDG8gjIPx54GPDfnnhQAACEIAABI4R+Gzlpe/5rPRd3VN/Re77IqE8Oiva3G7W3mtnK96qfZSF6lo9r/Rp7iN3PXuvM3bIHn6/R/Sz77jVz3fcyr06nizPmOf3O6qfsU+rR2+vVu6dvjveo+7jc6T3mLj/KhY+w/Wr5o32rV38+G5n6d7fde8/4vecLT3vlfm92Zl3t517+55n6nmv7J3xsjNnzVb9Wk7GVPNMsnb0k7bHRnX1+LYUOAPVu0+6Yi4VG5GqG8lVjmqeSdZuftL22KiuHvke35cG6VtjsxYb3aWVd1Xf1qy9PrFTXdry75HqkeyPvIcYHpV1D/XYc6e7csVO89L+sQS+bnw/Vfwms0falVY+/95KPwjFyyn9qPReH4Y9iVH381O23qA452+8xaN+935aPT1eevbJuOe4nnV7be/VmjnDl3fwHSqmN1j7++I9tt7D+0uv+q2jGZUn/aj0Xlvz74rnnXxuxc5+j+qZp+Vr5Siv5BlfzVCfnDfL1h1b8yt29XuM8vA86Udl3Vk9Wvef4at9/Gg/yV9L8Mvy/V4+vY1ii+v1yC5Zf6/8f075/LTs9Hm+9MpRnvSjsnqrh+bMlrqj9tB+kvKXHH0P5dXbtPp7z4x7zHXfR/pRWf3Vw2fN1GsfP2l7bFSf/R7aU6x7svIUU81smfzTfmQ/3uMRav9qkr/bru+Z4P9zsseW3ZtTdaqV3pPq0YvLX3muq26mrH38uO265+zRs8eW3etddaqV3pPq0YvLX3muq26mrH38uK1dj8pe//L7PM9LXTuoRnZLqrYVc5/3Us1sWfv5cdt3P6L3+pff53le6pqvGtktqdpWzH3eSzWzZe3nJ22PnaFn/7R7MypvNLfXo+W/qm9r1ogv75j2SI89Odk/7V6vyrvy68292588rryzevsdc77HXFftVdJnzdSTx1X39b5+35zvsf9Rn81j9vxne3P/3c7Sn43JzH1mvYHPnXl/ZkMAAhCAAAQgAAEIQAACEIAABCAAAQhAAAIQgMD5BP58Or8nHSEAAQhAAAIQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQhAAAIQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQhAAAIQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQhAAAIQgAAE9hH4C34+jyFAnAAA
   </data>
  </layer>
- <objectgroup id="5" name="Transition">
+ <objectgroup id="5" name="Transition" width="100" height="100">
   <object id="2" name="Dj1_RDC_sp" type="changement" x="611" y="629" width="60" height="55">
    <properties>
     <property name="detmap" value="Dj1_RDC_sp"/>
@@ -38,9 +38,9 @@
     <property name="dety" type="int" value="560"/>
    </properties>
   </object>
-  <object id="8" name="gotovillage" type="changement" x="608" y="64" width="94" height="94">
+  <object id="8" name="Vailor" type="changement" x="608" y="64" width="94" height="94">
    <properties>
-    <property name="detmap" value="Vialor"/>
+    <property name="detmap" value="Vailor"/>
     <property name="detx" type="int" value="57"/>
     <property name="dety" type="int" value="383"/>
    </properties>
