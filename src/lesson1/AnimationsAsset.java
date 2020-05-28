@@ -44,7 +44,7 @@ public class AnimationsAsset {
     	SpriteSheet spriteSheetChest = new SpriteSheet("texture/Chest.png",32,32);
     	SpriteSheet spriteSheetKingGobelin = new SpriteSheet("texture/Floressia.png",320,320);
     	SpriteSheet spriteSheetCagnazzo = new SpriteSheet("texture/Cagnazzo.png",320,320);
-    	SpriteSheet spriteSheetAntonio = new SpriteSheet("texture/Antonio.png",320,320);
+    	SpriteSheet spriteSheetAntonio = new SpriteSheet("texture/Antonio.png",128,128);
     	//Enemy animations
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
     	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
