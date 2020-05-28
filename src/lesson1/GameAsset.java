@@ -10,7 +10,7 @@ import org.newdawn.slick.SlickException;
 
 public class GameAsset {
 	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1, Henniktamer, battle_groundBoss2;
-	Enemie knight, gobelin, Hypou;
+	Enemie knight, gobelin, Hypou, Antonio;
 	Map map1, grotte1, Vialor, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb, Dj2_RDC_sp, Dj2_RDC_s2, 
 	Dj2_RDC_tphd, Dj2_RDC_tphg, Dj2_RDC_tpbd, Dj2_RDC_tpbg, Dj2_RDC_sb;
 	Epée copperSword, ironSword, diamondSword, GodGun;
@@ -53,6 +53,7 @@ public class GameAsset {
 		gobelin = new Enemie(30,5,2, "Gobelin", this.gobelinMeat);
 		knight = new Enemie(40,5,2,"knight", this.metalscrap);
 		Hypou = new Enemie(40,5,2,"Hypou", this.Hypoueye);
+		Antonio = new Enemie(80,5,3,"Antonio", this.Hypoueye);
 
 	}
 	public void initinventory(Player player) {
@@ -76,7 +77,7 @@ public class GameAsset {
 		Dj2_RDC_tpbd = new Map ("Dj2_RDC_tpbd.tmx", false, Henniktamer, "Dj2_RDC_tpbd",this.cave);
 		Dj2_RDC_sb = new Map ("Dj2_RDC_sb.tmx", false, Henniktamer, "Dj2_RDC_sb",this.cave);
 		
-		map1.addEncounrers(knight);
+		map1.addEncounrers(knight); map1.addEncounrers(Antonio);
 		grotte1.addEncounrers(gobelin);
 		Dj1_ET1_esc.addEncounrers(gobelin);
 		Dj1_RDC_sp.addEncounrers(gobelin);
