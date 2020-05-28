@@ -95,8 +95,18 @@ public class Enemie {
 	}
 
 	public void setXp(int level) {
-		if(level <= 2)
+		if(level <= 10)
 			this.xp = (level*1/2);
+		if(level > 10 && level <= 20)
+			this.xp = level;
+		if(level > 20 && level <= 30)
+			this.xp = (level*2);
+		if(level > 30 && level <= 50)
+			this.xp = (level*3);
+		if(level > 50 && level <= 75)
+			this.xp = (level*4);
+		if(level > 75 && level <= 99)
+			this.xp = (level*5);
 	}
 
 }
