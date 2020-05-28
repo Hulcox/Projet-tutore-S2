@@ -10,7 +10,7 @@ import org.newdawn.slick.SlickException;
 
 public class GameAsset {
 	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1, Henniktamer, battle_groundBoss2;
-	Enemie knight, gobelin, Hypou, Antonio;
+	Enemie knight, gobelin, Hypou, Antonio, Ricardo, Blackblop, Greenblop, Blueblop, Redblop, Demons;
 	Map map1, grotte1, Vailor, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb, Dj2_RDC_sp, Dj2_RDC_s2, 
 	Dj2_RDC_tphd, Dj2_RDC_tphg, Dj2_RDC_tpbd, Dj2_RDC_tpbg, Dj2_RDC_sb;
 	Epée copperSword, ironSword, diamondSword, GodGun;
@@ -19,7 +19,7 @@ public class GameAsset {
 	KeyItem debug, demonMask, key;
 	Booster boosterI;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm, WaterSpike;
-	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho, Hypoueye;
+	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho, Hypoueye, slime, Fireshard;
 	Chest chest1,chest2,chest3;
 	Quete PeauGobelin, masquedemo;
 	Boss KingGobelin, Cagnazzo;
@@ -53,8 +53,13 @@ public class GameAsset {
 		gobelin = new Enemie(30,5,2, "Gobelin", this.gobelinMeat);
 		knight = new Enemie(40,5,2,"knight", this.metalscrap);
 		Hypou = new Enemie(40,5,2,"Hypou", this.Hypoueye);
-		Antonio = new Enemie(80,5,3,"Antonio", this.Hypoueye);
-
+		Antonio = new Enemie(80,6,2,"Antonio", this.Hypoueye);
+		Ricardo = new Enemie(70,5,2,"Ricardo", this.Hypoueye);
+		Blackblop = new Enemie(30,3,2, "Blackblop", this.slime);
+		Redblop = new Enemie(30,3,2, "Redblop", this.slime);
+		Greenblop = new Enemie(30,3,2, "Greenblop", this.slime);
+		Blueblop = new Enemie(30,3,2, "Blueblop", this.slime);
+		Demons = new Enemie(100,8,2,"Demons",this.Fireshard);
 	}
 	public void initinventory(Player player) {
 		this.inventory = new Inventaire(player, this.InventoryBackground);
@@ -77,7 +82,7 @@ public class GameAsset {
 		Dj2_RDC_tpbd = new Map ("Dj2_RDC_tpbd.tmx", false, Henniktamer, "Dj2_RDC_tpbd",this.cave);
 		Dj2_RDC_sb = new Map ("Dj2_RDC_sb.tmx", false, Henniktamer, "Dj2_RDC_sb",this.cave);
 		
-		map1.addEncounrers(knight); map1.addEncounrers(Antonio);
+		map1.addEncounrers(knight); map1.addEncounrers(Blueblop); map1.addEncounrers(Greenblop);
 		grotte1.addEncounrers(gobelin);
 		Dj1_ET1_esc.addEncounrers(gobelin);
 		Dj1_RDC_sp.addEncounrers(gobelin);
@@ -123,6 +128,8 @@ public class GameAsset {
 		gobelinSpear = new MonsterDrop(25,"Gobelin spear", 10); allAsset.add(gobelinSpear);
 		Poncho = new MonsterDrop(25,"Poncho", 11); allAsset.add(Poncho);
 		Hypoueye = new MonsterDrop(25,"Hypoueye", 26); allAsset.add(Hypoueye);
+		slime = new MonsterDrop(20,"Slime", 27); allAsset.add(slime);
+		Fireshard = new MonsterDrop(100, "Fire shard", 28); allAsset.add(Fireshard);
 		//Potions
 		potion = new Potions(20,"potion",20,12); allAsset.add(potion);
 		superPotion = new Potions(40,"Super potion",  40,13); allAsset.add(superPotion);
@@ -139,7 +146,7 @@ public class GameAsset {
 		Ultima = new DamageSpell(800,"Ultima",false,160,40,20); allAsset.add(Ultima);
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,250,50,22); allAsset.add(MegaStorm); 
-		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:26
+		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:28
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
 		
 		//Chest ID,ITEM

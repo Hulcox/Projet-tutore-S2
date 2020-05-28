@@ -45,10 +45,23 @@ public class AnimationsAsset {
     	SpriteSheet spriteSheetKingGobelin = new SpriteSheet("texture/Floressia.png",320,320);
     	SpriteSheet spriteSheetCagnazzo = new SpriteSheet("texture/Cagnazzo.png",320,320);
     	SpriteSheet spriteSheetAntonio = new SpriteSheet("texture/Antonio.png",128,128);
+    	SpriteSheet spriteSheetRicardo = new SpriteSheet("texture/Ricardo.png",128,128);
+    	SpriteSheet spriteSheetBlackblop = new SpriteSheet("texture/Blackblop.png",128,128);
+    	SpriteSheet spriteSheetGreenblop = new SpriteSheet("texture/Greenblop.png",128,128);
+    	SpriteSheet spriteSheetRedblop = new SpriteSheet("texture/Redblop.png",128,128);
+    	SpriteSheet spriteSheetBlueblop = new SpriteSheet("texture/Blueblop.png",128,128);
+    	SpriteSheet spriteSheetDemons = new SpriteSheet("texture/Demons.png",128,128);
+    	
     	//Enemy animations
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
     	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
     	this.setEnemyAnimation(spriteSheetAntonio, 12, imageasset.Antonio);
+    	this.setEnemyAnimation(spriteSheetRicardo, 10, imageasset.Ricardo);
+    	this.setEnemyAnimation(spriteSheetBlackblop, 7, imageasset.Blackblop);
+    	this.setEnemyAnimation(spriteSheetBlueblop, 7, imageasset.Blueblop);
+    	this.setEnemyAnimation(spriteSheetGreenblop, 7, imageasset.Greenblop);
+    	this.setEnemyAnimation(spriteSheetRedblop, 7, imageasset.Redblop);
+    	this.setEnemyAnimation(spriteSheetDemons, 7, imageasset.Demons);
     	//Boss animations
     	this.setBossAnimation(spriteSheetKingGobelin, 10, imageasset.KingGobelin);
     	this.setBossAnimation(spriteSheetCagnazzo, 21, imageasset.Cagnazzo);
