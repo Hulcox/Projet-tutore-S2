@@ -17,6 +17,10 @@ public class BossBattle {
 	private boolean next = false;
 	private int RNG;
 	private boolean bossCasting = false;
+
+	private HUD hud_player;
+	private HUD hud_enemie;
+
 	public BossBattle(Player player) {
 		this.player = player;
 	}
@@ -46,10 +50,18 @@ public class BossBattle {
 			time++; 
 		}
 		TurnAnimation(g);
-		font.drawString(550,30, "Pv : " + BossPv, Color.red);
+		/*font.drawString(550,30, "Pv : " + BossPv, Color.red);
 		font.drawString(0,45, "Mana : " + playerMana + "/" + playerMaxMana, Color.blue);
 		font.drawString(0,30 , "Pv : " + playerPv + "/"+playerMaxPv, Color.green);
-		font.drawString(0,60, "XP : " + playerXp + "/" + playerMaxXp + " Level : " + playerLevel , Color.yellow);
+		font.drawString(0,60, "XP : " + playerXp + "/" + playerMaxXp + " Level : " + playerLevel , Color.yellow);*/
+
+		this.hud_player = new HUD("texture/hud/Hud_player.png", 5, -5, player); // hud player
+		this.hud_player.initPlayer();
+		this.hud_player.renderPlayer(g);
+
+		this.hud_enemie = new HUD("texture/hud/Hud_enemie.png", 357,-34, boss); //hud boss
+		this.hud_enemie.initEnemie();
+		this.hud_enemie.renderEnemie(g);
 	}
 
 	public void TurnAnimation (Graphics g) throws SlickException {
