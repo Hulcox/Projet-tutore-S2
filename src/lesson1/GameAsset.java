@@ -26,7 +26,7 @@ public class GameAsset {
 	Chest chest1,chest2,chest3,chest4,chest5;
 	Quete PeauGobelin, masquedemo, larmedemo, Leslimedaria, Leslimedizaria, Grosbras, Lebroalrick, Hypoumel;
 	Boss KingGobelin, Cagnazzo;
-	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA;
+	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA, death;
 	Inventaire inventory;
 	DialogueAsset bossAtxt,Cagnazzotxt;
 	SellingGUI sellGUI1, sellGUI2;
@@ -117,6 +117,7 @@ public class GameAsset {
 		MenuMusic = new Music("sound/MenuMusic.ogg");
 		Town = new Music("sound/Town.ogg");
 		BossA = new Music("sound/Bossa.ogg");
+		death = new Music("sound/death.ogg");
 	}
 	
 	public void loadObject() {

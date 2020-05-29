@@ -47,6 +47,7 @@ public class WindowGame extends BasicGame {
 	Graphics g;
 	Music playedmusic;
 	Boss temp;
+	GameOverScreen gameover;
 	private ArrayList<Integer> ID;
 	private String info;
 
@@ -66,13 +67,15 @@ public class WindowGame extends BasicGame {
     	menu = new StartScreen();
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player(25,20);
+    	p1 = new Player(5,20);
+    	gameover = new GameOverScreen();
     	GameAsset.initinventory(p1);
     	GameAsset.loadText(this.container);
     	IngameHUD = new InGameHUD(p1);
     	GameAsset.setPlayer(p1);
     	this.menu.init(container);
     	this.IngameHUD.init(container);
+    	this.gameover.init(container);
     	this.map = GameAsset.map1.getMap();
     	p1.setMap(GameAsset.map1);
     	this.MapLoading(GameAsset.map1.getMap());
@@ -156,6 +159,16 @@ public class WindowGame extends BasicGame {
 		if (!this.menu.isGameStart()) {
 			this.menu.render(container, g);
 			this.triggerMusic = true;
+		}
+		else if(this.p1.getPv() <= 0) {
+			this.gameover.render(container, g);
+			if(gameover.isTriggerMusic()) {
+				this.playedmusic = GameAsset.death;
+				this.playedmusic.loop();
+				gameover.setTriggerMusic(false);
+			}
+			
+			
 		}
 		else if (bossbattle.isInBattle()) {
 			bossbattle.render(container, g, singleFireEvent);
