@@ -226,8 +226,10 @@ public class GameAsset {
     	sellGUI1.AddTrade(potion, container);
     	sellGUI1.AddTrade(superPotion, container);
     	sellGUI1.AddTrade(Hypotion, container);
+    	sellGUI1.init(container);
     	sellGUI2 = new SellingGUI(InventoryShop,inventory,2); allSells.add(sellGUI2); //sellGUI2
     	sellGUI2.AddTrade(Hypotion, container);
+    	sellGUI2.init(container);
 		
 	}
 	public void loadWeapons(int ID) throws SlickException {

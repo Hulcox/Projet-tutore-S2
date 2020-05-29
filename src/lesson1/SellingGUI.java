@@ -91,6 +91,7 @@ public class SellingGUI implements ComponentListener {
 		
 		
 		if (source == this.sellingButton) {
+			System.out.println("sell activated");
 			ArrayList<Objets> toSell = new ArrayList<Objets>();
 			int finalsell = 0;
 			for (Objets o : this.inventory.getInventoryList())

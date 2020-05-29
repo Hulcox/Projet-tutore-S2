@@ -11,16 +11,16 @@ public class AnimationsAsset {
         animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
         animations[2] = loadAnimation(spriteSheet, 0, 1, 2);
         animations[3] = loadAnimation(spriteSheet, 0, 1, 3);
-        animations[4] = loadAnimation(spriteSheet, 1, 9, 0);
-        animations[5] = loadAnimation(spriteSheet, 1, 9, 1);
-        animations[6] = loadAnimation(spriteSheet, 1, 9, 2);
-        animations[7] = loadAnimation(spriteSheet, 1, 9, 3);
+        animations[4] = loadAnimation(spriteSheet, 1, 7, 0);
+        animations[5] = loadAnimation(spriteSheet, 1, 7, 1);
+        animations[6] = loadAnimation(spriteSheet, 1, 7, 2);
+        animations[7] = loadAnimation(spriteSheet, 1, 7, 3);
         p1.setAnimations(animations);
 	}
 	public void loadBattlersAnimation(SpriteSheet spriteSheet,Player p1) {
 		Animation animations[] = new Animation[2];
-		animations[0] = loadAnimation(spriteSheet, 0,1,0);
-		animations[1] = loadAnimation(spriteSheet, 1,9,0);
+		animations[0] = loadAnimation(spriteSheet, 0,4,1);
+		animations[1] = loadAnimation(spriteSheet, 0,10,0);
 		p1.setBattleanim(animations);
 	}
 	

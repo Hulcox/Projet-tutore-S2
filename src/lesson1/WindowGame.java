@@ -125,8 +125,8 @@ public class WindowGame extends BasicGame {
     	singleFireEvent = new EventObject(1000, false);
     	this.container = container;
     	container.setFullscreen(true);
-        SpriteSheet spriteSheet = new SpriteSheet("texture/character.png", 64, 64);
-        SpriteSheet battlers = new SpriteSheet("texture/FightAnimation.png", 196, 128);
+        SpriteSheet spriteSheet = new SpriteSheet("texture/character2.png", 64, 64);
+        SpriteSheet battlers = new SpriteSheet("texture/truebattle.png", 128, 128);
     	try {
 			loadAsset(container);
 		} catch (SlickException e) {
@@ -322,7 +322,6 @@ public class WindowGame extends BasicGame {
                 else if ("vendeur".equals(map.getObjectType(0, objectID))) {
                 	this.sellGUI = GameAsset.searchsellGUI(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if (sellGUI.isShopOpen()) {
-                		this.sellGUI.init(container);
                 		this.sellGUI.setPlayerOverArea(true);
                 	}
                 	else {
