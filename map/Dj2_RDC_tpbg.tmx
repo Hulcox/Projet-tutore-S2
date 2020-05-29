@@ -24,12 +24,17 @@
   </data>
  </layer>
  <objectgroup id="4" name="Transition" width="30" height="30">
-  <object id="1" x="341" y="818" width="50" height="55"/>
-  <object id="2" name="Dj2_RDC_s2" type="changement" x="447" y="760" width="64" height="33">
+  <object id="1" name="Serviteur Aria" type="Dialogue" x="341" y="818" width="50" height="55">
+   <properties>
+    <property name="personne" value="Serviteur Aria"/>
+   </properties>
+  </object>
+  <object id="2" name="Dj2_RDC_s2" type="changementc" x="447" y="760" width="64" height="33">
    <properties>
     <property name="detmap" value="Dj2_RDC_s2"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="675"/>
+    <property name="key" value="Ariapass"/>
    </properties>
   </object>
  </objectgroup>

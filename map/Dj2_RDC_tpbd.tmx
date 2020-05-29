@@ -24,12 +24,17 @@
   </data>
  </layer>
  <objectgroup id="4" name="Transition" width="30" height="30">
-  <object id="1" x="341" y="818" width="50" height="55"/>
+  <object id="1" name="Captain Alrick" type="Dialogue" x="341" y="818" width="50" height="55">
+   <properties>
+    <property name="personne" value="Captain Alrick"/>
+   </properties>
+  </object>
   <object id="2" name="Dj2_RDC_s2" type="changementc" x="447" y="759" width="64" height="33">
    <properties>
     <property name="detmap" value="Dj2_RDC_s2"/>
     <property name="detx" value="480"/>
     <property name="dety" value="675"/>
+    <property name="key" value="demontear"/>
    </properties>
   </object>
  </objectgroup>

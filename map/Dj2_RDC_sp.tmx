@@ -10,7 +10,7 @@
  </layer>
  <layer id="1" name="Calque 2" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2SPQ6AIAyFcfJvd9MbqLsxEb2A97+Nj4GBBiiGjiV5Ic0r/cgDY3RpApqAJqAJaAL5BFrYnZD6PCpwV1SbkPZgcr6wsG8hPXlU4Fohprv7H+6B/obRyfj+/IW+0lXC9XO5Xbnp1GM5L2ifGM3wae61OXNM7ys3/Z7Uib2vz5HbpXMemT/l7jNA0lw6r7Su/c+lHNonzX2RqRPl0DrF/QBiRfhGEA4AAA==
+   H4sIAAAAAAAECu2SwQ6CMAyG8YTC3Zu+gQJXYiLqA/j+b+PfhCZdM7YZuluX/Nm6ln70h6bx5Q64A+6AO+AOpB1okT4a6ZRGBdkboruRhqBzOliQfhnpnUYF2cWISe/+D3dG/SGjRybPzz9RV7pKuNw3tzt32/WYz1eUnzO6IK993+szM6eV3WHv1zPfUU0tLvNptpgHNbhyRubTLu9rcOWMI3gfiLjy3prL31LOqc80tzVX9yuN9/7PpRxdZ839wlOS5uh4i/sDM4cGjxAOAAA=
   </data>
  </layer>
  <layer id="4" name="Calque 3" width="30" height="30">
@@ -31,7 +31,11 @@
     <property name="dety" type="int" value="910"/>
    </properties>
   </object>
-  <object id="2" name="Abduul" type="Dialogue" x="632" y="724" width="50" height="55"/>
+  <object id="2" name="Abduul" type="Dialogue" x="632" y="724" width="50" height="55">
+   <properties>
+    <property name="personne" value="Abduul"/>
+   </properties>
+  </object>
   <object id="3" name="map1" type="changement" x="450" y="931" width="59" height="25">
    <properties>
     <property name="detmap" value="map1"/>

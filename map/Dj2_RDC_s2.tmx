@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="9">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="10">
  <tileset firstgid="1" source="WaterSet.tsx"/>
  <tileset firstgid="96" source="Paysage_V2.tsx"/>
  <tileset firstgid="126" source="logicSolid.tsx"/>
+ <tileset firstgid="151" source="Pnj.tsx"/>
  <layer id="1" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu3SQREAAAyDMFTUv9QJWR4Y4LJq8oABBhhggAEGGGCAAQYYeGfgAD7igqsQDgAA
@@ -15,12 +16,12 @@
  </layer>
  <layer id="3" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAWjITAaAiMpBHiAnuUFYj4gFqKjx+WBdikAsSIQqwIxvYAR0CJjIDYBYgt6WTpqz2gIUDEEKokwixg1RBgzqmQ0BIZtCBCTR4hRM2wDaNRjIzoEAOxEgEsQDgAA
+   H4sIAAAAAAAECmNgGAWjITAaAiMpBHiAnuUFYj4gFqKjx+WBdikAsSIQqwIxvYAR0CJjIDYBYgt6WTpqz2gIUDEEKokwixg1RBgzqmQ0BIZtCBCTR4hRM2wDaNRjZIXAfrJ0DT5NAKJ7eWQQDgAA
   </data>
  </layer>
  <layer id="5" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu1S0QqAMAjsy3uqXuuT2xEHx4JNtIK1CctDnafXpmnYUGAo8IYCc2r65LHOWOPcpNFqmFHKi7A3XtWxKIwhif9gtZ55+caglWLVTuOKUePVWfso/jsvd4XPTXPErInqzH5f8XJur/fu6+XjPS+v6kvMnvSMq2euVV7Mz324C73GFSMf3Rc98p6IwTSuGLnWeDFzxLz7RjhxtwXePc25VA52gdXqjqvs9j0BQXn7PhAOAAA=
+   H4sIAAAAAAAECu2SwQ7DIAxD++U7bbtun1x8eJLFodBkrcQgEoqVhDgxbNuypcBS4AoFHqXpL0/vjC3OtzV6dcxo5YdwNl7X8VCYjqTeoddm5uWPSSvHrp3HHasmqrP3cfzvvOwqX5vnwNRkdabfXbzMHfXRfaN83Ivyur5geuKJuyc3Kq/mZx92wXvcsfLZfdWj7qmYzOOOlRuNVzNnLLpvhlN3s7x6t4id4f0UgmfjMEOr7kth5Xf5O4EHEA4AAA==
   </data>
  </layer>
  <objectgroup id="4" name="Transition" width="30" height="30">
@@ -29,6 +30,7 @@
     <property name="detmap" value="Dj2_RDC_sb"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="910"/>
+    <property name="key" value="Abyssalkey"/>
    </properties>
   </object>
   <object id="2" name="Dj2_RDC_tphg" type="changementc" x="311" y="497" width="49" height="50">
@@ -36,6 +38,7 @@
     <property name="detmap" value="Dj2_RDC_tphg"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="675"/>
+    <property name="key" value="Izariapass"/>
    </properties>
   </object>
   <object id="3" name="Dj2_RDC_tphd" type="changementc" x="598" y="498" width="49" height="50">
@@ -45,7 +48,7 @@
     <property name="dety" type="int" value="675"/>
    </properties>
   </object>
-  <object id="4" name="Dj2_RDC_tpbg" type="changement" x="310" y="729" width="49" height="50">
+  <object id="4" name="Dj2_RDC_tpbg" type="changement" x="311" y="730" width="49" height="50">
    <properties>
     <property name="detmap" value="Dj2_RDC_tpbg"/>
     <property name="detx" type="int" value="480"/>
@@ -57,6 +60,7 @@
     <property name="detmap" value="Dj2_RDC_tpbd"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="480"/>
+    <property name="key" value="Shanpass"/>
    </properties>
   </object>
   <object id="6" name="Dj2_RDC_sp" type="changement" x="449" y="928" width="59" height="25">
@@ -73,11 +77,17 @@
     <property name="dety" type="int" value="675"/>
    </properties>
   </object>
-  <object id="8" name="Dj2_RDC_tphd" type="changementc" x="598" y="498" width="49" height="50">
+  <object id="8" name="Dj2_RDC_tphd" type="changementc" x="599" y="498" width="49" height="50">
    <properties>
     <property name="detmap" value="Dj2_RDC_tphd"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="675"/>
+    <property name="key" value="Ariapass"/>
+   </properties>
+  </object>
+  <object id="9" name="Yon" type="Dialogue" x="309" y="888" width="50" height="50">
+   <properties>
+    <property name="personne" value="Yon"/>
    </properties>
   </object>
  </objectgroup>

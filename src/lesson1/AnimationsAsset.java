@@ -104,6 +104,8 @@ public class AnimationsAsset {
         chest.setAnimations(animations);
         imageasset.chest2.setAnimations(animations);
         imageasset.chest3.setAnimations(animations);
+        imageasset.chest4.setAnimations(animations);
+        imageasset.chest5.setAnimations(animations);
     }
 
 

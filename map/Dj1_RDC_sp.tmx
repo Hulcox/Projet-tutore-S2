@@ -24,7 +24,7 @@
   </data>
  </layer>
  <objectgroup id="6" name="transition" width="30" height="30">
-  <object id="7" name="map1" type="changement" x="421" y="582" width="83" height="51">
+  <object id="7" name="map1" type="changement" x="432" y="598" width="61" height="34">
    <properties>
     <property name="detmap" value="map1"/>
     <property name="detx" type="int" value="638"/>
@@ -43,7 +43,7 @@
     <property name="ID" type="int" value="2"/>
    </properties>
   </object>
-  <object id="13" name="Konor" type="Dialogue" x="391" y="227" width="80" height="77">
+  <object id="13" name="Konor" type="Dialogue" x="406" y="215" width="50" height="50">
    <properties>
     <property name="personne" value="Konor"/>
    </properties>
@@ -53,7 +53,7 @@
     <property name="detmap" value="Dj1_RDC_sb"/>
     <property name="detx" type="int" value="511"/>
     <property name="dety" type="int" value="608"/>
-    <property name="key" value="cle du boss"/>
+    <property name="key" value="Wildkey"/>
    </properties>
   </object>
  </objectgroup>

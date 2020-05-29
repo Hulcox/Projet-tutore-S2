@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="7">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="8">
  <tileset firstgid="1" name="WaterSet" tilewidth="32" tileheight="32" tilecount="95" columns="19">
   <image source="WaterSet.png" width="608" height="160"/>
  </tileset>
@@ -25,18 +25,22 @@
  </layer>
  <layer id="6" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2RSwrDMBBD0/sfoxctWjwQZiSbZFNoDUZj/eym1/Vfv/QF3q/ravvkW7S8tGklXt6meVfzJS3x3Cv9ZPs7fE79iffskzn1J/7JXZ5N/YlXVtrp9rt8Tv2J517vSPOdDv899E4c2oSTf+JSFl6ZO8tzPrcu92k+3ep0L3dMHJqjfCwynBOSASdf0+R3XbOfpz4yO++ux/VdV3rHxHvvTv/2e3lf+01N47/iO9DHOSGd+BOmvHg6mFPHyrfOE2299ySzetY3+bl50Zofz4T+9kl3rnnR/B1w3sHcNDxg86KByvhMB9g0PGDzooHK+EwH2DQ8YPNKY7s/ZRJP1rF5uXP1rGf6Eo/u2LzSJn3i1Jl4v4+Z7oZ4wdTfOj6jklltEA4AAA==
+   H4sIAAAAAAAECu2RS4oEMQxDq+9/jL7ooMUDYSwldG8GZgLBjn5Oqp7nf/2lL/B+PU/bN9+i+cVtK+HSNs6zmi5xCWeu+Jvt9/A+5Sfcvd/0KT/h38xyb8pPuLzibrfP8j7lJ5y5npH6TzL8PeRuGNxWN/2GJS+4PJ8s93nfslyn/nYr07XM2DA4r9Kx8HBOFQ910zVOeufV+3nLw3PSnnKcP2Wle2y455743z6X+7U3NY5/xXcgj3OqZKJPNfmFk0GfMibeMm+4OffGMzXzTn5uWrimR7NVv/vGO9a0cH4PMM+gbxwaatPCUeXxngyquMajU206OOqN3rU+Z/ZNJ46Nb57BVVuW605aZsy8eSYz4fBem1bcxm/Y6Q0+Ey35qW6eiZ2yfgABd0szEA4AAA==
   </data>
  </layer>
  <objectgroup id="7" name="Transition" width="30" height="30">
-  <object id="1" name="Dj3_RDC_s2" type="changement" x="449.371" y="765.72" width="60.3633" height="43.5957">
+  <object id="1" name="Dj3_RDC_s2" type="changement" x="449" y="765" width="60" height="43">
    <properties>
     <property name="detmap" value="Dj3_RDC_s2"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="865"/>
    </properties>
   </object>
-  <object id="2" x="406.057" y="854.704" width="50" height="50"/>
+  <object id="2" name="Guard Vulcan" type="Dialogue" x="406" y="854" width="50" height="50">
+   <properties>
+    <property name="personne" value="Guard Vulcan"/>
+   </properties>
+  </object>
   <object id="3" name="Dj3_RDC_sp" type="transition" x="854" y="728" width="50" height="50">
    <properties>
     <property name="detmap" value="Dj3_RDC_sp"/>
@@ -44,10 +48,24 @@
     <property name="dety" type="int" value="865"/>
    </properties>
   </object>
-  <object id="5" x="361" y="459" width="236" height="166"/>
-  <object id="6" name="clebossfinal" type="Chest" x="773" y="772" width="32" height="96">
+  <object id="5" name="Dj3_RDC_sb" type="changementc" x="361" y="459" width="236" height="166">
    <properties>
-    <property name="ID" type="int" value="0"/>
+    <property name="detmap" value="Dj3_RDC_sb"/>
+    <property name="detx" type="int" value="365"/>
+    <property name="dety" type="int" value="810"/>
+    <property name="key" value="Demonickey"/>
+   </properties>
+  </object>
+  <object id="6" name="Demonickey" type="Chest" x="769" y="767" width="32" height="96">
+   <properties>
+    <property name="ID" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="7" name="Vailor" type="changement" x="452" y="931" width="57" height="26">
+   <properties>
+    <property name="detmap" value="Vailor"/>
+    <property name="detx" type="int" value="205"/>
+    <property name="dety" type="int" value="775"/>
    </properties>
   </object>
  </objectgroup>

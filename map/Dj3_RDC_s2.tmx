@@ -20,7 +20,7 @@
  </layer>
  <layer id="5" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2QSQ4CMAwD+f8H+C7kMJJl4pAilguVqiyeOFUvl9+d6311uvqqxNDfsnA11x3ve60zrnkNq31yYsdUz3W4TnOWmtjN4KfMxHWaz3aezlAT04zqmus7Ul8Z/InTDAxxyypXebr4VkwM/S2r3D9//AH+M8XHiV0Hv0SXns4zbdKTJ32drdxruHdH3ePek+bsaT15T9rpHucn70lzn9N68p600z3OT96T5j6ndXlPN/kxk/R//7M/wP93UTd3uva2LFzNdsf7XuuMa17Dal/z0qmJaUZ1zU888NaYvJQh37LKkRNPvYrfziqnOTs3Xq+wuqvydN07cerHmxOrnt/Ob8PyMs4QDgAA
+   H4sIAAAAAAAECu2QSwrDMAxEc/8L9LqtFg+GicaVS0k2MRh95mlkfBz3nddndbr6qsTQn7JwNdcd73utM655Dat9cmLHVM91uE5zlprYzeCnzIrrNJ/tPJ2hJqYZ1TXXd6S+MvgTVzMwxCmrXOXp4lsxMfSnrHJPfv4B/jPF88Ssg1+iS0/nm7bSkyd9na3ca7h/R93j3ivN2d06eVc/abs7Oj5537W33pje1L1/t7fyXmm7e5znP1N0nhqe+onX/gD/30V9Sadrb8rC1Wx3vO+1zrjmNaz2NS+dmphmVNd8xwNvjclLGfIpqxw5cder+Omscpqzc+L1C6u7Kk/XvROnfrw5sep5df4GP20srxAOAAA=
   </data>
  </layer>
  <objectgroup id="4" name="Transition" width="30" height="30">
@@ -57,6 +57,7 @@
     <property name="detmap" value="Dj3_RDC_s3"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="580"/>
+    <property name="key" value="lavatunic"/>
    </properties>
   </object>
   <object id="7" name="8" type="transition" x="439" y="151" width="80" height="50">
@@ -115,16 +116,16 @@
     <property name="dety" type="int" value="480"/>
    </properties>
   </object>
-  <object id="15" name="3" x="822" y="821" width="50" height="50">
+  <object id="15" name="3" type="transition" x="822" y="821" width="50" height="50">
    <properties>
     <property name="detmap" value="Dj3_RDC_s2"/>
     <property name="detx" type="int" value="130"/>
     <property name="dety" type="int" value="575"/>
    </properties>
   </object>
-  <object id="17" name="tunique de lave" type="Chest" x="539" y="445" width="32" height="96">
+  <object id="17" name="tunique de lave" type="Chest" x="543" y="446" width="32" height="96">
    <properties>
-    <property name="ID" type="int" value="0"/>
+    <property name="ID" type="int" value="4"/>
    </properties>
   </object>
  </objectgroup>

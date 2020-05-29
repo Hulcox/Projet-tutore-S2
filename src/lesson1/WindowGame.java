@@ -86,13 +86,13 @@ public class WindowGame extends BasicGame {
     	this.inventory = GameAsset.inventory;
     	p1.setInventaire(inventory);
     	inventory.setOpen(false); //Inventaire initialisation
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.metalscrap);
-    	inventory.AddObjet(GameAsset.gobelinMeat);
-    	inventory.AddObjet(GameAsset.gobelinMeat);
-    	inventory.AddObjet(GameAsset.gobelinMeat);
-    	inventory.AddObjet(GameAsset.gobelinMeat);
-    	inventory.AddObjet(GameAsset.gobelinSpear);
+    	inventory.AddObjet(GameAsset.Metalscrap);
+    	inventory.AddObjet(GameAsset.Metalscrap);
+    	inventory.AddObjet(GameAsset.Gobelinmeat);
+    	inventory.AddObjet(GameAsset.Gobelinmeat);
+    	inventory.AddObjet(GameAsset.Gobelinmeat);
+    	inventory.AddObjet(GameAsset.Gobelinmeat);
+    	inventory.AddObjet(GameAsset.Gobelinspear);
     	inventory.AddObjet(GameAsset.Poncho);
     	//sellGUI = GameAsset.sellGUI1;
     	spellgui = new SpellGUI(container, inventory);
