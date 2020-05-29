@@ -90,6 +90,14 @@ public class SpellGUI implements ComponentListener{
 						this.IsOpen = false;
 						this.inventory.getPlayer().setAnimstate(1);
 					}
+					else if(this.Spells.get(j).getTypeSpell() == "heal") {
+						Heal healspelltemp = (Heal) this.Spells.get(j);
+						this.inventory.getPlayer().setPv(this.inventory.getPlayer().getPv() + healspelltemp.getHealingvalue());
+						this.inventory.getPlayer().setSpell(healspelltemp);
+						this.inventory.getPlayer().setCasting(true);
+						this.IsOpen = false;
+						this.inventory.getPlayer().setAnimstate(1);
+					}
 					else if (this.Spells.get(j).getTypeSpell() == "damagespell") {
 						DamageSpell damageSpellTemp = (DamageSpell) this.Spells.get(j);
 						this.inventory.getPlayer().setDamage(this.inventory.getPlayer().getBaseDamage()+damageSpellTemp.getDegats());

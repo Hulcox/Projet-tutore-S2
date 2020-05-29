@@ -38,6 +38,7 @@ public class AnimationsAsset {
     	SpriteSheet spriteSheetBooster = new SpriteSheet("texture/booster.png",92,92);
     	SpriteSheet spriteSheetFire = new SpriteSheet("texture/Fire.png",98,64);
     	SpriteSheet spriteSheetWaterSpike = new SpriteSheet("texture/WaterSpike.png",80,96);
+    	SpriteSheet spriteSheetHeal = new SpriteSheet("texture/Heal.png",137,128);
     	SpriteSheet spriteSheetUltima = new SpriteSheet("texture/Ultima.png",186,315);
     	SpriteSheet spriteSheetMaelStrom = new SpriteSheet("texture/Maelstrom.png",130,128);
     	SpriteSheet spriteSheetMegaStorm = new SpriteSheet("texture/MegaStorm.png",140,176);
@@ -74,6 +75,9 @@ public class AnimationsAsset {
     	this.setSpellAnimation(spriteSheetMaelStrom, 5, imageasset.MaelStrom);
     	this.setSpellAnimation(spriteSheetMegaStorm, 8, imageasset.MegaStorm);
     	this.setSpellAnimation(spriteSheetWaterSpike, 3, imageasset.WaterSpike);
+    	this.setSpellAnimation(spriteSheetHeal, 5, imageasset.healI);
+    	this.setSpellAnimation(spriteSheetHeal, 5, imageasset.healII);
+    	this.setSpellAnimation(spriteSheetHeal, 5, imageasset.healIII);
     	//Chest animations
     	this.setChestAnimation(spriteSheetChest, 12, imageasset.chest1, imageasset);
     }

@@ -18,6 +18,7 @@ public class GameAsset {
 	Armure copperArmor, ironArmor, diamondArmor;
 	KeyItem debug, demonMask, key;
 	Booster boosterI;
+	Heal healI, healII, healIII;
 	DamageSpell fireI, fireII, fireIII, Ultima, MaelStrom, MegaStorm, WaterSpike;
 	MonsterDrop metalscrap, gobelinMeat, gobelinSpear, Poncho, Hypoueye, slime, Fireshard;
 	Chest chest1,chest2,chest3;
@@ -140,13 +141,16 @@ public class GameAsset {
 		key = new KeyItem(1,"cle du boss",24); allAsset.add(key);
 		//Spells
 		boosterI = new Booster(200,"booster I",true,2,10,16); allAsset.add(boosterI);
+		healI = new Heal(100,"Heal I",true,20,5,29); allAsset.add(healI);
+		healII = new Heal(200,"Heal II",true,40,10,30); allAsset.add(healII);
+		healIII = new Heal(400,"Heal III",true,80,20,31); allAsset.add(healIII);
 		fireI = new DamageSpell(200,"Fire I",false,20,5,17); allAsset.add(fireI);
 		fireII = new DamageSpell(400,"Fire II",false,40,10,18); allAsset.add(fireII);
 		fireIII = new DamageSpell(800,"Fire III",false,80,20,19); allAsset.add(fireIII);
 		Ultima = new DamageSpell(800,"Ultima",false,160,40,20); allAsset.add(Ultima);
 		MaelStrom = new DamageSpell(800,"MaelStrom",false,200,45,21); allAsset.add(MaelStrom);
 		MegaStorm = new DamageSpell(800,"Mega storm",false,250,50,22); allAsset.add(MegaStorm); 
-		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:28
+		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:30
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
 		
 		//Chest ID,ITEM
