@@ -98,8 +98,7 @@ public class WindowGame extends BasicGame {
     	spellgui = new SpellGUI(container, inventory);
     	spellgui.AddMouseOverArea(GameAsset.boosterI);
     	spellgui.AddMouseOverArea(GameAsset.fireI);
-    	spellgui.AddMouseOverArea(GameAsset.fireII);
-    	spellgui.AddMouseOverArea(GameAsset.fireIII);
+    	spellgui.AddMouseOverArea(GameAsset.healI);
     	spellgui.AddMouseOverArea(GameAsset.Ultima);
     	spellgui.AddMouseOverArea(GameAsset.MaelStrom);
     	itemsgui = new ItemsGUI(container, inventory);
@@ -306,6 +305,20 @@ public class WindowGame extends BasicGame {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
+                else if ("transitionc".equals(map.getObjectType(0, objectID))) {
+                	String keyName = this.map.getObjectProperty(0, objectID, "key","undefined");
+                	boolean textfound = false;
+                	for (KeyItem k : p1.getInventaire().getKeyItemList()) {
+                		if (k.getNom().equals(keyName)) {
+                			p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
+                            p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
+                		}
+                	}
+                	if(!textfound) {
+                		this.info = ("You need the item : " + keyName);
+                		this.DisplayinfoMessage = true;
+                	}
+                }
                 else if ("vendeur".equals(map.getObjectType(0, objectID))) {
                 	this.sellGUI = GameAsset.searchsellGUI(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if (sellGUI.isShopOpen()) {
