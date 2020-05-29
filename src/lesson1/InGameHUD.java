@@ -20,6 +20,7 @@ public class InGameHUD implements ComponentListener {
 	private static final int Y_PADDING = 3; 
 	private static final int X_PADDING = 13;
 	private Save save;
+	private HUD hud_player;
 	public InGameHUD(Player player) {
 		this.player = player;
 	}
@@ -27,6 +28,8 @@ public class InGameHUD implements ComponentListener {
 	
 	   public void init(GameContainer container) throws SlickException {
 		   	  Image buttonImage = new Image("texture/buttons.png");
+			  this.hud_player = new HUD("texture/hud/Hud_player.png", 5, -5, player);
+			  this.hud_player.initPlayer();
 			  Menu = new MouseOverArea(container,buttonImage, 475,0 ,this);
 			  Save = new MouseOverArea(container, buttonImage,475,60 ,this);
 			  SoundUp = new MouseOverArea(container, buttonImage,475,90 ,this);
@@ -45,6 +48,7 @@ public class InGameHUD implements ComponentListener {
 			   g.drawString("Sound up", SoundUp.getX() + X_PADDING, SoundUp.getY() + Y_PADDING);
 			   SoundDown.render(container, g);
 			   g.drawString("Sound Down", SoundDown.getX() + X_PADDING, SoundDown.getY() + Y_PADDING);
+			   this.hud_player.renderPlayer(g);
 		   }
 			  
 	   }

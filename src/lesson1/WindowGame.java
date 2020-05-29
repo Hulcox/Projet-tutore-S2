@@ -51,7 +51,7 @@ public class WindowGame extends BasicGame {
 	private ArrayList<Integer> ID;
 	private String info;
 
-	private HUD hud_player;
+	
 
     public WindowGame() {
         super("Lesson 1 :: WindowGame");
@@ -67,7 +67,7 @@ public class WindowGame extends BasicGame {
     	menu = new StartScreen();
     	input = container.getInput();
     	camera = new Camera();
-    	p1 = new Player(5,20);
+    	p1 = new Player(25,20);
     	gameover = new GameOverScreen();
     	GameAsset.initinventory(p1);
     	GameAsset.loadText(this.container);
@@ -117,8 +117,7 @@ public class WindowGame extends BasicGame {
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
     	sellGUI = GameAsset.sellGUI1;
-		this.hud_player = new HUD("texture/hud/Hud_player.png", 5, -5, p1);
-		this.hud_player.initPlayer();
+
     }
 
     
@@ -239,7 +238,7 @@ public class WindowGame extends BasicGame {
 	    	g.drawAnimation(p1.getAnimations()[p1.getDirection() + (p1.isMoving() ? 4 : 0)], p1.getX()-32, p1.getY()-60);
 	    	this.IngameHUD.render(container, g);
 
-			this.hud_player.renderPlayer(g);
+			
 
 	    	if (sellGUI.isPlayerOverArea()){
 		    	
