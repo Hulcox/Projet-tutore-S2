@@ -1,10 +1,6 @@
 package lesson1;
 
-import org.newdawn.slick.Color;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
+import org.newdawn.slick.*;
 import org.newdawn.slick.gui.AbstractComponent;
 import org.newdawn.slick.gui.ComponentListener;
 import org.newdawn.slick.gui.MouseOverArea;
@@ -49,6 +45,9 @@ public class InGameHUD implements ComponentListener {
 			   SoundDown.render(container, g);
 			   g.drawString("Sound Down", SoundDown.getX() + X_PADDING, SoundDown.getY() + Y_PADDING);
 			   this.hud_player.renderPlayer(g);
+			   Font font = g.getFont();
+			   String playerLevel = Integer.toString(player.getLevel());
+			   font.drawString(300,60," Level : " + playerLevel , Color.green);
 		   }
 			  
 	   }
