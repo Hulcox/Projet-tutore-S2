@@ -352,6 +352,9 @@ public class GameAsset {
 	public ArrayList<Objets> getAllAsset() {
 		return allAsset;
 	}
+	public ArrayList<Boss> getAllBoss(){
+		return allBoss;
+	}
 
 	public void setAllAsset(ArrayList<Objets> allAsset) {
 		this.allAsset = allAsset;

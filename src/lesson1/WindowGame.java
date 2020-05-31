@@ -117,6 +117,7 @@ public class WindowGame extends BasicGame {
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
     	sellGUI = GameAsset.sellGUI1;
+    	container.setIcon("texture/Icone.png");
 
     }
 

@@ -65,6 +65,12 @@ public class Save {
 	        		myWriter.write( Integer.toString(i.getID())+ "|"); //line 23 Quest complete
 	        	}
 	        }
+	        myWriter.write("\n"); //line 24 boss defeat
+	        for (Boss b : this.gameasset.getAllBoss()) {
+	        	if(b.isDefeated()) {
+	        		myWriter.write(Integer.toString(b.getID())+"|"); 
+	        	}
+	        }
 	        myWriter.close();
 	        System.out.println("Successfully saved the game");
 	      } catch (IOException e) {
