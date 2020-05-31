@@ -237,6 +237,30 @@ public class Player {
 
 		this.baseDamage = baseDamage;
 	}
+
+	public void BaseDamage(){
+		if(getLevel() <= 10)
+			this.baseDamage  += 2 ;
+		if(getLevel() > 10 && getLevel() <= 20)
+			this.baseDamage  += 5 ;
+		if(getLevel() > 20 && getLevel() <= 30)
+			this.baseDamage += 10 ;
+		if(getLevel() > 30 && getLevel() <= 40)
+			this.baseDamage  += 12 ;
+		if(getLevel() > 40 && getLevel() <= 50)
+			this.baseDamage  += 15 ;
+		if(getLevel() > 50 && getLevel() <= 60)
+			this.baseDamage  += 20 ;
+		if(getLevel() > 60 && getLevel() <= 70)
+			this.baseDamage  += 30 ;
+		if(getLevel() > 70 && getLevel() <= 80)
+			this.baseDamage  += 35;
+		if(getLevel() > 80 && getLevel() <= 90)
+			this.baseDamage  += 40 ;
+		if(getLevel() > 90 && getLevel() <= 99)
+			this.baseDamage  += 50 ;
+	}
+
 	public boolean isCasting() {
 
 		return isCasting;
