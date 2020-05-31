@@ -200,8 +200,12 @@ public class Player {
 		return mana;
 	}
 	public void setMana(int mana) {
-
-		this.mana = mana;
+		if(this.mana + mana < this.getMaxMana()) {
+			this.mana = mana;
+		}
+		else {
+			this.mana = this.MaxMana;
+		}
 	}
 	public int getMaxMana() {
 
