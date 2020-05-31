@@ -30,7 +30,7 @@ public class BossBattle {
 		this.next = next;
 	}
 	
-	public void render (GameContainer container, Graphics g,EventObject singleFireEvent) throws SlickException {
+	public void render (GameContainer container, Graphics g,EventObject singleFireEvent, EventObject singleFireEvent2) throws SlickException {
 		g.resetTransform();
 		Font font = g.getFont();
 		String playerPv = Integer.toString(player.getPv());
@@ -42,6 +42,9 @@ public class BossBattle {
 		String playerMaxXp = Integer.toString(player.getMaxXp());
 		String playerLevel = Integer.toString(player.getLevel());
 		g.drawImage(player.getMap().getBattleImg(),0,0);
+		if(singleFireEvent2.isReady() && !boss.isSecondephase() && boss.getID() == 4) {
+			time++;
+		}
 		if(singleFireEvent.isReady() && player.getAnimstate() >= 1) {
 			if (player.getAnimstate() == 2 && EnemyAttack) {
 				this.time = 2;
@@ -50,6 +53,7 @@ public class BossBattle {
 			this.RNG = (int) (Math.random()*100);
 			time++; 
 		}
+		
 		TurnAnimation(g);
 		/*font.drawString(550,30, "Pv : " + BossPv, Color.red);
 		font.drawString(0,45, "Mana : " + playerMana + "/" + playerMaxMana, Color.blue);
@@ -67,8 +71,14 @@ public class BossBattle {
 
 	public void TurnAnimation (Graphics g) throws SlickException {
 		g.resetTransform();
-		if(boss.isSecondephase() && time < 1) {
-			
+		if(boss.getID() == 4 && !boss.isSecondephase()) {
+			g.drawAnimation(boss.getTrans()[0],580-boss.getTrans()[0].getWidth(),360-boss.getTrans()[0].getHeight());
+			g.drawAnimation(player.getBattleanim()[0], 0, 240);
+			if (time > 2) {
+				System.out.println("transform");
+				boss.setSecondephase(true);
+				this.time = 0;
+			}
 		}
 		else {
 			if (time > 1) {  
@@ -124,8 +134,7 @@ public class BossBattle {
 						if(this.bossCasting) {
 							this.SpellDamage(boss);
 							this.bossCasting = false;
-							System.out.println("casting !");
-							System.out.println(this.RNG);
+
 						}
 						player.setAnimstate(0);
 						player.setDegats(boss.getDegats()); //Degats sur le joueur
@@ -177,7 +186,7 @@ public class BossBattle {
 	public void SpellDamage(Boss boss) {
 		if(this.boss.getCurrentSpell().getTypeSpell().equals("damagespell")){
 			DamageSpell damageSpellTemp = (DamageSpell) this.boss.getCurrentSpell();
-			this.boss.setDegats((int) (this.boss.getDegats()+damageSpellTemp.getDegats()));
+			this.boss.setDegats((int) (this.boss.getDegats()/2+damageSpellTemp.getDegats()));
 
 			
 		}

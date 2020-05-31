@@ -10,6 +10,7 @@ public class InGameHUD implements ComponentListener {
 	private MouseOverArea Save;
 	private MouseOverArea SoundUp;
 	private MouseOverArea SoundDown;
+	private MouseOverArea Exit;
 	private Player player;
 	private float sound = 1.2f;
 	private boolean open = false;
@@ -17,6 +18,7 @@ public class InGameHUD implements ComponentListener {
 	private static final int X_PADDING = 13;
 	private Save save;
 	private HUD hud_player;
+	private boolean exit = false;
 	public InGameHUD(Player player) {
 		this.player = player;
 	}
@@ -30,6 +32,7 @@ public class InGameHUD implements ComponentListener {
 			  Save = new MouseOverArea(container, buttonImage,475,60 ,this);
 			  SoundUp = new MouseOverArea(container, buttonImage,475,90 ,this);
 			  SoundDown = new MouseOverArea(container, buttonImage,475,120 ,this);
+			  Exit = new MouseOverArea(container, buttonImage,475,150 ,this);
 			  save = new Save(player);
 	    }
 	   public void render(GameContainer container, Graphics g) { 
@@ -44,10 +47,15 @@ public class InGameHUD implements ComponentListener {
 			   g.drawString("Sound up", SoundUp.getX() + X_PADDING, SoundUp.getY() + Y_PADDING);
 			   SoundDown.render(container, g);
 			   g.drawString("Sound Down", SoundDown.getX() + X_PADDING, SoundDown.getY() + Y_PADDING);
+			   Exit.render(container, g);
+			   g.drawString("Exit game", Exit.getX() + X_PADDING, Exit.getY() + Y_PADDING);
 			   this.hud_player.renderPlayer(g);
 			   Font font = g.getFont();
 			   String playerLevel = Integer.toString(player.getLevel());
 			   font.drawString(300,60," Level : " + playerLevel , Color.green);
+			   if(this.exit) {
+				   container.exit();
+			   }
 		   }
 			  
 	   }
@@ -66,6 +74,9 @@ public class InGameHUD implements ComponentListener {
 		}
 		if(source == SoundDown) {
 			this.sound -= 0.2;
+		}
+		if(source == Exit) {
+			this.exit = true;
 		}
 	}
 

@@ -47,14 +47,6 @@ public class Battle {
 		g.resetTransform();
 		this.index = i;
 		font = g.getFont();
-		/*String playerPv = Integer.toString(player.getPv());
-		String playerMaxPv = Integer.toString(player.getMaxPV());
-		String playerMana = Integer.toString(player.getMana());
-		String playerMaxMana = Integer.toString(player.getMaxMana());
-		String EnemiePv = Integer.toString(player.getMap().getArrayList().get(i).getPv());
-		String playerXp = Integer.toString(player.getXp());
-		String playerMaxXp = Integer.toString(player.getMaxXp());
-		String playerLevel = Integer.toString(player.getLevel());*/
 
 		g.drawImage(player.getMap().getBattleImg(),0,0);
 		if(singleFireEvent.isReady() && player.getAnimstate() >= 1) {
@@ -65,10 +57,6 @@ public class Battle {
 			time++; 
 		}
 		this.TurnAnimation(g, player, i);
-		/*font.drawString(550,30, "Pv : " + EnemiePv, Color.red);
-		font.drawString(0,45, "Mana : " + playerMana + "/" + playerMaxMana, Color.blue);
-		font.drawString(0,30 , "Pv : " + playerPv + "/"+playerMaxPv, Color.green);
-		font.drawString(0,60, "XP : " + playerXp + "/" + playerMaxXp + " Level : " + playerLevel , Color.yellow);*/
 
 		this.hud_player = new HUD("texture/hud/Hud_player.png", 5, -5, player); // hud player
 		this.hud_player.initPlayer();
@@ -142,7 +130,7 @@ public class Battle {
 			else {
 				if (player.getSpell().isOnPlayer()) { //Casting spell on player
 					g.drawAnimation(player.getBattleanim()[0], 0, 240); 
-					g.drawAnimation(player.getSpell().getAnimation()[0], 0+player.getSpell().getAnimation()[0].getWidth()/2,240+player.getSpell().getAnimation()[0].getHeight()/2);
+					g.drawAnimation(player.getSpell().getAnimation()[0], 0+player.getAnimations()[0].getWidth()/2 - player.getSpell().getAnimation()[0].getWidth()/2,240+player.getAnimations()[0].getHeight()/2 - player.getSpell().getAnimation()[0].getHeight()/2);
 				}
 				else if (!player.getSpell().isOnPlayer() && player.isCasting()){ //Casting spell on enemy
 					g.drawAnimation(player.getBattleanim()[0], 0, 240);

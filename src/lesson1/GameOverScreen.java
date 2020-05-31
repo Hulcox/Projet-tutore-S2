@@ -13,13 +13,17 @@ public class GameOverScreen implements ComponentListener{
 	private boolean GameDeath = false;
 	private boolean triggerMusic = true;
 	private Image image;
+	private String imgpath;
 	private MouseOverArea continueGame;
 	private static final int Y_PADDING = 3; 
 	private static final int X_PADDING = 13;
-
+	
+	public GameOverScreen(String imgpath) {
+		this.imgpath = imgpath;
+	}
 	public void init (GameContainer container) throws SlickException {
 	   	  Image buttonImage = new Image("texture/buttons.png");
-		  image = new Image("texture/Ecran_Game_Over.png");
+		  this.image = new Image(imgpath);
 		  continueGame = new MouseOverArea(container, buttonImage,320-buttonImage.getWidth()/2,420 ,this);
 	}
 	   public void render(GameContainer container, Graphics g) { 

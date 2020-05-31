@@ -9,10 +9,11 @@ import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 
 public class GameAsset {
-	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1, Henniktamer, battle_groundBoss2;
+	Image battle1,hero, InventoryBackground, battleGrotte, InventoryShop, InfoImage,OrbeBoss1,OrbeBoss2 ,OrbeBoss3,Henniktamer, battle_groundBoss2, volcanback;
 	Enemie knight, gobelin, Antonio, Ricardo, Blackblop, Greenblop, Blueblop, Redblop, Demons;
 	Map map1, grotte1, Vailor, Dj1_RDC_sp, Dj1_RDC_sg, Dj1_RDC_sg2, Dj1_ET1_esc, Dj1_RDC_sb, Dj2_RDC_sp, Dj2_RDC_s2, 
-	Dj2_RDC_tphd, Dj2_RDC_tphg, Dj2_RDC_tpbd, Dj2_RDC_tpbg, Dj2_RDC_sb, Dj3_RDC_sp, Dj3_RDC_s2, Dj3_RDC_s3, Dj3_RDC_sb, Dj3_RDC_sb2 ;
+	Dj2_RDC_tphd, Dj2_RDC_tphg, Dj2_RDC_tpbd, Dj2_RDC_tpbg, Dj2_RDC_sb, Dj3_RDC_sp, Dj3_RDC_s2, Dj3_RDC_s3, Dj3_RDC_sb, Dj3_RDC_sb2 ,
+	eglise, hauteglise;
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Ether ether, superEther, HyEther;
@@ -26,10 +27,10 @@ public class GameAsset {
 	Redslime, Greenslime,Fireshard;
 	Chest chest1,chest2,chest3,chest4,chest5;
 	Quete PeauGobelin, masquedemo, larmedemo, Leslimedaria, Leslimedizaria, Grosbras, Lebroalrick, Hypoumel;
-	Boss KingGobelin, Cagnazzo;
-	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA, death, abysse, lava;
+	Boss KingGobelin, Cagnazzo, DemonKing1, DemonKing2;
+	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA, death, abysse, lava, finalm;
 	Inventaire inventory;
-	DialogueAsset bossAtxt,Cagnazzotxt;
+	DialogueAsset bossAtxt,Cagnazzotxt, demonking1txt, demonking2txt;
 	SellingGUI sellGUI1, sellGUI2, sellGUI3, sellGUI4;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
@@ -43,12 +44,14 @@ public class GameAsset {
 		InfoImage = new Image("texture/DialogueBox.png");
 		battle1 = new Image("texture/battle_ground.png");
 		battleGrotte = new Image("texture/battle_groundGrotte1.png");
-		Henniktamer = new Image("texture/Henniktamer.png");
 		battle_groundBoss2 = new Image("texture/battle_groundBoss2.png");
-		hero = new Image("texture/hero.png");
 		InventoryBackground = new Image("texture/inventory.png");
 		InventoryShop = new Image("texture/ShopInventory.png");
 		OrbeBoss1 = new Image("texture/boss1.png");
+		OrbeBoss2 = new Image("texture/boss2.png");
+		volcanback = new Image("texture/volcanback.png");
+		OrbeBoss3 = new Image("texture/redorbe.png");
+		
 		
 	}
 	
@@ -70,25 +73,27 @@ public class GameAsset {
 	
 	public void loadMap() throws SlickException{
 		map1 = new Map("MainMap.tmx", true,battle1, "map1",this.maintheme);
-		Vailor = new Map ("Vailor.tmx", false, battle1, "Vailor",this.Town);
+		Vailor = new Map ("Vailor.tmx", false, battle1, "Vailor",this.Town); Vailor.addEncounrers(Greenblop);
 		grotte1 = new Map("Grotte1.tmx", true,battleGrotte, "grotte1",this.cave);
+		eglise = new Map("eglise.tmx", false,battleGrotte, "eglise",this.Town);
+		hauteglise = new Map("hauteglise.tmx", false,battleGrotte, "hauteglise",this.Town);
 		Dj1_RDC_sp = new Map ("Dj1_RDC_sp.tmx", true, battleGrotte, "Dj1_RDC_sp",this.cave); 
 		Dj1_RDC_sg = new Map ("Dj1_RDC_sg.tmx", true, battleGrotte, "Dj1_RDC_sg",this.cave);
 		Dj1_ET1_esc = new Map ("Dj1_ET1_esc.tmx", true, battleGrotte, "Dj1_ET1_esc",this.cave);
 		Dj1_RDC_sg2 = new Map ("Dj1_RDC_sg2.tmx", true, battleGrotte, "Dj1_RDC_sg2",this.cave);
-		Dj1_RDC_sb = new Map ("Dj1_RDC_sb.tmx", false, battleGrotte, "Dj1_RDC_sb",this.cave);
+		Dj1_RDC_sb = new Map ("Dj1_RDC_sb.tmx", false, battleGrotte, "Dj1_RDC_sb",this.cave); Dj1_RDC_sb.addEncounrers(Greenblop);
 		Dj2_RDC_sp = new Map ("Dj2_RDC_sp.tmx", true, battle_groundBoss2, "Dj2_RDC_sp",this.abysse);
 		Dj2_RDC_s2 = new Map ("Dj2_RDC_s2.tmx", true, battle_groundBoss2, "Dj2_RDC_s2",this.abysse);
 		Dj2_RDC_tphg = new Map ("Dj2_RDC_tphg.tmx", true, battle_groundBoss2, "Dj2_RDC_tphg",this.abysse);
 		Dj2_RDC_tphd = new Map ("Dj2_RDC_tphd.tmx", true, battle_groundBoss2, "Dj2_RDC_tphd",this.abysse);
 		Dj2_RDC_tpbg = new Map ("Dj2_RDC_tpbg.tmx", true, battle_groundBoss2, "Dj2_RDC_tpbg",this.abysse);
 		Dj2_RDC_tpbd = new Map ("Dj2_RDC_tpbd.tmx", true, battle_groundBoss2, "Dj2_RDC_tpbd",this.abysse);
-		Dj2_RDC_sb = new Map ("Dj2_RDC_sb.tmx", false, battle_groundBoss2, "Dj2_RDC_sb",this.abysse);
-		Dj3_RDC_sp = new Map ("Dj3_RDC_sp.tmx", true, battle_groundBoss2, "Dj3_RDC_sp",this.lava);
-		Dj3_RDC_s2 = new Map ("Dj3_RDC_s2.tmx", true, battle_groundBoss2, "Dj3_RDC_s2",this.lava);
-		Dj3_RDC_s3 = new Map ("Dj3_RDC_s3.tmx", true, battle_groundBoss2, "Dj3_RDC_s3",this.lava);
-		Dj3_RDC_sb = new Map ("Dj3_RDC_sb.tmx", false, battle_groundBoss2, "Dj3_RDC_sb",this.lava);
-		Dj3_RDC_sb2 = new Map ("Dj3_RDC_sb2.tmx", false, battle_groundBoss2, "Dj3_RDC_sb2",this.lava);
+		Dj2_RDC_sb = new Map ("Dj2_RDC_sb.tmx", false, battle_groundBoss2, "Dj2_RDC_sb",this.abysse); Dj2_RDC_sb.addEncounrers(Greenblop);
+		Dj3_RDC_sp = new Map ("Dj3_RDC_sp.tmx", true, this.volcanback, "Dj3_RDC_sp",this.lava);
+		Dj3_RDC_s2 = new Map ("Dj3_RDC_s2.tmx", true, this.volcanback, "Dj3_RDC_s2",this.lava);
+		Dj3_RDC_s3 = new Map ("Dj3_RDC_s3.tmx", true, this.volcanback, "Dj3_RDC_s3",this.lava);
+		Dj3_RDC_sb = new Map ("Dj3_RDC_sb.tmx", false, this.volcanback, "Dj3_RDC_sb",this.lava); Dj3_RDC_sb.addEncounrers(Greenblop);
+		Dj3_RDC_sb2 = new Map ("Dj3_RDC_sb2.tmx", false, this.volcanback, "Dj3_RDC_sb2",this.lava); Dj3_RDC_sb2.addEncounrers(Greenblop);
 
 		map1.addEncounrers(knight); map1.addEncounrers(Blueblop); map1.addEncounrers(Greenblop);
 		Dj1_ET1_esc.addEncounrers(gobelin);Dj1_ET1_esc.addEncounrers(Greenblop);
@@ -109,7 +114,7 @@ public class GameAsset {
 		allMaps.add(Dj1_ET1_esc); allMaps.add(Dj1_RDC_sg2); allMaps.add(Dj1_RDC_sb); allMaps.add(Dj2_RDC_sp); 
 		allMaps.add(Dj2_RDC_s2); allMaps.add(Dj2_RDC_tphg); allMaps.add(Dj2_RDC_tphd); allMaps.add(Dj2_RDC_tpbg); allMaps.add(Dj2_RDC_tpbd); 
 		allMaps.add(Dj2_RDC_sb); allMaps.add(Dj3_RDC_sp); allMaps.add(Dj3_RDC_s2); allMaps.add(Dj3_RDC_s3); allMaps.add(Dj3_RDC_sb); 
-		allMaps.add(Dj3_RDC_sb2);
+		allMaps.add(Dj3_RDC_sb2); allMaps.add(hauteglise); allMaps.add(eglise);
 		
 	}
 	public void loadMusic() throws SlickException {
@@ -123,6 +128,7 @@ public class GameAsset {
 		death = new Music("sound/death.ogg");
 		abysse = new Music("sound/abysse.ogg");
 		lava =  new Music("sound/lava.ogg");
+		finalm = new Music("sound/final.ogg");
 	}
 	
 	public void loadObject() {
@@ -133,7 +139,7 @@ public class GameAsset {
 		//Epée
 		copperSword = new Epée(100, "Copper sword", 10,1); allAsset.add(copperSword);
 		ironSword = new Epée(300, "Iron sword",  20,2); allAsset.add(ironSword);
-		diamondSword = new Epée(1000, "Diamond sword",  40,3); allAsset.add(diamondSword);
+		diamondSword = new Epée(500, "Diamond sword",  40,3); allAsset.add(diamondSword);
 		GodGun = new Epée(9999,"Gun",9999,4); allAsset.add(GodGun);
 		//Armure
 		copperArmor = new Armure(150, "Copper armor", 10,5); allAsset.add(copperArmor);
@@ -177,7 +183,7 @@ public class GameAsset {
 		boosterI = new Booster(200,"booster I",true,2,10,16); allAsset.add(boosterI);
 		healI = new Heal(100,"Heal I",true,20,5,41); allAsset.add(healI);
 		healII = new Heal(200,"Heal II",true,40,10,42); allAsset.add(healII);
-		healIII = new Heal(400,"Heal III",true,80,20,43); allAsset.add(healIII);
+		healIII = new Heal(400,"Heal III",true,160,20,43); allAsset.add(healIII);
 		fireI = new DamageSpell(200,"Fire I",false,5,5,17); allAsset.add(fireI);
 		fireII = new DamageSpell(400,"Fire II",false,10,10,18); allAsset.add(fireII);
 		fireIII = new DamageSpell(800,"Fire III",false,50,20,19); allAsset.add(fireIII);
@@ -194,28 +200,35 @@ public class GameAsset {
 		chest4 = new Chest(4,this.lavatunic,this); allChest.add(chest4);
 		chest5 = new Chest(5,this.Demonickey,this); allChest.add(chest5);
 		//Initialisation des quetes OBJET ATTENDU, QUANTITE, RECOMPENSE, ID
-		PeauGobelin = new Quete(this.Gobelinmeat,10,this.Ricapass,1); allQuest.add(PeauGobelin);
+		PeauGobelin = new Quete(this.Gobelinmeat,9,this.Ricapass,1); allQuest.add(PeauGobelin);
 		masquedemo = new Quete(this.demonMask,1,this.Wildkey,2); allQuest.add(masquedemo);
 		larmedemo = new Quete(this.demontear,1,this.Abyssalkey,3); allQuest.add(larmedemo);
-		Leslimedaria = new Quete(this.Greenslime,8,this.Ariapass,4); allQuest.add(Leslimedaria);
-		Leslimedizaria = new Quete(this.Blueslime,5,this.Izariapass,5); allQuest.add(Leslimedizaria);
-		Grosbras = new Quete(this.Watertrident,4,this.Shanpass,6); allQuest.add(Grosbras);
+		Leslimedaria = new Quete(this.Greenslime,7,this.Ariapass,4); allQuest.add(Leslimedaria);
+		Leslimedizaria = new Quete(this.Blueslime,4,this.Izariapass,5); allQuest.add(Leslimedizaria);
+		Grosbras = new Quete(this.Watertrident,3,this.Shanpass,6); allQuest.add(Grosbras);
 		Lebroalrick = new Quete(this.Shanpass,1,this.demontear,7); allQuest.add(Lebroalrick);
-		Hypoumel = new Quete(this.Hypoueye,5,this.Melpass,8); allQuest.add(Hypoumel);
+		Hypoumel = new Quete(this.Hypoueye,4,this.Melpass,8); allQuest.add(Hypoumel);
 		//Boss PV, DEGATS, NIVEAU, NOM, SORT1, SORT2, SORT3, ID
 		KingGobelin = new Boss(500,15,1,"King gobelin",this.Gobelinspear,this.fireI,this.fireI,this.Ultima,this.BossA,this.Wildorb,1);
 		this.KingGobelin.setImage(this.OrbeBoss1); allBoss.add(KingGobelin);
 		Cagnazzo = new Boss(1000,20,1,"Cagnazzo",this.Gobelinspear,this.WaterSpike,this.WaterSpike,this.MaelStrom,this.BossA,this.Abyssalorb,2);
-		this.Cagnazzo.setImage(this.OrbeBoss1); allBoss.add(this.Cagnazzo);
-		
+		this.Cagnazzo.setImage(this.OrbeBoss2); allBoss.add(this.Cagnazzo);
+		DemonKing1 = new Boss(500,20,1,"Demon king",this.Gobelinspear,this.WaterSpike,this.fireIII,this.MegaStorm,this.BossA,this.Abyssalorb,3);
+		this.DemonKing1.setImage(this.OrbeBoss3); allBoss.add(this.DemonKing1);
+		DemonKing2 = new Boss(1500,30,1,"True demon king",this.Gobelinspear,this.Ultima,this.MaelStrom,this.MegaStorm,this.finalm,this.Abyssalorb,4);
+		this.DemonKing2.setImage(this.OrbeBoss3); allBoss.add(this.DemonKing2);
 
 	}
 	public void loadText(GameContainer container) throws SlickException, IOException {
 		allSells = new ArrayList<SellingGUI>();
-		bossAtxt = new DialogueAsset("Bossa", false);
+		bossAtxt = new DialogueAsset("Plantaria", false);
 		this.KingGobelin.setDialogue(bossAtxt);
 		Cagnazzotxt = new DialogueAsset("Cagnazzo", false);
 		this.Cagnazzo.setDialogue(Cagnazzotxt);
+		demonking1txt = new DialogueAsset("Demon king", false);
+		this.DemonKing1.setDialogue(demonking1txt);
+		demonking2txt = new DialogueAsset("True demon king", false);
+		this.DemonKing2.setDialogue(demonking2txt);
 		allTexts = new ArrayList<DialogueAsset>();
 		allTexts.add(new DialogueAsset("soldat",false));
 		allTexts.add(new DialogueAsset("King",false));
@@ -237,6 +250,7 @@ public class GameAsset {
 		//Selling GUI init
 		sellGUI1 = new SellingGUI(InventoryShop,inventory,1); allSells.add(sellGUI1); //sellGUI1 'marchand de gauche dans la mainmap à droite du premier donjon'
     	sellGUI1.AddTrade(this.ironArmor, container);
+    	sellGUI1.AddTrade(this.ironSword, container);
     	sellGUI1.AddTrade(potion, container);
     	sellGUI1.AddTrade(superPotion, container);
     	sellGUI1.AddTrade(Hypotion, container);
@@ -244,6 +258,7 @@ public class GameAsset {
     	sellGUI2 = new SellingGUI(InventoryShop,inventory,2); allSells.add(sellGUI2); //sellGUI2 'marchand de droite dans la mainmap à droite du premier donjon'
     	sellGUI2.AddTrade(this.healII, container);
     	sellGUI2.AddTrade(this.fireII, container);
+    	sellGUI2.AddTrade(this.boosterI, container);
     	sellGUI2.AddTrade(this.ether, container);
     	sellGUI2.AddTrade(this.superEther, container);
     	sellGUI2.AddTrade(this.HyEther, container);
@@ -262,6 +277,7 @@ public class GameAsset {
     	sellGUI4.AddTrade(this.healIII, container);
     	sellGUI4.AddTrade(this.fireIII, container);
     	sellGUI4.AddTrade(this.diamondArmor, container);
+    	sellGUI4.AddTrade(this.diamondSword, container);
     	sellGUI4.AddTrade(this.ether, container);
     	sellGUI4.AddTrade(this.superEther, container);
     	sellGUI4.AddTrade(this.HyEther, container);

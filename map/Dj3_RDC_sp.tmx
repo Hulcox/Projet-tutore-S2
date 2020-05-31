@@ -29,7 +29,7 @@
  </layer>
  <layer id="6" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2RSwrDMAxE0/sfoxctWjwYhGYskk2hNRhJ85ObXtf//NIXeL+uK93Nt0j+4qbj8NImTrOSznEOZ2/xm6vv0N7lO1y9T3qX7/Anu9Tr8h1e3uK2V3dp7/Idzl7NcP2dDP095E4Y3FQn/YQ5L3h57hz1aZ+yVFf99lamatkxYXBaS8fBw+wqHuqkS1zpla9e5ykPz0l7ylH+lOXeMeGae+K/fS/vS78pcfxXfAfymF0lE72rzl84GfQuo+Mpc8P1vRtP1/Q36Zy0cEmPZqr69olXLGk7d3pP1+ue3idt5zZ7u6fvY066zjFTyaAW7jg01KQjR2v5dFa/9uS7mrSaP/nh4VIWGmrS9lw8WtWvvWqmnuxUJx+Y7koZH5JDGJ4QDgAA
+   H4sIAAAAAAAECu2RSwrDMAxE0/sfoxctWjwYhGYskk2hNRhJ85ObXtf//NIXeL+uK93Nt0j+4qbj8NImTrOSznEOZ2/xm6vv0N7lO1y9T3qX7/Anu9Tr8h1e3uK2V3dp7/Idzl7NcP2dDP095E4Y3FQn/YQ5L3h57hz1aZ+yVFf99lamatkxYXBaS8fBw+wqHuqkS1zpla9e5ykPz0l7ylH+lOXeMeGae+K/fS/vS78pcfxXfAfymF0lE72rzl84GfQuo+Mpc8P1vRtP1/Q36Zy0cEmPZqr69olXLGk7d3pP1+ue3idt5zZ7u6fvY066zjFTyaAW7jg01KQjR2v5dFa/9uS7mrSav/GnrO5PWvZ2j87q1141U092qpMPTHeljA8UxwAbEA4AAA==
   </data>
  </layer>
  <objectgroup id="7" name="Transition" width="30" height="30">
@@ -55,8 +55,8 @@
   <object id="5" name="Dj3_RDC_sb" type="changementc" x="361" y="459" width="236" height="166">
    <properties>
     <property name="detmap" value="Dj3_RDC_sb"/>
-    <property name="detx" type="int" value="365"/>
-    <property name="dety" type="int" value="810"/>
+    <property name="detx" type="int" value="453"/>
+    <property name="dety" type="int" value="750"/>
     <property name="key" value="Demonic key"/>
    </properties>
   </object>
@@ -72,7 +72,7 @@
     <property name="dety" type="int" value="775"/>
    </properties>
   </object>
-  <object id="8" name="Marchand des enfers" type="marchand" x="600" y="852" width="50" height="50">
+  <object id="8" name="Marchand des enfers" type="vendeur" x="600" y="852" width="50" height="50">
    <properties>
     <property name="ID" type="int" value="4"/>
    </properties>

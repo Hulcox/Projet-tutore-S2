@@ -22,7 +22,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class WindowGame extends BasicGame {
 	
 	private GameContainer container;
-	private boolean textrender = false, chestTextRender = false, triggerMusic = false, bossrender = false, DisplayinfoMessage = false;
+	private boolean textrender = false, chestTextRender = false, triggerMusic = false, bossrender = false, DisplayinfoMessage = false, winrender = false;
 	Inventaire inventory;
 	GameAsset GameAsset = new GameAsset();
 	Texture text;
@@ -35,7 +35,7 @@ public class WindowGame extends BasicGame {
 	AnimationsAsset animationasset;
 	Battle battle;
 	BossBattle bossbattle;
-	EventObject singleFireEvent;
+	EventObject singleFireEvent, singleFireEvent2;
 	BattleHUD hud;
 	SellingGUI sellGUI;
 	SpellGUI spellgui;
@@ -47,7 +47,7 @@ public class WindowGame extends BasicGame {
 	Graphics g;
 	Music playedmusic;
 	Boss temp;
-	GameOverScreen gameover;
+	GameOverScreen gameover, win;
 	private ArrayList<Integer> ID;
 	private String info;
 
@@ -68,7 +68,8 @@ public class WindowGame extends BasicGame {
     	input = container.getInput();
     	camera = new Camera();
     	p1 = new Player(25,20);
-    	gameover = new GameOverScreen();
+    	gameover = new GameOverScreen("texture/Ecran_Game_Over.png");
+    	win = new GameOverScreen("texture/endscreen.png");
     	GameAsset.initinventory(p1);
     	GameAsset.loadText(this.container);
     	IngameHUD = new InGameHUD(p1);
@@ -76,8 +77,12 @@ public class WindowGame extends BasicGame {
     	this.menu.init(container);
     	this.IngameHUD.init(container);
     	this.gameover.init(container);
+    	this.win.init(container);
     	this.map = GameAsset.map1.getMap();
-    	p1.setMap(GameAsset.map1);
+    	p1.setMap(GameAsset.hauteglise);
+    	p1.setX(527);
+    	p1.setY(355);
+    	
     	this.MapLoading(GameAsset.map1.getMap());
     	animationasset = new AnimationsAsset();
     	battle = new Battle(p1);
@@ -89,29 +94,13 @@ public class WindowGame extends BasicGame {
     	this.inventory = GameAsset.inventory;
     	p1.setInventaire(inventory);
     	inventory.setOpen(false); //Inventaire initialisation
-    	inventory.AddObjet(GameAsset.Metalscrap);
-    	inventory.AddObjet(GameAsset.Metalscrap);
-    	inventory.AddObjet(GameAsset.Gobelinmeat);
-    	inventory.AddObjet(GameAsset.Gobelinmeat);
-    	inventory.AddObjet(GameAsset.Gobelinmeat);
-    	inventory.AddObjet(GameAsset.Gobelinmeat);
-    	inventory.AddObjet(GameAsset.Gobelinspear);
-    	inventory.AddObjet(GameAsset.Poncho);
     	//sellGUI = GameAsset.sellGUI1;
     	spellgui = new SpellGUI(container, inventory);
-    	spellgui.AddMouseOverArea(GameAsset.boosterI);
-    	spellgui.AddMouseOverArea(GameAsset.fireI);
-    	spellgui.AddMouseOverArea(GameAsset.healI);
-    	spellgui.AddMouseOverArea(GameAsset.Ultima);
-    	spellgui.AddMouseOverArea(GameAsset.MaelStrom);
     	itemsgui = new ItemsGUI(container, inventory);
     	inventory.setitemsgui(itemsgui);
     	inventory.setSpellgui(spellgui);
-    	itemsgui.AddMouseOverArea(GameAsset.Hypotion);
     	itemsgui.AddMouseOverArea(GameAsset.potion);
-    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
-    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
-    	itemsgui.AddMouseOverArea(GameAsset.superPotion);
+    	itemsgui.AddMouseOverArea(GameAsset.potion);
     	p1.setCamera(camera);
     	IngameHUD.getSave().setGameasset(GameAsset);
     	menu.setSave(IngameHUD.getSave());
@@ -126,6 +115,7 @@ public class WindowGame extends BasicGame {
     public void init(GameContainer container) throws SlickException {
 
     	singleFireEvent = new EventObject(1000, false);
+    	singleFireEvent2 = new EventObject(1000, false);
     	this.container = container;
     	container.setFullscreen(true);
         SpriteSheet spriteSheet = new SpriteSheet("texture/character2.png", 64, 64);
@@ -140,8 +130,8 @@ public class WindowGame extends BasicGame {
     	animationasset.addAnimation(spriteSheet, p1);
     	animationasset.loadBattlersAnimation(battlers, p1);
     	animationasset.loadEnemyAnimation(GameAsset);
+
     	this.hud.init(container);
-    	
     	this.playedmusic = GameAsset.MenuMusic;
     	this.playedmusic.loop();
 
@@ -160,6 +150,14 @@ public class WindowGame extends BasicGame {
 			this.menu.render(container, g);
 			this.triggerMusic = true;
 		}
+		else if(winrender) {
+			this.win.render(container, g);
+			if(win.isTriggerMusic()) {
+				this.playedmusic = GameAsset.Victory;
+				this.playedmusic.loop();
+				win.setTriggerMusic(false);
+			}
+		}
 		else if(this.p1.getPv() <= 0) {
 			this.gameover.render(container, g);
 			if(gameover.isTriggerMusic()) {
@@ -171,7 +169,7 @@ public class WindowGame extends BasicGame {
 			
 		}
 		else if (bossbattle.isInBattle()) {
-			bossbattle.render(container, g, singleFireEvent);
+			bossbattle.render(container, g, singleFireEvent, singleFireEvent2);
 			this.hud.render(container, g);
 			if (spellgui.isIsOpen()) {
 				spellgui.render(container, g);
@@ -388,6 +386,11 @@ public class WindowGame extends BasicGame {
                 	
 
                 }
+                else if("end".equals(map.getObjectType(0, objectID))) {
+                	p1.setMoving(false);
+                	winrender = true;
+                	
+                }
                 else if("changementc".equals(map.getObjectType(0, objectID))){
                 	String keyName = this.map.getObjectProperty(0, objectID, "key","undefined");
                 	boolean textfound = false;
@@ -411,6 +414,7 @@ public class WindowGame extends BasicGame {
                 	}
                 }
                 else if("boss".equals(map.getObjectType(0, objectID))) {
+                	this.textrender = false;
                 	if (!this.temp.isDefeated()) {
                 		this.textrender = false;
                 		this.playedmusic = this.temp.getMusic();
@@ -435,6 +439,7 @@ public class WindowGame extends BasicGame {
          }
         
     	singleFireEvent.update(delta);
+    	singleFireEvent2.update(delta);
         if (p1.isMoving()) {
         	this.chestTextRender = false;
         	this.textrender  = false;
@@ -485,7 +490,6 @@ public class WindowGame extends BasicGame {
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
 	        case Input.KEY_DOWN:  p1.setDirection(2); p1.setMoving(true); break;
 	        case Input.KEY_RIGHT: p1.setDirection(3); p1.setMoving(true); break;
-	        case Input.KEY_ESCAPE: container.exit(); break;
 	        case Input.KEY_E: inventory.setOpen(!inventory.isOpen());break;
 	        case Input.KEY_A: sellGUI.setShopOpen(!sellGUI.isShopOpen()); sellGUI.setInfoBox("Hello what do you want ?");break;
 	        }

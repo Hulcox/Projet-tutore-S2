@@ -51,7 +51,7 @@ public class Inventaire implements ComponentListener{
 			else if  (objet.getType().equals( "Armure")) {
 				this.player.setPlayerArmor((Armure) objet);
 			}
-			else if (objet.getType().equals("potions")) {
+			else if (objet.getType().equals("potions") || objet.getType().equals("ether")) {
 				if (this.itemsgui.getItems().size() < 10) {
 					this.itemsgui.AddMouseOverArea(objet);
 				}

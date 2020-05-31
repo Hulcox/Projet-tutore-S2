@@ -52,7 +52,13 @@ public class AnimationsAsset {
     	SpriteSheet spriteSheetRedblop = new SpriteSheet("texture/Redblop.png",128,128);
     	SpriteSheet spriteSheetBlueblop = new SpriteSheet("texture/Blueblop.png",128,128);
     	SpriteSheet spriteSheetDemons = new SpriteSheet("texture/Demons.png",128,128);
-    	
+    	SpriteSheet spriteSheetDemonking = new SpriteSheet("texture/phase1.png",320,320);
+    	SpriteSheet spriteSheetTrueDemonking = new SpriteSheet("texture/finalboss.png",320,320);
+    	SpriteSheet spriteSheetForm = new SpriteSheet("texture/transform.png",320,320);
+    	//Transform animation for last boss
+    	Animation animations[] = new Animation[1];
+        animations[0] = loadAnimation(spriteSheetForm, 0, 30, 0);
+        imageasset.DemonKing2.setTrans(animations);
     	//Enemy animations
     	this.setEnemyAnimation(spriteSheetKnight, 3, imageasset.knight);
     	this.setEnemyAnimation(spriteSheetGobelin, 2, imageasset.gobelin);
@@ -66,6 +72,8 @@ public class AnimationsAsset {
     	//Boss animations
     	this.setBossAnimation(spriteSheetKingGobelin, 10, imageasset.KingGobelin);
     	this.setBossAnimation(spriteSheetCagnazzo, 21, imageasset.Cagnazzo);
+    	this.setBossAnimation(spriteSheetDemonking, 8, imageasset.DemonKing1);
+    	this.setBossAnimation(spriteSheetTrueDemonking, 17, imageasset.DemonKing2);
     	//SpellAnimations
     	this.setSpellAnimation(spriteSheetBooster, 10, imageasset.boosterI);
     	this.setSpellAnimation(spriteSheetFire, 6, imageasset.fireI);
@@ -93,6 +101,7 @@ public class AnimationsAsset {
         animations[0] = loadAnimation(spriteSheet, 0, numberOfFrame, 0);
     	spell.setAnimation(animations);
     }
+   
     public void setBossAnimation(SpriteSheet spriteSheet, int numberOfFrame, Boss boss) {
     	Animation animations[] = new Animation[3];
     	animations[0] = loadAnimation(spriteSheet, 0, numberOfFrame, 1);

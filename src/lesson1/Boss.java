@@ -1,5 +1,6 @@
 package lesson1;
 
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -19,7 +20,8 @@ public class Boss extends Enemie {
     private boolean Trigger = true;
     private Music music;
     private DialogueAsset dialogue;
-    private boolean secondephase;
+    private boolean secondephase = false;
+    private Animation[] trans;
     private KeyItem key;
     public void setDamage(int damage) {
     	this.pv = damage;
@@ -149,6 +151,12 @@ public class Boss extends Enemie {
 	}
 	public void setKey(KeyItem key) {
 		this.key = key;
+	}
+	public Animation[] getTrans() {
+		return trans;
+	}
+	public void setTrans(Animation[] trans) {
+		this.trans = trans;
 	}
 
 }
