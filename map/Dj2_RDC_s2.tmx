@@ -25,11 +25,11 @@
   </data>
  </layer>
  <objectgroup id="4" name="Transition" width="30" height="30">
-  <object id="1" name="Dj2_RDC_sb" type="changement" x="452" y="287" width="52" height="46">
+  <object id="1" name="Dj2_RDC_sb" type="changementc" x="452" y="287" width="52" height="46">
    <properties>
     <property name="detmap" value="Dj2_RDC_sb"/>
     <property name="detx" type="int" value="480"/>
-    <property name="dety" type="int" value="910"/>
+    <property name="dety" type="int" value="850"/>
     <property name="key" value="Abyssal key"/>
    </properties>
   </object>
@@ -52,15 +52,15 @@
    <properties>
     <property name="detmap" value="Dj2_RDC_tpbg"/>
     <property name="detx" type="int" value="480"/>
-    <property name="dety" type="int" value="480"/>
+    <property name="dety" type="int" value="875"/>
    </properties>
   </object>
   <object id="5" name="Dj2_RDC_tpbd" type="changementc" x="600" y="730" width="49" height="50">
    <properties>
     <property name="detmap" value="Dj2_RDC_tpbd"/>
     <property name="detx" type="int" value="480"/>
-    <property name="dety" type="int" value="480"/>
-    <property name="key" value=" Shan pass"/>
+    <property name="dety" type="int" value="875"/>
+    <property name="key" value="Shan pass"/>
    </properties>
   </object>
   <object id="6" name="Dj2_RDC_sp" type="changement" x="449" y="928" width="59" height="25">

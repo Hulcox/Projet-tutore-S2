@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="4">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="5">
  <tileset firstgid="1" source="WaterSet.tsx"/>
  <tileset firstgid="96" source="Pnj.tsx"/>
  <tileset firstgid="192" source="logicSolid.tsx"/>
+ <tileset firstgid="217" source="mychild.tsx"/>
  <layer id="3" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu3SQREAAAyDMFTUv9QJWR4Y4LJq8oABBhhggAEGGGCAAQYYeGfgAD7igqsQDgAA
@@ -15,7 +16,7 @@
  </layer>
  <layer id="4" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCoyEwGgKkhoAAUIMwqZqooF4ZaIYaFcwh1QgzoAZLUjWNqh8NgSEWAsVDzL2jzh0NAWqEAADN6MbdEA4AAA==
+   H4sIAAAAAAAECmNgGAWjITAaAqMhMBoCoyEwGgKkhoAAUIMwqZqooF4ZaIYaFcwh1QgzoAZLUjURqf4mkeqorewWtQ0cNW/Ih0DxkPfBqAdGQ4D0EAAAmICjvhAOAAA=
   </data>
  </layer>
  <layer id="6" name="Logic" width="30" height="30">
@@ -43,5 +44,6 @@
     <property name="dety" type="int" value="750"/>
    </properties>
   </object>
+  <object id="4" type="regen" x="224" y="576" width="32" height="64"/>
  </objectgroup>
 </map>
