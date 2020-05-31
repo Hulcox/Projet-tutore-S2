@@ -65,6 +65,12 @@ public class Save {
 	        		myWriter.write( Integer.toString(i.getID())+ "|"); //line 23 Quest complete
 	        	}
 	        }
+	        myWriter.write("\n"); //line 24 boss defeat
+	        for (Boss b : this.gameasset.getAllBoss()) {
+	        	if(b.isDefeated()) {
+	        		myWriter.write(Integer.toString(b.getID())+"|"); 
+	        	}
+	        }
 	        myWriter.close();
 	        System.out.println("Successfully saved the game");
 	      } catch (IOException e) {
@@ -105,6 +111,7 @@ public class Save {
 			case 21: this.gameasset.loadSpells(this.gameasset.loadIDS(line));break;
 			case 22: this.gameasset.loadChest(this.gameasset.loadIDS(line));break;
 			case 23: this.gameasset.loadQuest(this.gameasset.loadIDS(line)); break;
+			case 24: this.gameasset.loadBoss(this.gameasset.loadIDS(line)); break;
 			}
 			nbline++;
 

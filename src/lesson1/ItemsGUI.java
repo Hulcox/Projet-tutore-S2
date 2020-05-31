@@ -84,6 +84,15 @@ public class ItemsGUI implements ComponentListener{
 					toDelObjet = potionTemp;
 					toDelBtnLst = i;
 				}
+				else if (this.Items.get(j).getType() == "ether") {
+					Ether potionTemp = (Ether) this.Items.get(j);
+					this.inventory.getPlayer().setMana(this.inventory.getPlayer().getMana() + potionTemp.getHealingValue());
+					this.IsOpen = false;
+					this.inventory.getSpellgui().setIsOpen(false);
+					this.inventory.getPlayer().setAnimstate(2);
+					toDelObjet = potionTemp;
+					toDelBtnLst = i;
+				} 
 
 			}
 			j++;

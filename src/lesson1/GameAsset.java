@@ -302,6 +302,15 @@ public class GameAsset {
 			}
 		}
 	}
+	public void loadBoss(ArrayList<Integer> ID) {
+		for (int i : ID) {
+			for (Boss b : this.allBoss) {
+				if (b.getID() == i) {
+					b.setDefeated(true);
+				}
+			}
+		}
+	}
 	
 	public Map searchMap(String name) {
 		for(Map i : allMaps) {
@@ -359,6 +368,9 @@ public class GameAsset {
 	}
 	public ArrayList<Objets> getAllAsset() {
 		return allAsset;
+	}
+	public ArrayList<Boss> getAllBoss(){
+		return allBoss;
 	}
 
 	public void setAllAsset(ArrayList<Objets> allAsset) {

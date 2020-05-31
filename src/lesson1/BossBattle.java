@@ -11,6 +11,7 @@ public class BossBattle {
 	private Boss boss;
 	private Player player;
 	private int time;
+	private boolean secondphase;
 	private boolean EnemyAttack = true;
 	private boolean InBattle = false;
 	private boolean damagetaken = false;
@@ -66,101 +67,106 @@ public class BossBattle {
 
 	public void TurnAnimation (Graphics g) throws SlickException {
 		g.resetTransform();
-		if (time > 1) {  
-			this.damagetaken = false;
-			if (boss.getPv() <= 0) { //Battle win
-				if (this.next) {
-					this.next = false;
-					this.setInBattle(false);
-					this.time = 0;
-					this.player.setAnimstate(0);
-					this.EnemyAttack = true;
-					this.boss.setDefeated(true);
-					this.player.setAffichageState(false);
-					player.setDefending(false);
-					player.setCasting(false);
-					player.setDamage(player.getBaseDamage());
-					player.setXp(boss.getXp());
-					player.setLevel();
-					player.getInventaire().getSpellgui().AddMouseOverArea(this.boss.getSpell3());
-				}
-				else {
-					this.player.setAffichageState(true);
-					g.drawAnimation(player.getBattleanim()[0], 0, 240);
-					g.drawString("Victory ! loot : " + this.boss.getSpell3().getNom()  + " Press 'e' to continue" , 100, 240);
-					time = 2;
-				}
-			}
-			else if (time > 2) { //ENEMY TURN
-				g.drawAnimation(player.getBattleanim()[0], 0, 240);
-				
-				if(this.RNG < 50) { //NORMAL ATTACK
-					g.drawAnimation(boss.getBattleanim()[1],0+boss.getBattleanim()[1].getWidth()/2,240-boss.getBattleanim()[1].getHeight()/2); //ENEMY ON PLAYER
-				}
-				else { //SPELL ON PLAYER
-					this.bossCasting = true;
-					if(!boss.getCurrentSpell().isOnPlayer()) { //damaging spell
-						g.drawAnimation(boss.getBattleanim()[2],580-boss.getBattleanim()[2].getWidth(),360-boss.getBattleanim()[2].getHeight());
-						g.drawAnimation(boss.getCurrentSpell().getAnimation()[0], 0+player.getAnimations()[0].getWidth()/2,240+player.getAnimations()[0].getHeight()/2);
-						
-					}
-					else { //Buff spell
-						g.drawAnimation(boss.getBattleanim()[2],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
-						g.drawAnimation(boss.getCurrentSpell().getAnimation()[0], 580-(boss.getBattleanim()[0].getWidth()/2+boss.getCurrentSpell().getAnimation()[0].getWidth()/2), 360-(boss.getBattleanim()[0].getHeight()/2 + boss.getCurrentSpell().getAnimation()[0].getHeight()/2));
-					}
-					
-				}
-				if (time > 3) { //End turn
-					time = 0;
-					if(player.isCasting() && !player.getSpell().isOnPlayer()) {
-						player.setDamage(player.getBaseDamage());
-					}
-					if(this.bossCasting) {
-						this.SpellDamage(boss);
-						this.bossCasting = false;
-					}
-					player.setAnimstate(0);
-					player.setDegats(boss.getDegats()); //Degats sur le joueur
-					boss.setDegats(boss.getBaseDamage());
-					this.EnemyAttack = true;
-					player.setDefending(false);
-					player.setCasting(false);
-				}
-			}
-			else {
-				g.drawAnimation(player.getBattleanim()[0], 0, 240);
-				g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
-			}
-		}
-		else if (time > 0) { //PLAYER TURN
-			g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
-			if (!player.isCasting()) {
-				g.drawAnimation(player.getBattleanim()[1], 580-boss.getBattleanim()[0].getWidth()-player.getBattleanim()[1].getWidth()/2, 360-boss.getBattleanim()[0].getHeight());
-			}//PLAYER ON ENEMY
-			else {
-				if (player.getSpell().isOnPlayer()) { //Casting spell on player
-					g.drawAnimation(player.getBattleanim()[0], 0, 240); 
-					g.drawAnimation(player.getSpell().getAnimation()[0], 0+player.getSpell().getAnimation()[0].getWidth()/2,240+player.getSpell().getAnimation()[0].getHeight()/2);
-				}
-				else if (!player.getSpell().isOnPlayer() && player.isCasting()){ //Casting spell on enemy
-					g.drawAnimation(player.getBattleanim()[0], 0, 240);
-					g.drawAnimation(player.getSpell().getAnimation()[0], 580-(boss.getBattleanim()[0].getWidth()/2+player.getSpell().getAnimation()[0].getWidth()/2), 360-(boss.getBattleanim()[0].getHeight()/2 + player.getSpell().getAnimation()[0].getHeight()/2));
-				}
-			}
-			if (!damagetaken) {
-				damagetaken = true;
-				if (!player.isCasting()) {
-					boss.setDamage(boss.getPv()-player.getDamage()); //Damaging boss
-				}//Damage spell
-				if (player.isCasting() && !player.getSpell().isOnPlayer()) {
-					boss.setDamage(boss.getPv()-player.getDamage()); //Damaging boss
-					
-				}
-			}
+		if(boss.isSecondephase() && time < 1) {
+			
 		}
 		else {
-			g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
-			g.drawAnimation(player.getBattleanim()[0], 0, 240);
+			if (time > 1) {  
+				this.damagetaken = false;
+				if (boss.getPv() <= 0) { //Battle win
+					if (this.next) {
+						this.next = false;
+						this.setInBattle(false);
+						this.time = 0;
+						this.player.setAnimstate(0);
+						this.EnemyAttack = true;
+						this.boss.setDefeated(true);
+						this.player.setAffichageState(false);
+						player.setDefending(false);
+						player.setCasting(false);
+						player.setDamage(player.getBaseDamage());
+						player.setXp(boss.getXp());
+						player.setLevel();
+						player.getInventaire().getSpellgui().AddMouseOverArea(this.boss.getSpell3());
+					}
+					else {
+						this.player.setAffichageState(true);
+						g.drawAnimation(player.getBattleanim()[0], 0, 240);
+						g.drawString("Victory ! loot : " + this.boss.getSpell3().getNom()  + " Press 'e' to continue" , 100, 240);
+						time = 2;
+					}
+				}
+				else if (time > 2) { //ENEMY TURN
+					g.drawAnimation(player.getBattleanim()[0], 0, 240);
+					
+					if(this.RNG < 50) { //NORMAL ATTACK
+						g.drawAnimation(boss.getBattleanim()[1],0+boss.getBattleanim()[1].getWidth()/2,240-boss.getBattleanim()[1].getHeight()/2); //ENEMY ON PLAYER
+					}
+					else { //SPELL ON PLAYER
+						this.bossCasting = true;
+						if(!boss.getCurrentSpell().isOnPlayer()) { //damaging spell
+							g.drawAnimation(boss.getBattleanim()[2],580-boss.getBattleanim()[2].getWidth(),360-boss.getBattleanim()[2].getHeight());
+							g.drawAnimation(boss.getCurrentSpell().getAnimation()[0], 0+player.getAnimations()[0].getWidth()/2,240+player.getAnimations()[0].getHeight()/2);
+							
+						}
+						else { //Buff spell
+							g.drawAnimation(boss.getBattleanim()[2],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
+							g.drawAnimation(boss.getCurrentSpell().getAnimation()[0], 580-(boss.getBattleanim()[0].getWidth()/2+boss.getCurrentSpell().getAnimation()[0].getWidth()/2), 360-(boss.getBattleanim()[0].getHeight()/2 + boss.getCurrentSpell().getAnimation()[0].getHeight()/2));
+						}
+						
+					}
+					if (time > 3) { //End turn
+						time = 0;
+						if(player.isCasting() && !player.getSpell().isOnPlayer()) {
+							player.setDamage(player.getBaseDamage());
+						}
+						if(this.bossCasting) {
+							this.SpellDamage(boss);
+							this.bossCasting = false;
+						}
+						player.setAnimstate(0);
+						player.setDegats(boss.getDegats()); //Degats sur le joueur
+						boss.setDegats(boss.getBaseDamage());
+						this.EnemyAttack = true;
+						player.setDefending(false);
+						player.setCasting(false);
+					}
+				}
+				else {
+					g.drawAnimation(player.getBattleanim()[0], 0, 240);
+					g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
+				}
+			}
+			else if (time > 0) { //PLAYER TURN
+				g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
+				if (!player.isCasting()) {
+					g.drawAnimation(player.getBattleanim()[1], 580-boss.getBattleanim()[0].getWidth()-player.getBattleanim()[1].getWidth()/2, 360-boss.getBattleanim()[0].getHeight());
+				}//PLAYER ON ENEMY
+				else {
+					if (player.getSpell().isOnPlayer()) { //Casting spell on player
+						g.drawAnimation(player.getBattleanim()[0], 0, 240); 
+						g.drawAnimation(player.getSpell().getAnimation()[0], 0+player.getSpell().getAnimation()[0].getWidth()/2,240+player.getSpell().getAnimation()[0].getHeight()/2);
+					}
+					else if (!player.getSpell().isOnPlayer() && player.isCasting()){ //Casting spell on enemy
+						g.drawAnimation(player.getBattleanim()[0], 0, 240);
+						g.drawAnimation(player.getSpell().getAnimation()[0], 580-(boss.getBattleanim()[0].getWidth()/2+player.getSpell().getAnimation()[0].getWidth()/2), 360-(boss.getBattleanim()[0].getHeight()/2 + player.getSpell().getAnimation()[0].getHeight()/2));
+					}
+				}
+				if (!damagetaken) {
+					damagetaken = true;
+					if (!player.isCasting()) {
+						boss.setDamage(boss.getPv()-player.getDamage()); //Damaging boss
+					}//Damage spell
+					if (player.isCasting() && !player.getSpell().isOnPlayer()) {
+						boss.setDamage(boss.getPv()-player.getDamage()); //Damaging boss
+						
+					}
+				}
+			}
+			else {
+				g.drawAnimation(boss.getBattleanim()[0],580-boss.getBattleanim()[0].getWidth(),360-boss.getBattleanim()[0].getHeight());
+				g.drawAnimation(player.getBattleanim()[0], 0, 240);
+			}
 		}
 		
 	}

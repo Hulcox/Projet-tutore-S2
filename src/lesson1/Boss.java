@@ -19,6 +19,7 @@ public class Boss extends Enemie {
     private boolean Trigger = true;
     private Music music;
     private DialogueAsset dialogue;
+    private boolean secondephase;
     public void setDamage(int damage) {
     	this.pv = damage;
         if(this.pv < (this.maxHp-(this.maxHp*0.49))) {
@@ -134,6 +135,12 @@ public class Boss extends Enemie {
 	}
 	public void setDialogue(DialogueAsset dialogue) {
 		this.dialogue = dialogue;
+	}
+	public boolean isSecondephase() {
+		return secondephase;
+	}
+	public void setSecondephase(boolean secondephase) {
+		this.secondephase = secondephase;
 	}
 
 }

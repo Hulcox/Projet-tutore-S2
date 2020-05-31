@@ -117,6 +117,7 @@ public class WindowGame extends BasicGame {
     	menu.setSave(IngameHUD.getSave());
     	bossbattle = new BossBattle(p1);
     	sellGUI = GameAsset.sellGUI1;
+    	container.setIcon("texture/Icone.png");
 
     }
 
@@ -317,6 +318,10 @@ public class WindowGame extends BasicGame {
                     p1.setX(Float.parseFloat(map.getObjectProperty(0, objectID, "detx", Float.toString(p1.getX())))); 
                     p1.setY(Float.parseFloat(map.getObjectProperty(0, objectID, "dety", Float.toString(p1.getY()))));
                 } 
+                else if ("regen".equals(map.getObjectType(0, objectID))) {
+                	this.p1.setPv(p1.getMaxPV());
+                	this.p1.setMana(p1.getMaxMana());
+                }
                 else if ("transitionc".equals(map.getObjectType(0, objectID))) {
                 	String keyName = this.map.getObjectProperty(0, objectID, "key","undefined");
                 	boolean textfound = false;
