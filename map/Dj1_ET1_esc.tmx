@@ -29,10 +29,10 @@
     <property name="detmap" value="Dj1_RDC_sg"/>
     <property name="detx" value="418"/>
     <property name="dety" value="527"/>
-    <property name="key" value="droit de passage"/>
+    <property name="key" value="Rica pass"/>
    </properties>
   </object>
-  <object id="2" name="Rica" type="Dialogue" x="419" y="479" width="81" height="60">
+  <object id="2" name="Rica" type="Dialogue" x="437" y="472" width="50" height="50">
    <properties>
     <property name="personne" value="Rica"/>
    </properties>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="8">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="9">
+ <properties>
+  <property name="ID" type="int" value="3"/>
+ </properties>
  <tileset firstgid="1" name="WaterSet" tilewidth="32" tileheight="32" tilecount="95" columns="19">
   <image source="WaterSet.png" width="608" height="160"/>
  </tileset>
@@ -10,26 +13,26 @@
  <tileset firstgid="419" source="logicSolid.tsx"/>
  <layer id="1" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu1UQQ6AMAjj/3/xD578gf/RRZs0DSw4F71wWIAC7QLT1czWOjWDD97Admp458n78/ob1uMY6VG+EY6RntJ9/kb+mrPuquL+dzh7PtHegbMeMLVck/WVQ2Pm0Rxirsn66I0s82RquL7nR1zAuReYWq7J+sqhMfNoDjHXZH30RjbLU3Xz/weLmXnHm/XM/XmaDRvVxd28fsZK99o3zwQ+Zqg2ygP37Mw5R/d5q+v1M9Z09/s0n3NZ/wCJdtLeEA4AAA==
+   H4sIAAAAAAAECu1UQQ7DMAjj/3/ZH3raD/afDU2WLMtJaZZtFw4IcMBuIe0REUdbz+AHd+D+0nB25f65/sRmHCs9yrfCsdLTutfvyL/mrLvqfP4d7p7PaO/AWQ+Yeq6pxsqhOfPoGXKuqcboHXnmqdRw/SwecQHnXmDquaYaK4fmzKNnyLmmGqN35Ks8Xbf/f3CLCGdu1jv35zQT+1Q3n9FxAGvd974xD/Zn+x2du5nvnPO3dPndXay6j4hIc+/r+hN7AuEg0iMQDgAA
   </data>
  </layer>
  <layer id="4" name="Calque 2" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECsVWy07DQAws4jP6L/w3cC6o3KASt7aHKlw59oqHdCrLsb2bbJSsZDnZx4zttZ1sNv14FvUi8np7X0rthOhN5L2BcIrtn8L3JXJo4J1i+1H4TiLnBt4W2xGrfSClu9e2RxiRW4hVNGrvPsP4DsCzM2vxdmLrT4VcAp8wPcXftXhtnKN6ze4q85e5yHDx3fIC3+s15MU5DmJEvKxB9JDtQy949noK99pew/kaDNql9VVeINHQ9RrtKWF45+wZfDcyIYbuPY8SMwjj/MFNida8vLNk+/2bku21OeLhLcHr1cRY3k6M/xXJ+ob1F7GxNbEEL3Nf18RYXvoCH5B/zCWtuUeW/4dXE5Y3y2WsEZM+sO611n7dqAdK82ZYxK3BHJA4E5rXWZ51Kqv50v9GiyGtNQ9uryYx/yR9Kxq1vMCIcLyajPg4X8uL3I32MgfH5FmEBbvAxRiSF/Vj792rSZzPRonXW2fdZrilNeDq/qKf6aPFmIOXd8NeoDXuay5//wAq4tLoEA4AAA==
+   H4sIAAAAAAAECsVWQU4DMQws4hn8pf8GzlDBDSr1BhxQuXLkiod2qpFre5MN2kayvEmcGTux3a5Wh3Fr6s7k/jhfSj0Y0aPJZoBwju8vxvdqsh3gneP7m/G9m3wM8I74jrt6SmTq7dX3DCMLC3eVjda3rzB2CXh15lK8e/P1q0E+k5iwPCfeS/H6e87qtXqrKl7mIq+Lc88L/KjXkBfnOIiR8bIG0UNurg6C76in0Nb3Gq63YNAv1T82gWRD6zWzmcKIzvkz+N2ohBjae67tziC852caFVp5+WaF+ek3pbL1ORLhLcEb1UQv796c/zap+oaPF3fja2IJXua+1kQvL2NBDMg/5pJq2tj234hqwvNWuYw9YjIG1r1qjetIfaaUt8IibgvmGUmwoLzB9r8uVTU/9X9jxJHRmgd3VJNYX1vfykYvL7CYT8SMapJ7me7lBafnZQ725FkLr9YT/Nc5ciCqSdhVo4XXx6d41Z7a+W/wan/Rb2JS+7OYV3uRPdf4NuwFqvleFXa1Rw7oX6pZZokQDgAA
   </data>
  </layer>
  <layer id="5" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECmNgGAWjIUBaCOzEo3w3HrlRqdEQGKwhcHKwOmyQuwtfWQBz+miZAAuJUXo0BEZDYDCFAKjcH4iy/xrQ3iuDKSCGoVtcGIehp2jsJQDTQQxOEA4AAA==
+   H4sIAAAAAAAECmNgGAWjIUBaCOzEo3w3HrlRqdEQGKwhcHKwOmyQuwtfWQBz+miZAAuJUXo0BEZDYDQEECFwHMEcESyQf+nlZxdG7EHqhUMcu+qRJQoANcpUJxAOAAA=
   </data>
  </layer>
  <layer id="6" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2RS4oEMQxDq+9/jL7ooMUDYSwldG8GZgLBjn5Oqp7nf/2lL/B+PU/bN9+i+cVtK+HSNs6zmi5xCWeu+Jvt9/A+5Sfcvd/0KT/h38xyb8pPuLzibrfP8j7lJ5y5npH6TzL8PeRuGNxWN/2GJS+4PJ8s93nfslyn/nYr07XM2DA4r9Kx8HBOFQ910zVOeufV+3nLw3PSnnKcP2Wle2y455743z6X+7U3NY5/xXcgj3OqZKJPNfmFk0GfMibeMm+4OffGMzXzTn5uWrimR7NVv/vGO9a0cH4PMM+gbxwaatPCUeXxngyquMajU206OOqN3rU+Z/ZNJ46Nb57BVVuW605aZsy8eSYz4fBem1bcxm/Y6Q0+Ey35qW6eiZ2yfgABd0szEA4AAA==
+   H4sIAAAAAAAECu2RSwrDMAxE0/sfoxctWjwYhGYskk2hNRhJ85ObXtf//NIXeL+uK93Nt0j+4qbj8NImTrOSznEOZ2/xm6vv0N7lO1y9T3qX7/Anu9Tr8h1e3uK2V3dp7/Idzl7NcP2dDP095E4Y3FQn/YQ5L3h57hz1aZ+yVFf99lamatkxYXBaS8fBw+wqHuqkS1zpla9e5ykPz0l7ylH+lOXeMeGae+K/fS/vS78pcfxXfAfymF0lE72rzl84GfQuo+Mpc8P1vRtP1/Q36Zy0cEmPZqr69olXLGk7d3pP1+ue3idt5zZ7u6fvY066zjFTyaAW7jg01KQjR2v5dFa/9uS7mrSaP/nh4VIWGmrS9lw8WtWvvWqmnuxUJx+Y7koZH5JDGJ4QDgAA
   </data>
  </layer>
  <objectgroup id="7" name="Transition" width="30" height="30">
-  <object id="1" name="Dj3_RDC_s2" type="changement" x="449" y="765" width="60" height="43">
+  <object id="1" name="Dj3_RDC_s2" type="changement" x="506" y="760" width="50" height="50">
    <properties>
     <property name="detmap" value="Dj3_RDC_s2"/>
     <property name="detx" type="int" value="480"/>
@@ -53,7 +56,7 @@
     <property name="detmap" value="Dj3_RDC_sb"/>
     <property name="detx" type="int" value="365"/>
     <property name="dety" type="int" value="810"/>
-    <property name="key" value="Demonickey"/>
+    <property name="key" value="Demonic key"/>
    </properties>
   </object>
   <object id="6" name="Demonickey" type="Chest" x="769" y="767" width="32" height="96">
@@ -61,11 +64,16 @@
     <property name="ID" type="int" value="5"/>
    </properties>
   </object>
-  <object id="7" name="Vailor" type="changement" x="452" y="931" width="57" height="26">
+  <object id="7" name="Vailor" type="changement" x="500" y="931" width="57" height="26">
    <properties>
     <property name="detmap" value="Vailor"/>
     <property name="detx" type="int" value="205"/>
     <property name="dety" type="int" value="775"/>
+   </properties>
+  </object>
+  <object id="8" name="Marchand des enfers" type="marchand" x="600" y="852" width="50" height="50">
+   <properties>
+    <property name="ID" type="int" value="4"/>
    </properties>
   </object>
  </objectgroup>

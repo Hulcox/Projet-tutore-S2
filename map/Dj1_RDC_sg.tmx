@@ -20,7 +20,7 @@
  </layer>
  <layer id="4" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECs2VyW7DMAxE8/m5tAnaU/u11RwGeBhQW53EESCQImcRHcO5XM5b12a9uz8aR3uXJ7zXWdx7u4Dvvxp951W8cTcTW5Tvq9a7+fJ3f8Yz6M1LX+a+w3/eQeqs+NpL0VxH9mY5Obu+1qaGa7NIzsxX2N5Onxlu1zf1e2fqVhj2R/P6/pVGVaPurN/zrXizWvr63ozWWPUld5RbV1G43qp8K3xVS83E5Jn4ypf9nTx98kytd/DV/Y5uzvSqeempnDO4V9Ue/f975ryeM+PoveIzWc2pf2TeEZceyhObZ+JH81Za5Dq3vuOsrn769rjCZk81ruzn2VjV09c9R3KZq59ncxxH/R1f663GVd+fJvgN0a+Wfx7Y8u3xf+GjlN8OPouAPez4B5E1/ZUQDgAA
+   H4sIAAAAAAAECs2VyQ7CMAxE+/lcWAQn+Friw0hPI2ejpW2kyHY8S1yqsizHrUuxnt3Xwok9ywu81lHcR7mA7j8adedRvHB3EUsM373W2Xz5u//jGdTmpS9z3eGXd5A6I77yiiiuInu9nJxZX2lTQ2e9SE7PN7C17T493Kyv69dq6mYY9lvz6v6ZRnZG3V6/5pvxemfuq3szSmPUl9xWLt2IgautzDfDZ2eu6Rivic982Z/J3cdrap3BN+63dnOmvealZ+ScQb3sbOv/3yPn1ZweW+8Vn8loTv0187a49IjcsV4T35o30yLXc/dRrUi8+zqGNXNqKPe+18S5r3qK5DKPvtfiKLb6M77SG42jvu8i+ILos+S3FTt8a/wPfCLlt4PPwmCblV/caug+EA4AAA==
   </data>
  </layer>
  <objectgroup id="3" name="transition" width="30" height="30">
@@ -48,7 +48,7 @@
     <property name="detmap" value="Dj1_RDC_sg2"/>
     <property name="detx" type="int" value="463"/>
     <property name="dety" type="int" value="433"/>
-    <property name="key" value="droit de passage"/>
+    <property name="key" value="Rica pass"/>
    </properties>
   </object>
  </objectgroup>

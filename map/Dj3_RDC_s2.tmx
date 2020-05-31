@@ -38,11 +38,11 @@
     <property name="dety" type="int" value="180"/>
    </properties>
   </object>
-  <object id="4" name="6" x="86" y="822" width="50" height="50">
+  <object id="4" name="6" type="transition" x="86" y="822" width="50" height="50">
    <properties>
     <property name="detmap" value="Dj3_RDC_s2"/>
-    <property name="detx" type="int" value="785"/>
-    <property name="dety" type="int" value="110"/>
+    <property name="detx" type="int" value="845"/>
+    <property name="dety" type="int" value="180"/>
    </properties>
   </object>
   <object id="5" name="1" type="transition" x="758" y="759" width="50" height="50">
@@ -71,7 +71,7 @@
    <properties>
     <property name="detmap" value="Dj3_RDC_s2"/>
     <property name="detx" type="int" value="480"/>
-    <property name="dety" type="int" value="545"/>
+    <property name="dety" type="int" value="530"/>
    </properties>
   </object>
   <object id="9" name="2" type="transition" x="791" y="343" width="80" height="50">

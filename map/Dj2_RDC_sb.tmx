@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="2">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="3">
  <tileset firstgid="1" name="WaterSet" tilewidth="32" tileheight="32" tilecount="95" columns="19">
   <image source="WaterSet.png" width="608" height="160"/>
  </tileset>
  <tileset firstgid="96" source="logicSolid.tsx"/>
+ <tileset firstgid="121" source="Paysage.tsx"/>
  <layer id="1" name="Calque 1" width="30" height="30">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAEChNjYGAQG8WjYTCaBkbTwGgaGE0Do2lgNA2MpoHRNDDC0oDoAPl3JNirjhS2A+Xf0T4Ocf08ABXeJJIQDgAA
@@ -16,10 +17,10 @@
  </layer>
  <layer id="5" name="Calque 3" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3QgQAAAADDoPlTH+SFUGHAgAEDBgwYMGDAgAEDjwMDe25clxAOAAA=
+   H4sIAAAAAAAECu3QsQkAAAgDwexfOrE6g5VwDynTXCICBAgQIECAAAECBAgQuAjUnHffanGk/2kQDgAA
   </data>
  </layer>
- <layer id="4" name="Logic" width="30" height="30">
+ <layer id="4" name="Logic" width="30" height="30" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu2WzQ7CMAyDedRc+BEc4P1P+INamqJeWJsJwSxZbhKIu3RSdzjs+IYJhDaxhqN7X+PJf0YRanAVb02Je3QdpT6KUIOzeGlK3KPrKPVRhBr0fN2XOtzCFw+DPYX4S753Pc9DRI9tLXlhmfPvotVGhB6ZvN+G399QYknXZ6l7u1+OnZ+t2SfHs/3cD5/enF2vUnyhEVrAaoQMoBFawGqEDPY5V0/5fZb7nLeZc3aJnCiI8fiX8+VZuYdRI7Tg3kWrsPy+yR5871Qh1Jh7PoPzjpycHNP/lEjuUzwBNJMSMhAOAAA=
   </data>
@@ -28,6 +29,13 @@
   <object id="1" name="Cagnazzo" type="boss" x="444" y="251" width="68" height="67">
    <properties>
     <property name="ID" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="2" name="Dj2_RDC_s2" type="changement" x="444" y="894" width="69" height="39">
+   <properties>
+    <property name="detmap" value="Dj2_RDC_s2"/>
+    <property name="detx" type="int" value="480"/>
+    <property name="dety" type="int" value="375"/>
    </properties>
   </object>
  </objectgroup>

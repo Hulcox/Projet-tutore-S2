@@ -53,7 +53,7 @@
     <property name="detmap" value="Dj1_RDC_sb"/>
     <property name="detx" type="int" value="511"/>
     <property name="dety" type="int" value="608"/>
-    <property name="key" value="Wildkey"/>
+    <property name="key" value="Wild key"/>
    </properties>
   </object>
  </objectgroup>

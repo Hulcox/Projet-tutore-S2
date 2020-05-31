@@ -34,7 +34,7 @@
     <property name="detmap" value="Dj2_RDC_s2"/>
     <property name="detx" type="int" value="480"/>
     <property name="dety" type="int" value="675"/>
-    <property name="key" value="Izariapass"/>
+    <property name="key" value="Izaria pass"/>
    </properties>
   </object>
  </objectgroup>

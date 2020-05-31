@@ -27,7 +27,7 @@
  <objectgroup id="4" name="Transition" width="30" height="30">
   <object id="2" name="boss" type="boss" x="392" y="266" width="143" height="143">
    <properties>
-    <property name="ID" type="int" value="0"/>
+    <property name="ID" type="int" value="3"/>
    </properties>
   </object>
   <object id="4" name="Dj3_RDC_sb2" type="changement" x="440" y="154" width="50" height="50">

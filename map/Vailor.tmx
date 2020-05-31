@@ -34,25 +34,43 @@
     <property name="dety" type="int" value="200"/>
    </properties>
   </object>
-  <object id="3" name=" Gora " type="vendeur" x="245" y="147" width="50" height="55"/>
-  <object id="4" x="117" y="754" width="50" height="55"/>
-  <object id="7" name="Un couple lambda" type="Dialogue" x="656" y="122" width="55" height="75"/>
-  <object id="8" name="Willy" type="Dialogue" x="373" y="659" width="50" height="55"/>
-  <object id="9" name="Jeune Vailorais" type="Dialogue" x="725" y="849" width="50" height="55"/>
-  <object id="10" name="Dj3_RDC_sp" type="Changementc" x="182" y="788" width="50" height="50">
+  <object id="3" name=" Gora " type="vendeur" x="245" y="147" width="50" height="55">
    <properties>
-    <property name="detmap" value="Dj3_RDC_sp"/>
-    <property name="detx" type="int" value="0"/>
-    <property name="dety" type="int" value="0"/>
-    <property name="key" value="Demonorb"/>
+    <property name="ID" type="int" value="0"/>
    </properties>
   </object>
-  <object id="11" name="map1" type="changementc" x="785" y="926" width="92" height="25">
+  <object id="4" name="Young Vailoraise" type="Dialogue" x="118" y="754" width="50" height="55">
+   <properties>
+    <property name="personne" value="Jeune Vailoraise"/>
+   </properties>
+  </object>
+  <object id="7" name="normal couple" type="Dialogue" x="656" y="122" width="55" height="75">
+   <properties>
+    <property name="personne" value="Un couple lambda"/>
+   </properties>
+  </object>
+  <object id="8" name="Willy" type="Dialogue" x="373" y="659" width="50" height="55">
+   <properties>
+    <property name="personne" value="Willy"/>
+   </properties>
+  </object>
+  <object id="9" name="Young Vailorais" type="Dialogue" x="726" y="849" width="50" height="55">
+   <properties>
+    <property name="personne" value="Jeune Vailorais"/>
+   </properties>
+  </object>
+  <object id="10" name="Dj3_RDC_sp" type="changement" x="182" y="788" width="50" height="50">
+   <properties>
+    <property name="detmap" value="Dj3_RDC_sp"/>
+    <property name="detx" type="int" value="530"/>
+    <property name="dety" type="int" value="915"/>
+   </properties>
+  </object>
+  <object id="11" name="map1" type="changement" x="785" y="926" width="92" height="25">
    <properties>
     <property name="detmap" value="Vailor"/>
-    <property name="detx" type="int" value="0"/>
-    <property name="dety" type="int" value="0"/>
-    <property name="key" value=""/>
+    <property name="detx" type="int" value="1855"/>
+    <property name="dety" type="int" value="190"/>
    </properties>
   </object>
  </objectgroup>

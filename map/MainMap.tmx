@@ -22,12 +22,12 @@
  </layer>
  <layer id="6" name="Décors" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3ZPU7EMBCG4YUOtqOmQgIKoAAKoAAK4Kx03AZKzsKMxIiRnVgyu8kXad9IVvwTe5wnmwkSqxXHEgVObVNnVs6tjNV933nM23dW7q08eCMdQ/1DfWnKaDXP662Xi/bOz9eXa03ZvrDFL61cWRmre/w85u1HK09Wnr2RjqH+ob40ZbSa5/XWy0V75+fry7WmbF/b4jdWbq2M1T1+HvP2i5VXK2/eSMdQ/1BfmjJazfN66+WivfPz9eVatBFoCXy2Brc4psrhfgvK2CXh0X7Z09/+bkzx9VslpqpyuMdXxo77j/PxFp5HrFWeD21tX79V1r/xlTlcGbs0m7LtzyPev/XeX6Sv36qPxfP4G6U2lUC8H2Pr+3sTz2PbObznu7ft2GP3q+6P9yPekbyf+KbE81DmcGXsbDJ1Pd4Pfw9OrMTh9fimxPNQ5nBl7DCZ63xg9q0y1z6I0yegzOHK2H1K812tzOHK2P8R/kh/q5bzW2Plta22MocrY7dMGEMgBJQ5XBk77r/n3MpJrbGeGMocrozdYzTntcocroy9ifF7+q7n+iZrMneZAsocroy9zKeh/R8E34/6V6HM4crYtQQ9CNQCyhyujF1LLKNHmcOVsZehX+9CmcOVsWsJehCoBZQ5XBm7llhGjzKHK2MvQ7/ehTKHK2PXEvQgUAvkHD5n3XeS49U7282enMPnrLt2jreb+vVd5xw+Z913kuPVO6MHAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQSWJPADVFEL4kCcAAA=
+   H4sIAAAAAAAECu3ZMU/zMBDG8cIG3ZiZkIABGIABGIAB+KxsfBv4PNxJPfVkJ5ZMSZ5I/UeyerZjn/sLub7Su1pxLVHg3A51Ye3S2ljs585z3n+w9mjtyTvpGhofGktLRsO8rjcuN+1dn+8v95qyf2WbX1u7sTYWe/485/1nay/WXr2TrqHxobG0ZDTM63rjctPe9fn+cq8p+7e2+Z21e2tjsefPc95/s/Zu7cM76RoaHxpLS0bDvK43LjftXZ/vL/eij0BL4Ls1+Y9zqhruX0GZuyQ8OSxH/rfv+7daZFPVcM+vzB3fPz5PJ3wex7a3799q601+ZQ1X5o7nMMenP494/9YH24w/m9Dn4nlsZ4mmEoj3Y2x/f2/ieShruDL3mM0U4/F+xDuSc8RvSjwPZQ1X5s4mU8fxfvh7cGYtLo/jNyWeh7KGK3OHyVyfR2bfanOdgzx9AsoarszdpzTf3coarsz9F+Gv9G/Vcn1rrry31VfWcGXulglzCISAsoYrc8f37/ls1aTWXE8OZQ1X5u4xmvNeZQ1X5t7F+DP9rud4lz1Zu0wBZQ1X5l7m09D+HwS/H/VfhbKGK3PXEowgUAsoa7gydy2xjBFlDVfmXoZ+fQplDVfmriUYQaAWUNZwZe5aYhkjyhquzL0M/foUyhquzF1LMIJALZBr+JyxnyTnq0+2nyO5hs8Zu3bOt5/69bfONXzO2E+S89UnYwQBBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBJYk8AupqCY4QJwAAA==
   </data>
  </layer>
  <layer id="4" name="Logic" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <objectgroup id="5" name="Transition" width="100" height="100">
@@ -61,12 +61,6 @@
    </properties>
   </object>
   <object id="12" x="447" y="354" width="32" height="96"/>
-  <object id="14" name="Tifa" type="Dialogue" x="759" y="180" width="50" height="55">
-   <properties>
-    <property name="personne" value="Tifa"/>
-   </properties>
-  </object>
-  <object id="15" x="1942" y="275" width="50" height="55"/>
   <object id="16" name="Dj2_RDC_sp" type="changement" x="1826" y="669" width="58" height="57">
    <properties>
     <property name="detmap" value="Dj2_RDC_sp"/>
@@ -74,7 +68,7 @@
     <property name="dety" type="int" value="910"/>
    </properties>
   </object>
-  <object id="17" name="Vailor" type="changement" x="1767" y="136" width="176" height="24">
+  <object id="17" name="Vailor" type="changement" x="1767" y="135" width="176" height="24">
    <properties>
     <property name="detmap" value="Vailor"/>
     <property name="detx" type="int" value="830"/>

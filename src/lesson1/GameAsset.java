@@ -16,7 +16,7 @@ public class GameAsset {
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
 	Armure copperArmor, ironArmor, diamondArmor;
-	KeyItem debug, demonMask, Wildkey, demontear, Abyssalkey, Ariapass, Izariapass, Shanpass, Wildorb, Abyssalorb, 
+	KeyItem Ricapass, demonMask, Wildkey, demontear, Abyssalkey, Ariapass, Izariapass, Shanpass, Wildorb, Abyssalorb, 
 	Demonorb, lavatunic, Melpass, Demonickey;
 	Booster boosterI;
 	Heal healI, healII, healIII;
@@ -29,7 +29,7 @@ public class GameAsset {
 	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA, death;
 	Inventaire inventory;
 	DialogueAsset bossAtxt,Cagnazzotxt;
-	SellingGUI sellGUI1, sellGUI2;
+	SellingGUI sellGUI1, sellGUI2, sellGUI3, sellGUI4;
 	private Player player;
 	private ArrayList<DialogueAsset> allTexts;
 	private ArrayList<Map> allMaps;
@@ -139,27 +139,27 @@ public class GameAsset {
 		Gobelinmeat = new MonsterDrop(25, "Gobelin meat", 9); allAsset.add(Gobelinmeat);
 		Gobelinspear = new MonsterDrop(25,"Gobelin spear", 10); allAsset.add(Gobelinspear);
 		Poncho = new MonsterDrop(25,"Poncho", 11); allAsset.add(Poncho);
-		Hypoueye = new MonsterDrop(35,"Hypoueye", 26); allAsset.add(Hypoueye);
+		Hypoueye = new MonsterDrop(35,"Hypou eye", 26); allAsset.add(Hypoueye);
 		Greenslime = new MonsterDrop(30," Green slime", 27); allAsset.add(Greenslime);
 		Blueslime = new MonsterDrop(30," Blue slime", 28); allAsset.add(Blueslime);
 		Blackslime = new MonsterDrop(30," Black slime", 29); allAsset.add(Blackslime);
 		Redslime = new MonsterDrop(30," Red slime", 30); allAsset.add(Redslime);
 		Fireshard = new MonsterDrop(100, "Fire shard", 31); allAsset.add(Fireshard);
-		Watertrident = new MonsterDrop(30,"WaterTrident", 32); allAsset.add(Watertrident);
+		Watertrident = new MonsterDrop(30,"Water Trident", 32); allAsset.add(Watertrident);
 		//Potions
 		potion = new Potions(20,"potion",20,12); allAsset.add(potion);
 		superPotion = new Potions(40,"Super potion",  40,13); allAsset.add(superPotion);
 		Hypotion = new Potions(80,"potion X",  80,14); allAsset.add(Hypotion);
 		//Key object
-		debug = new KeyItem(1,"droit de passage",15); allAsset.add(debug);
-		demonMask = new KeyItem(1,"Demon Mask",23); allAsset.add(demonMask);
+		Ricapass = new KeyItem(1,"Rica pass",15); allAsset.add(Ricapass);
+		demonMask = new KeyItem(1,"Demon mask",23); allAsset.add(demonMask);
 		Wildkey = new KeyItem(1,"Wild key",24); allAsset.add(Wildkey);
-		demontear = new KeyItem(1,"Demon Tear",33); allAsset.add(demontear);
+		demontear = new KeyItem(1,"Demon tear",33); allAsset.add(demontear);
 		Abyssalkey = new KeyItem(1,"Abyssal key",34); allAsset.add(Abyssalkey);
 		Ariapass = new KeyItem(1,"Aria pass",35); allAsset.add(Ariapass);
 		Izariapass = new KeyItem(1,"Izaria pass",36); allAsset.add(Izariapass);
 		Shanpass = new KeyItem(1,"Shan pass",37); allAsset.add(Shanpass);
-		lavatunic = new KeyItem(1,"Lava Tunic",38); allAsset.add(Shanpass);
+		lavatunic = new KeyItem(1,"Lava tunic",38); allAsset.add(Shanpass);
 		Melpass = new KeyItem(1,"Mel pass",39); allAsset.add(Shanpass);
 		Demonickey = new KeyItem(1,"Demonic key",40); allAsset.add(Demonickey);
 		//Spells
@@ -181,9 +181,9 @@ public class GameAsset {
 		chest2 = new Chest(2,this.potion,this); allChest.add(chest2);
 		chest3 = new Chest(3,this.demonMask,this); allChest.add(chest3);
 		chest4 = new Chest(4,this.lavatunic,this); allChest.add(chest4);
-		chest5 = new Chest(5,this.lavatunic,this); allChest.add(chest5);
+		chest5 = new Chest(5,this.Demonickey,this); allChest.add(chest5);
 		//Initialisation des quetes OBJET ATTENDU, QUANTITE, RECOMPENSE, ID
-		PeauGobelin = new Quete(this.Gobelinmeat,3,this.debug,1); allQuest.add(PeauGobelin);
+		PeauGobelin = new Quete(this.Gobelinmeat,10,this.Ricapass,1); allQuest.add(PeauGobelin);
 		masquedemo = new Quete(this.demonMask,1,this.Wildkey,2); allQuest.add(masquedemo);
 		larmedemo = new Quete(this.demontear,1,this.Abyssalkey,3); allQuest.add(larmedemo);
 		Leslimedaria = new Quete(this.Greenslime,10,this.Ariapass,4); allQuest.add(Leslimedaria);
@@ -210,6 +210,11 @@ public class GameAsset {
 		allTexts.add(new DialogueAsset("King",false));
 		allTexts.add(new DialogueAsset("Yon",false));
 		allTexts.add(new DialogueAsset("Guard Vulcan",false));
+		allTexts.add(new DialogueAsset("Un couple lambda",false));
+		allTexts.add(new DialogueAsset("Willy",false));
+		allTexts.add(new DialogueAsset("Jeune Vailorais",false));
+		allTexts.add(new DialogueAsset("Jeune Vailoraise",false));
+
 		
 		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
 		allTexts.add(new DialogueAsset("Konor",true,this.masquedemo,container));
@@ -221,17 +226,20 @@ public class GameAsset {
 
 
 		//Selling GUI init
-		sellGUI1 = new SellingGUI(InventoryShop,inventory,1); allSells.add(sellGUI1); //sellGUI1
+		sellGUI1 = new SellingGUI(InventoryShop,inventory,1); allSells.add(sellGUI1); //sellGUI1 'marchand de gauche dans la mainmap à droite du premier donjon'
 		sellGUI1.AddTrade(copperArmor, container);
     	sellGUI1.AddTrade(diamondArmor, container);
     	sellGUI1.AddTrade(potion, container);
     	sellGUI1.AddTrade(superPotion, container);
     	sellGUI1.AddTrade(Hypotion, container);
     	sellGUI1.init(container);
-    	sellGUI2 = new SellingGUI(InventoryShop,inventory,2); allSells.add(sellGUI2); //sellGUI2
+    	sellGUI2 = new SellingGUI(InventoryShop,inventory,2); allSells.add(sellGUI2); //sellGUI2 'marchand de droite dans la mainmap à droite du premier donjon'
     	sellGUI2.AddTrade(Hypotion, container);
     	sellGUI2.init(container);
-		
+    	sellGUI3 = new SellingGUI(InventoryShop,inventory,3); allSells.add(sellGUI3); //sellGUI3 'marchand en haut à gauche de Vailor elle s'appelle Gora'
+    	sellGUI3.init(container);
+    	sellGUI4 = new SellingGUI(InventoryShop,inventory,4); allSells.add(sellGUI4); //sellGUI4 'marchand final dans la première salle du donjon de feu'
+    	sellGUI4.init(container);
 	}
 	public void loadWeapons(int ID) throws SlickException {
 		for (Objets j : allAsset) {
