@@ -111,6 +111,7 @@ public class Save {
 			case 21: this.gameasset.loadSpells(this.gameasset.loadIDS(line));break;
 			case 22: this.gameasset.loadChest(this.gameasset.loadIDS(line));break;
 			case 23: this.gameasset.loadQuest(this.gameasset.loadIDS(line)); break;
+			case 24: this.gameasset.loadBoss(this.gameasset.loadIDS(line)); break;
 			}
 			nbline++;
 
