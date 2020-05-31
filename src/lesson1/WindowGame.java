@@ -321,6 +321,8 @@ public class WindowGame extends BasicGame {
                 else if ("regen".equals(map.getObjectType(0, objectID))) {
                 	this.p1.setPv(p1.getMaxPV());
                 	this.p1.setMana(p1.getMaxMana());
+            		this.info = ("MP HP fully restored ! ");
+            		this.DisplayinfoMessage = true;
                 }
                 else if ("transitionc".equals(map.getObjectType(0, objectID))) {
                 	String keyName = this.map.getObjectProperty(0, objectID, "key","undefined");

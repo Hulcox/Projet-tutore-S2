@@ -20,6 +20,7 @@ public class Boss extends Enemie {
     private Music music;
     private DialogueAsset dialogue;
     private boolean secondephase;
+    private KeyItem key;
     public void setDamage(int damage) {
     	this.pv = damage;
         if(this.pv < (this.maxHp-(this.maxHp*0.49))) {
@@ -60,7 +61,7 @@ public class Boss extends Enemie {
     }
 
     
-    public Boss(int pv, int degats, int level, String name, MonsterDrop loot, Spells Spell1, Spells Spell2, Spells Spell3,Music music, int ID) {
+    public Boss(int pv, int degats, int level, String name, MonsterDrop loot, Spells Spell1, Spells Spell2, Spells Spell3,Music music,KeyItem key ,int ID) {
         super(pv, degats, level, name, loot);
         this.BaseDamage = degats;
         this.Spell1 = Spell1;
@@ -69,6 +70,7 @@ public class Boss extends Enemie {
         this.Spell3 = Spell3;
         this.ID = ID;
         this.music = music;
+        this.setKey(key);
        
     }
     public void render(GameContainer container, Graphics g) {
@@ -141,6 +143,12 @@ public class Boss extends Enemie {
 	}
 	public void setSecondephase(boolean secondephase) {
 		this.secondephase = secondephase;
+	}
+	public KeyItem getKey() {
+		return key;
+	}
+	public void setKey(KeyItem key) {
+		this.key = key;
 	}
 
 }

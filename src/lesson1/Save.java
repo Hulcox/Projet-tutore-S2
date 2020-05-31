@@ -18,10 +18,11 @@ public class Save {
 	public void SaveData() {
 	    try {
 	        FileWriter myWriter = new FileWriter("save/savedata.txt");
-	        myWriter.write(Integer.toString(this.player.getPv()) + "\n"); // line 0
-	        myWriter.write(Integer.toString(this.player.getMaxPV()) + "\n"); // line 1
-	        myWriter.write(Integer.toString(this.player.getMana()) + "\n"); // line 2
-	        myWriter.write(Integer.toString(this.player.getMaxMana()) + "\n"); // line 3
+	       
+	        myWriter.write(Integer.toString(this.player.getMaxPV()) + "\n"); // line 0
+	        myWriter.write(Integer.toString(this.player.getMaxMana()) + "\n"); // line 1
+	        myWriter.write(Integer.toString(this.player.getPv()) + "\n"); // line 2
+	        myWriter.write(Integer.toString(this.player.getMana()) + "\n"); // line 3
 	        myWriter.write(Integer.toString(this.player.getDamage()) + "\n"); // line 4
 	        myWriter.write(Integer.toString(this.player.getBaseDamage()) + "\n"); // line 5
 	        myWriter.write(Integer.toString(this.player.getMoney()) + "\n"); // line 6
@@ -71,6 +72,7 @@ public class Save {
 	        		myWriter.write(Integer.toString(b.getID())+"|"); 
 	        	}
 	        }
+
 	        myWriter.close();
 	        System.out.println("Successfully saved the game");
 	      } catch (IOException e) {
@@ -87,12 +89,11 @@ public class Save {
 		while ((line = in.readLine()) != null)
 		{
 			switch (nbline) {
-			case 0: this.gameasset.reset();this.player.setPv(Integer.parseInt(line)) ;break;
-			case 1: this.player.setMaxPV(Integer.parseInt(line)); break;
-			case 2: this.player.setMana(Integer.parseInt(line)); break;
-			case 3: this.player.setMaxMana(Integer.parseInt(line)); break;
-			case 4: this.player.setDamage(Integer.parseInt(line)); break;
-			case 5: this.player.setBaseDamage(Integer.parseInt(line)); break;
+			case 0: this.gameasset.reset();this.player.setMaxPV(Integer.parseInt(line)); break;
+			case 1: this.player.setMaxMana(Integer.parseInt(line)); break;
+			case 2: this.player.setPv(Integer.parseInt(line)) ;break;
+			case 3: this.player.setMana(Integer.parseInt(line)); break;
+			case 5: this.player.setBaseDamage(Integer.parseInt(line)); this.player.setDamage(Integer.parseInt(line)); break;
 			case 6: this.player.setMoney(Integer.parseInt(line)); break;
 			case 7: this.player.setX(Float.parseFloat(line)); break;
 			case 8: this.player.setY(Float.parseFloat(line)); break;

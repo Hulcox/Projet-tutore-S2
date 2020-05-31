@@ -186,6 +186,7 @@ public class Player {
 			this.MaxPV += 75 ;
 		if(getLevel() > 90 && getLevel() <= 99)
 			this.MaxPV += 80 ;
+		this.pv = this.MaxPV;
 	}
 	public boolean isDefending() {
 
@@ -200,7 +201,7 @@ public class Player {
 		return mana;
 	}
 	public void setMana(int mana) {
-		if(this.mana + mana < this.getMaxMana()) {
+		if(mana < this.getMaxMana()) {
 			this.mana = mana;
 		}
 		else {
@@ -232,6 +233,7 @@ public class Player {
 			this.MaxMana += 80 ;
 		if(getLevel() > 90 && getLevel() <= 99)
 			this.MaxMana += 100 ;
+		this.mana = this.MaxMana;
 	}
 	public int getBaseDamage() {
 
@@ -263,6 +265,8 @@ public class Player {
 			this.baseDamage  += 40 ;
 		if(getLevel() > 90 && getLevel() <= 99)
 			this.baseDamage  += 50 ;
+		
+		this.damage = this.baseDamage;
 	}
 
 	public boolean isCasting() {
@@ -348,6 +352,7 @@ public class Player {
 			MaxXp();
 			MaxMana();
 			MaxPV();
+			BaseDamage();
 		}
 	}
 

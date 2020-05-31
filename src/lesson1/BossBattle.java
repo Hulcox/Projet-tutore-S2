@@ -87,6 +87,7 @@ public class BossBattle {
 						player.setDamage(player.getBaseDamage());
 						player.setXp(boss.getXp());
 						player.setLevel();
+						player.getInventaire().addKeyItem(boss.getKey());
 						player.getInventaire().getSpellgui().AddMouseOverArea(this.boss.getSpell3());
 					}
 					else {
@@ -123,6 +124,8 @@ public class BossBattle {
 						if(this.bossCasting) {
 							this.SpellDamage(boss);
 							this.bossCasting = false;
+							System.out.println("casting !");
+							System.out.println(this.RNG);
 						}
 						player.setAnimstate(0);
 						player.setDegats(boss.getDegats()); //Degats sur le joueur

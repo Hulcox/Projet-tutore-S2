@@ -15,6 +15,7 @@ public class GameAsset {
 	Dj2_RDC_tphd, Dj2_RDC_tphg, Dj2_RDC_tpbd, Dj2_RDC_tpbg, Dj2_RDC_sb, Dj3_RDC_sp, Dj3_RDC_s2, Dj3_RDC_s3, Dj3_RDC_sb, Dj3_RDC_sb2 ;
 	Epée copperSword, ironSword, diamondSword, GodGun;
 	Potions potion, superPotion, Hypotion;
+	Ether ether, superEther, HyEther;
 	Armure copperArmor, ironArmor, diamondArmor;
 	KeyItem Ricapass, demonMask, Wildkey, demontear, Abyssalkey, Ariapass, Izariapass, Shanpass, Wildorb, Abyssalorb, 
 	Demonorb, lavatunic, Melpass, Demonickey;
@@ -26,7 +27,7 @@ public class GameAsset {
 	Chest chest1,chest2,chest3,chest4,chest5;
 	Quete PeauGobelin, masquedemo, larmedemo, Leslimedaria, Leslimedizaria, Grosbras, Lebroalrick, Hypoumel;
 	Boss KingGobelin, Cagnazzo;
-	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA, death;
+	Music maintheme, cave, Battle, Victory, MenuMusic, Town, BossA, death, abysse, lava;
 	Inventaire inventory;
 	DialogueAsset bossAtxt,Cagnazzotxt;
 	SellingGUI sellGUI1, sellGUI2, sellGUI3, sellGUI4;
@@ -76,18 +77,18 @@ public class GameAsset {
 		Dj1_ET1_esc = new Map ("Dj1_ET1_esc.tmx", true, battleGrotte, "Dj1_ET1_esc",this.cave);
 		Dj1_RDC_sg2 = new Map ("Dj1_RDC_sg2.tmx", true, battleGrotte, "Dj1_RDC_sg2",this.cave);
 		Dj1_RDC_sb = new Map ("Dj1_RDC_sb.tmx", false, battleGrotte, "Dj1_RDC_sb",this.cave);
-		Dj2_RDC_sp = new Map ("Dj2_RDC_sp.tmx", true, battle_groundBoss2, "Dj2_RDC_sp",this.cave);
-		Dj2_RDC_s2 = new Map ("Dj2_RDC_s2.tmx", true, battle_groundBoss2, "Dj2_RDC_s2",this.cave);
-		Dj2_RDC_tphg = new Map ("Dj2_RDC_tphg.tmx", true, battle_groundBoss2, "Dj2_RDC_tphg",this.cave);
-		Dj2_RDC_tphd = new Map ("Dj2_RDC_tphd.tmx", true, battle_groundBoss2, "Dj2_RDC_tphd",this.cave);
-		Dj2_RDC_tpbg = new Map ("Dj2_RDC_tpbg.tmx", true, battle_groundBoss2, "Dj2_RDC_tpbg",this.cave);
-		Dj2_RDC_tpbd = new Map ("Dj2_RDC_tpbd.tmx", true, battle_groundBoss2, "Dj2_RDC_tpbd",this.cave);
-		Dj2_RDC_sb = new Map ("Dj2_RDC_sb.tmx", false, battle_groundBoss2, "Dj2_RDC_sb",this.cave);
-		Dj3_RDC_sp = new Map ("Dj3_RDC_sp.tmx", true, battle_groundBoss2, "Dj3_RDC_sp",this.cave);
-		Dj3_RDC_s2 = new Map ("Dj3_RDC_s2.tmx", true, battle_groundBoss2, "Dj3_RDC_s2",this.cave);
-		Dj3_RDC_s3 = new Map ("Dj3_RDC_s3.tmx", true, battle_groundBoss2, "Dj3_RDC_s3",this.cave);
-		Dj3_RDC_sb = new Map ("Dj3_RDC_sb.tmx", false, battle_groundBoss2, "Dj3_RDC_sb",this.cave);
-		Dj3_RDC_sb2 = new Map ("Dj3_RDC_sb2.tmx", false, battle_groundBoss2, "Dj3_RDC_sb2",this.cave);
+		Dj2_RDC_sp = new Map ("Dj2_RDC_sp.tmx", true, battle_groundBoss2, "Dj2_RDC_sp",this.abysse);
+		Dj2_RDC_s2 = new Map ("Dj2_RDC_s2.tmx", true, battle_groundBoss2, "Dj2_RDC_s2",this.abysse);
+		Dj2_RDC_tphg = new Map ("Dj2_RDC_tphg.tmx", true, battle_groundBoss2, "Dj2_RDC_tphg",this.abysse);
+		Dj2_RDC_tphd = new Map ("Dj2_RDC_tphd.tmx", true, battle_groundBoss2, "Dj2_RDC_tphd",this.abysse);
+		Dj2_RDC_tpbg = new Map ("Dj2_RDC_tpbg.tmx", true, battle_groundBoss2, "Dj2_RDC_tpbg",this.abysse);
+		Dj2_RDC_tpbd = new Map ("Dj2_RDC_tpbd.tmx", true, battle_groundBoss2, "Dj2_RDC_tpbd",this.abysse);
+		Dj2_RDC_sb = new Map ("Dj2_RDC_sb.tmx", false, battle_groundBoss2, "Dj2_RDC_sb",this.abysse);
+		Dj3_RDC_sp = new Map ("Dj3_RDC_sp.tmx", true, battle_groundBoss2, "Dj3_RDC_sp",this.lava);
+		Dj3_RDC_s2 = new Map ("Dj3_RDC_s2.tmx", true, battle_groundBoss2, "Dj3_RDC_s2",this.lava);
+		Dj3_RDC_s3 = new Map ("Dj3_RDC_s3.tmx", true, battle_groundBoss2, "Dj3_RDC_s3",this.lava);
+		Dj3_RDC_sb = new Map ("Dj3_RDC_sb.tmx", false, battle_groundBoss2, "Dj3_RDC_sb",this.lava);
+		Dj3_RDC_sb2 = new Map ("Dj3_RDC_sb2.tmx", false, battle_groundBoss2, "Dj3_RDC_sb2",this.lava);
 
 		map1.addEncounrers(knight); map1.addEncounrers(Blueblop); map1.addEncounrers(Greenblop);
 		Dj1_ET1_esc.addEncounrers(gobelin);Dj1_ET1_esc.addEncounrers(Greenblop);
@@ -97,10 +98,12 @@ public class GameAsset {
 		Dj2_RDC_sp.addEncounrers(Blueblop);Dj2_RDC_sp.addEncounrers(Antonio);Dj2_RDC_sp.addEncounrers(Blackblop);
 		Dj2_RDC_s2.addEncounrers(Blueblop);Dj2_RDC_s2.addEncounrers(Antonio);Dj2_RDC_s2.addEncounrers(Blackblop);
 		Dj2_RDC_tphg.addEncounrers(Blueblop);Dj2_RDC_tphg.addEncounrers(Antonio);Dj2_RDC_tphg.addEncounrers(Blackblop);
-		Dj2_RDC_tphd.addEncounrers(Blueblop);Dj2_RDC_tphd.addEncounrers(Antonio);Dj2_RDC_tphd.addEncounrers(Blackblop);
-		Dj2_RDC_tpbg.addEncounrers(Blueblop);Dj2_RDC_tpbg.addEncounrers(Antonio);Dj2_RDC_tpbg.addEncounrers(Blackblop);
+		Dj2_RDC_tphd.addEncounrers(Blueblop);Dj2_RDC_tphd.addEncounrers(Antonio);
+		Dj2_RDC_tpbg.addEncounrers(Greenblop);
 		Dj2_RDC_tpbd.addEncounrers(Blueblop);Dj2_RDC_tpbd.addEncounrers(Antonio);Dj2_RDC_tpbd.addEncounrers(Blackblop);
-		
+		Dj3_RDC_sp.addEncounrers(Ricardo);Dj3_RDC_sp.addEncounrers(Demons);
+		Dj3_RDC_s2.addEncounrers(Ricardo);Dj3_RDC_sp.addEncounrers(Demons);
+		Dj3_RDC_s3.addEncounrers(Ricardo);Dj3_RDC_sp.addEncounrers(Demons);
 		allMaps = new ArrayList<Map>();
 		allMaps.add(map1); allMaps.add(grotte1); allMaps.add(Vailor); allMaps.add(Dj1_RDC_sp); allMaps.add(Dj1_RDC_sg);
 		allMaps.add(Dj1_ET1_esc); allMaps.add(Dj1_RDC_sg2); allMaps.add(Dj1_RDC_sb); allMaps.add(Dj2_RDC_sp); 
@@ -118,6 +121,8 @@ public class GameAsset {
 		Town = new Music("sound/Town.ogg");
 		BossA = new Music("sound/Bossa.ogg");
 		death = new Music("sound/death.ogg");
+		abysse = new Music("sound/abysse.ogg");
+		lava =  new Music("sound/lava.ogg");
 	}
 	
 	public void loadObject() {
@@ -132,8 +137,8 @@ public class GameAsset {
 		GodGun = new Epée(9999,"Gun",9999,4); allAsset.add(GodGun);
 		//Armure
 		copperArmor = new Armure(150, "Copper armor", 10,5); allAsset.add(copperArmor);
-		ironArmor = new Armure(400, "Iron armor", 15,6); allAsset.add(ironArmor);
-		diamondArmor = new Armure(199, "Diamond armor",30,7); allAsset.add(diamondArmor);
+		ironArmor = new Armure(200, "Iron armor", 30,6); allAsset.add(ironArmor);
+		diamondArmor = new Armure(400, "Diamond armor",60,7); allAsset.add(diamondArmor);
 		//Loot de mob
 		Metalscrap = new MonsterDrop(50,"Metal scrap", 8); allAsset.add(Metalscrap);
 		Gobelinmeat = new MonsterDrop(25, "Gobelin meat", 9); allAsset.add(Gobelinmeat);
@@ -150,30 +155,36 @@ public class GameAsset {
 		potion = new Potions(20,"potion",20,12); allAsset.add(potion);
 		superPotion = new Potions(40,"Super potion",  40,13); allAsset.add(superPotion);
 		Hypotion = new Potions(80,"potion X",  80,14); allAsset.add(Hypotion);
+		ether = new Ether(40,"Ether", 20,44); allAsset.add(ether);
+		superEther = new Ether(80,"Super ether", 40,45); allAsset.add(superEther);
+		HyEther = new Ether(160,"Ether X", 80,46); allAsset.add(HyEther);
 		//Key object
 		Ricapass = new KeyItem(1,"Rica pass",15); allAsset.add(Ricapass);
 		demonMask = new KeyItem(1,"Demon mask",23); allAsset.add(demonMask);
 		Wildkey = new KeyItem(1,"Wild key",24); allAsset.add(Wildkey);
+		Wildorb = new KeyItem(1,"Wild orb",47); allAsset.add(Wildorb);
+		Abyssalorb = new KeyItem(1,"Abyssal orb",48); allAsset.add(Abyssalorb);
+		Demonorb = new KeyItem(1,"Demon orb",49); allAsset.add(Demonorb);
 		demontear = new KeyItem(1,"Demon tear",33); allAsset.add(demontear);
 		Abyssalkey = new KeyItem(1,"Abyssal key",34); allAsset.add(Abyssalkey);
 		Ariapass = new KeyItem(1,"Aria pass",35); allAsset.add(Ariapass);
 		Izariapass = new KeyItem(1,"Izaria pass",36); allAsset.add(Izariapass);
 		Shanpass = new KeyItem(1,"Shan pass",37); allAsset.add(Shanpass);
-		lavatunic = new KeyItem(1,"Lava tunic",38); allAsset.add(Shanpass);
-		Melpass = new KeyItem(1,"Mel pass",39); allAsset.add(Shanpass);
+		lavatunic = new KeyItem(1,"lavatunic",38); allAsset.add(lavatunic);
+		Melpass = new KeyItem(1,"Melpass",39); allAsset.add(Melpass);
 		Demonickey = new KeyItem(1,"Demonic key",40); allAsset.add(Demonickey);
 		//Spells
 		boosterI = new Booster(200,"booster I",true,2,10,16); allAsset.add(boosterI);
 		healI = new Heal(100,"Heal I",true,20,5,41); allAsset.add(healI);
 		healII = new Heal(200,"Heal II",true,40,10,42); allAsset.add(healII);
 		healIII = new Heal(400,"Heal III",true,80,20,43); allAsset.add(healIII);
-		fireI = new DamageSpell(200,"Fire I",false,20,5,17); allAsset.add(fireI);
-		fireII = new DamageSpell(400,"Fire II",false,40,10,18); allAsset.add(fireII);
-		fireIII = new DamageSpell(800,"Fire III",false,80,20,19); allAsset.add(fireIII);
-		Ultima = new DamageSpell(800,"Ultima",false,160,40,20); allAsset.add(Ultima);
-		MaelStrom = new DamageSpell(800,"MaelStrom",false,200,45,21); allAsset.add(MaelStrom);
-		MegaStorm = new DamageSpell(800,"Mega storm",false,250,50,22); allAsset.add(MegaStorm); 
-		WaterSpike = new DamageSpell(400,"Water spike",false,85,20,25); allAsset.add(WaterSpike); //LAST ID:44 (mais en vrai 43)
+		fireI = new DamageSpell(200,"Fire I",false,5,5,17); allAsset.add(fireI);
+		fireII = new DamageSpell(400,"Fire II",false,10,10,18); allAsset.add(fireII);
+		fireIII = new DamageSpell(800,"Fire III",false,50,20,19); allAsset.add(fireIII);
+		Ultima = new DamageSpell(800,"Ultima",false,20,40,20); allAsset.add(Ultima);
+		MaelStrom = new DamageSpell(800,"MaelStrom",false,30,45,21); allAsset.add(MaelStrom);
+		MegaStorm = new DamageSpell(800,"Mega storm",false,120,50,22); allAsset.add(MegaStorm); 
+		WaterSpike = new DamageSpell(400,"Water spike",false,20,20,25); allAsset.add(WaterSpike); //LAST ID:49
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
 		
 		//Chest ID,ITEM
@@ -186,15 +197,15 @@ public class GameAsset {
 		PeauGobelin = new Quete(this.Gobelinmeat,10,this.Ricapass,1); allQuest.add(PeauGobelin);
 		masquedemo = new Quete(this.demonMask,1,this.Wildkey,2); allQuest.add(masquedemo);
 		larmedemo = new Quete(this.demontear,1,this.Abyssalkey,3); allQuest.add(larmedemo);
-		Leslimedaria = new Quete(this.Greenslime,10,this.Ariapass,4); allQuest.add(Leslimedaria);
-		Leslimedizaria = new Quete(this.Blueslime,15,this.Izariapass,5); allQuest.add(Leslimedizaria);
-		Grosbras = new Quete(this.Watertrident,15,this.Shanpass,6); allQuest.add(Grosbras);
+		Leslimedaria = new Quete(this.Greenslime,8,this.Ariapass,4); allQuest.add(Leslimedaria);
+		Leslimedizaria = new Quete(this.Blueslime,5,this.Izariapass,5); allQuest.add(Leslimedizaria);
+		Grosbras = new Quete(this.Watertrident,4,this.Shanpass,6); allQuest.add(Grosbras);
 		Lebroalrick = new Quete(this.Shanpass,1,this.demontear,7); allQuest.add(Lebroalrick);
-		Hypoumel = new Quete(this.Hypoueye,15,this.Melpass,8); allQuest.add(Hypoumel);
+		Hypoumel = new Quete(this.Hypoueye,5,this.Melpass,8); allQuest.add(Hypoumel);
 		//Boss PV, DEGATS, NIVEAU, NOM, SORT1, SORT2, SORT3, ID
-		KingGobelin = new Boss(500,15,1,"King gobelin",this.Gobelinspear,this.fireI,this.fireII,this.MegaStorm,this.BossA,1);
+		KingGobelin = new Boss(500,15,1,"King gobelin",this.Gobelinspear,this.fireI,this.fireI,this.Ultima,this.BossA,this.Wildorb,1);
 		this.KingGobelin.setImage(this.OrbeBoss1); allBoss.add(KingGobelin);
-		Cagnazzo = new Boss(1000,30,1,"Cagnazzo",this.Gobelinspear,this.WaterSpike,this.WaterSpike,this.MaelStrom,this.BossA,2);
+		Cagnazzo = new Boss(1000,20,1,"Cagnazzo",this.Gobelinspear,this.WaterSpike,this.WaterSpike,this.MaelStrom,this.BossA,this.Abyssalorb,2);
 		this.Cagnazzo.setImage(this.OrbeBoss1); allBoss.add(this.Cagnazzo);
 		
 
@@ -214,31 +225,46 @@ public class GameAsset {
 		allTexts.add(new DialogueAsset("Willy",false));
 		allTexts.add(new DialogueAsset("Jeune Vailorais",false));
 		allTexts.add(new DialogueAsset("Jeune Vailoraise",false));
-
-		
 		allTexts.add(new DialogueAsset("Rica",true,this.PeauGobelin,container));
 		allTexts.add(new DialogueAsset("Konor",true,this.masquedemo,container));
 		allTexts.add(new DialogueAsset("Abduul",true,this.larmedemo,container));
-		allTexts.add(new DialogueAsset("Servant Aria",true,this.Leslimedaria,container));
+		allTexts.add(new DialogueAsset("Serviteur Aria",true,this.Leslimedaria,container));
 		allTexts.add(new DialogueAsset("Super servant Izaria",true,this.Leslimedizaria,container));
 		allTexts.add(new DialogueAsset("Hyper servant Shan",true,this.Grosbras,container));
 		allTexts.add(new DialogueAsset("Guard Mel",true,this.Hypoumel,container));
-
+		allTexts.add(new DialogueAsset("Captain Alrick",true,this.Lebroalrick,container));
 
 		//Selling GUI init
 		sellGUI1 = new SellingGUI(InventoryShop,inventory,1); allSells.add(sellGUI1); //sellGUI1 'marchand de gauche dans la mainmap à droite du premier donjon'
-		sellGUI1.AddTrade(copperArmor, container);
-    	sellGUI1.AddTrade(diamondArmor, container);
+    	sellGUI1.AddTrade(this.ironArmor, container);
     	sellGUI1.AddTrade(potion, container);
     	sellGUI1.AddTrade(superPotion, container);
     	sellGUI1.AddTrade(Hypotion, container);
     	sellGUI1.init(container);
     	sellGUI2 = new SellingGUI(InventoryShop,inventory,2); allSells.add(sellGUI2); //sellGUI2 'marchand de droite dans la mainmap à droite du premier donjon'
-    	sellGUI2.AddTrade(Hypotion, container);
+    	sellGUI2.AddTrade(this.healII, container);
+    	sellGUI2.AddTrade(this.fireII, container);
+    	sellGUI2.AddTrade(this.ether, container);
+    	sellGUI2.AddTrade(this.superEther, container);
+    	sellGUI2.AddTrade(this.HyEther, container);
     	sellGUI2.init(container);
-    	sellGUI3 = new SellingGUI(InventoryShop,inventory,3); allSells.add(sellGUI3); //sellGUI3 'marchand en haut à gauche de Vailor elle s'appelle Gora'
+    	sellGUI3 = new SellingGUI(InventoryShop,inventory,0); allSells.add(sellGUI3); //sellGUI3 'marchand en haut à gauche de Vailor elle s'appelle Gora'
+    	sellGUI3.AddTrade(this.healI, container);
+    	sellGUI3.AddTrade(this.fireI, container);
+    	sellGUI3.AddTrade(this.ether, container);
+    	sellGUI3.AddTrade(this.superEther, container);
+    	sellGUI3.AddTrade(this.HyEther, container);
+    	sellGUI3.AddTrade(potion, container);
+    	sellGUI3.AddTrade(superPotion, container);
+    	sellGUI3.AddTrade(Hypotion, container);
     	sellGUI3.init(container);
     	sellGUI4 = new SellingGUI(InventoryShop,inventory,4); allSells.add(sellGUI4); //sellGUI4 'marchand final dans la première salle du donjon de feu'
+    	sellGUI4.AddTrade(this.healIII, container);
+    	sellGUI4.AddTrade(this.fireIII, container);
+    	sellGUI4.AddTrade(this.diamondArmor, container);
+    	sellGUI4.AddTrade(this.ether, container);
+    	sellGUI4.AddTrade(this.superEther, container);
+    	sellGUI4.AddTrade(this.HyEther, container);
     	sellGUI4.init(container);
 	}
 	public void loadWeapons(int ID) throws SlickException {
