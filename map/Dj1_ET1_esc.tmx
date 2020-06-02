@@ -24,12 +24,11 @@
   </data>
  </layer>
  <objectgroup id="4" name="transition" width="30" height="30">
-  <object id="1" name="Dj1_RDC_sg" type="changementc" x="393" y="356" width="203" height="83">
+  <object id="1" name="Dj1_RDC_sg" type="changement" x="393" y="356" width="203" height="83">
    <properties>
     <property name="detmap" value="Dj1_RDC_sg"/>
     <property name="detx" value="418"/>
     <property name="dety" value="527"/>
-    <property name="key" value="Rica pass"/>
    </properties>
   </object>
   <object id="2" name="Rica" type="Dialogue" x="437" y="472" width="50" height="50">
