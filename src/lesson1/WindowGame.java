@@ -80,7 +80,7 @@ public class WindowGame extends BasicGame {
     	this.gameover.init(container);
     	this.win.init(container);
     	this.map = GameAsset.map1.getMap();
-    	p1.setMap(GameAsset.Dj2_RDC_sb);
+    	p1.setMap(GameAsset.hauteglise);
     	p1.setX(527);
     	p1.setY(355);
     	this.MapLoading(GameAsset.map1.getMap());
