@@ -11,6 +11,7 @@ public class Battle {
 	private boolean musicTrigger = true;
 	private boolean damagetaken = false;
 	private boolean xptake = false;
+	private boolean init = true;
 	private int time = 0;
 	private Enemie enemie1;
 	private int index;
@@ -20,10 +21,12 @@ public class Battle {
 	private boolean isInBattle = false;
 	private boolean next = false;
 	private boolean EnemyAttack = true;
-
+	private int templevel;
 	private HUD hud_player;
 	private HUD hud_enemie;
-
+	public void setinit(boolean init) {
+		this.init = init;
+	}
 	public Enemie getEnemie1() {
 
 		return enemie1;
@@ -47,7 +50,10 @@ public class Battle {
 		g.resetTransform();
 		this.index = i;
 		font = g.getFont();
-
+		if (this.init) {
+			this.templevel = player.getLevel();
+			this.init = false;
+		}
 		g.drawImage(player.getMap().getBattleImg(),0,0);
 		if(singleFireEvent.isReady() && player.getAnimstate() >= 1) {
 			if (player.getAnimstate() == 2 && EnemyAttack) {
@@ -74,7 +80,7 @@ public class Battle {
 			if (player.getMap().getArrayList().get(i).getPv() <= 0) { //Battle win
 				
 				if (this.next) {
-					
+					this.init = true;
 					this.next = false;
 					this.setInBattle(false);
 					player.getMap().getArrayList().get(i).setPv(player.getMap().getArrayList().get(i).getMaxHp());
@@ -91,15 +97,20 @@ public class Battle {
 					
 				}
 				else {
+					g.setColor(Color.magenta);
 					if(!this.xptake) { //xp actualisation
 						player.setXp(this.player.getMap().getArrayList().get(i).getXp());
 						player.setLevel();
 						this.xptake = true;
 					}
+					if(player.getLevel() > this.templevel) {
+						g.drawString("Level up ! : " + player.getLevel() , 100, 200);
+					}
 					this.player.setAffichageState(true);
 					g.drawAnimation(player.getBattleanim()[0], 0, 240);
 					g.drawString("Victory ! " + "Loot : " + player.getMap().getArrayList().get(i).getLoot().getNom() + " Press 'e' to continue" , 100, 240);
 					time = 2;
+					g.setColor(Color.black);
 				}
 			}
 			else if (time > 2) {

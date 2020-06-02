@@ -59,14 +59,14 @@ public class Enemie {
 		this.maxHp = this.pv;
 	}
 
-	public Enemie (int pv, int degats, int level, String name, MonsterDrop loot) {
+	public Enemie (int pv, int xp,int degats, int level, String name, MonsterDrop loot) {
 		this.setDegats(degats);
 		this.setName(name);
 		this.setPv(pv);
 		this.maxHp = pv;
 		this.setLevel(level);
 		this.loot = loot;
-		this.setXp(getLevel());
+		this.xp = xp;
 	}
 	public int getMaxHp() {
 

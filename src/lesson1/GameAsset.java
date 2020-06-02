@@ -57,15 +57,15 @@ public class GameAsset {
 	
 	public void loadEnemie() throws SlickException{ //Enemy
 		//Random encounters
-		gobelin = new Enemie(30,5,2, "Gobelin", this.Gobelinmeat);
-		knight = new Enemie(40,5,2,"knight", this.Metalscrap);
-		Antonio = new Enemie(80,6,2,"Antonio", this.Watertrident);
-		Ricardo = new Enemie(70,5,2,"Ricardo", this.Hypoueye);
-		Blackblop = new Enemie(30,3,2, "Blackblop", this.Blackslime);
-		Redblop = new Enemie(30,3,2, "Redblop", this.Redslime);
-		Greenblop = new Enemie(30,3,2, "Greenblop", this.Greenslime);
-		Blueblop = new Enemie(30,3,2, "Blueblop", this.Blueslime);
-		Demons = new Enemie(100,8,2,"Demons",this.Fireshard);
+		gobelin = new Enemie(30,1,5,2, "Gobelin", this.Gobelinmeat);
+		knight = new Enemie(40,2,5,2,"knight", this.Metalscrap);
+		Antonio = new Enemie(80,3,6,2,"Antonio", this.Watertrident);
+		Ricardo = new Enemie(100,4,5,2,"Ricardo", this.Hypoueye);
+		Blackblop = new Enemie(30,1,3,2, "Blackblop", this.Blackslime);
+		Redblop = new Enemie(300,12,8,2, "Redblop", this.Redslime);
+		Greenblop = new Enemie(30,1,3,2, "Greenblop", this.Greenslime);
+		Blueblop = new Enemie(30,1,3,2, "Blueblop", this.Blueslime);
+		Demons = new Enemie(120,5,8,2,"Demons",this.Fireshard);
 	}
 	public void initinventory(Player player) {
 		this.inventory = new Inventaire(player, this.InventoryBackground);
@@ -106,7 +106,7 @@ public class GameAsset {
 		Dj2_RDC_tphd.addEncounrers(Blueblop);Dj2_RDC_tphd.addEncounrers(Antonio);
 		Dj2_RDC_tpbg.addEncounrers(Greenblop);
 		Dj2_RDC_tpbd.addEncounrers(Blueblop);Dj2_RDC_tpbd.addEncounrers(Antonio);Dj2_RDC_tpbd.addEncounrers(Blackblop);
-		Dj3_RDC_sp.addEncounrers(Ricardo);Dj3_RDC_sp.addEncounrers(Demons);
+		Dj3_RDC_sp.addEncounrers(Ricardo);Dj3_RDC_sp.addEncounrers(Demons);Dj3_RDC_sp.addEncounrers(Redblop);
 		Dj3_RDC_s2.addEncounrers(Ricardo);Dj3_RDC_sp.addEncounrers(Demons);
 		Dj3_RDC_s3.addEncounrers(Ricardo);Dj3_RDC_sp.addEncounrers(Demons);
 		allMaps = new ArrayList<Map>();
@@ -154,13 +154,13 @@ public class GameAsset {
 		Greenslime = new MonsterDrop(30," Green slime", 27); allAsset.add(Greenslime);
 		Blueslime = new MonsterDrop(30," Blue slime", 28); allAsset.add(Blueslime);
 		Blackslime = new MonsterDrop(30," Black slime", 29); allAsset.add(Blackslime);
-		Redslime = new MonsterDrop(30," Red slime", 30); allAsset.add(Redslime);
+		Redslime = new MonsterDrop(500," Red slime", 30); allAsset.add(Redslime);
 		Fireshard = new MonsterDrop(100, "Fire shard", 31); allAsset.add(Fireshard);
 		Watertrident = new MonsterDrop(30,"Water Trident", 32); allAsset.add(Watertrident);
 		//Potions
 		potion = new Potions(20,"potion",20,12); allAsset.add(potion);
 		superPotion = new Potions(40,"Super potion",  40,13); allAsset.add(superPotion);
-		Hypotion = new Potions(80,"potion X",  80,14); allAsset.add(Hypotion);
+		Hypotion = new Potions(80,"potion X",  100,14); allAsset.add(Hypotion);
 		ether = new Ether(40,"Ether", 20,44); allAsset.add(ether);
 		superEther = new Ether(80,"Super ether", 40,45); allAsset.add(superEther);
 		HyEther = new Ether(160,"Ether X", 80,46); allAsset.add(HyEther);
@@ -184,12 +184,12 @@ public class GameAsset {
 		healI = new Heal(100,"Heal I",true,20,5,41); allAsset.add(healI);
 		healII = new Heal(200,"Heal II",true,40,10,42); allAsset.add(healII);
 		healIII = new Heal(400,"Heal III",true,160,20,43); allAsset.add(healIII);
-		fireI = new DamageSpell(200,"Fire I",false,5,5,17); allAsset.add(fireI);
-		fireII = new DamageSpell(400,"Fire II",false,10,10,18); allAsset.add(fireII);
-		fireIII = new DamageSpell(800,"Fire III",false,50,20,19); allAsset.add(fireIII);
-		Ultima = new DamageSpell(800,"Ultima",false,20,40,20); allAsset.add(Ultima);
-		MaelStrom = new DamageSpell(800,"MaelStrom",false,30,45,21); allAsset.add(MaelStrom);
-		MegaStorm = new DamageSpell(800,"Mega storm",false,120,50,22); allAsset.add(MegaStorm); 
+		fireI = new DamageSpell(200,"Fire I",false,5,1,17); allAsset.add(fireI);
+		fireII = new DamageSpell(400,"Fire II",false,10,5,18); allAsset.add(fireII);
+		fireIII = new DamageSpell(800,"Fire III",false,30,10,19); allAsset.add(fireIII);
+		Ultima = new DamageSpell(800,"Ultima",false,20,10,20); allAsset.add(Ultima);
+		MaelStrom = new DamageSpell(800,"MaelStrom",false,30,15,21); allAsset.add(MaelStrom);
+		MegaStorm = new DamageSpell(800,"Mega storm",false,40,20,22); allAsset.add(MegaStorm); 
 		WaterSpike = new DamageSpell(400,"Water spike",false,20,20,25); allAsset.add(WaterSpike); //LAST ID:49
 		//////////////ID INDEPENDANTE/////////////////////////////////////////////////////////////////
 		
@@ -213,9 +213,9 @@ public class GameAsset {
 		this.KingGobelin.setImage(this.OrbeBoss1); allBoss.add(KingGobelin);
 		Cagnazzo = new Boss(1000,20,1,"Cagnazzo",this.Gobelinspear,this.WaterSpike,this.WaterSpike,this.MaelStrom,this.BossA,this.Abyssalorb,2);
 		this.Cagnazzo.setImage(this.OrbeBoss2); allBoss.add(this.Cagnazzo);
-		DemonKing1 = new Boss(500,20,1,"Demon king",this.Gobelinspear,this.WaterSpike,this.fireIII,this.MegaStorm,this.BossA,this.Abyssalorb,3);
+		DemonKing1 = new Boss(1000,20,1,"Demon king",this.Gobelinspear,this.WaterSpike,this.fireIII,this.MegaStorm,this.BossA,this.Abyssalorb,3);
 		this.DemonKing1.setImage(this.OrbeBoss3); allBoss.add(this.DemonKing1);
-		DemonKing2 = new Boss(1500,30,1,"True demon king",this.Gobelinspear,this.Ultima,this.MaelStrom,this.MegaStorm,this.finalm,this.Abyssalorb,4);
+		DemonKing2 = new Boss(2000,30,1,"True demon king",this.Gobelinspear,this.Ultima,this.MaelStrom,this.MegaStorm,this.finalm,this.Abyssalorb,4);
 		this.DemonKing2.setImage(this.OrbeBoss3); allBoss.add(this.DemonKing2);
 
 	}

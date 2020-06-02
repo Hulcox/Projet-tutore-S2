@@ -28,7 +28,7 @@
  </layer>
  <layer id="4" name="Logic" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <objectgroup id="5" name="Transition" width="100" height="100">
@@ -39,7 +39,7 @@
     <property name="dety" type="int" value="560"/>
    </properties>
   </object>
-  <object id="8" name="Vailor" type="changement" x="608" y="64" width="94" height="94">
+  <object id="8" name="Vailor" type="changement" x="577" y="32" width="156" height="126">
    <properties>
     <property name="detmap" value="Vailor"/>
     <property name="detx" type="int" value="57"/>
@@ -69,7 +69,7 @@
     <property name="dety" type="int" value="910"/>
    </properties>
   </object>
-  <object id="17" name="Vailor" type="changement" x="1767" y="135" width="176" height="24">
+  <object id="17" name="Vailor" type="changement" x="1759" y="135" width="193" height="24">
    <properties>
     <property name="detmap" value="Vailor"/>
     <property name="detx" type="int" value="830"/>

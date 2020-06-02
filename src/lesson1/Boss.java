@@ -64,7 +64,7 @@ public class Boss extends Enemie {
 
     
     public Boss(int pv, int degats, int level, String name, MonsterDrop loot, Spells Spell1, Spells Spell2, Spells Spell3,Music music,KeyItem key ,int ID) {
-        super(pv, degats, level, name, loot);
+        super(pv,0,degats, level, name, loot);
         this.BaseDamage = degats;
         this.Spell1 = Spell1;
         this.setCurrentSpell(Spell1);

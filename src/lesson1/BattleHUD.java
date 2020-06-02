@@ -61,7 +61,7 @@ public class BattleHUD implements ComponentListener {
 		 if (source == attackButton) {
 		    player.setAnimstate(1);
 		 }
-		 else if (source == fleeButton) {
+		 else if (source == fleeButton && battle.isInBattle()) {
 			 battle.setInBattle(false);
 			 player.getMap().getArrayList().get(battle.getIndex()).setPv(player.getMap().getArrayList().get(battle.getIndex()).getMaxHp());
 			 player.setAnimstate(0);

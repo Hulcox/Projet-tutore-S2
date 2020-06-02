@@ -54,7 +54,7 @@ public class WindowGame extends BasicGame {
 	
 
     public WindowGame() {
-        super("Lesson 1 :: WindowGame");
+        super("Knight VOW");
     }
     
     public void loadAsset(GameContainer container) throws SlickException, IOException {
@@ -66,6 +66,7 @@ public class WindowGame extends BasicGame {
     	GameAsset.loadMap();
     	menu = new StartScreen();
     	input = container.getInput();
+    	container.setTargetFrameRate(120);
     	camera = new Camera();
     	p1 = new Player(25,20);
     	gameover = new GameOverScreen("texture/Ecran_Game_Over.png");
@@ -79,10 +80,9 @@ public class WindowGame extends BasicGame {
     	this.gameover.init(container);
     	this.win.init(container);
     	this.map = GameAsset.map1.getMap();
-    	p1.setMap(GameAsset.hauteglise);
+    	p1.setMap(GameAsset.Dj2_RDC_sb);
     	p1.setX(527);
     	p1.setY(355);
-    	
     	this.MapLoading(GameAsset.map1.getMap());
     	animationasset = new AnimationsAsset();
     	battle = new Battle(p1);
@@ -169,6 +169,7 @@ public class WindowGame extends BasicGame {
 			
 		}
 		else if (bossbattle.isInBattle()) {
+			p1.setMoving(false);
 			bossbattle.render(container, g, singleFireEvent, singleFireEvent2);
 			this.hud.render(container, g);
 			if (spellgui.isIsOpen()) {
@@ -191,6 +192,7 @@ public class WindowGame extends BasicGame {
 			this.triggerMusic = true;
 		}
 		else if  (battle.isInBattle()) {	 //Boucle de la bataille
+			p1.setMoving(false);
     			battle.DrawBattle(g,p1,p1.getMap(), camera,enemieselect,singleFireEvent);
     			this.hud.render(container, g);
     			if (spellgui.isIsOpen()) {
@@ -209,6 +211,8 @@ public class WindowGame extends BasicGame {
     			this.triggerMusic = true;
 		}
 		else {
+			
+			
 			if(triggerMusic) {
 				this.playedmusic = p1.getMap().getMusic();
 				this.playedmusic.loop();
@@ -340,6 +344,7 @@ public class WindowGame extends BasicGame {
                 	this.sellGUI = GameAsset.searchsellGUI(Integer.parseInt(this.map.getObjectProperty(0, objectID, "ID","undefined")));
                 	if (sellGUI.isShopOpen()) {
                 		this.sellGUI.setPlayerOverArea(true);
+                		this.p1.setMoving(false);
                 	}
                 	else {
                 		this.sellGUI.setPlayerOverArea(false);
@@ -485,6 +490,12 @@ public class WindowGame extends BasicGame {
     public void keyPressed(int key, char c) {
 
     	if (!battle.isInBattle() && !bossbattle.isInBattle()) { //Commande hors bataille
+    		if(key != Input.KEY_LSHIFT) {
+    			p1.setSpeed(0.1f);
+    		}
+    		else {
+    			p1.setSpeed(0.2f);
+    		}
 	        switch (key) {
 	        case Input.KEY_UP:    p1.setDirection(0); p1.setMoving(true); break;
 	        case Input.KEY_LEFT:  p1.setDirection(1); p1.setMoving(true); break;
@@ -499,7 +510,7 @@ public class WindowGame extends BasicGame {
  
     	else {
     		switch (key) { //Commande bataille
-    		case Input.KEY_F: battle.setInBattle(false);  break; 
+    		case Input.KEY_F: battle.setInBattle(false); this.battle.setinit(true); this.p1.setAnimstate(0);break; 
     		case Input.KEY_A: p1.setAnimstate(1);break;
     		case Input.KEY_E: battle.setNext(true); bossbattle.setNext(true);break;
     		case Input.KEY_I: itemsgui.setIsOpen(!itemsgui.isIsOpen());break;

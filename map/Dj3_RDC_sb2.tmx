@@ -20,12 +20,16 @@
  </layer>
  <layer id="4" name="Logic" width="30" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu2QWw7CMBADe21uD1Y1qmV1CSIbfkiksC+vh+Y49tkv8N8v8Hh9ft5fvIiYfrL2WWeenKw7We6VnKxd25mLA8vzTkbl5dxK09nn+5xLr4ODl0f5wksGfdeTp/ZdjQ8aPLI/mld69jKiJ+Z8VLNHHOmZp141F41HZnd7rhvl7kOunfTFhz5aj2hmYvplPeP9ya54OsSzWv8Lj7ieeBLgETd3zQvwvsQ1lMtVHK665Kv5lX/Vv/7xXIZ/Fefc6214UlR5vf39RCznyemuNyI8AcxV8uEQDgAA
+   H4sIAAAAAAAECu2QWw4CMQwD99rcHqzVaC2LUKApP7RSycvxsD2OffYL/PcL3B6fn/cXLyKmn6x91pknJ+tOlnslJ2vXdubiwPK8k1F5ObfSdPb5PufS6+Dg5VG+8JJB3/XkqX1V44MGj+yP5pWevYzoiTkf1ewRR3rmqVfNReOR2bM9141y9yHXTvriQx+tRzQzMf2ynvF+Z1c8HeJZrf+FR1xPPAnwiJu75gV4X+IayuUqDldd8tX8yr/qX/94LsO/inPu9TY8Kaq83v5+IlZ1P3G9A004aTUQDgAA
   </data>
  </layer>
  <objectgroup id="5" name="Transition" width="30" height="30">
-  <object id="1" name="Finalboss" type="boss" x="422" y="422" width="146" height="145"/>
-  <object id="2" name="Vailor" type="changement" x="471" y="248" width="50" height="50">
+  <object id="1" name="Finalboss" type="boss" x="422" y="422" width="146" height="145">
+   <properties>
+    <property name="ID" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="2" name="Vailor" type="end" x="471" y="248" width="50" height="50">
    <properties>
     <property name="detmap" value="Vailor"/>
     <property name="detx" type="int" value="205"/>
